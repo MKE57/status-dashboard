@@ -49,10 +49,32 @@ body.wallboard-mode {
 }
 
 .header-row {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: flex-start;
   gap: 20px;
+}
+
+.header-brand-logo {
+  align-self: start;
+  justify-self: center;
+  height: 96px;
+  max-width: 330px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-brand-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
 }
 
 .header-time {
@@ -369,7 +391,7 @@ body.wallboard-mode {
 
 body.wallboard-mode .header-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto auto;
   gap: clamp(10px, min(2vw, 2vh), 28px);
   align-items: start;
   margin-bottom: clamp(8px, min(1.5vw, 1.6vh), 18px);
@@ -381,6 +403,11 @@ body.wallboard-mode h1 {
   font-size: clamp(28px, min(3.2vw, 6vh), 64px);
   line-height: 1.05;
   letter-spacing: -1px;
+}
+
+body.wallboard-mode .header-brand-logo {
+  height: clamp(96px, min(10vw, 18vh), 190px);
+  max-width: clamp(280px, min(24vw, 44vh), 560px);
 }
 
 body.wallboard-mode .small {
@@ -601,7 +628,7 @@ body.wallboard-mode.wallboard-light .footer-row {
   }
 
   body.wallboard-mode .header-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) auto;
   }
 
   body.wallboard-mode .header-time {
@@ -616,11 +643,19 @@ body.wallboard-mode.wallboard-light .footer-row {
 
 @media (max-width: 800px) {
   .header-row {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
   }
 
   .header-time {
     display: none;
+  }
+
+  .header-brand-logo {
+    justify-self: end;
+    height: 74px;
+    max-width: 220px;
   }
 
   .dashboard-grid {
@@ -667,6 +702,10 @@ body.wallboard-mode.wallboard-light .footer-row {
     <p class="small" id="pageSubtitle">Simple aggregated view of Cloudflare, Worldpay and AudienceView status pages</p>
   </div>
 
+  <div class="header-brand-logo">
+    <img src="https://mke57.github.io/status-dashboard/assets/logos/ATG.jpeg" alt="ATG logo">
+  </div>
+
   <div id="currentTime" class="header-time"></div>
 </div>
 
@@ -701,7 +740,7 @@ body.wallboard-mode.wallboard-light .footer-row {
 <div class="footer-row">
   <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
   <div>Auto-refresh: every 60 seconds</div>
-  <div id="dashboardMeta">Version: v0.5.5 | Built and maintained by Mike Ahrens</div>
+  <div id="dashboardMeta">Version: v0.5.7 | Built and maintained by Mike Ahrens</div>
 </div>
 
 <script>
@@ -740,7 +779,7 @@ const providers = [
   }
 ];
 
-const dashboardVersion = "v0.5.5";
+const dashboardVersion = "v0.5.7";
 const dashboardMaintainer = "Mike Ahrens";
 
 function detectPageMode() {
@@ -748,7 +787,7 @@ function detectPageMode() {
 
   if (path.includes("/wallboard/") || path.includes("/wallboardtest/")) {
     document.body.classList.add("wallboard-mode");
-    document.getElementById("pageTitle").innerText = "SaaS Status Wallboard";
+    document.getElementById("pageTitle").innerText = "SaaS Status Dashboard";
     document.getElementById("pageSubtitle").innerText = "Live operational status for monitored SaaS services";
     return "wallboard";
   }
@@ -768,34 +807,27 @@ const pageMode = detectPageMode();
 function toggleDarkMode() {
   if (pageMode === "wallboard") {
     document.body.classList.toggle("wallboard-light");
-
     const isWallboardLight = document.body.classList.contains("wallboard-light");
     localStorage.setItem("wallboardTheme", isWallboardLight ? "light" : "dark");
-
     return;
   }
 
   document.body.classList.toggle("dark-mode");
-
   const isDarkMode = document.body.classList.contains("dark-mode");
   localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
-
   document.getElementById("darkModeButton").innerText = isDarkMode ? "Light Mode" : "Dark Mode";
 }
 
 function applySavedTheme() {
   if (pageMode === "wallboard") {
     const savedWallboardTheme = localStorage.getItem("wallboardTheme");
-
     if (savedWallboardTheme === "light") {
       document.body.classList.add("wallboard-light");
     }
-
     return;
   }
 
   const savedTheme = localStorage.getItem("darkMode");
-
   if (savedTheme === "enabled") {
     document.body.classList.add("dark-mode");
     document.getElementById("darkModeButton").innerText = "Light Mode";
@@ -804,11 +836,9 @@ function applySavedTheme() {
 
 function handleBackgroundDoubleClick(event) {
   const ignoredElement = event.target.closest("button, a");
-
   if (ignoredElement) {
     return;
   }
-
   toggleDarkMode();
 }
 
@@ -819,19 +849,10 @@ function updateCurrentTime() {
     document.getElementById("currentTime").innerHTML =
       "<div class='time-label'>Current time</div>" +
       "<div class='time-value'>" +
-      now.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-      }) +
+      now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }) +
       "</div>" +
       "<div class='date-value'>" +
-      now.toLocaleDateString([], {
-        weekday: "long",
-        day: "2-digit",
-        month: "long",
-        year: "numeric"
-      }) +
+      now.toLocaleDateString([], { weekday: "long", day: "2-digit", month: "long", year: "numeric" }) +
       "</div>";
   } else {
     document.getElementById("currentTime").innerText = "Current time: " + now.toLocaleString();
@@ -855,47 +876,27 @@ function getSeverity(service) {
   if (service.status === "Unable to fetch") {
     return 3;
   }
-
   if (service.activeIncidents.some(isMajorIncident)) {
     return 3;
   }
-
   if (service.activeIncidents.length > 0) {
     return 2;
   }
-
   return 1;
 }
 
 function getStatusClass(service) {
   const severity = getSeverity(service);
-
-  if (severity === 3) {
-    return "bad";
-  }
-
-  if (severity === 2) {
-    return "warn";
-  }
-
+  if (severity === 3) return "bad";
+  if (severity === 2) return "warn";
   return "good";
 }
 
 function getDisplayStatus(service) {
   const severity = getSeverity(service);
-
-  if (service.status === "Unable to fetch") {
-    return "Unable to fetch";
-  }
-
-  if (severity === 3) {
-    return "Major incident";
-  }
-
-  if (severity === 2) {
-    return "Active incident";
-  }
-
+  if (service.status === "Unable to fetch") return "Unable to fetch";
+  if (severity === 3) return "Major incident";
+  if (severity === 2) return "Active incident";
   return "Operational";
 }
 
@@ -914,24 +915,17 @@ function updateSummary(results) {
   document.getElementById("activeIncidents").innerText = activeIncidents;
 
   const banner = document.getElementById("summaryBanner");
-
   banner.classList.remove("summary-good", "summary-warn", "summary-bad");
 
   if (highestSeverity === 1) {
     banner.classList.add("summary-good");
-    banner.innerText = pageMode === "wallboard"
-      ? "All monitored services operational"
-      : "All monitored services are currently operational";
+    banner.innerText = pageMode === "wallboard" ? "All monitored services operational" : "All monitored services are currently operational";
   } else if (highestSeverity === 2) {
     banner.classList.add("summary-warn");
-    banner.innerText = pageMode === "wallboard"
-      ? "Active incident reported"
-      : "One or more monitored services are reporting active incidents";
+    banner.innerText = pageMode === "wallboard" ? "Active incident reported" : "One or more monitored services are reporting active incidents";
   } else {
     banner.classList.add("summary-bad");
-    banner.innerText = pageMode === "wallboard"
-      ? "Major incident reported"
-      : "One or more monitored services are reporting a major incident or could not be checked";
+    banner.innerText = pageMode === "wallboard" ? "Major incident reported" : "One or more monitored services are reporting a major incident or could not be checked";
   }
 }
 
@@ -941,7 +935,6 @@ async function fetchProvider(provider) {
       fetch(provider.url),
       fetch(provider.incidentsUrl)
     ]);
-
     const summaryData = await summaryResponse.json();
     const incidentData = await incidentResponse.json();
 
@@ -971,15 +964,8 @@ async function fetchProvider(provider) {
 
 function formatDateTime(value) {
   if (!value) return "Unknown";
-
   try {
-    return new Date(value).toLocaleString([], {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit"
-    });
+    return new Date(value).toLocaleString([], { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" });
   } catch (err) {
     return value;
   }
@@ -987,12 +973,8 @@ function formatDateTime(value) {
 
 function formatUpdatedTime(value) {
   if (!value) return "Unknown";
-
   try {
-    return new Date(value).toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit"
-    });
+    return new Date(value).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   } catch (err) {
     return value;
   }
@@ -1000,30 +982,17 @@ function formatUpdatedTime(value) {
 
 function timeAgo(value) {
   if (!value) return "Unknown";
-
   const dateValue = new Date(value);
-
-  if (Number.isNaN(dateValue.getTime())) {
-    return "Unknown";
-  }
+  if (Number.isNaN(dateValue.getTime())) return "Unknown";
 
   const diffMs = new Date() - dateValue;
   const diffMinutes = Math.max(0, Math.floor(diffMs / 60000));
   const diffHours = Math.floor(diffMinutes / 60);
   const diffDays = Math.floor(diffHours / 24);
 
-  if (diffDays > 0) {
-    return diffDays + "d " + (diffHours % 24) + "h ago";
-  }
-
-  if (diffHours > 0) {
-    return diffHours + "h " + (diffMinutes % 60) + "m ago";
-  }
-
-  if (diffMinutes > 0) {
-    return diffMinutes + "m ago";
-  }
-
+  if (diffDays > 0) return diffDays + "d " + (diffHours % 24) + "h ago";
+  if (diffHours > 0) return diffHours + "h " + (diffMinutes % 60) + "m ago";
+  if (diffMinutes > 0) return diffMinutes + "m ago";
   return "just now";
 }
 
@@ -1031,7 +1000,6 @@ function incidentPillClass(incident) {
   if (isMajorIncident(incident)) {
     return "bad";
   }
-
   return "warn";
 }
 
@@ -1050,9 +1018,7 @@ function logoHtml(service) {
 }
 
 function buildWebIncidentDetails(service) {
-  if (pageMode === "wallboard") {
-    return "";
-  }
+  if (pageMode === "wallboard") return "";
 
   const sortedIncidents = sortIncidentsNewestFirst(service.recentIncidents);
   const latestIncident = sortedIncidents[0];
@@ -1124,9 +1090,7 @@ async function loadStatuses() {
   container.innerHTML = "<div class='card'>Loading...</div>";
 
   const results = await Promise.all(providers.map(fetchProvider));
-
   updateSummary(results);
-
   container.innerHTML = "";
 
   results.forEach(service => {
@@ -1135,18 +1099,12 @@ async function loadStatuses() {
     const displayStatus = getDisplayStatus(service);
     const detailsHtml = buildWebIncidentDetails(service);
 
-    if (pageMode === "wallboard") {
-      card.className = "card " + badgeClass + "-border";
-    } else {
-      card.className = "card";
-    }
+    card.className = pageMode === "wallboard" ? "card " + badgeClass + "-border" : "card";
 
     if (pageMode === "wallboard") {
       card.innerHTML = `
         <div class="service-header">
-          <h2>
-            <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
-          </h2>
+          <h2><a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a></h2>
           ${logoHtml(service)}
         </div>
         <div class="badge ${badgeClass}">${displayStatus}</div>
@@ -1156,9 +1114,7 @@ async function loadStatuses() {
     } else {
       card.innerHTML = `
         <div class="service-header">
-          <h2>
-            <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
-          </h2>
+          <h2><a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a></h2>
           ${logoHtml(service)}
         </div>
         <div class="badge ${badgeClass}">${displayStatus}</div>
@@ -1172,18 +1128,13 @@ async function loadStatuses() {
   });
 
   const refreshValue = pageMode === "wallboard"
-    ? new Date().toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-      })
+    ? new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })
     : new Date().toLocaleString();
 
   document.getElementById("lastRefreshFooter").innerText = "Last refreshed: " + refreshValue;
 
   if (document.getElementById("dashboardMeta")) {
-    document.getElementById("dashboardMeta").innerText =
-      "Version: " + dashboardVersion + " | Built and maintained by " + dashboardMaintainer;
+    document.getElementById("dashboardMeta").innerText = "Version: " + dashboardVersion + " | Built and maintained by " + dashboardMaintainer;
   }
 }
 
