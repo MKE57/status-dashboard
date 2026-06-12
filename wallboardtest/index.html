@@ -12,25 +12,20 @@
   --light-panel: #ffffff;
   --light-border: #e5e7eb;
   --light-muted: #6b7280;
-
   --dark-bg: #0f172a;
   --dark-text: #e5e7eb;
   --dark-panel: #1e293b;
   --dark-border: #334155;
   --dark-muted: #cbd5e1;
-
   --green-bg: #dcfce7;
   --green-text: #065f46;
   --green-border: #22c55e;
-
   --yellow-bg: #fef3c7;
   --yellow-text: #92400e;
   --yellow-border: #f59e0b;
-
   --red-bg: #fee2e2;
   --red-text: #991b1b;
   --red-border: #ef4444;
-
   --wall-green-bg: #14532d;
   --wall-yellow-bg: #713f12;
   --wall-red-bg: #7f1d1d;
@@ -605,6 +600,7 @@ body.wallboard-mode.wallboard-light .footer-row {
   <button onclick="loadStatuses()">Refresh</button>
   <button onclick="toggleDarkMode()" id="darkModeButton">Dark Mode</button>
   <span id="lastRefresh" class="small"></span>
+  <span id="webDashboardMeta" class="small"></span>
 </div>
 
 <div id="results" class="dashboard-grid"></div>
@@ -612,6 +608,7 @@ body.wallboard-mode.wallboard-light .footer-row {
 <div class="footer-row">
   <div id="wallboardLastRefresh">Last refreshed: Not yet refreshed</div>
   <div>Auto-refresh: every 60 seconds</div>
+  <div id="dashboardMeta">Version: v0.4.0 | Built and maintained by Mike Ahrens</div>
 </div>
 
 <script>
@@ -637,6 +634,9 @@ const providers = [
     statusPage: "https://unlimited-status.audienceview.com/"
   }
 ];
+
+const dashboardVersion = "v0.4.0";
+const dashboardMaintainer = "Mike Ahrens";
 
 function detectPageMode() {
   const path = window.location.pathname.toLowerCase();
@@ -908,12 +908,22 @@ async function loadStatuses() {
 
   document.getElementById("lastRefresh").innerText = refreshText;
 
+  if (document.getElementById("webDashboardMeta")) {
+    document.getElementById("webDashboardMeta").innerText =
+      " | Auto-refresh: every 60 seconds | Version: " + dashboardVersion + " | Built and maintained by " + dashboardMaintainer;
+  }
+
   if (document.getElementById("wallboardLastRefresh")) {
     document.getElementById("wallboardLastRefresh").innerText = "Last refreshed: " + new Date().toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
       second: "2-digit"
     });
+  }
+
+  if (document.getElementById("dashboardMeta")) {
+    document.getElementById("dashboardMeta").innerText =
+      "Version: " + dashboardVersion + " | Built and maintained by " + dashboardMaintainer;
   }
 }
 
