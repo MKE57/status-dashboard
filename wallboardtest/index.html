@@ -222,6 +222,59 @@ body.wallboard-mode .provider-link:hover {
   text-decoration: none;
 }
 
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.service-header h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.service-logo {
+  flex-shrink: 0;
+  min-width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  border: 1px solid var(--light-border);
+  background: var(--light-bg);
+  color: var(--light-text);
+}
+
+body.dark-mode .service-logo,
+body.wallboard-mode .service-logo {
+  border-color: var(--dark-border);
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.logo-cloudflare {
+  background: #fff7ed;
+  color: #c2410c;
+  border-color: #fdba74;
+}
+
+.logo-worldpay {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #93c5fd;
+}
+
+.logo-av {
+  background: #f5f3ff;
+  color: #6d28d9;
+  border-color: #c4b5fd;
+}
+
 .badge {
   padding: 5px 10px;
   border-radius: 20px;
@@ -277,6 +330,30 @@ body.wallboard-mode .detail-block {
 
 .detail-list li {
   margin-bottom: 5px;
+}
+
+.detail-pill {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.detail-pill.good {
+  background: var(--green-bg);
+  color: var(--green-text);
+}
+
+.detail-pill.warn {
+  background: var(--yellow-bg);
+  color: var(--yellow-text);
+}
+
+.detail-pill.bad {
+  background: var(--red-bg);
+  color: var(--red-text);
 }
 
 .footer-row {
@@ -424,7 +501,8 @@ body.wallboard-mode .summary-value {
   line-height: 1;
 }
 
-body.wallboard-mode .controls {
+body.wallboard-mode .controls,
+body.wallboard-mode .detail-block {
   display: none;
 }
 
@@ -463,14 +541,22 @@ body.wallboard-mode .card.bad-border {
   border-left-color: var(--red-border);
 }
 
-body.wallboard-mode .service-name {
+body.wallboard-mode .service-header {
+  align-items: flex-start;
+}
+
+body.wallboard-mode .service-header h2 {
   font-size: clamp(22px, min(2.3vw, 4.5vh), 50px);
   font-weight: bold;
-  margin-bottom: clamp(8px, min(1.5vw, 1.8vh), 20px);
+  margin: 0 0 clamp(8px, min(1.5vw, 1.8vh), 20px) 0;
   line-height: 1.08;
-  max-width: 100%;
-  overflow-wrap: break-word;
-  word-break: normal;
+}
+
+body.wallboard-mode .service-logo {
+  min-width: clamp(38px, min(3.4vw, 6vh), 72px);
+  height: clamp(38px, min(3.4vw, 6vh), 72px);
+  border-radius: clamp(10px, min(1vw, 1.5vh), 18px);
+  font-size: clamp(12px, min(1vw, 2vh), 22px);
 }
 
 body.wallboard-mode .badge {
@@ -649,7 +735,7 @@ body.wallboard-mode.wallboard-light .footer-row {
 <div class="footer-row">
   <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
   <div>Auto-refresh: every 60 seconds</div>
-  <div id="dashboardMeta">Version: v0.4.3 | Built and maintained by Mike Ahrens</div>
+  <div id="dashboardMeta">Version: v0.5.0 | Built and maintained by Mike Ahrens</div>
 </div>
 
 <script>
@@ -657,26 +743,38 @@ const providers = [
   {
     name: "Cloudflare",
     url: "https://www.cloudflarestatus.com/api/v2/summary.json",
-    statusPage: "https://www.cloudflarestatus.com/"
+    incidentsUrl: "https://www.cloudflarestatus.com/api/v2/incidents.json",
+    statusPage: "https://www.cloudflarestatus.com/",
+    logoText: "CF",
+    logoClass: "logo-cloudflare"
   },
   {
     name: "Worldpay",
     url: "https://status.worldpay.com/api/v2/summary.json",
-    statusPage: "https://status.worldpay.com/"
+    incidentsUrl: "https://status.worldpay.com/api/v2/incidents.json",
+    statusPage: "https://status.worldpay.com/",
+    logoText: "WP",
+    logoClass: "logo-worldpay"
   },
   {
     name: "AudienceView Professional",
     url: "https://professional-status.audienceview.com/api/v2/summary.json",
-    statusPage: "https://professional-status.audienceview.com/"
+    incidentsUrl: "https://professional-status.audienceview.com/api/v2/incidents.json",
+    statusPage: "https://professional-status.audienceview.com/",
+    logoText: "AVP",
+    logoClass: "logo-av"
   },
   {
     name: "AudienceView Unlimited",
     url: "https://unlimited-status.audienceview.com/api/v2/summary.json",
-    statusPage: "https://unlimited-status.audienceview.com/"
+    incidentsUrl: "https://unlimited-status.audienceview.com/api/v2/incidents.json",
+    statusPage: "https://unlimited-status.audienceview.com/",
+    logoText: "AVU",
+    logoClass: "logo-av"
   }
 ];
 
-const dashboardVersion = "v0.4.3";
+const dashboardVersion = "v0.5.0";
 const dashboardMaintainer = "Mike Ahrens";
 
 function detectPageMode() {
@@ -774,16 +872,17 @@ function updateCurrentTime() {
   }
 }
 
-function getStatusClass(service) {
-  if (service.status === "Unable to fetch") {
-    return "bad";
-  }
+function isMajorIncident(incident) {
+  const impact = (incident.impact || "").toLowerCase();
+  const name = (incident.name || "").toLowerCase();
+  const status = (incident.status || "").toLowerCase();
 
-  if (service.incidents.length > 0) {
-    return "warn";
-  }
-
-  return "good";
+  return impact.includes("major") ||
+    impact.includes("critical") ||
+    name.includes("major") ||
+    name.includes("critical") ||
+    status.includes("major") ||
+    status.includes("critical");
 }
 
 function getSeverity(service) {
@@ -791,11 +890,47 @@ function getSeverity(service) {
     return 3;
   }
 
-  if (service.incidents.length > 0) {
+  if (service.activeIncidents.some(isMajorIncident)) {
+    return 3;
+  }
+
+  if (service.activeIncidents.length > 0) {
     return 2;
   }
 
   return 1;
+}
+
+function getStatusClass(service) {
+  const severity = getSeverity(service);
+
+  if (severity === 3) {
+    return "bad";
+  }
+
+  if (severity === 2) {
+    return "warn";
+  }
+
+  return "good";
+}
+
+function getDisplayStatus(service) {
+  const severity = getSeverity(service);
+
+  if (service.status === "Unable to fetch") {
+    return "Unable to fetch";
+  }
+
+  if (severity === 3) {
+    return "Major incident";
+  }
+
+  if (severity === 2) {
+    return "Active incident";
+  }
+
+  return "Operational";
 }
 
 function hasIssue(service) {
@@ -805,7 +940,7 @@ function hasIssue(service) {
 function updateSummary(results) {
   const servicesMonitored = results.length;
   const servicesWithIssues = results.filter(hasIssue).length;
-  const activeIncidents = results.reduce((total, service) => total + service.incidents.length, 0);
+  const activeIncidents = results.reduce((total, service) => total + service.activeIncidents.length, 0);
   const highestSeverity = Math.max(...results.map(getSeverity));
 
   document.getElementById("servicesMonitored").innerText = servicesMonitored;
@@ -829,29 +964,40 @@ function updateSummary(results) {
   } else {
     banner.classList.add("summary-bad");
     banner.innerText = pageMode === "wallboard"
-      ? "Major service issue detected"
-      : "One or more monitored services are reporting a major issue or could not be checked";
+      ? "Major incident reported"
+      : "One or more monitored services are reporting a major incident or could not be checked";
   }
 }
 
 async function fetchProvider(provider) {
   try {
-    const res = await fetch(provider.url);
-    const data = await res.json();
+    const [summaryResponse, incidentResponse] = await Promise.all([
+      fetch(provider.url),
+      fetch(provider.incidentsUrl)
+    ]);
+
+    const summaryData = await summaryResponse.json();
+    const incidentData = await incidentResponse.json();
 
     return {
       name: provider.name,
       statusPage: provider.statusPage,
-      status: data.status.description,
-      incidents: data.incidents || [],
-      updated: data.page.updated_at
+      logoText: provider.logoText,
+      logoClass: provider.logoClass,
+      status: summaryData.status.description,
+      activeIncidents: summaryData.incidents || [],
+      recentIncidents: incidentData.incidents || [],
+      updated: summaryData.page.updated_at
     };
   } catch (err) {
     return {
       name: provider.name,
       statusPage: provider.statusPage,
+      logoText: provider.logoText,
+      logoClass: provider.logoClass,
       status: "Unable to fetch",
-      incidents: [],
+      activeIncidents: [],
+      recentIncidents: [],
       updated: null
     };
   }
@@ -886,50 +1032,85 @@ function formatUpdatedTime(value) {
   }
 }
 
+function timeAgo(value) {
+  if (!value) return "Unknown";
+
+  const dateValue = new Date(value);
+
+  if (Number.isNaN(dateValue.getTime())) {
+    return "Unknown";
+  }
+
+  const diffMs = new Date() - dateValue;
+  const diffMinutes = Math.max(0, Math.floor(diffMs / 60000));
+  const diffHours = Math.floor(diffMinutes / 60);
+  const diffDays = Math.floor(diffHours / 24);
+
+  if (diffDays > 0) {
+    return diffDays + "d " + (diffHours % 24) + "h ago";
+  }
+
+  if (diffHours > 0) {
+    return diffHours + "h " + (diffMinutes % 60) + "m ago";
+  }
+
+  if (diffMinutes > 0) {
+    return diffMinutes + "m ago";
+  }
+
+  return "just now";
+}
+
+function incidentPillClass(incident) {
+  if (isMajorIncident(incident)) {
+    return "bad";
+  }
+
+  if (incident.status === "resolved") {
+    return "good";
+  }
+
+  return "warn";
+}
+
 function buildWebIncidentDetails(service) {
   if (pageMode === "wallboard") {
     return "";
   }
 
-  if (!service.incidents || service.incidents.length === 0) {
-    return `
-      <div class="detail-block">
-        <p class="detail-heading">Recent update</p>
-        <p class="small">No recent incident updates reported by this provider.</p>
-      </div>
-    `;
-  }
-
-  const activeIncidents = service.incidents.filter(incident => incident.status !== "resolved");
-  const resolvedIncidents = service.incidents.filter(incident => incident.status === "resolved");
-  const latestIncident = [...service.incidents].sort((a, b) => {
-    return new Date(b.updated_at || b.created_at || 0) - new Date(a.updated_at || a.created_at || 0);
+  const latestIncident = [...service.recentIncidents].sort((a, b) => {
+    return new Date(b.updated_at || b.resolved_at || b.created_at || 0) - new Date(a.updated_at || a.resolved_at || a.created_at || 0);
   })[0];
+
+  const latestResolved = service.recentIncidents
+    .filter(incident => incident.status === "resolved")
+    .sort((a, b) => {
+      return new Date(b.updated_at || b.resolved_at || b.created_at || 0) - new Date(a.updated_at || a.resolved_at || a.created_at || 0);
+    })[0];
 
   let activeHtml = "";
   let recentHtml = "";
+  let stabilityHtml = "";
 
-  if (activeIncidents.length > 0) {
+  if (service.activeIncidents.length > 0) {
     activeHtml = `
       <div class="detail-block">
         <p class="detail-heading">Active incident details</p>
         <ul class="detail-list">
-          ${activeIncidents.slice(0, 2).map(incident => {
-            return "<li>" + incident.name + " - " + incident.status + " - updated " + formatDateTime(incident.updated_at || incident.created_at) + "</li>";
+          ${service.activeIncidents.slice(0, 2).map(incident => {
+            return "<li><span class='detail-pill " + incidentPillClass(incident) + "'>" + (isMajorIncident(incident) ? "Major" : "Active") + "</span>" + incident.name + " - updated " + formatDateTime(incident.updated_at || incident.created_at) + "</li>";
           }).join("")}
         </ul>
       </div>
     `;
   }
 
-  if (resolvedIncidents.length > 0) {
+  if (latestResolved) {
     recentHtml = `
       <div class="detail-block">
         <p class="detail-heading">Recent resolved update</p>
         <ul class="detail-list">
-          ${resolvedIncidents.slice(0, 1).map(incident => {
-            return "<li>" + incident.name + " - resolved " + formatDateTime(incident.updated_at || incident.resolved_at || incident.created_at) + "</li>";
-          }).join("")}
+          <li><span class="detail-pill good">Resolved</span>${latestResolved.name} - ${formatDateTime(latestResolved.updated_at || latestResolved.resolved_at || latestResolved.created_at)} (${timeAgo(latestResolved.updated_at || latestResolved.resolved_at || latestResolved.created_at)})</li>
         </ul>
       </div>
     `;
@@ -938,13 +1119,29 @@ function buildWebIncidentDetails(service) {
       <div class="detail-block">
         <p class="detail-heading">Latest provider update</p>
         <ul class="detail-list">
-          <li>${latestIncident.name} - ${latestIncident.status} - updated ${formatDateTime(latestIncident.updated_at || latestIncident.created_at)}</li>
+          <li><span class="detail-pill ${incidentPillClass(latestIncident)}">${latestIncident.status || "Update"}</span>${latestIncident.name} - updated ${formatDateTime(latestIncident.updated_at || latestIncident.created_at)} (${timeAgo(latestIncident.updated_at || latestIncident.created_at)})</li>
         </ul>
+      </div>
+    `;
+  } else {
+    recentHtml = `
+      <div class="detail-block">
+        <p class="detail-heading">Recent update</p>
+        <p class="small">No recent incident updates reported by this provider.</p>
       </div>
     `;
   }
 
-  return activeHtml + recentHtml;
+  if (latestIncident) {
+    stabilityHtml = `
+      <div class="detail-block">
+        <p class="detail-heading">Last incident update</p>
+        <p class="small">${timeAgo(latestIncident.updated_at || latestIncident.resolved_at || latestIncident.created_at)} (${formatDateTime(latestIncident.updated_at || latestIncident.resolved_at || latestIncident.created_at)})</p>
+      </div>
+    `;
+  }
+
+  return activeHtml + recentHtml + stabilityHtml;
 }
 
 async function loadStatuses() {
@@ -960,6 +1157,7 @@ async function loadStatuses() {
   results.forEach(service => {
     const card = document.createElement("div");
     const badgeClass = getStatusClass(service);
+    const displayStatus = getDisplayStatus(service);
     const detailsHtml = buildWebIncidentDetails(service);
 
     if (pageMode === "wallboard") {
@@ -970,21 +1168,27 @@ async function loadStatuses() {
 
     if (pageMode === "wallboard") {
       card.innerHTML = `
-        <div class="service-name">
-          <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
+        <div class="service-header">
+          <h2>
+            <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
+          </h2>
+          <div class="service-logo ${service.logoClass}">${service.logoText}</div>
         </div>
-        <div class="badge ${badgeClass}">${service.status}</div>
-        <div class="card-detail"><strong>Active incidents:</strong> ${service.incidents.length}</div>
-        <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)}</div>
+        <div class="badge ${badgeClass}">${displayStatus}</div>
+        <div class="card-detail"><strong>Active incidents:</strong> ${service.activeIncidents.length}</div>
+        <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)} (${timeAgo(service.updated)})</div>
       `;
     } else {
       card.innerHTML = `
-        <h2>
-          <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
-        </h2>
-        <div class="badge ${badgeClass}">${service.status}</div>
-        <p class="small">Provider updated: ${formatDateTime(service.updated)}</p>
-        <p><strong>Active incidents:</strong> ${service.incidents.length}</p>
+        <div class="service-header">
+          <h2>
+            <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
+          </h2>
+          <div class="service-logo ${service.logoClass}">${service.logoText}</div>
+        </div>
+        <div class="badge ${badgeClass}">${displayStatus}</div>
+        <p class="small">Provider updated: ${formatDateTime(service.updated)} (${timeAgo(service.updated)})</p>
+        <p><strong>Active incidents:</strong> ${service.activeIncidents.length}</p>
         ${detailsHtml}
       `;
     }
