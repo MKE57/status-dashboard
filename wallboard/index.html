@@ -205,19 +205,6 @@ body.wallboard-mode .card {
   border-color: var(--dark-border);
 }
 
-.provider-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-.provider-link:hover {
-  text-decoration: underline;
-}
-
-body.wallboard-mode .provider-link:hover {
-  text-decoration: none;
-}
-
 .badge {
   padding: 5px 10px;
   border-radius: 20px;
@@ -577,23 +564,19 @@ body.wallboard-mode.wallboard-light .footer-row {
 const providers = [
   {
     name: "Cloudflare",
-    url: "https://www.cloudflarestatus.com/api/v2/summary.json",
-    statusPage: "https://www.cloudflarestatus.com/"
+    url: "https://www.cloudflarestatus.com/api/v2/summary.json"
   },
   {
     name: "Worldpay",
-    url: "https://status.worldpay.com/api/v2/summary.json",
-    statusPage: "https://status.worldpay.com/"
+    url: "https://status.worldpay.com/api/v2/summary.json"
   },
   {
     name: "AudienceView Professional",
-    url: "https://professional-status.audienceview.com/api/v2/summary.json",
-    statusPage: "https://professional-status.audienceview.com/"
+    url: "https://professional-status.audienceview.com/api/v2/summary.json"
   },
   {
     name: "AudienceView Unlimited",
-    url: "https://unlimited-status.audienceview.com/api/v2/summary.json",
-    statusPage: "https://unlimited-status.audienceview.com/"
+    url: "https://unlimited-status.audienceview.com/api/v2/summary.json"
   }
 ];
 
@@ -782,7 +765,6 @@ async function fetchProvider(provider) {
 
     return {
       name: provider.name,
-      statusPage: provider.statusPage,
       status: data.status.description,
       incidents: data.incidents || [],
       updated: data.page.updated_at
@@ -790,7 +772,6 @@ async function fetchProvider(provider) {
   } catch (err) {
     return {
       name: provider.name,
-      statusPage: provider.statusPage,
       status: "Unable to fetch",
       incidents: [],
       updated: null
@@ -841,15 +822,15 @@ async function loadStatuses() {
 
     if (pageMode === "wallboard") {
       card.innerHTML = `
-        <div class="service-name">
-          <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer}">${service.status}</div>
+        <div class="service-name">${service.name}</div>
+        <div class="badge ${badgeClass}">${service.status}</div>
         <div class="card-detail"><strong>Active incidents:</strong> ${service.incidents.length}</div>
         <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)}</div>
       `;
     } else {
       card.innerHTML = `
-        <h2>
-          <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.status}</div>
+        <h2>${service.name}</h2>
+        <div class="badge ${badgeClass}">${service.status}</div>
         <p class="small">Updated: ${service.updated || "Unknown"}</p>
         <p><strong>Active Incidents:</strong> ${service.incidents.length}</p>
         ${incidentHtml}
