@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaaS Status Wallboard</title>
+
+<style>
+:root {
+  --bg: #0f172a;
+  --panel: #1e293b;
+  --panel-border: #334155;
+  --text: #e5e7eb;
+  --muted: #cbd5e1;
+
+  --green-bg: #14532d;
+  --green-text: #dcfce7;
+  --green-border: #22c55e;
+
+  --yellow-bg: #713f12;
+  --yellow-text: #fef3c7;
+  --yellow-border: #f59e0b;
+
+  --red-bg: #7f1d1d;
+  --red-text: #fee2e2;
+  --red-border: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 28px;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.header-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 22px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 46px;
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.time-panel {
+  min-width: 340px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  padding: 18px 22px;
+  text-align: right;
+}
+
+.time-label {
+  font-size: 18px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.time-value {
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.date-value {
+  margin-top: 8px;
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.summary-banner {
+  border-radius: 22px;
+  padding: 26px 30px;
+  font-size: 34px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  border: 3px solid var(--panel-border);
+}
+
+.summary-good {
+  background: var(--green-bg);
+  color: var(--green-text);
+  border-color: var(--green-border);
+}
+
+.summary-warn {
+  background: var(--yellow-bg);
+  color: var(--yellow-text);
+  border-color: var(--yellow-border);
+}
+
+.summary-bad {
+  background: var(--red-bg);
+  color: var(--red-text);
+  border-color: var(--red-border);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.summary-card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  padding: 18px 20px;
+}
+
+.summary-label {
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.summary-value {
+  font-size: 42px;
+  font-weight: bold;
+  margin-top: 6px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-left: 12px solid var(--panel-border);
+  border-radius: 20px;
+  padding: 24px;
+  min-height: 220px;
+}
+
+.card.good-border {
+  border-left-color: var(--green-border);
+}
+
+.card.warn-border {
+  border-left-color: var(--yellow-border);
+}
+
+.card.bad-border {
+  border-left-color: var(--red-border);
+}
+
+.service-name {
+  font-size: 34px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.badge {
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 22px;
+  font-weight: bold;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.good {
+  background: var(--green-bg);
+  color: var(--green-text);
+  border: 2px solid var(--green-border);
+}
+
+.warn {
+  background: var(--yellow-bg);
+  color: var(--yellow-text);
+  border: 2px solid var(--yellow-border);
+}
+
+.bad {
+  background: var(--red-bg);
+  color: var(--red-text);
+  border: 2px solid var(--red-border);
+}
+
+.card-detail {
+  margin-top: 18px;
+  font-size: 22px;
+  color: var(--muted);
+}
+
+.incident-list {
+  margin-top: 14px;
+  padding-left: 26px;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.footer-row {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+@media (max-width: 1000px) {
+  body {
+    overflow: auto;
+  }
+
+  .header-row {
+    grid-template-columns: 1fr;
+  }
+
+  .time-panel {
+    text-align: left;
+    min-width: 0;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header-row">
+  <div>
+    <h1>SaaS Status Wallboard</h1>
+    <div class="subtitle">Live operational status for monitored SaaS services</div>
+  </div>
+
+  <div class="time-panel">
+    <div class="time-label">Current time</div>
+    <div id="currentTime" class="time-value"></div>
+    <div id="currentDate" class="date-value"></div>
+  </div>
+</div>
+
+<div id="summaryBanner" class="summary-banner summary-good">
+  Loading service status...
+</div>
+
+<div class="summary-grid">
+  <div class="summary-card">
+    <div class="summary-label">Services monitored</div>
+    <div id="servicesMonitored" class="summary-value">0</div>
+  </div>
+
+  <div class="summary-card">
+    <div class="summary-label">Services with issues</div>
+    <div id="servicesWithIssues" class="summary-value">0</div>
+  </div>
+
+  <div class="summary-card">
+    <div class="summary-label">Active incidents</div>
+    <div id="activeIncidents" class="summary-value">0</div>
+  </div>
+</div>
+
+<div id="results" class="dashboard-grid"></div>
+
+<div class="footer-row">
+  <div id="lastRefresh">Last refreshed: Not yet refreshed</div>
+  <div>Auto-refresh: every 60 seconds</div>
+</div>
+
+<script>
+const providers = [
+  {
+    name: "Cloudflare",
+    url: "https://www.cloudflarestatus.com/api/v2/summary.json"
+  },
+  {
+    name: "Worldpay",
+    url: "https://status.worldpay.com/api/v2/summary.json"
+  },
+  {
+    name: "AudienceView Professional",
+    url: "https://professional-status.audienceview.com/api/v2/summary.json"
+  },
+  {
+    name: "AudienceView Unlimited",
+    url: "https://unlimited-status.audienceview.com/api/v2/summary.json"
+  }
+];
+
+function updateCurrentTime() {
+  const now = new Date();
+
+  document.getElementById("currentTime").innerText = now.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  });
+
+  document.getElementById("currentDate").innerText = now.toLocaleDateString([], {
+    weekday: "long",
+    day: "2-digit",
+    month: "long",
+    year: "numeric"
+  });
+}
+
+function getStatusClass(status) {
+  if (!status) return "warn";
+
+  status = status.toLowerCase();
+
+  if (status.includes("operational") || status.includes("all systems")) {
+    return "good";
+  }
+
+  if (status.includes("degraded") || status.includes("minor") || status.includes("maintenance")) {
+    return "warn";
+  }
+
+  return "bad";
+}
+
+function getSeverity(service) {
+  const status = service.status.toLowerCase();
+
+  if (service.status === "Unable to fetch") {
+    return 3;
+  }
+
+  if (
+    status.includes("critical") ||
+    status.includes("major") ||
+    status.includes("partial outage")
+  ) {
+    return 3;
+  }
+
+  if (
+    status.includes("minor") ||
+    status.includes("degraded") ||
+    status.includes("maintenance") ||
+    status.includes("service outage")
+  ) {
+    return 2;
+  }
+
+  if (service.incidents.length > 0) {
+    return 2;
+  }
+
+  return 1;
+}
+
+function hasIssue(service) {
+  return getSeverity(service) > 1;
+}
+
+function updateSummary(results) {
+  const servicesMonitored = results.length;
+  const servicesWithIssues = results.filter(hasIssue).length;
+  const activeIncidents = results.reduce((total, service) => total + service.incidents.length, 0);
+  const highestSeverity = Math.max(...results.map(getSeverity));
+
+  document.getElementById("servicesMonitored").innerText = servicesMonitored;
+  document.getElementById("servicesWithIssues").innerText = servicesWithIssues;
+  document.getElementById("activeIncidents").innerText = activeIncidents;
+
+  const banner = document.getElementById("summaryBanner");
+
+  banner.classList.remove("summary-good", "summary-warn", "summary-bad");
+
+  if (highestSeverity === 1) {
+    banner.classList.add("summary-good");
+    banner.innerText = "All monitored services operational";
+  } else if (highestSeverity === 2) {
+    banner.classList.add("summary-warn");
+    banner.innerText = "Minor service issue detected";
+  } else {
+    banner.classList.add("summary-bad");
+    banner.innerText = "Major service issue detected";
+  }
+}
+
+async function fetchProvider(provider) {
+  try {
+    const res = await fetch(provider.url);
+    const data = await res.json();
+
+    return {
+      name: provider.name,
+      status: data.status.description,
+      incidents: data.incidents || [],
+      updated: data.page.updated_at
+    };
+  } catch (err) {
+    return {
+      name: provider.name,
+      status: "Unable to fetch",
+      incidents: [],
+      updated: null
+    };
+  }
+}
+
+function formatUpdatedTime(value) {
+  if (!value) return "Unknown";
+
+  try {
+    return new Date(value).toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+  } catch (err) {
+    return value;
+  }
+}
+
+async function loadStatuses() {
+  const container = document.getElementById("results");
+  container.innerHTML = "<div class='card'>Loading...</div>";
+
+  let results = await Promise.all(providers.map(fetchProvider));
+
+  results = results.sort((a, b) => {
+    return getSeverity(b) - getSeverity(a) || a.name.localeCompare(b.name);
+  });
+
+  updateSummary(results);
+
+  container.innerHTML = "";
+
+  results.forEach(service => {
+    const card = document.createElement("div");
+
+    const badgeClass = getStatusClass(service.status);
+    card.className = "card " + badgeClass + "-border";
+
+    let incidentHtml = "";
+
+    if (service.incidents.length > 0) {
+      incidentHtml = "<ul class='incident-list'>" + service.incidents.slice(0, 2).map(incident => {
+        return "<li>" + incident.name + " - " + incident.status + "</li>";
+      }).join("") + "</ul>";
+    }
+
+    card.innerHTML = `
+      <div class="service-name">${service.name}</div>
+      <div class="badge ${badgeClass}">${service.status}</div>
+      <div class="card-detail"><strong>Active incidents:</strong> ${service.incidents.length}</div>
+      <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)}</div>
+      ${incidentHtml}
+    `;
+
+    container.appendChild(card);
+  });
+
+  document.getElementById("lastRefresh").innerText = "Last refreshed: " + new Date().toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  });
+}
+
+updateCurrentTime();
+loadStatuses();
+
+setInterval(updateCurrentTime, 1000);
+setInterval(loadStatuses, 60000);
+</script>
+
+</body>
+</html>
