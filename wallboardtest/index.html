@@ -246,15 +246,6 @@ body.wallboard-mode .provider-link:hover {
   font-size: 13px;
   letter-spacing: 0.4px;
   border: 1px solid var(--light-border);
-  background: var(--light-bg);
-  color: var(--light-text);
-}
-
-body.dark-mode .service-logo,
-body.wallboard-mode .service-logo {
-  border-color: var(--dark-border);
-  background: var(--dark-bg);
-  color: var(--dark-text);
 }
 
 .logo-cloudflare {
@@ -329,7 +320,7 @@ body.wallboard-mode .detail-block {
 }
 
 .detail-list li {
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .detail-pill {
@@ -339,11 +330,6 @@ body.wallboard-mode .detail-block {
   font-size: 11px;
   font-weight: bold;
   margin-right: 6px;
-}
-
-.detail-pill.good {
-  background: var(--green-bg);
-  color: var(--green-text);
 }
 
 .detail-pill.warn {
@@ -541,10 +527,6 @@ body.wallboard-mode .card.bad-border {
   border-left-color: var(--red-border);
 }
 
-body.wallboard-mode .service-header {
-  align-items: flex-start;
-}
-
 body.wallboard-mode .service-header h2 {
   font-size: clamp(22px, min(2.3vw, 4.5vh), 50px);
   font-weight: bold;
@@ -603,8 +585,6 @@ body.wallboard-mode .footer-row {
   color: var(--dark-muted);
   flex-shrink: 0;
 }
-
-/* Wallboard light mode override */
 
 body.wallboard-mode.wallboard-light {
   background: var(--light-bg);
@@ -735,7 +715,7 @@ body.wallboard-mode.wallboard-light .footer-row {
 <div class="footer-row">
   <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
   <div>Auto-refresh: every 60 seconds</div>
-  <div id="dashboardMeta">Version: v0.5.0 | Built and maintained by Mike Ahrens</div>
+  <div id="dashboardMeta">Version: v0.5.2 | Built and maintained by Mike Ahrens</div>
 </div>
 
 <script>
@@ -774,7 +754,7 @@ const providers = [
   }
 ];
 
-const dashboardVersion = "v0.5.0";
+const dashboardVersion = "v0.5.2";
 const dashboardMaintainer = "Mike Ahrens";
 
 function detectPageMode() {
@@ -1066,11 +1046,13 @@ function incidentPillClass(incident) {
     return "bad";
   }
 
-  if (incident.status === "resolved") {
-    return "good";
-  }
-
   return "warn";
+}
+
+function sortIncidentsNewestFirst(incidents) {
+  return [...incidents].sort((a, b) => {
+    return new Date(b.updated_at || b.resolved_at || b.created_at || 0) - new Date(a.updated_at || a.resolved_at || a.created_at || 0);
+  });
 }
 
 function buildWebIncidentDetails(service) {
@@ -1078,18 +1060,14 @@ function buildWebIncidentDetails(service) {
     return "";
   }
 
-  const latestIncident = [...service.recentIncidents].sort((a, b) => {
-    return new Date(b.updated_at || b.resolved_at || b.created_at || 0) - new Date(a.updated_at || a.resolved_at || a.created_at || 0);
-  })[0];
-
-  const latestResolved = service.recentIncidents
-    .filter(incident => incident.status === "resolved")
-    .sort((a, b) => {
-      return new Date(b.updated_at || b.resolved_at || b.created_at || 0) - new Date(a.updated_at || a.resolved_at || a.created_at || 0);
-    })[0];
+  const sortedIncidents = sortIncidentsNewestFirst(service.recentIncidents);
+  const latestIncident = sortedIncidents[0];
+  const latestResolvedIncidents = sortIncidentsNewestFirst(
+    service.recentIncidents.filter(incident => incident.status === "resolved")
+  ).slice(0, 3);
 
   let activeHtml = "";
-  let recentHtml = "";
+  let resolvedHtml = "";
   let stabilityHtml = "";
 
   if (service.activeIncidents.length > 0) {
@@ -1105,17 +1083,20 @@ function buildWebIncidentDetails(service) {
     `;
   }
 
-  if (latestResolved) {
-    recentHtml = `
+  if (latestResolvedIncidents.length > 0) {
+    resolvedHtml = `
       <div class="detail-block">
-        <p class="detail-heading">Recent resolved update</p>
+        <p class="detail-heading">Last 3 resolved incidents</p>
         <ul class="detail-list">
-          <li><span class="detail-pill good">Resolved</span>${latestResolved.name} - ${formatDateTime(latestResolved.updated_at || latestResolved.resolved_at || latestResolved.created_at)} (${timeAgo(latestResolved.updated_at || latestResolved.resolved_at || latestResolved.created_at)})</li>
+          ${latestResolvedIncidents.map(incident => {
+            const incidentDate = incident.updated_at || incident.resolved_at || incident.created_at;
+            return "<li>" + incident.name + " - " + formatDateTime(incidentDate) + " (" + timeAgo(incidentDate) + ")</li>";
+          }).join("")}
         </ul>
       </div>
     `;
   } else if (latestIncident) {
-    recentHtml = `
+    resolvedHtml = `
       <div class="detail-block">
         <p class="detail-heading">Latest provider update</p>
         <ul class="detail-list">
@@ -1124,10 +1105,10 @@ function buildWebIncidentDetails(service) {
       </div>
     `;
   } else {
-    recentHtml = `
+    resolvedHtml = `
       <div class="detail-block">
-        <p class="detail-heading">Recent update</p>
-        <p class="small">No recent incident updates reported by this provider.</p>
+        <p class="detail-heading">Incident history</p>
+        <p class="small">No incident history reported by this provider.</p>
       </div>
     `;
   }
@@ -1141,7 +1122,7 @@ function buildWebIncidentDetails(service) {
     `;
   }
 
-  return activeHtml + recentHtml + stabilityHtml;
+  return activeHtml + resolvedHtml + stabilityHtml;
 }
 
 async function loadStatuses() {
