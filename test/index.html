@@ -85,7 +85,6 @@ body.wallboard-mode {
 .header-time {
   text-align: right;
   font-size: 14px;
-  color: var(--light-text);
   white-space: nowrap;
   margin-top: 2px;
   background: var(--light-panel);
@@ -362,6 +361,18 @@ body.wallboard-mode .detail-block {
   display: none;
 }
 
+.card-detail {
+  display: none;
+}
+
+body.wallboard-mode .card > p {
+  display: none;
+}
+
+body.wallboard-mode .card-detail {
+  display: block;
+}
+
 .footer-row {
   margin-top: 18px;
   display: grid;
@@ -513,7 +524,6 @@ body.wallboard-mode .summary-value {
 }
 
 body.wallboard-mode .controls,
-body.wallboard-mode .detail-block,
 body.wallboard-mode .desktop-details,
 body.wallboard-mode .mobile-card-toggle,
 body.wallboard-mode .mobile-details {
@@ -653,6 +663,19 @@ body.wallboard-mode.wallboard-light .footer-row {
     grid-template-columns: 1fr;
     grid-template-rows: none;
   }
+
+  body.wallboard-mode .card {
+    padding-bottom: 52px;
+    overflow: hidden;
+  }
+
+  body.wallboard-mode .mobile-card-toggle {
+    display: flex;
+  }
+
+  body.wallboard-mode .mobile-details {
+    display: grid;
+  }
 }
 
 @media (max-width: 800px) {
@@ -685,9 +708,10 @@ body.wallboard-mode.wallboard-light .footer-row {
     overflow: hidden;
     transition: padding-bottom 180ms ease, box-shadow 180ms ease;
   }
+}
 
+@media (max-width: 1000px) {
   .mobile-card-toggle {
-    display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
@@ -724,7 +748,6 @@ body.wallboard-mode.wallboard-light .footer-row {
   }
 
   .mobile-details {
-    display: grid;
     grid-template-rows: 0fr;
     opacity: 0;
     margin-top: 0;
@@ -750,6 +773,16 @@ body.wallboard-mode.wallboard-light .footer-row {
   }
 }
 
+@media (max-width: 800px) {
+  body:not(.wallboard-mode) .mobile-card-toggle {
+    display: flex;
+  }
+
+  body:not(.wallboard-mode) .mobile-details {
+    display: grid;
+  }
+}
+
 @media (max-width: 520px) {
   .summary-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -762,9 +795,6 @@ body.wallboard-mode.wallboard-light .footer-row {
 
   .summary-label {
     font-size: 11px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .summary-value {
@@ -827,7 +857,7 @@ body.wallboard-mode.wallboard-light .footer-row {
 <div class="footer-row">
   <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
   <div>Auto-refresh: every 60 seconds</div>
-  <div id="dashboardMeta">Version: v0.5.8 | Built and maintained by Mike Ahrens</div>
+  <div id="dashboardMeta">Version: v0.5.9 | Built and maintained by Mike Ahrens</div>
 </div>
 
 <script>
@@ -866,7 +896,7 @@ const providers = [
   }
 ];
 
-const dashboardVersion = "v0.5.8";
+const dashboardVersion = "v0.5.9";
 const dashboardMaintainer = "Mike Ahrens";
 
 function detectPageMode() {
@@ -1172,11 +1202,7 @@ function logoHtml(service) {
   `;
 }
 
-function buildWebIncidentDetails(service) {
-  if (pageMode === "wallboard") {
-    return "";
-  }
-
+function buildIncidentDetails(service) {
   const sortedIncidents = sortIncidentsNewestFirst(service.recentIncidents);
   const latestIncident = sortedIncidents[0];
   const latestResolvedIncidents = sortIncidentsNewestFirst(
@@ -1231,10 +1257,12 @@ function buildWebIncidentDetails(service) {
   }
 
   if (latestIncident) {
+    const latestIncidentDate = latestIncident.updated_at || latestIncident.resolved_at || latestIncident.created_at;
+
     stabilityHtml = `
       <div class="detail-block">
         <p class="detail-heading">Last incident update</p>
-        <p class="small">${timeAgo(latestIncident.updated_at || latestIncident.resolved_at || latestIncident.created_at)} (${formatDateTime(latestIncident.updated_at || latestIncident.resolved_at || latestIncident.created_at)})</p>
+        <p class="small">${timeAgo(latestIncidentDate)} (${formatDateTime(latestIncidentDate)})</p>
       </div>
     `;
   }
@@ -1254,34 +1282,24 @@ async function loadStatuses() {
     const card = document.createElement("div");
     const badgeClass = getStatusClass(service);
     const displayStatus = getDisplayStatus(service);
-    const detailsHtml = buildWebIncidentDetails(service);
+    const detailsHtml = buildIncidentDetails(service);
 
     card.className = pageMode === "wallboard" ? "card " + badgeClass + "-border" : "card";
 
-    if (pageMode === "wallboard") {
-      card.innerHTML = `
-        <div class="service-header">
-          <h2><a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a></h2>
-          ${logoHtml(service)}
-        </div>
-        <div class="badge ${badgeClass}">${displayStatus}</div>
-        <div class="card-detail"><strong>Active incidents:</strong> ${service.activeIncidents.length}</div>
-        <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)} (${timeAgo(service.updated)})</div>
-      `;
-    } else {
-      card.innerHTML = `
-        <div class="service-header">
-          <h2><a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a></h2>
-          ${logoHtml(service)}
-        </div>
-        <div class="badge ${badgeClass}">${displayStatus}</div>
-        <p class="small">Provider updated: ${formatDateTime(service.updated)} (${timeAgo(service.updated)})</p>
-        <p><strong>Active incidents:</strong> ${service.activeIncidents.length}</p>
-        <div class="desktop-details">${detailsHtml}</div>
-        <div class="mobile-details"><div class="mobile-details-inner">${detailsHtml}</div></div>
-        <button class="mobile-card-toggle" type="button" aria-label="Expand ${service.name} details" aria-expanded="false" title="Expand details" onclick="toggleMobileCardDetails(this)"></button>
-      `;
-    }
+    card.innerHTML = `
+      <div class="service-header">
+        <h2><a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a></h2>
+        ${logoHtml(service)}
+      </div>
+      <div class="badge ${badgeClass}">${displayStatus}</div>
+      <p class="small">Provider updated: ${formatDateTime(service.updated)} (${timeAgo(service.updated)})</p>
+      <p><strong>Active incidents:</strong> ${service.activeIncidents.length}</p>
+      <div class="card-detail"><strong>Active incidents:</strong> ${service.activeIncidents.length}</div>
+      <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)} (${timeAgo(service.updated)})</div>
+      <div class="desktop-details">${detailsHtml}</div>
+      <div class="mobile-details"><div class="mobile-details-inner">${detailsHtml}</div></div>
+      <button class="mobile-card-toggle" type="button" aria-label="Expand ${service.name} details" aria-expanded="false" title="Expand details" onclick="toggleMobileCardDetails(this)"></button>
+    `;
 
     container.appendChild(card);
   });
