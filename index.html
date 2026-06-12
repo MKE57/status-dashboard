@@ -4,23 +4,116 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SaaS Status Dashboard</title>
+
 <style>
-body { font-family: Arial, sans-serif; margin: 20px; background:#f8fafc; color:#1f2937; }
-h1 { margin-bottom: 5px; }
-button { padding: 8px 12px; margin-right:10px; cursor:pointer; }
-.dashboard-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:15px; margin-top:15px; }
-.card { background:white; border:1px solid #e5e7eb; border-radius:10px; padding:15px; min-height:160px; box-sizing:border-box; }
-.badge { padding:5px 10px; border-radius:20px; font-size:12px; display:inline-block; }
-.good { background:#dcfce7; color:#065f46; }
-.warn { background:#fef3c7; color:#92400e; }
-.bad { background:#fee2e2; color:#991b1b; }
-.small { font-size:12px; color:#6b7280; }
-ul { margin-top: 8px; padding-left: 20px; }
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
+body.dark-mode {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+h1 {
+  margin-bottom: 5px;
+}
+
+.test-title {
+  color: red;
+}
+
+button {
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  color: #1f2937;
+}
+
+body.dark-mode button {
+  background: #1e293b;
+  color: #e5e7eb;
+  border-color: #475569;
+}
+
+.controls {
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 160px;
+  box-sizing: border-box;
+}
+
+body.dark-mode .card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.good {
+  background: #dcfce7;
+  color: #065f46;
+}
+
+.warn {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.bad {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.small {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+body.dark-mode .small {
+  color: #cbd5e1;
+}
+
+ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
 @media (max-width: 800px) {
-  .dashboard-grid { grid-template-columns: 1fr; }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
+
+<body>
+
 <h1>SaaS Status Dashboard</h1>
 <p class="small">Simple aggregated view of Cloudflare, Worldpay and AudienceView status pages</p>
 
