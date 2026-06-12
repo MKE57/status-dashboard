@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaaS Status Dashboard</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; background:#f8fafc; color:#1f2937; }
+h1 { margin-bottom: 5px; }
+button { padding: 8px 12px; margin-right:10px; cursor:pointer; }
+.dashboard-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:15px; margin-top:15px; }
+.card { background:white; border:1px solid #e5e7eb; border-radius:10px; padding:15px; min-height:160px; box-sizing:border-box; }
+.badge { padding:5px 10px; border-radius:20px; font-size:12px; display:inline-block; }
+.good { background:#dcfce7; color:#065f46; }
+.warn { background:#fef3c7; color:#92400e; }
+.bad { background:#fee2e2; color:#991b1b; }
+.small { font-size:12px; color:#6b7280; }
+ul { margin-top: 8px; padding-left: 20px; }
+@media (max-width: 800px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<h1>SaaS Status Dashboard</h1>
+<p class="small">Simple aggregated view of Cloudflare, Worldpay and AudienceView status pages</p>
+
+<button onclick="loadStatuses()">Refresh</button>
+<span id="lastRefresh" class="small"></span>
+
+<div id="results" class="dashboard-grid"></div>
+
+<script>
+
+const providers = [
+  {
+    name: "Cloudflare",
+    url: "https://www.cloudflarestatus.com/api/v2/summary.json"
+  },
+  {
+    name: "Worldpay",
+    url: "https://status.worldpay.com/api/v2/summary.json"
+  },
+  {
+    name: "AudienceView Professional",
+    url: "https://professional-status.audienceview.com/api/v2/summary.json"
+  },
+  {
+    name: "AudienceView Unlimited",
+    url: "https://unlimited-status.audienceview.com/api/v2/summary.json"
+  }
+];
+
+function getStatusClass(status) {
+  if (!status) return "warn";
+  status = status.toLowerCase();
+  if (status.includes("operational") || status.includes("all systems")) return "good";
+  if (status.includes("degraded") || status.includes("minor") || status.includes("maintenance")) return "warn";
+  return "bad";
+}
+
+async function fetchProvider(provider) {
+  try {
+    const res = await fetch(provider.url);
+    const data = await res.json();
+
+    return {
+      name: provider.name,
+      status: data.status.description,
+      incidents: data.incidents || [],
+      updated: data.page.updated_at
+    };
+  } catch (err) {
+    return {
+      name: provider.name,
+      status: "Unable to fetch",
+      incidents: [],
+      updated: null
+    };
+  }
+}
+
+async function loadStatuses() {
+  const container = document.getElementById("results");
+  container.innerHTML = "<div class='card'>Loading...</div>";
+
+  const results = await Promise.all(providers.map(fetchProvider));
+
+  container.innerHTML = "";
+
+  results.forEach(service => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const badgeClass = getStatusClass(service.status);
+
+    let incidentHtml = "";
+    if (service.incidents.length > 0) {
+      incidentHtml = "<ul>" + service.incidents.map(incident => {
+        return "<li>" + incident.name + " - " + incident.status + "</li>";
+      }).join("") + "</ul>";
+    }
+
+    card.innerHTML = `
+      <h2>${service.name}</h2>
+      <div class="badge ${badgeClass}">${service.status}</div>
+      <p class="small">Updated: ${service.updated || "Unknown"}</p>
+      <p><strong>Active Incidents:</strong> ${service.incidents.length}</p>
+      ${incidentHtml}
+    `;
+
+    container.appendChild(card);
+  });
+
+  document.getElementById("lastRefresh").innerText = "Last refreshed: " + new Date().toLocaleString();
+}
+
+loadStatuses();
+setInterval(loadStatuses, 60000);
+
+</script>
+
+</body>
+</html>
