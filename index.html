@@ -160,6 +160,7 @@ body.dark-mode button {
   border: 1px solid var(--light-border);
   border-radius: 10px;
   padding: 12px;
+  min-width: 0;
 }
 
 body.dark-mode .summary-card,
@@ -171,6 +172,9 @@ body.wallboard-mode .summary-card {
 .summary-label {
   font-size: 12px;
   color: var(--light-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 body.dark-mode .summary-label,
@@ -203,6 +207,19 @@ body.dark-mode .card,
 body.wallboard-mode .card {
   background: var(--dark-panel);
   border-color: var(--dark-border);
+}
+
+.provider-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.provider-link:hover {
+  text-decoration: underline;
+}
+
+body.wallboard-mode .provider-link:hover {
+  text-decoration: none;
 }
 
 .badge {
@@ -243,14 +260,37 @@ ul {
 }
 
 .footer-row {
-  display: none;
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--light-muted);
+}
+
+.footer-row div:nth-child(1) {
+  text-align: left;
+}
+
+.footer-row div:nth-child(2) {
+  text-align: center;
+}
+
+.footer-row div:nth-child(3) {
+  text-align: right;
+}
+
+body.dark-mode .footer-row,
+body.wallboard-mode .footer-row {
+  color: var(--dark-muted);
 }
 
 /* Wallboard mode */
 
 body.wallboard-mode {
   margin: 0;
-  padding: 28px;
+  padding: clamp(10px, min(2vw, 2vh), 28px);
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -259,23 +299,23 @@ body.wallboard-mode {
 
 body.wallboard-mode .header-row {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 28px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(10px, min(2vw, 2vh), 28px);
   align-items: start;
-  margin-bottom: 18px;
+  margin-bottom: clamp(8px, min(1.5vw, 1.6vh), 18px);
   flex-shrink: 0;
 }
 
 body.wallboard-mode h1 {
   margin: 0;
-  font-size: clamp(42px, 3.5vw, 72px);
+  font-size: clamp(28px, min(3.2vw, 6vh), 64px);
   line-height: 1.05;
   letter-spacing: -1px;
 }
 
 body.wallboard-mode .small {
-  margin-top: 10px;
-  font-size: clamp(18px, 1.3vw, 28px);
+  margin-top: clamp(3px, min(0.6vw, 0.8vh), 8px);
+  font-size: clamp(12px, min(1.1vw, 2.2vh), 24px);
 }
 
 body.wallboard-mode .test-label {
@@ -283,43 +323,44 @@ body.wallboard-mode .test-label {
 }
 
 body.wallboard-mode .header-time {
-  min-width: 380px;
+  min-width: clamp(260px, 26vw, 380px);
   border-radius: 22px;
-  padding: 20px 24px;
+  padding: clamp(10px, min(1.6vw, 2vh), 20px) clamp(14px, min(1.8vw, 2.4vh), 24px);
   text-align: right;
   border-width: 2px;
 }
 
 body.wallboard-mode .time-label {
-  font-size: clamp(18px, 1.2vw, 24px);
+  font-size: clamp(12px, min(1vw, 2vh), 22px);
   color: var(--dark-muted);
-  margin-bottom: 8px;
+  margin-bottom: clamp(3px, min(0.5vw, 0.7vh), 6px);
 }
 
 body.wallboard-mode .time-value {
-  font-size: clamp(44px, 3.5vw, 76px);
+  font-size: clamp(28px, min(3vw, 6vh), 68px);
   font-weight: bold;
   line-height: 1;
 }
 
 body.wallboard-mode .date-value {
-  margin-top: 10px;
-  font-size: clamp(18px, 1.3vw, 28px);
+  margin-top: clamp(4px, min(0.7vw, 0.9vh), 8px);
+  font-size: clamp(12px, min(1.1vw, 2.2vh), 24px);
   color: var(--dark-muted);
 }
 
 body.wallboard-mode .summary-banner {
-  border-radius: 24px;
-  padding: 28px 32px;
-  font-size: clamp(34px, 3vw, 62px);
+  border-radius: clamp(14px, min(1.8vw, 2vh), 24px);
+  padding: clamp(12px, min(2vw, 2.8vh), 28px) clamp(16px, min(2.3vw, 3vh), 32px);
+  font-size: clamp(22px, min(2.7vw, 5vh), 56px);
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-top: 0;
-  margin-bottom: 18px;
-  border-width: 4px;
+  margin-bottom: clamp(8px, min(1.5vw, 1.8vh), 18px);
+  border-width: clamp(2px, min(0.3vw, 0.5vh), 4px);
   flex-shrink: 0;
+  line-height: 1.1;
 }
 
 body.wallboard-mode .summary-good {
@@ -341,23 +382,25 @@ body.wallboard-mode .summary-bad {
 }
 
 body.wallboard-mode .summary-grid {
-  gap: 18px;
-  margin-bottom: 18px;
+  gap: clamp(8px, min(1.2vw, 1.4vh), 18px);
+  margin-bottom: clamp(8px, min(1.5vw, 1.8vh), 18px);
   flex-shrink: 0;
 }
 
 body.wallboard-mode .summary-card {
-  border-radius: 20px;
-  padding: 18px 22px;
+  border-radius: clamp(12px, min(1.5vw, 1.8vh), 20px);
+  padding: clamp(9px, min(1.4vw, 1.8vh), 18px) clamp(12px, min(1.6vw, 2vh), 22px);
   border-width: 2px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 body.wallboard-mode .summary-label {
-  font-size: clamp(18px, 1.2vw, 24px);
+  font-size: clamp(12px, min(1vw, 1.9vh), 22px);
 }
 
 body.wallboard-mode .summary-value {
-  font-size: clamp(42px, 3vw, 68px);
+  font-size: clamp(26px, min(2.7vw, 5vh), 62px);
   line-height: 1;
 }
 
@@ -371,19 +414,21 @@ body.wallboard-mode .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  gap: clamp(10px, min(1.6vw, 2vh), 24px);
   margin-top: 0;
 }
 
 body.wallboard-mode .card {
-  border-radius: 24px;
-  padding: 28px;
+  border-radius: clamp(14px, min(1.8vw, 2vh), 24px);
+  padding: clamp(12px, min(2vw, 2.5vh), 28px);
   min-height: 0;
   border-width: 2px;
-  border-left-width: 16px;
+  border-left-width: clamp(10px, min(1.2vw, 1.6vh), 16px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  min-width: 0;
 }
 
 body.wallboard-mode .card.good-border {
@@ -399,20 +444,26 @@ body.wallboard-mode .card.bad-border {
 }
 
 body.wallboard-mode .service-name {
-  font-size: clamp(34px, 2.7vw, 58px);
+  font-size: clamp(22px, min(2.3vw, 4.5vh), 50px);
   font-weight: bold;
-  margin-bottom: 22px;
-  line-height: 1.1;
+  margin-bottom: clamp(8px, min(1.5vw, 1.8vh), 20px);
+  line-height: 1.08;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 body.wallboard-mode .badge {
-  padding: 12px 22px;
+  padding: clamp(6px, min(1vw, 1.2vh), 12px) clamp(10px, min(1.5vw, 1.8vh), 22px);
   border-radius: 999px;
-  font-size: clamp(22px, 1.8vw, 38px);
+  font-size: clamp(15px, min(1.5vw, 3vh), 32px);
   font-weight: bold;
   text-transform: uppercase;
-  border: 3px solid transparent;
+  border: clamp(2px, min(0.25vw, 0.4vh), 3px) solid transparent;
   width: fit-content;
+  max-width: 100%;
+  line-height: 1.1;
+  white-space: normal;
 }
 
 body.wallboard-mode .good {
@@ -434,17 +485,15 @@ body.wallboard-mode .bad {
 }
 
 body.wallboard-mode .card-detail {
-  margin-top: 18px;
-  font-size: clamp(22px, 1.5vw, 34px);
+  margin-top: clamp(6px, min(1.3vw, 1.5vh), 18px);
+  font-size: clamp(14px, min(1.3vw, 2.6vh), 30px);
   color: var(--dark-muted);
+  line-height: 1.2;
 }
 
 body.wallboard-mode .footer-row {
-  margin-top: 18px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  font-size: clamp(18px, 1.2vw, 26px);
+  margin-top: clamp(6px, min(1.3vw, 1.5vh), 18px);
+  font-size: clamp(12px, min(1vw, 1.8vh), 24px);
   color: var(--dark-muted);
   flex-shrink: 0;
 }
@@ -486,6 +535,7 @@ body.wallboard-mode.wallboard-light .footer-row {
   body.wallboard-mode .header-time {
     text-align: left;
     min-width: 0;
+    width: 100%;
   }
 
   body.wallboard-mode .dashboard-grid {
@@ -503,11 +553,35 @@ body.wallboard-mode.wallboard-light .footer-row {
     text-align: left;
   }
 
-  .summary-grid {
+  .dashboard-grid {
     grid-template-columns: 1fr;
   }
+}
 
-  .dashboard-grid {
+@media (max-width: 520px) {
+  .summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .summary-card {
+    padding: 10px;
+  }
+
+  .summary-label {
+    font-size: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .summary-value {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 340px) {
+  .summary-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -550,40 +624,47 @@ body.wallboard-mode.wallboard-light .footer-row {
 <div class="controls">
   <button onclick="loadStatuses()">Refresh</button>
   <button onclick="toggleDarkMode()" id="darkModeButton">Dark Mode</button>
-  <span id="lastRefresh" class="small"></span>
 </div>
 
 <div id="results" class="dashboard-grid"></div>
 
 <div class="footer-row">
-  <div id="wallboardLastRefresh">Last refreshed: Not yet refreshed</div>
+  <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
   <div>Auto-refresh: every 60 seconds</div>
+  <div id="dashboardMeta">Version: v0.4.1 | Built and maintained by Mike Ahrens</div>
 </div>
 
 <script>
 const providers = [
   {
     name: "Cloudflare",
-    url: "https://www.cloudflarestatus.com/api/v2/summary.json"
+    url: "https://www.cloudflarestatus.com/api/v2/summary.json",
+    statusPage: "https://www.cloudflarestatus.com/"
   },
   {
     name: "Worldpay",
-    url: "https://status.worldpay.com/api/v2/summary.json"
+    url: "https://status.worldpay.com/api/v2/summary.json",
+    statusPage: "https://status.worldpay.com/"
   },
   {
     name: "AudienceView Professional",
-    url: "https://professional-status.audienceview.com/api/v2/summary.json"
+    url: "https://professional-status.audienceview.com/api/v2/summary.json",
+    statusPage: "https://professional-status.audienceview.com/"
   },
   {
     name: "AudienceView Unlimited",
-    url: "https://unlimited-status.audienceview.com/api/v2/summary.json"
+    url: "https://unlimited-status.audienceview.com/api/v2/summary.json",
+    statusPage: "https://unlimited-status.audienceview.com/"
   }
 ];
+
+const dashboardVersion = "v0.4.1";
+const dashboardMaintainer = "Mike Ahrens";
 
 function detectPageMode() {
   const path = window.location.pathname.toLowerCase();
 
-  if (path.includes("/wallboard/")) {
+  if (path.includes("/wallboard/") || path.includes("/wallboardtest/")) {
     document.body.classList.add("wallboard-mode");
     document.getElementById("pageTitle").innerText = "SaaS Status Wallboard";
     document.getElementById("pageSubtitle").innerText = "Live operational status for monitored SaaS services";
@@ -675,44 +756,21 @@ function updateCurrentTime() {
   }
 }
 
-function getStatusClass(status) {
-  if (!status) return "warn";
-
-  status = status.toLowerCase();
-
-  if (status.includes("operational") || status.includes("all systems")) {
-    return "good";
+function getStatusClass(service) {
+  if (service.status === "Unable to fetch") {
+    return "bad";
   }
 
-  if (status.includes("degraded") || status.includes("minor") || status.includes("maintenance")) {
+  if (service.incidents.length > 0) {
     return "warn";
   }
 
-  return "bad";
+  return "good";
 }
 
 function getSeverity(service) {
-  const status = service.status.toLowerCase();
-
   if (service.status === "Unable to fetch") {
     return 3;
-  }
-
-  if (
-    status.includes("critical") ||
-    status.includes("major") ||
-    status.includes("partial outage")
-  ) {
-    return 3;
-  }
-
-  if (
-    status.includes("minor") ||
-    status.includes("degraded") ||
-    status.includes("maintenance") ||
-    status.includes("service outage")
-  ) {
-    return 2;
   }
 
   if (service.incidents.length > 0) {
@@ -748,8 +806,8 @@ function updateSummary(results) {
   } else if (highestSeverity === 2) {
     banner.classList.add("summary-warn");
     banner.innerText = pageMode === "wallboard"
-      ? "Minor service issue detected"
-      : "One or more monitored services are reporting a minor issue, degraded performance or maintenance";
+      ? "Active incident reported"
+      : "One or more monitored services are reporting active incidents";
   } else {
     banner.classList.add("summary-bad");
     banner.innerText = pageMode === "wallboard"
@@ -765,6 +823,7 @@ async function fetchProvider(provider) {
 
     return {
       name: provider.name,
+      statusPage: provider.statusPage,
       status: data.status.description,
       incidents: data.incidents || [],
       updated: data.page.updated_at
@@ -772,6 +831,7 @@ async function fetchProvider(provider) {
   } catch (err) {
     return {
       name: provider.name,
+      statusPage: provider.statusPage,
       status: "Unable to fetch",
       incidents: [],
       updated: null
@@ -804,7 +864,7 @@ async function loadStatuses() {
 
   results.forEach(service => {
     const card = document.createElement("div");
-    const badgeClass = getStatusClass(service.status);
+    const badgeClass = getStatusClass(service);
 
     if (pageMode === "wallboard") {
       card.className = "card " + badgeClass + "-border";
@@ -822,14 +882,18 @@ async function loadStatuses() {
 
     if (pageMode === "wallboard") {
       card.innerHTML = `
-        <div class="service-name">${service.name}</div>
+        <div class="service-name">
+          <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
+        </div>
         <div class="badge ${badgeClass}">${service.status}</div>
         <div class="card-detail"><strong>Active incidents:</strong> ${service.incidents.length}</div>
         <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)}</div>
       `;
     } else {
       card.innerHTML = `
-        <h2>${service.name}</h2>
+        <h2>
+          <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
+        </h2>
         <div class="badge ${badgeClass}">${service.status}</div>
         <p class="small">Updated: ${service.updated || "Unknown"}</p>
         <p><strong>Active Incidents:</strong> ${service.incidents.length}</p>
@@ -840,16 +904,19 @@ async function loadStatuses() {
     container.appendChild(card);
   });
 
-  const refreshText = "Last refreshed: " + new Date().toLocaleString();
+  const refreshValue = pageMode === "wallboard"
+    ? new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      })
+    : new Date().toLocaleString();
 
-  document.getElementById("lastRefresh").innerText = refreshText;
+  document.getElementById("lastRefreshFooter").innerText = "Last refreshed: " + refreshValue;
 
-  if (document.getElementById("wallboardLastRefresh")) {
-    document.getElementById("wallboardLastRefresh").innerText = "Last refreshed: " + new Date().toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit"
-    });
+  if (document.getElementById("dashboardMeta")) {
+    document.getElementById("dashboardMeta").innerText =
+      "Version: " + dashboardVersion + " | Built and maintained by " + dashboardMaintainer;
   }
 }
 
