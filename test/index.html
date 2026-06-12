@@ -3,82 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SaaS Status Dashboard</title>
+<title>TEST – SaaS Status Dashboard</title>
+
 <style>
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
-  background:#f8fafc;
-  color:#1f2937;
+  background: #f8fafc;
+  color: #1f2937;
 }
 
 body.dark-mode {
-  background:#0f172a;
-  color:#e5e7eb;
+  background: #0f172a;
+  color: #e5e7eb;
 }
 
-h1 { margin-bottom: 5px; }
+h1 {
+  margin-bottom: 5px;
+}
+
+.test-title {
+  color: red;
+}
 
 button {
   padding: 8px 12px;
-  margin-right:10px;
-  cursor:pointer;
-  border:1px solid #d1d5db;
-  border-radius:6px;
-  background:white;
-  color:#1f2937;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  color: #1f2937;
 }
 
 body.dark-mode button {
-  background:#1e293b;
-  color:#e5e7eb;
-  border-color:#475569;
-}
-
-.dashboard-grid {
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap:15px;
-  margin-top:15px;
-}
-
-.card {
-  background:white;
-  border:1px solid #e5e7eb;
-  border-radius:10px;
-  padding:15px;
-  min-height:160px;
-  box-sizing:border-box;
-}
-
-body.dark-mode .card {
-  background:#1e293b;
-  border-color:#334155;
-}
-
-.badge {
-  padding:5px 10px;
-  border-radius:20px;
-  font-size:12px;
-  display:inline-block;
-}
-
-.good { background:#dcfce7; color:#065f46; }
-.warn { background:#fef3c7; color:#92400e; }
-.bad { background:#fee2e2; color:#991b1b; }
-
-.small {
-  font-size:12px;
-  color:#6b7280;
-}
-
-body.dark-mode .small {
-  color:#cbd5e1;
-}
-
-ul {
-  margin-top: 8px;
-  padding-left: 20px;
+  background: #1e293b;
+  color: #e5e7eb;
+  border-color: #475569;
 }
 
 .controls {
@@ -86,29 +47,74 @@ ul {
   margin-bottom: 10px;
 }
 
-@media (max-width: 800px) {
-  .dashboard-grid { grid-template-columns: 1fr; }
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 15px;
 }
-</style>
-body { font-family: Arial, sans-serif; margin: 20px; background:#f8fafc; color:#1f2937; }
-h1 { margin-bottom: 5px; }
-button { padding: 8px 12px; margin-right:10px; cursor:pointer; }
-.dashboard-grid { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap:15px; margin-top:15px; }
-.card { background:white; border:1px solid #e5e7eb; border-radius:10px; padding:15px; min-height:160px; box-sizing:border-box; }
-.badge { padding:5px 10px; border-radius:20px; font-size:12px; display:inline-block; }
-.good { background:#dcfce7; color:#065f46; }
-.warn { background:#fef3c7; color:#92400e; }
-.bad { background:#fee2e2; color:#991b1b; }
-.small { font-size:12px; color:#6b7280; }
-ul { margin-top: 8px; padding-left: 20px; }
+
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 160px;
+  box-sizing: border-box;
+}
+
+body.dark-mode .card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.good {
+  background: #dcfce7;
+  color: #065f46;
+}
+
+.warn {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.bad {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.small {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+body.dark-mode .small {
+  color: #cbd5e1;
+}
+
+ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
 @media (max-width: 800px) {
-  .dashboard-grid { grid-template-columns: 1fr; }
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
+
 <body>
 
-<h1 style="color: red;">TEST – SaaS Status Dashboard</h1>
+<h1 class="test-title">TEST – SaaS Status Dashboard</h1>
 <p class="small">Simple aggregated view of Cloudflare, Worldpay and AudienceView status pages</p>
 
 <div class="controls">
@@ -116,30 +122,10 @@ ul { margin-top: 8px; padding-left: 20px; }
   <button onclick="toggleDarkMode()" id="darkModeButton">Dark Mode</button>
   <span id="lastRefresh" class="small"></span>
 </div>
-``
 
 <div id="results" class="dashboard-grid"></div>
 
 <script>
-
-  function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-
-  const isDarkMode = document.body.classList.contains("dark-mode");
-  localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
-
-  document.getElementById("darkModeButton").innerText = isDarkMode ? "Light Mode" : "Dark Mode";
-}
-
-function applySavedTheme() {
-  const savedTheme = localStorage.getItem("darkMode");
-
-  if (savedTheme === "enabled") {
-    document.body.classList.add("dark-mode");
-    document.getElementById("darkModeButton").innerText = "Light Mode";
-  }
-}
-  
 const providers = [
   {
     name: "Cloudflare",
@@ -159,11 +145,37 @@ const providers = [
   }
 ];
 
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+
+  const isDarkMode = document.body.classList.contains("dark-mode");
+  localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
+
+  document.getElementById("darkModeButton").innerText = isDarkMode ? "Light Mode" : "Dark Mode";
+}
+
+function applySavedTheme() {
+  const savedTheme = localStorage.getItem("darkMode");
+
+  if (savedTheme === "enabled") {
+    document.body.classList.add("dark-mode");
+    document.getElementById("darkModeButton").innerText = "Light Mode";
+  }
+}
+
 function getStatusClass(status) {
   if (!status) return "warn";
+
   status = status.toLowerCase();
-  if (status.includes("operational") || status.includes("all systems")) return "good";
-  if (status.includes("degraded") || status.includes("minor") || status.includes("maintenance")) return "warn";
+
+  if (status.includes("operational") || status.includes("all systems")) {
+    return "good";
+  }
+
+  if (status.includes("degraded") || status.includes("minor") || status.includes("maintenance")) {
+    return "warn";
+  }
+
   return "bad";
 }
 
@@ -203,6 +215,7 @@ async function loadStatuses() {
     const badgeClass = getStatusClass(service.status);
 
     let incidentHtml = "";
+
     if (service.incidents.length > 0) {
       incidentHtml = "<ul>" + service.incidents.map(incident => {
         return "<li>" + incident.name + " - " + incident.status + "</li>";
@@ -226,7 +239,6 @@ async function loadStatuses() {
 applySavedTheme();
 loadStatuses();
 setInterval(loadStatuses, 60000);
-
 </script>
 
 </body>
