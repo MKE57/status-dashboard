@@ -18,12 +18,27 @@ body.dark-mode {
   color: #e5e7eb;
 }
 
-h1 {
-  margin-bottom: 5px;
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.test-title {
-  color: red;
+.header-time {
+  text-align: right;
+  font-size: 12px;
+  color: #6b7280;
+  white-space: nowrap;
+  margin-top: 6px;
+}
+
+body.dark-mode .header-time {
+  color: #cbd5e1;
+}
+
+h1 {
+  margin-bottom: 5px;
 }
 
 button {
@@ -45,6 +60,67 @@ body.dark-mode button {
 .controls {
   margin-top: 12px;
   margin-bottom: 10px;
+}
+
+.summary-banner {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 1px solid #e5e7eb;
+}
+
+.summary-good {
+  background: #dcfce7;
+  color: #065f46;
+  border-color: #bbf7d0;
+}
+
+.summary-warn {
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.summary-bad {
+  background: #fee2e2;
+  color: #991b1b;
+  border-color: #fecaca;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.summary-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+body.dark-mode .summary-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+body.dark-mode .summary-label {
+  color: #cbd5e1;
+}
+
+.summary-value {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 4px;
 }
 
 .dashboard-grid {
@@ -105,6 +181,18 @@ ul {
 }
 
 @media (max-width: 800px) {
+  .header-row {
+    flex-direction: column;
+  }
+
+  .header-time {
+    text-align: left;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
   .dashboard-grid {
     grid-template-columns: 1fr;
   }
@@ -114,8 +202,35 @@ ul {
 
 <body>
 
-<h1>SaaS Status Dashboard</h1>
-<p class="small">Simple aggregated view of Cloudflare, Worldpay and AudienceView status pages</p>
+<div class="header-row">
+  <div>
+    <h1>SaaS Status Dashboard</h1>
+    <p class="small">Simple aggregated view of Cloudflare, Worldpay and AudienceView status pages</p>
+  </div>
+
+  <div id="currentTime" class="header-time"></div>
+</div>
+
+<div id="summaryBanner" class="summary-banner summary-good">
+  Loading service status...
+</div>
+
+<div class="summary-grid">
+  <div class="summary-card">
+    <div class="summary-label">Services monitored</div>
+    <div id="servicesMonitored" class="summary-value">0</div>
+  </div>
+
+  <div class="summary-card">
+    <div class="summary-label">Services with issues</div>
+    <div id="servicesWithIssues" class="summary-value">0</div>
+  </div>
+
+  <div class="summary-card">
+    <div class="summary-label">Active incidents</div>
+    <div id="activeIncidents" class="summary-value">0</div>
+  </div>
+</div>
 
 <div class="controls">
   <button onclick="loadStatuses()">Refresh</button>
@@ -163,6 +278,10 @@ function applySavedTheme() {
   }
 }
 
+function updateCurrentTime() {
+  document.getElementById("currentTime").innerText = "Current time: " + new Date().toLocaleString();
+}
+
 function getStatusClass(status) {
   if (!status) return "warn";
 
@@ -177,6 +296,55 @@ function getStatusClass(status) {
   }
 
   return "bad";
+}
+
+function hasIssue(service) {
+  const status = service.status.toLowerCase();
+
+  if (service.status === "Unable to fetch") {
+    return true;
+  }
+
+  if (service.incidents.length > 0) {
+    return true;
+  }
+
+  if (
+    status.includes("degraded") ||
+    status.includes("minor") ||
+    status.includes("outage") ||
+    status.includes("incident") ||
+    status.includes("maintenance")
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
+function updateSummary(results) {
+  const servicesMonitored = results.length;
+  const servicesWithIssues = results.filter(hasIssue).length;
+  const activeIncidents = results.reduce((total, service) => total + service.incidents.length, 0);
+
+  document.getElementById("servicesMonitored").innerText = servicesMonitored;
+  document.getElementById("servicesWithIssues").innerText = servicesWithIssues;
+  document.getElementById("activeIncidents").innerText = activeIncidents;
+
+  const banner = document.getElementById("summaryBanner");
+
+  banner.classList.remove("summary-good", "summary-warn", "summary-bad");
+
+  if (servicesWithIssues === 0 && activeIncidents === 0) {
+    banner.classList.add("summary-good");
+    banner.innerText = "All monitored services are currently operational";
+  } else if (activeIncidents > 0) {
+    banner.classList.add("summary-bad");
+    banner.innerText = "One or more monitored services are reporting active incidents";
+  } else {
+    banner.classList.add("summary-warn");
+    banner.innerText = "One or more monitored services may require attention";
+  }
 }
 
 async function fetchProvider(provider) {
@@ -205,6 +373,8 @@ async function loadStatuses() {
   container.innerHTML = "<div class='card'>Loading...</div>";
 
   const results = await Promise.all(providers.map(fetchProvider));
+
+  updateSummary(results);
 
   container.innerHTML = "";
 
@@ -237,7 +407,10 @@ async function loadStatuses() {
 }
 
 applySavedTheme();
+updateCurrentTime();
 loadStatuses();
+
+setInterval(updateCurrentTime, 1000);
 setInterval(loadStatuses, 60000);
 </script>
 
