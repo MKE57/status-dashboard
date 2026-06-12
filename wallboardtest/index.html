@@ -260,7 +260,30 @@ ul {
 }
 
 .footer-row {
-  display: none;
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--light-muted);
+}
+
+.footer-row div:nth-child(1) {
+  text-align: left;
+}
+
+.footer-row div:nth-child(2) {
+  text-align: center;
+}
+
+.footer-row div:nth-child(3) {
+  text-align: right;
+}
+
+body.dark-mode .footer-row,
+body.wallboard-mode .footer-row {
+  color: var(--dark-muted);
 }
 
 /* Wallboard mode */
@@ -470,25 +493,9 @@ body.wallboard-mode .card-detail {
 
 body.wallboard-mode .footer-row {
   margin-top: clamp(6px, min(1.3vw, 1.5vh), 18px);
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 20px;
   font-size: clamp(12px, min(1vw, 1.8vh), 24px);
   color: var(--dark-muted);
   flex-shrink: 0;
-}
-
-body.wallboard-mode .footer-row div:nth-child(1) {
-  text-align: left;
-}
-
-body.wallboard-mode .footer-row div:nth-child(2) {
-  text-align: center;
-}
-
-body.wallboard-mode .footer-row div:nth-child(3) {
-  text-align: right;
 }
 
 /* Wallboard light mode override */
@@ -617,14 +624,12 @@ body.wallboard-mode.wallboard-light .footer-row {
 <div class="controls">
   <button onclick="loadStatuses()">Refresh</button>
   <button onclick="toggleDarkMode()" id="darkModeButton">Dark Mode</button>
-  <span id="lastRefresh" class="small"></span>
-  <span id="webDashboardMeta" class="small"></span>
 </div>
 
 <div id="results" class="dashboard-grid"></div>
 
 <div class="footer-row">
-  <div id="wallboardLastRefresh">Last refreshed: Not yet refreshed</div>
+  <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
   <div>Auto-refresh: every 60 seconds</div>
   <div id="dashboardMeta">Version: v0.4.1 | Built and maintained by Mike Ahrens</div>
 </div>
@@ -899,22 +904,15 @@ async function loadStatuses() {
     container.appendChild(card);
   });
 
-  const refreshText = "Last refreshed: " + new Date().toLocaleString();
+  const refreshValue = pageMode === "wallboard"
+    ? new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+      })
+    : new Date().toLocaleString();
 
-  document.getElementById("lastRefresh").innerText = refreshText;
-
-  if (document.getElementById("webDashboardMeta")) {
-    document.getElementById("webDashboardMeta").innerText =
-      " | Auto-refresh: every 60 seconds | Version: " + dashboardVersion + " | Built and maintained by " + dashboardMaintainer;
-  }
-
-  if (document.getElementById("wallboardLastRefresh")) {
-    document.getElementById("wallboardLastRefresh").innerText = "Last refreshed: " + new Date().toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit"
-    });
-  }
+  document.getElementById("lastRefreshFooter").innerText = "Last refreshed: " + refreshValue;
 
   if (document.getElementById("dashboardMeta")) {
     document.getElementById("dashboardMeta").innerText =
