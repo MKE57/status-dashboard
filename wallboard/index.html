@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" content="width=device-width, initial-scale=1.0"><html lang="en">
 <title>SaaS Status Dashboard</title>
 
 <style>
@@ -772,10 +769,8 @@ async function loadStatuses() {
 
     let incidentHtml = "";
 
-    if (service.incidents.length > 0) {
-      const incidentClass = pageMode === "wallboard" ? "incident-list" : "";
-
-      incidentHtml = "<ul class='" + incidentClass + "'>" + service.incidents.slice(0, 2).map(incident => {
+    if (pageMode !== "wallboard" && service.incidents.length > 0) {
+      incidentHtml = "<ul>" + service.incidents.slice(0, 2).map(incident => {
         return "<li>" + incident.name + " - " + incident.status + "</li>";
       }).join("") + "</ul>";
     }
@@ -786,7 +781,6 @@ async function loadStatuses() {
         <div class="badge ${badgeClass}">${service.status}</div>
         <div class="card-detail"><strong>Active incidents:</strong> ${service.incidents.length}</div>
         <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)}</div>
-        ${incidentHtml}
       `;
     } else {
       card.innerHTML = `
@@ -824,3 +818,5 @@ setInterval(loadStatuses, 60000);
 
 </body>
 </html>
+<head>
+<meta charset="UTF-8">
