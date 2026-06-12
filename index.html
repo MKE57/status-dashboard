@@ -254,9 +254,29 @@ body.wallboard-mode .small {
   color: var(--dark-muted);
 }
 
-ul {
-  margin-top: 8px;
+.detail-block {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--light-border);
+}
+
+body.dark-mode .detail-block,
+body.wallboard-mode .detail-block {
+  border-top-color: var(--dark-border);
+}
+
+.detail-heading {
+  font-weight: bold;
+  margin: 0 0 6px 0;
+}
+
+.detail-list {
+  margin-top: 6px;
   padding-left: 20px;
+}
+
+.detail-list li {
+  margin-bottom: 5px;
 }
 
 .footer-row {
@@ -533,9 +553,7 @@ body.wallboard-mode.wallboard-light .footer-row {
   }
 
   body.wallboard-mode .header-time {
-    text-align: left;
-    min-width: 0;
-    width: 100%;
+    display: none;
   }
 
   body.wallboard-mode .dashboard-grid {
@@ -550,7 +568,7 @@ body.wallboard-mode.wallboard-light .footer-row {
   }
 
   .header-time {
-    text-align: left;
+    display: none;
   }
 
   .dashboard-grid {
@@ -631,7 +649,7 @@ body.wallboard-mode.wallboard-light .footer-row {
 <div class="footer-row">
   <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
   <div>Auto-refresh: every 60 seconds</div>
-  <div id="dashboardMeta">Version: v0.4.1 | Built and maintained by Mike Ahrens</div>
+  <div id="dashboardMeta">Version: v0.4.3 | Built and maintained by Mike Ahrens</div>
 </div>
 
 <script>
@@ -658,7 +676,7 @@ const providers = [
   }
 ];
 
-const dashboardVersion = "v0.4.1";
+const dashboardVersion = "v0.4.3";
 const dashboardMaintainer = "Mike Ahrens";
 
 function detectPageMode() {
@@ -839,6 +857,22 @@ async function fetchProvider(provider) {
   }
 }
 
+function formatDateTime(value) {
+  if (!value) return "Unknown";
+
+  try {
+    return new Date(value).toLocaleString([], {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+  } catch (err) {
+    return value;
+  }
+}
+
 function formatUpdatedTime(value) {
   if (!value) return "Unknown";
 
@@ -850,6 +884,67 @@ function formatUpdatedTime(value) {
   } catch (err) {
     return value;
   }
+}
+
+function buildWebIncidentDetails(service) {
+  if (pageMode === "wallboard") {
+    return "";
+  }
+
+  if (!service.incidents || service.incidents.length === 0) {
+    return `
+      <div class="detail-block">
+        <p class="detail-heading">Recent update</p>
+        <p class="small">No recent incident updates reported by this provider.</p>
+      </div>
+    `;
+  }
+
+  const activeIncidents = service.incidents.filter(incident => incident.status !== "resolved");
+  const resolvedIncidents = service.incidents.filter(incident => incident.status === "resolved");
+  const latestIncident = [...service.incidents].sort((a, b) => {
+    return new Date(b.updated_at || b.created_at || 0) - new Date(a.updated_at || a.created_at || 0);
+  })[0];
+
+  let activeHtml = "";
+  let recentHtml = "";
+
+  if (activeIncidents.length > 0) {
+    activeHtml = `
+      <div class="detail-block">
+        <p class="detail-heading">Active incident details</p>
+        <ul class="detail-list">
+          ${activeIncidents.slice(0, 2).map(incident => {
+            return "<li>" + incident.name + " - " + incident.status + " - updated " + formatDateTime(incident.updated_at || incident.created_at) + "</li>";
+          }).join("")}
+        </ul>
+      </div>
+    `;
+  }
+
+  if (resolvedIncidents.length > 0) {
+    recentHtml = `
+      <div class="detail-block">
+        <p class="detail-heading">Recent resolved update</p>
+        <ul class="detail-list">
+          ${resolvedIncidents.slice(0, 1).map(incident => {
+            return "<li>" + incident.name + " - resolved " + formatDateTime(incident.updated_at || incident.resolved_at || incident.created_at) + "</li>";
+          }).join("")}
+        </ul>
+      </div>
+    `;
+  } else if (latestIncident) {
+    recentHtml = `
+      <div class="detail-block">
+        <p class="detail-heading">Latest provider update</p>
+        <ul class="detail-list">
+          <li>${latestIncident.name} - ${latestIncident.status} - updated ${formatDateTime(latestIncident.updated_at || latestIncident.created_at)}</li>
+        </ul>
+      </div>
+    `;
+  }
+
+  return activeHtml + recentHtml;
 }
 
 async function loadStatuses() {
@@ -865,19 +960,12 @@ async function loadStatuses() {
   results.forEach(service => {
     const card = document.createElement("div");
     const badgeClass = getStatusClass(service);
+    const detailsHtml = buildWebIncidentDetails(service);
 
     if (pageMode === "wallboard") {
       card.className = "card " + badgeClass + "-border";
     } else {
       card.className = "card";
-    }
-
-    let incidentHtml = "";
-
-    if (pageMode !== "wallboard" && service.incidents.length > 0) {
-      incidentHtml = "<ul>" + service.incidents.slice(0, 2).map(incident => {
-        return "<li>" + incident.name + " - " + incident.status + "</li>";
-      }).join("") + "</ul>";
     }
 
     if (pageMode === "wallboard") {
@@ -895,9 +983,9 @@ async function loadStatuses() {
           <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
         </h2>
         <div class="badge ${badgeClass}">${service.status}</div>
-        <p class="small">Updated: ${service.updated || "Unknown"}</p>
-        <p><strong>Active Incidents:</strong> ${service.incidents.length}</p>
-        ${incidentHtml}
+        <p class="small">Provider updated: ${formatDateTime(service.updated)}</p>
+        <p><strong>Active incidents:</strong> ${service.incidents.length}</p>
+        ${detailsHtml}
       `;
     }
 
