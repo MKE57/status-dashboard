@@ -30,6 +30,10 @@
   --red-bg: #fee2e2;
   --red-text: #991b1b;
   --red-border: #ef4444;
+
+  --wall-green-bg: #14532d;
+  --wall-yellow-bg: #713f12;
+  --wall-red-bg: #7f1d1d;
 }
 
 * {
@@ -247,7 +251,10 @@ ul {
 body.wallboard-mode {
   margin: 0;
   padding: 28px;
+  height: 100vh;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 body.wallboard-mode .header-row {
@@ -255,92 +262,103 @@ body.wallboard-mode .header-row {
   grid-template-columns: 1fr auto;
   gap: 28px;
   align-items: start;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
+  flex-shrink: 0;
 }
 
 body.wallboard-mode h1 {
   margin: 0;
-  font-size: 46px;
+  font-size: clamp(42px, 3.5vw, 72px);
   line-height: 1.05;
   letter-spacing: -1px;
 }
 
 body.wallboard-mode .small {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: clamp(18px, 1.3vw, 28px);
+}
+
+body.wallboard-mode .test-label {
+  display: none;
 }
 
 body.wallboard-mode .header-time {
-  min-width: 340px;
-  border-radius: 18px;
-  padding: 18px 22px;
+  min-width: 380px;
+  border-radius: 22px;
+  padding: 20px 24px;
   text-align: right;
+  border-width: 2px;
 }
 
 body.wallboard-mode .time-label {
-  font-size: 18px;
+  font-size: clamp(18px, 1.2vw, 24px);
   color: var(--dark-muted);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 body.wallboard-mode .time-value {
-  font-size: 42px;
+  font-size: clamp(44px, 3.5vw, 76px);
   font-weight: bold;
   line-height: 1;
 }
 
 body.wallboard-mode .date-value {
-  margin-top: 8px;
-  font-size: 20px;
+  margin-top: 10px;
+  font-size: clamp(18px, 1.3vw, 28px);
   color: var(--dark-muted);
 }
 
 body.wallboard-mode .summary-banner {
-  border-radius: 22px;
-  padding: 26px 30px;
-  font-size: 34px;
+  border-radius: 24px;
+  padding: 28px 32px;
+  font-size: clamp(34px, 3vw, 62px);
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 20px;
-  border-width: 3px;
+  margin-top: 0;
+  margin-bottom: 18px;
+  border-width: 4px;
+  flex-shrink: 0;
 }
 
 body.wallboard-mode .summary-good {
-  background: #14532d;
+  background: var(--wall-green-bg);
   color: #dcfce7;
   border-color: var(--green-border);
 }
 
 body.wallboard-mode .summary-warn {
-  background: #713f12;
+  background: var(--wall-yellow-bg);
   color: #fef3c7;
   border-color: var(--yellow-border);
 }
 
 body.wallboard-mode .summary-bad {
-  background: #7f1d1d;
+  background: var(--wall-red-bg);
   color: #fee2e2;
   border-color: var(--red-border);
 }
 
 body.wallboard-mode .summary-grid {
   gap: 18px;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
+  flex-shrink: 0;
 }
 
 body.wallboard-mode .summary-card {
-  border-radius: 18px;
-  padding: 18px 20px;
+  border-radius: 20px;
+  padding: 18px 22px;
+  border-width: 2px;
 }
 
 body.wallboard-mode .summary-label {
-  font-size: 18px;
+  font-size: clamp(18px, 1.2vw, 24px);
 }
 
 body.wallboard-mode .summary-value {
-  font-size: 42px;
+  font-size: clamp(42px, 3vw, 68px);
+  line-height: 1;
 }
 
 body.wallboard-mode .controls {
@@ -348,14 +366,24 @@ body.wallboard-mode .controls {
 }
 
 body.wallboard-mode .dashboard-grid {
-  gap: 22px;
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 0;
 }
 
 body.wallboard-mode .card {
-  border-radius: 20px;
-  padding: 24px;
-  min-height: 220px;
-  border-left: 12px solid var(--dark-border);
+  border-radius: 24px;
+  padding: 28px;
+  min-height: 0;
+  border-width: 2px;
+  border-left-width: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 body.wallboard-mode .card.good-border {
@@ -371,63 +399,67 @@ body.wallboard-mode .card.bad-border {
 }
 
 body.wallboard-mode .service-name {
-  font-size: 34px;
+  font-size: clamp(34px, 2.7vw, 58px);
   font-weight: bold;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
+  line-height: 1.1;
 }
 
 body.wallboard-mode .badge {
-  padding: 10px 18px;
+  padding: 12px 22px;
   border-radius: 999px;
-  font-size: 22px;
+  font-size: clamp(22px, 1.8vw, 38px);
   font-weight: bold;
   text-transform: uppercase;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
+  width: fit-content;
 }
 
 body.wallboard-mode .good {
-  background: #14532d;
+  background: var(--wall-green-bg);
   color: #dcfce7;
   border-color: var(--green-border);
 }
 
 body.wallboard-mode .warn {
-  background: #713f12;
+  background: var(--wall-yellow-bg);
   color: #fef3c7;
   border-color: var(--yellow-border);
 }
 
 body.wallboard-mode .bad {
-  background: #7f1d1d;
+  background: var(--wall-red-bg);
   color: #fee2e2;
   border-color: var(--red-border);
 }
 
 body.wallboard-mode .card-detail {
   margin-top: 18px;
-  font-size: 22px;
+  font-size: clamp(22px, 1.5vw, 34px);
   color: var(--dark-muted);
 }
 
 body.wallboard-mode .incident-list {
-  margin-top: 14px;
-  padding-left: 26px;
-  font-size: 18px;
+  margin-top: 16px;
+  padding-left: 30px;
+  font-size: clamp(18px, 1.2vw, 28px);
   color: var(--dark-muted);
 }
 
 body.wallboard-mode .footer-row {
-  margin-top: 22px;
+  margin-top: 18px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: 18px;
+  font-size: clamp(18px, 1.2vw, 26px);
   color: var(--dark-muted);
+  flex-shrink: 0;
 }
 
 @media (max-width: 1000px) {
   body.wallboard-mode {
     overflow: auto;
+    height: auto;
   }
 
   body.wallboard-mode .header-row {
@@ -437,6 +469,11 @@ body.wallboard-mode .footer-row {
   body.wallboard-mode .header-time {
     text-align: left;
     min-width: 0;
+  }
+
+  body.wallboard-mode .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
   }
 }
 
