@@ -68,7 +68,6 @@ body.wallboard-mode {
   padding: 0;
   background: transparent;
   border: none;
-  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -223,6 +222,7 @@ body.wallboard-mode .summary-label {
   position: relative;
   padding: 15px;
   min-height: 160px;
+  overflow: hidden;
 }
 
 .provider-link {
@@ -234,7 +234,8 @@ body.wallboard-mode .summary-label {
   text-decoration: underline;
 }
 
-body.wallboard-mode .provider-link:hover {
+body.wallboard-mode .provider-link:hover,
+body.wallboard-mode .service-logo-link:hover {
   text-decoration: none;
 }
 
@@ -248,6 +249,13 @@ body.wallboard-mode .provider-link:hover {
 .service-header h2 {
   margin-top: 0;
   margin-bottom: 12px;
+}
+
+.service-logo-link {
+  display: inline-flex;
+  text-decoration: none;
+  color: inherit;
+  flex-shrink: 0;
 }
 
 .service-logo {
@@ -312,6 +320,10 @@ body.wallboard-mode .small {
   color: var(--dark-muted);
 }
 
+.provider-updated-line {
+  padding-right: 34px;
+}
+
 .detail-block {
   margin-top: 12px;
   padding-top: 10px;
@@ -365,14 +377,6 @@ body.wallboard-mode .detail-block {
   display: none;
 }
 
-body.wallboard-mode .card > p {
-  display: none;
-}
-
-body.wallboard-mode .card-detail {
-  display: block;
-}
-
 .footer-row {
   margin-top: 18px;
   display: grid;
@@ -398,6 +402,10 @@ body.wallboard-mode .card-detail {
 body.dark-mode .footer-row,
 body.wallboard-mode .footer-row {
   color: var(--dark-muted);
+}
+
+body.auto-refresh-paused .footer-row div:nth-child(2)::after {
+  content: " (collapse to resume)";
 }
 
 /* Wallboard mode */
@@ -510,7 +518,6 @@ body.wallboard-mode .summary-card {
   border-radius: clamp(12px, min(1.5vw, 1.8vh), 20px);
   padding: clamp(9px, min(1.4vw, 1.8vh), 18px) clamp(12px, min(1.6vw, 2vh), 22px);
   border-width: 2px;
-  min-width: 0;
   overflow: hidden;
 }
 
@@ -524,9 +531,7 @@ body.wallboard-mode .summary-value {
 }
 
 body.wallboard-mode .controls,
-body.wallboard-mode .desktop-details,
-body.wallboard-mode .mobile-card-toggle,
-body.wallboard-mode .mobile-details {
+body.wallboard-mode .desktop-details {
   display: none;
 }
 
@@ -550,7 +555,14 @@ body.wallboard-mode .card {
   flex-direction: column;
   justify-content: flex-start;
   overflow: hidden;
-  min-width: 0;
+}
+
+body.wallboard-mode .card > p {
+  display: none;
+}
+
+body.wallboard-mode .card-detail {
+  display: block;
 }
 
 body.wallboard-mode .card.good-border {
@@ -664,15 +676,7 @@ body.wallboard-mode.wallboard-light .footer-row {
     grid-template-rows: none;
   }
 
-  body.wallboard-mode .card {
-    padding-bottom: 52px;
-    overflow: hidden;
-  }
-
-  body.wallboard-mode .mobile-card-toggle {
-    display: flex;
-  }
-
+  body.wallboard-mode .mobile-card-toggle,
   body.wallboard-mode .mobile-details {
     display: grid;
   }
@@ -680,9 +684,7 @@ body.wallboard-mode.wallboard-light .footer-row {
 
 @media (max-width: 800px) {
   .header-row {
-    display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    align-items: start;
   }
 
   .header-time {
@@ -703,10 +705,9 @@ body.wallboard-mode.wallboard-light .footer-row {
     display: none;
   }
 
-  .card {
-    padding-bottom: 40px;
-    overflow: hidden;
-    transition: padding-bottom 180ms ease, box-shadow 180ms ease;
+  body:not(.wallboard-mode) .mobile-card-toggle,
+  body:not(.wallboard-mode) .mobile-details {
+    display: grid;
   }
 }
 
@@ -717,26 +718,27 @@ body.wallboard-mode.wallboard-light .footer-row {
     position: absolute;
     right: 8px;
     bottom: 8px;
-    width: 34px;
-    height: 34px;
+    width: 26px;
+    height: 26px;
     padding: 0;
     margin: 0;
     border: none;
     background: transparent;
     color: currentColor;
-    opacity: 0.85;
+    opacity: 0.35;
+    z-index: 2;
   }
 
   .mobile-card-toggle:hover,
   .mobile-card-toggle:focus-visible {
-    opacity: 1;
+    opacity: 0.55;
     outline: none;
   }
 
   .mobile-card-toggle::before {
     content: "";
-    width: 18px;
-    height: 18px;
+    width: 13px;
+    height: 13px;
     border-right: 2px solid currentColor;
     border-bottom: 2px solid currentColor;
     transform: rotate(45deg);
@@ -764,22 +766,8 @@ body.wallboard-mode.wallboard-light .footer-row {
     margin-top: 12px;
   }
 
-  .card.expanded {
-    padding-bottom: 52px;
-  }
-
   .mobile-details .detail-block:first-child {
     margin-top: 0;
-  }
-}
-
-@media (max-width: 800px) {
-  body:not(.wallboard-mode) .mobile-card-toggle {
-    display: flex;
-  }
-
-  body:not(.wallboard-mode) .mobile-details {
-    display: grid;
   }
 }
 
@@ -856,8 +844,8 @@ body.wallboard-mode.wallboard-light .footer-row {
 
 <div class="footer-row">
   <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
-  <div>Auto-refresh: every 60 seconds</div>
-  <div id="dashboardMeta">Version: v0.5.9 | Built and maintained by Mike Ahrens</div>
+  <div id="autoRefreshFooter">Auto-refresh: every 60 seconds</div>
+  <div id="dashboardMeta">Version: v0.5.11 | Built and maintained by Mike Ahrens</div>
 </div>
 
 <script>
@@ -896,8 +884,10 @@ const providers = [
   }
 ];
 
-const dashboardVersion = "v0.5.9";
+const dashboardVersion = "v0.5.11";
 const dashboardMaintainer = "Mike Ahrens";
+let autoRefreshTimer = null;
+let isLoadingStatuses = false;
 
 function detectPageMode() {
   const path = window.location.pathname.toLowerCase();
@@ -920,6 +910,47 @@ function detectPageMode() {
 }
 
 const pageMode = detectPageMode();
+
+function anyCardExpanded() {
+  return document.querySelector(".card.expanded") !== null;
+}
+
+function updateAutoRefreshState() {
+  const paused = anyCardExpanded();
+  document.body.classList.toggle("auto-refresh-paused", paused);
+
+  const footer = document.getElementById("autoRefreshFooter");
+  if (footer) {
+    footer.innerText = paused
+      ? "Auto-refresh: paused while details are expanded"
+      : "Auto-refresh: every 60 seconds";
+  }
+
+  if (paused) {
+    stopAutoRefresh();
+  } else {
+    startAutoRefresh();
+  }
+}
+
+function startAutoRefresh() {
+  if (autoRefreshTimer || anyCardExpanded()) {
+    return;
+  }
+
+  autoRefreshTimer = setInterval(() => {
+    if (!anyCardExpanded()) {
+      loadStatuses();
+    }
+  }, 60000);
+}
+
+function stopAutoRefresh() {
+  if (autoRefreshTimer) {
+    clearInterval(autoRefreshTimer);
+    autoRefreshTimer = null;
+  }
+}
 
 function toggleDarkMode() {
   if (pageMode === "wallboard") {
@@ -964,6 +995,7 @@ function toggleMobileCardDetails(button) {
   const isExpanded = card.classList.toggle("expanded");
   button.setAttribute("aria-expanded", isExpanded ? "true" : "false");
   button.setAttribute("title", isExpanded ? "Collapse details" : "Expand details");
+  updateAutoRefreshState();
 }
 
 function updateCurrentTime() {
@@ -1196,9 +1228,11 @@ function sortIncidentsNewestFirst(incidents) {
 
 function logoHtml(service) {
   return `
-    <div class="service-logo">
-      <img src="${service.logoSrc}" alt="${service.name} logo" onerror="this.style.display='none'; this.parentElement.textContent='${service.logoText}';">
-    </div>
+    <a class="service-logo-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer" aria-label="Open ${service.name} status page">
+      <div class="service-logo">
+        <img src="${service.logoSrc}" alt="${service.name} logo" onerror="this.style.display='none'; this.parentElement.textContent='${service.logoText}';">
+      </div>
+    </a>
   `;
 }
 
@@ -1271,6 +1305,12 @@ function buildIncidentDetails(service) {
 }
 
 async function loadStatuses() {
+  if (isLoadingStatuses || anyCardExpanded()) {
+    updateAutoRefreshState();
+    return;
+  }
+
+  isLoadingStatuses = true;
   const container = document.getElementById("results");
   container.innerHTML = "<div class='card'>Loading...</div>";
 
@@ -1292,10 +1332,10 @@ async function loadStatuses() {
         ${logoHtml(service)}
       </div>
       <div class="badge ${badgeClass}">${displayStatus}</div>
-      <p class="small">Provider updated: ${formatDateTime(service.updated)} (${timeAgo(service.updated)})</p>
       <p><strong>Active incidents:</strong> ${service.activeIncidents.length}</p>
+      <p class="small provider-updated-line">Provider updated: ${formatDateTime(service.updated)} (${timeAgo(service.updated)})</p>
       <div class="card-detail"><strong>Active incidents:</strong> ${service.activeIncidents.length}</div>
-      <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)} (${timeAgo(service.updated)})</div>
+      <div class="card-detail provider-updated-line"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)} (${timeAgo(service.updated)})</div>
       <div class="desktop-details">${detailsHtml}</div>
       <div class="mobile-details"><div class="mobile-details-inner">${detailsHtml}</div></div>
       <button class="mobile-card-toggle" type="button" aria-label="Expand ${service.name} details" aria-expanded="false" title="Expand details" onclick="toggleMobileCardDetails(this)"></button>
@@ -1317,16 +1357,19 @@ async function loadStatuses() {
   if (document.getElementById("dashboardMeta")) {
     document.getElementById("dashboardMeta").innerText = "Version: " + dashboardVersion + " | Built and maintained by " + dashboardMaintainer;
   }
+
+  isLoadingStatuses = false;
+  updateAutoRefreshState();
 }
 
 applySavedTheme();
 updateCurrentTime();
 loadStatuses();
+startAutoRefresh();
 
 document.addEventListener("dblclick", handleBackgroundDoubleClick);
 
 setInterval(updateCurrentTime, 1000);
-setInterval(loadStatuses, 60000);
 </script>
 
 </body>
