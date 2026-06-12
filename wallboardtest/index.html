@@ -12,20 +12,25 @@
   --light-panel: #ffffff;
   --light-border: #e5e7eb;
   --light-muted: #6b7280;
+
   --dark-bg: #0f172a;
   --dark-text: #e5e7eb;
   --dark-panel: #1e293b;
   --dark-border: #334155;
   --dark-muted: #cbd5e1;
+
   --green-bg: #dcfce7;
   --green-text: #065f46;
   --green-border: #22c55e;
+
   --yellow-bg: #fef3c7;
   --yellow-text: #92400e;
   --yellow-border: #f59e0b;
+
   --red-bg: #fee2e2;
   --red-text: #991b1b;
   --red-border: #ef4444;
+
   --wall-green-bg: #14532d;
   --wall-yellow-bg: #713f12;
   --wall-red-bg: #7f1d1d;
@@ -465,12 +470,25 @@ body.wallboard-mode .card-detail {
 
 body.wallboard-mode .footer-row {
   margin-top: clamp(6px, min(1.3vw, 1.5vh), 18px);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   gap: 20px;
   font-size: clamp(12px, min(1vw, 1.8vh), 24px);
   color: var(--dark-muted);
   flex-shrink: 0;
+}
+
+body.wallboard-mode .footer-row div:nth-child(1) {
+  text-align: left;
+}
+
+body.wallboard-mode .footer-row div:nth-child(2) {
+  text-align: center;
+}
+
+body.wallboard-mode .footer-row div:nth-child(3) {
+  text-align: right;
 }
 
 /* Wallboard light mode override */
@@ -608,7 +626,7 @@ body.wallboard-mode.wallboard-light .footer-row {
 <div class="footer-row">
   <div id="wallboardLastRefresh">Last refreshed: Not yet refreshed</div>
   <div>Auto-refresh: every 60 seconds</div>
-  <div id="dashboardMeta">Version: v0.4.0 | Built and maintained by Mike Ahrens</div>
+  <div id="dashboardMeta">Version: v0.4.1 | Built and maintained by Mike Ahrens</div>
 </div>
 
 <script>
@@ -635,7 +653,7 @@ const providers = [
   }
 ];
 
-const dashboardVersion = "v0.4.0";
+const dashboardVersion = "v0.4.1";
 const dashboardMaintainer = "Mike Ahrens";
 
 function detectPageMode() {
@@ -733,44 +751,21 @@ function updateCurrentTime() {
   }
 }
 
-function getStatusClass(status) {
-  if (!status) return "warn";
-
-  status = status.toLowerCase();
-
-  if (status.includes("operational") || status.includes("all systems")) {
-    return "good";
+function getStatusClass(service) {
+  if (service.status === "Unable to fetch") {
+    return "bad";
   }
 
-  if (status.includes("degraded") || status.includes("minor") || status.includes("maintenance")) {
+  if (service.incidents.length > 0) {
     return "warn";
   }
 
-  return "bad";
+  return "good";
 }
 
 function getSeverity(service) {
-  const status = service.status.toLowerCase();
-
   if (service.status === "Unable to fetch") {
     return 3;
-  }
-
-  if (
-    status.includes("critical") ||
-    status.includes("major") ||
-    status.includes("partial outage")
-  ) {
-    return 3;
-  }
-
-  if (
-    status.includes("minor") ||
-    status.includes("degraded") ||
-    status.includes("maintenance") ||
-    status.includes("service outage")
-  ) {
-    return 2;
   }
 
   if (service.incidents.length > 0) {
@@ -806,8 +801,8 @@ function updateSummary(results) {
   } else if (highestSeverity === 2) {
     banner.classList.add("summary-warn");
     banner.innerText = pageMode === "wallboard"
-      ? "Minor service issue detected"
-      : "One or more monitored services are reporting a minor issue, degraded performance or maintenance";
+      ? "Active incident reported"
+      : "One or more monitored services are reporting active incidents";
   } else {
     banner.classList.add("summary-bad");
     banner.innerText = pageMode === "wallboard"
@@ -864,7 +859,7 @@ async function loadStatuses() {
 
   results.forEach(service => {
     const card = document.createElement("div");
-    const badgeClass = getStatusClass(service.status);
+    const badgeClass = getStatusClass(service);
 
     if (pageMode === "wallboard") {
       card.className = "card " + badgeClass + "-border";
