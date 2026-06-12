@@ -298,34 +298,46 @@ function getStatusClass(status) {
   return "bad";
 }
 
-function hasIssue(service) {
+function getSeverity(service) {
   const status = service.status.toLowerCase();
 
   if (service.status === "Unable to fetch") {
-    return true;
-  }
-
-  if (service.incidents.length > 0) {
-    return true;
+    return 3;
   }
 
   if (
-    status.includes("degraded") ||
-    status.includes("minor") ||
-    status.includes("outage") ||
-    status.includes("incident") ||
-    status.includes("maintenance")
+    status.includes("critical") ||
+    status.includes("major") ||
+    status.includes("partial outage")
   ) {
-    return true;
+    return 3;
   }
 
-  return false;
+  if (
+    status.includes("minor") ||
+    status.includes("degraded") ||
+    status.includes("maintenance") ||
+    status.includes("service outage")
+  ) {
+    return 2;
+  }
+
+  if (service.incidents.length > 0) {
+    return 2;
+  }
+
+  return 1;
+}
+
+function hasIssue(service) {
+  return getSeverity(service) > 1;
 }
 
 function updateSummary(results) {
   const servicesMonitored = results.length;
   const servicesWithIssues = results.filter(hasIssue).length;
   const activeIncidents = results.reduce((total, service) => total + service.incidents.length, 0);
+  const highestSeverity = Math.max(...results.map(getSeverity));
 
   document.getElementById("servicesMonitored").innerText = servicesMonitored;
   document.getElementById("servicesWithIssues").innerText = servicesWithIssues;
@@ -335,15 +347,15 @@ function updateSummary(results) {
 
   banner.classList.remove("summary-good", "summary-warn", "summary-bad");
 
-  if (servicesWithIssues === 0 && activeIncidents === 0) {
+  if (highestSeverity === 1) {
     banner.classList.add("summary-good");
     banner.innerText = "All monitored services are currently operational";
-  } else if (activeIncidents > 0) {
-    banner.classList.add("summary-bad");
-    banner.innerText = "One or more monitored services are reporting active incidents";
-  } else {
+  } else if (highestSeverity === 2) {
     banner.classList.add("summary-warn");
-    banner.innerText = "One or more monitored services may require attention";
+    banner.innerText = "One or more monitored services are reporting a minor issue, degraded performance or maintenance";
+  } else {
+    banner.classList.add("summary-bad");
+    banner.innerText = "One or more monitored services are reporting a major issue or could not be checked";
   }
 }
 
