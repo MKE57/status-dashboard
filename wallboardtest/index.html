@@ -225,8 +225,8 @@ body.wallboard-mode .provider-link:hover {
 
 .service-logo {
   flex-shrink: 0;
-  width: 70px;
-  height: 42px;
+  width: 90px;
+  height: 52px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -234,8 +234,8 @@ body.wallboard-mode .provider-link:hover {
   font-weight: bold;
   font-size: 13px;
   border: 1px solid var(--light-border);
-  background: #ffffff;
-  padding: 6px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px;
   overflow: hidden;
 }
 
@@ -248,7 +248,7 @@ body.wallboard-mode .provider-link:hover {
 
 body.dark-mode .service-logo,
 body.wallboard-mode .service-logo {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
   border-color: var(--dark-border);
   color: var(--light-text);
 }
@@ -522,8 +522,8 @@ body.wallboard-mode .service-header h2 {
 }
 
 body.wallboard-mode .service-logo {
-  width: clamp(70px, min(6vw, 9vh), 130px);
-  height: clamp(38px, min(3.4vw, 6vh), 72px);
+  width: clamp(90px, min(7vw, 10vh), 160px);
+  height: clamp(50px, min(4vw, 7vh), 90px);
   border-radius: clamp(10px, min(1vw, 1.5vh), 18px);
 }
 
@@ -701,7 +701,7 @@ body.wallboard-mode.wallboard-light .footer-row {
 <div class="footer-row">
   <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
   <div>Auto-refresh: every 60 seconds</div>
-  <div id="dashboardMeta">Version: v0.5.4 | Built and maintained by Mike Ahrens</div>
+  <div id="dashboardMeta">Version: v0.5.5 | Built and maintained by Mike Ahrens</div>
 </div>
 
 <script>
@@ -740,7 +740,7 @@ const providers = [
   }
 ];
 
-const dashboardVersion = "v0.5.4";
+const dashboardVersion = "v0.5.5";
 const dashboardMaintainer = "Mike Ahrens";
 
 function detectPageMode() {
