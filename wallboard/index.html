@@ -3,239 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SaaS Status Wallboard</title>
+<title>SaaS Status Dashboard</title>
 
 <style>
-:root {
-  --bg: #0f172a;
-  --panel: #1e293b;
-  --panel-border: #334155;
-  --text: #e5e7eb;
-  --muted: #cbd5e1;
-
-  --green-bg: #14532d;
-  --green-text: #dcfce7;
-  --green-border: #22c55e;
-
-  --yellow-bg: #713f12;
-  --yellow-text: #fef3c7;
-  --yellow-border: #f59e0b;
-
-  --red-bg: #7f1d1d;
-  --red-text: #fee2e2;
-  --red-border: #ef4444;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 28px;
-  background: var(--bg);
-  color: var(--text);
-  overflow: hidden;
+  margin: 20px;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
+body.dark-mode {
+  background: #0f172a;
+  color: #e5e7eb;
 }
 
 .header-row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 28px;
-  align-items: start;
-  margin-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.header-time {
+  text-align: right;
+  font-size: 14px;
+  color: #1f2937;
+  white-space: nowrap;
+  margin-top: 2px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  min-width: 210px;
+  box-sizing: border-box;
+}
+
+body.dark-mode .header-time {
+  background: #1e293b;
+  color: #e5e7eb;
+  border-color: #334155;
 }
 
 h1 {
-  margin: 0;
-  font-size: 46px;
-  line-height: 1.05;
-  letter-spacing: -1px;
+  margin-bottom: 5px;
 }
 
-.subtitle {
-  margin-top: 10px;
-  font-size: 20px;
-  color: var(--muted);
+button {
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  color: #1f2937;
 }
 
-.time-panel {
-  min-width: 340px;
-  background: var(--panel);
-  border: 1px solid var(--panel-border);
-  border-radius: 18px;
-  padding: 18px 22px;
-  text-align: right;
+body.dark-mode button {
+  background: #1e293b;
+  color: #e5e7eb;
+  border-color: #475569;
 }
 
-.time-label {
-  font-size: 18px;
-  color: var(--muted);
-  margin-bottom: 6px;
-}
-
-.time-value {
-  font-size: 42px;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.date-value {
-  margin-top: 8px;
-  font-size: 20px;
-  color: var(--muted);
+.controls {
+  margin-top: 12px;
+  margin-bottom: 10px;
 }
 
 .summary-banner {
-  border-radius: 22px;
-  padding: 26px 30px;
-  font-size: 34px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-radius: 10px;
   font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 20px;
-  border: 3px solid var(--panel-border);
+  border: 1px solid #e5e7eb;
 }
 
 .summary-good {
-  background: var(--green-bg);
-  color: var(--green-text);
-  border-color: var(--green-border);
+  background: #dcfce7;
+  color: #065f46;
+  border-color: #bbf7d0;
 }
 
 .summary-warn {
-  background: var(--yellow-bg);
-  color: var(--yellow-text);
-  border-color: var(--yellow-border);
+  background: #fef3c7;
+  color: #92400e;
+  border-color: #fde68a;
 }
 
 .summary-bad {
-  background: var(--red-bg);
-  color: var(--red-text);
-  border-color: var(--red-border);
+  background: #fee2e2;
+  color: #991b1b;
+  border-color: #fecaca;
 }
 
 .summary-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-bottom: 22px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .summary-card {
-  background: var(--panel);
-  border: 1px solid var(--panel-border);
-  border-radius: 18px;
-  padding: 18px 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+body.dark-mode .summary-card {
+  background: #1e293b;
+  border-color: #334155;
 }
 
 .summary-label {
-  font-size: 18px;
-  color: var(--muted);
+  font-size: 12px;
+  color: #6b7280;
+}
+
+body.dark-mode .summary-label {
+  color: #cbd5e1;
 }
 
 .summary-value {
-  font-size: 42px;
+  font-size: 24px;
   font-weight: bold;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  gap: 15px;
+  margin-top: 15px;
 }
 
 .card {
-  background: var(--panel);
-  border: 1px solid var(--panel-border);
-  border-left: 12px solid var(--panel-border);
-  border-radius: 20px;
-  padding: 24px;
-  min-height: 220px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 15px;
+  min-height: 160px;
+  box-sizing: border-box;
 }
 
-.card.good-border {
-  border-left-color: var(--green-border);
-}
-
-.card.warn-border {
-  border-left-color: var(--yellow-border);
-}
-
-.card.bad-border {
-  border-left-color: var(--red-border);
-}
-
-.service-name {
-  font-size: 34px;
-  font-weight: bold;
-  margin-bottom: 18px;
+body.dark-mode .card {
+  background: #1e293b;
+  border-color: #334155;
 }
 
 .badge {
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-size: 22px;
-  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
   display: inline-block;
-  text-transform: uppercase;
 }
 
 .good {
-  background: var(--green-bg);
-  color: var(--green-text);
-  border: 2px solid var(--green-border);
+  background: #dcfce7;
+  color: #065f46;
 }
 
 .warn {
-  background: var(--yellow-bg);
-  color: var(--yellow-text);
-  border: 2px solid var(--yellow-border);
+  background: #fef3c7;
+  color: #92400e;
 }
 
 .bad {
-  background: var(--red-bg);
-  color: var(--red-text);
-  border: 2px solid var(--red-border);
+  background: #fee2e2;
+  color: #991b1b;
 }
 
-.card-detail {
-  margin-top: 18px;
-  font-size: 22px;
-  color: var(--muted);
+.small {
+  font-size: 12px;
+  color: #6b7280;
 }
 
-.incident-list {
-  margin-top: 14px;
-  padding-left: 26px;
-  font-size: 18px;
-  color: var(--muted);
+body.dark-mode .small {
+  color: #cbd5e1;
 }
 
-.footer-row {
-  margin-top: 22px;
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  font-size: 18px;
-  color: var(--muted);
+ul {
+  margin-top: 8px;
+  padding-left: 20px;
 }
 
-@media (max-width: 1000px) {
-  body {
-    overflow: auto;
-  }
-
+@media (max-width: 800px) {
   .header-row {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 
-  .time-panel {
+  .header-time {
     text-align: left;
-    min-width: 0;
   }
 
   .summary-grid {
@@ -253,15 +212,11 @@ h1 {
 
 <div class="header-row">
   <div>
-    <h1>SaaS Status Wallboard</h1>
-    <div class="subtitle">Live operational status for monitored SaaS services</div>
+    <h1>SaaS Status Dashboard</h1>
+    <p class="small">Simple aggregated view of Cloudflare, Worldpay and AudienceView status pages</p>
   </div>
 
-  <div class="time-panel">
-    <div class="time-label">Current time</div>
-    <div id="currentTime" class="time-value"></div>
-    <div id="currentDate" class="date-value"></div>
-  </div>
+  <div id="currentTime" class="header-time"></div>
 </div>
 
 <div id="summaryBanner" class="summary-banner summary-good">
@@ -285,12 +240,13 @@ h1 {
   </div>
 </div>
 
-<div id="results" class="dashboard-grid"></div>
-
-<div class="footer-row">
-  <div id="lastRefresh">Last refreshed: Not yet refreshed</div>
-  <div>Auto-refresh: every 60 seconds</div>
+<div class="controls">
+  <button onclick="loadStatuses()">Refresh</button>
+  <button onclick="toggleDarkMode()" id="darkModeButton">Dark Mode</button>
+  <span id="lastRefresh" class="small"></span>
 </div>
+
+<div id="results" class="dashboard-grid"></div>
 
 <script>
 const providers = [
@@ -312,21 +268,26 @@ const providers = [
   }
 ];
 
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+
+  const isDarkMode = document.body.classList.contains("dark-mode");
+  localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
+
+  document.getElementById("darkModeButton").innerText = isDarkMode ? "Light Mode" : "Dark Mode";
+}
+
+function applySavedTheme() {
+  const savedTheme = localStorage.getItem("darkMode");
+
+  if (savedTheme === "enabled") {
+    document.body.classList.add("dark-mode");
+    document.getElementById("darkModeButton").innerText = "Light Mode";
+  }
+}
+
 function updateCurrentTime() {
-  const now = new Date();
-
-  document.getElementById("currentTime").innerText = now.toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit"
-  });
-
-  document.getElementById("currentDate").innerText = now.toLocaleDateString([], {
-    weekday: "long",
-    day: "2-digit",
-    month: "long",
-    year: "numeric"
-  });
+  document.getElementById("currentTime").innerText = "Current time: " + new Date().toLocaleString();
 }
 
 function getStatusClass(status) {
@@ -396,13 +357,13 @@ function updateSummary(results) {
 
   if (highestSeverity === 1) {
     banner.classList.add("summary-good");
-    banner.innerText = "All monitored services operational";
+    banner.innerText = "All monitored services are currently operational";
   } else if (highestSeverity === 2) {
     banner.classList.add("summary-warn");
-    banner.innerText = "Minor service issue detected";
+    banner.innerText = "One or more monitored services are reporting a minor issue, degraded performance or maintenance";
   } else {
     banner.classList.add("summary-bad");
-    banner.innerText = "Major service issue detected";
+    banner.innerText = "One or more monitored services are reporting a major issue or could not be checked";
   }
 }
 
@@ -427,28 +388,11 @@ async function fetchProvider(provider) {
   }
 }
 
-function formatUpdatedTime(value) {
-  if (!value) return "Unknown";
-
-  try {
-    return new Date(value).toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit"
-    });
-  } catch (err) {
-    return value;
-  }
-}
-
 async function loadStatuses() {
   const container = document.getElementById("results");
   container.innerHTML = "<div class='card'>Loading...</div>";
 
-  let results = await Promise.all(providers.map(fetchProvider));
-
-  results = results.sort((a, b) => {
-    return getSeverity(b) - getSeverity(a) || a.name.localeCompare(b.name);
-  });
+  const results = await Promise.all(providers.map(fetchProvider));
 
   updateSummary(results);
 
@@ -456,36 +400,33 @@ async function loadStatuses() {
 
   results.forEach(service => {
     const card = document.createElement("div");
+    card.className = "card";
 
     const badgeClass = getStatusClass(service.status);
-    card.className = "card " + badgeClass + "-border";
 
     let incidentHtml = "";
 
     if (service.incidents.length > 0) {
-      incidentHtml = "<ul class='incident-list'>" + service.incidents.slice(0, 2).map(incident => {
+      incidentHtml = "<ul>" + service.incidents.map(incident => {
         return "<li>" + incident.name + " - " + incident.status + "</li>";
       }).join("") + "</ul>";
     }
 
     card.innerHTML = `
-      <div class="service-name">${service.name}</div>
+      <h2>${service.name}</h2>
       <div class="badge ${badgeClass}">${service.status}</div>
-      <div class="card-detail"><strong>Active incidents:</strong> ${service.incidents.length}</div>
-      <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)}</div>
+      <p class="small">Updated: ${service.updated || "Unknown"}</p>
+      <p><strong>Active Incidents:</strong> ${service.incidents.length}</p>
       ${incidentHtml}
     `;
 
     container.appendChild(card);
   });
 
-  document.getElementById("lastRefresh").innerText = "Last refreshed: " + new Date().toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit"
-  });
+  document.getElementById("lastRefresh").innerText = "Last refreshed: " + new Date().toLocaleString();
 }
 
+applySavedTheme();
 updateCurrentTime();
 loadStatuses();
 
