@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport:root {<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SaaS Status Dashboard</title>
+
+<style>
+:root {
   --light-bg: #f8fafc;
   --light-text: #1f2937;
   --light-panel: #ffffff;
@@ -32,9 +36,7 @@
   --wall-red-bg: #7f1d1d;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   font-family: Arial, sans-serif;
@@ -76,9 +78,7 @@ body.wallboard-mode .header-time {
   border-color: var(--dark-border);
 }
 
-h1 {
-  margin-bottom: 5px;
-}
+h1 { margin-bottom: 5px; }
 
 .test-label {
   display: none;
@@ -92,9 +92,7 @@ h1 {
   width: fit-content;
 }
 
-body.test-mode .test-label {
-  display: inline-block;
-}
+body.test-mode .test-label { display: inline-block; }
 
 button {
   padding: 8px 12px;
@@ -170,9 +168,7 @@ body.wallboard-mode .summary-card {
 }
 
 body.dark-mode .summary-label,
-body.wallboard-mode .summary-label {
-  color: var(--dark-muted);
-}
+body.wallboard-mode .summary-label { color: var(--dark-muted); }
 
 .summary-value {
   font-size: 24px;
@@ -201,6 +197,14 @@ body.wallboard-mode .card {
   border-color: var(--dark-border);
 }
 
+.provider-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.provider-link:hover { text-decoration: underline; }
+body.wallboard-mode .provider-link:hover { text-decoration: none; }
+
 .badge {
   padding: 5px 10px;
   border-radius: 20px;
@@ -208,20 +212,9 @@ body.wallboard-mode .card {
   display: inline-block;
 }
 
-.good {
-  background: var(--green-bg);
-  color: var(--green-text);
-}
-
-.warn {
-  background: var(--yellow-bg);
-  color: var(--yellow-text);
-}
-
-.bad {
-  background: var(--red-bg);
-  color: var(--red-text);
-}
+.good { background: var(--green-bg); color: var(--green-text); }
+.warn { background: var(--yellow-bg); color: var(--yellow-text); }
+.bad { background: var(--red-bg); color: var(--red-text); }
 
 .small {
   font-size: 12px;
@@ -229,18 +222,14 @@ body.wallboard-mode .card {
 }
 
 body.dark-mode .small,
-body.wallboard-mode .small {
-  color: var(--dark-muted);
-}
+body.wallboard-mode .small { color: var(--dark-muted); }
 
 ul {
   margin-top: 8px;
   padding-left: 20px;
 }
 
-.footer-row {
-  display: none;
-}
+.footer-row { display: none; }
 
 /* Wallboard mode */
 
@@ -274,9 +263,7 @@ body.wallboard-mode .small {
   font-size: clamp(15px, 1.1vw, 24px);
 }
 
-body.wallboard-mode .test-label {
-  display: none;
-}
+body.wallboard-mode .test-label { display: none; }
 
 body.wallboard-mode .header-time {
   min-width: clamp(260px, 26vw, 380px);
@@ -363,9 +350,7 @@ body.wallboard-mode .summary-value {
   line-height: 1;
 }
 
-body.wallboard-mode .controls {
-  display: none;
-}
+body.wallboard-mode .controls { display: none; }
 
 body.wallboard-mode .dashboard-grid {
   flex: 1;
@@ -390,17 +375,9 @@ body.wallboard-mode .card {
   min-width: 0;
 }
 
-body.wallboard-mode .card.good-border {
-  border-left-color: var(--green-border);
-}
-
-body.wallboard-mode .card.warn-border {
-  border-left-color: var(--yellow-border);
-}
-
-body.wallboard-mode .card.bad-border {
-  border-left-color: var(--red-border);
-}
+body.wallboard-mode .card.good-border { border-left-color: var(--green-border); }
+body.wallboard-mode .card.warn-border { border-left-color: var(--yellow-border); }
+body.wallboard-mode .card.bad-border { border-left-color: var(--red-border); }
 
 body.wallboard-mode .service-name {
   font-size: clamp(26px, 2.3vw, 50px);
@@ -507,21 +484,10 @@ body.wallboard-mode.wallboard-light .footer-row {
 }
 
 @media (max-width: 800px) {
-  .header-row {
-    flex-direction: column;
-  }
-
-  .header-time {
-    text-align: left;
-  }
-
-  .summary-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
+  .header-row { flex-direction: column; }
+  .header-time { text-align: left; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .dashboard-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -576,19 +542,23 @@ body.wallboard-mode.wallboard-light .footer-row {
 const providers = [
   {
     name: "Cloudflare",
-    url: "https://www.cloudflarestatus.com/api/v2/summary.json"
+    url: "https://www.cloudflarestatus.com/api/v2/summary.json",
+    statusPage: "https://www.cloudflarestatus.com/"
   },
   {
     name: "Worldpay",
-    url: "https://status.worldpay.com/api/v2/summary.json"
+    url: "https://status.worldpay.com/api/v2/summary.json",
+    statusPage: "https://status.worldpay.com/"
   },
   {
     name: "AudienceView Professional",
-    url: "https://professional-status.audienceview.com/api/v2/summary.json"
+    url: "https://professional-status.audienceview.com/api/v2/summary.json",
+    statusPage: "https://professional-status.audienceview.com/"
   },
   {
     name: "AudienceView Unlimited",
-    url: "https://unlimited-status.audienceview.com/api/v2/summary.json"
+    url: "https://unlimited-status.audienceview.com/api/v2/summary.json",
+    statusPage: "https://unlimited-status.audienceview.com/"
   }
 ];
 
@@ -777,6 +747,7 @@ async function fetchProvider(provider) {
 
     return {
       name: provider.name,
+      statusPage: provider.statusPage,
       status: data.status.description,
       incidents: data.incidents || [],
       updated: data.page.updated_at
@@ -784,6 +755,7 @@ async function fetchProvider(provider) {
   } catch (err) {
     return {
       name: provider.name,
+      statusPage: provider.statusPage,
       status: "Unable to fetch",
       incidents: [],
       updated: null
@@ -834,14 +806,18 @@ async function loadStatuses() {
 
     if (pageMode === "wallboard") {
       card.innerHTML = `
-        <div class="service-name">${service.name}</div>
+        <div class="service-name">
+          <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
+        </div>
         <div class="badge ${badgeClass}">${service.status}</div>
         <div class="card-detail"><strong>Active incidents:</strong> ${service.incidents.length}</div>
         <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)}</div>
       `;
     } else {
       card.innerHTML = `
-        <h2>${service.name}</h2>
+        <h2>
+          <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
+        </h2>
         <div class="badge ${badgeClass}">${service.status}</div>
         <p class="small">Updated: ${service.updated || "Unknown"}</p>
         <p><strong>Active Incidents:</strong> ${service.incidents.length}</p>
@@ -877,6 +853,3 @@ setInterval(loadStatuses, 60000);
 
 </body>
 </html>
-<title>SaaS Status Dashboard</title>
-
-<style>
