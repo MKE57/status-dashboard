@@ -36,9 +36,7 @@
   --wall-red-bg: #7f1d1d;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   font-family: Arial, sans-serif;
@@ -80,9 +78,7 @@ body.wallboard-mode .header-time {
   border-color: var(--dark-border);
 }
 
-h1 {
-  margin-bottom: 5px;
-}
+h1 { margin-bottom: 5px; }
 
 .test-label {
   display: none;
@@ -96,9 +92,7 @@ h1 {
   width: fit-content;
 }
 
-body.test-mode .test-label {
-  display: inline-block;
-}
+body.test-mode .test-label { display: inline-block; }
 
 button {
   padding: 8px 12px;
@@ -174,9 +168,7 @@ body.wallboard-mode .summary-card {
 }
 
 body.dark-mode .summary-label,
-body.wallboard-mode .summary-label {
-  color: var(--dark-muted);
-}
+body.wallboard-mode .summary-label { color: var(--dark-muted); }
 
 .summary-value {
   font-size: 24px;
@@ -205,6 +197,14 @@ body.wallboard-mode .card {
   border-color: var(--dark-border);
 }
 
+.provider-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.provider-link:hover { text-decoration: underline; }
+body.wallboard-mode .provider-link:hover { text-decoration: none; }
+
 .badge {
   padding: 5px 10px;
   border-radius: 20px;
@@ -212,20 +212,9 @@ body.wallboard-mode .card {
   display: inline-block;
 }
 
-.good {
-  background: var(--green-bg);
-  color: var(--green-text);
-}
-
-.warn {
-  background: var(--yellow-bg);
-  color: var(--yellow-text);
-}
-
-.bad {
-  background: var(--red-bg);
-  color: var(--red-text);
-}
+.good { background: var(--green-bg); color: var(--green-text); }
+.warn { background: var(--yellow-bg); color: var(--yellow-text); }
+.bad { background: var(--red-bg); color: var(--red-text); }
 
 .small {
   font-size: 12px;
@@ -233,93 +222,88 @@ body.wallboard-mode .card {
 }
 
 body.dark-mode .small,
-body.wallboard-mode .small {
-  color: var(--dark-muted);
-}
+body.wallboard-mode .small { color: var(--dark-muted); }
 
 ul {
   margin-top: 8px;
   padding-left: 20px;
 }
 
-.footer-row {
-  display: none;
-}
+.footer-row { display: none; }
 
 /* Wallboard mode */
 
 body.wallboard-mode {
   margin: 0;
-  padding: 28px;
-  height: 100vh;
-  overflow: hidden;
+  padding: clamp(16px, 2vw, 28px);
+  min-height: 100vh;
+  overflow: auto;
   display: flex;
   flex-direction: column;
 }
 
 body.wallboard-mode .header-row {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 28px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(16px, 2vw, 28px);
   align-items: start;
-  margin-bottom: 18px;
+  margin-bottom: clamp(12px, 1.5vw, 18px);
   flex-shrink: 0;
 }
 
 body.wallboard-mode h1 {
   margin: 0;
-  font-size: clamp(42px, 3.5vw, 72px);
+  font-size: clamp(34px, 3.2vw, 64px);
   line-height: 1.05;
   letter-spacing: -1px;
 }
 
 body.wallboard-mode .small {
-  margin-top: 10px;
-  font-size: clamp(18px, 1.3vw, 28px);
+  margin-top: 8px;
+  font-size: clamp(15px, 1.1vw, 24px);
 }
 
-body.wallboard-mode .test-label {
-  display: none;
-}
+body.wallboard-mode .test-label { display: none; }
 
 body.wallboard-mode .header-time {
-  min-width: 380px;
+  min-width: clamp(260px, 26vw, 380px);
   border-radius: 22px;
-  padding: 20px 24px;
+  padding: clamp(12px, 1.6vw, 20px) clamp(16px, 1.8vw, 24px);
   text-align: right;
   border-width: 2px;
 }
 
 body.wallboard-mode .time-label {
-  font-size: clamp(18px, 1.2vw, 24px);
+  font-size: clamp(14px, 1vw, 22px);
   color: var(--dark-muted);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 body.wallboard-mode .time-value {
-  font-size: clamp(44px, 3.5vw, 76px);
+  font-size: clamp(34px, 3vw, 68px);
   font-weight: bold;
   line-height: 1;
 }
 
 body.wallboard-mode .date-value {
-  margin-top: 10px;
-  font-size: clamp(18px, 1.3vw, 28px);
+  margin-top: 8px;
+  font-size: clamp(14px, 1.1vw, 24px);
   color: var(--dark-muted);
 }
 
 body.wallboard-mode .summary-banner {
   border-radius: 24px;
-  padding: 28px 32px;
-  font-size: clamp(34px, 3vw, 62px);
+  padding: clamp(18px, 2vw, 28px) clamp(20px, 2.3vw, 32px);
+  font-size: clamp(28px, 2.7vw, 56px);
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-top: 0;
-  margin-bottom: 18px;
+  margin-bottom: clamp(12px, 1.5vw, 18px);
   border-width: 4px;
   flex-shrink: 0;
+  line-height: 1.1;
 }
 
 body.wallboard-mode .summary-good {
@@ -341,78 +325,81 @@ body.wallboard-mode .summary-bad {
 }
 
 body.wallboard-mode .summary-grid {
-  gap: 18px;
-  margin-bottom: 18px;
+  gap: clamp(10px, 1.2vw, 18px);
+  margin-bottom: clamp(12px, 1.5vw, 18px);
   flex-shrink: 0;
 }
 
 body.wallboard-mode .summary-card {
   border-radius: 20px;
-  padding: 18px 22px;
+  padding: clamp(12px, 1.4vw, 18px) clamp(14px, 1.6vw, 22px);
   border-width: 2px;
+  min-width: 0;
+  overflow: hidden;
 }
 
 body.wallboard-mode .summary-label {
-  font-size: clamp(18px, 1.2vw, 24px);
+  font-size: clamp(14px, 1vw, 22px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 body.wallboard-mode .summary-value {
-  font-size: clamp(42px, 3vw, 68px);
+  font-size: clamp(32px, 2.7vw, 62px);
   line-height: 1;
 }
 
-body.wallboard-mode .controls {
-  display: none;
-}
+body.wallboard-mode .controls { display: none; }
 
 body.wallboard-mode .dashboard-grid {
   flex: 1;
   min-height: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-rows: repeat(2, minmax(220px, 1fr));
+  gap: clamp(14px, 1.6vw, 24px);
   margin-top: 0;
 }
 
 body.wallboard-mode .card {
   border-radius: 24px;
-  padding: 28px;
-  min-height: 0;
+  padding: clamp(18px, 2vw, 28px);
+  min-height: 220px;
   border-width: 2px;
   border-left-width: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  min-width: 0;
 }
 
-body.wallboard-mode .card.good-border {
-  border-left-color: var(--green-border);
-}
-
-body.wallboard-mode .card.warn-border {
-  border-left-color: var(--yellow-border);
-}
-
-body.wallboard-mode .card.bad-border {
-  border-left-color: var(--red-border);
-}
+body.wallboard-mode .card.good-border { border-left-color: var(--green-border); }
+body.wallboard-mode .card.warn-border { border-left-color: var(--yellow-border); }
+body.wallboard-mode .card.bad-border { border-left-color: var(--red-border); }
 
 body.wallboard-mode .service-name {
-  font-size: clamp(34px, 2.7vw, 58px);
+  font-size: clamp(26px, 2.3vw, 50px);
   font-weight: bold;
-  margin-bottom: 22px;
-  line-height: 1.1;
+  margin-bottom: clamp(12px, 1.5vw, 20px);
+  line-height: 1.08;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 body.wallboard-mode .badge {
-  padding: 12px 22px;
+  padding: clamp(8px, 1vw, 12px) clamp(14px, 1.5vw, 22px);
   border-radius: 999px;
-  font-size: clamp(22px, 1.8vw, 38px);
+  font-size: clamp(18px, 1.5vw, 32px);
   font-weight: bold;
   text-transform: uppercase;
   border: 3px solid transparent;
   width: fit-content;
+  max-width: 100%;
+  line-height: 1.1;
+  white-space: normal;
 }
 
 body.wallboard-mode .good {
@@ -434,17 +421,18 @@ body.wallboard-mode .bad {
 }
 
 body.wallboard-mode .card-detail {
-  margin-top: 18px;
-  font-size: clamp(22px, 1.5vw, 34px);
+  margin-top: clamp(10px, 1.3vw, 18px);
+  font-size: clamp(18px, 1.3vw, 30px);
   color: var(--dark-muted);
+  line-height: 1.2;
 }
 
 body.wallboard-mode .footer-row {
-  margin-top: 18px;
+  margin-top: clamp(10px, 1.3vw, 18px);
   display: flex;
   justify-content: space-between;
   gap: 20px;
-  font-size: clamp(18px, 1.2vw, 26px);
+  font-size: clamp(14px, 1vw, 24px);
   color: var(--dark-muted);
   flex-shrink: 0;
 }
@@ -473,7 +461,7 @@ body.wallboard-mode.wallboard-light .footer-row {
   color: var(--light-muted);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1000px), (max-height: 760px) {
   body.wallboard-mode {
     overflow: auto;
     height: auto;
@@ -486,6 +474,7 @@ body.wallboard-mode.wallboard-light .footer-row {
   body.wallboard-mode .header-time {
     text-align: left;
     min-width: 0;
+    width: 100%;
   }
 
   body.wallboard-mode .dashboard-grid {
@@ -495,21 +484,10 @@ body.wallboard-mode.wallboard-light .footer-row {
 }
 
 @media (max-width: 800px) {
-  .header-row {
-    flex-direction: column;
-  }
-
-  .header-time {
-    text-align: left;
-  }
-
-  .summary-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
+  .header-row { flex-direction: column; }
+  .header-time { text-align: left; }
+  .summary-grid { grid-template-columns: 1fr; }
+  .dashboard-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -564,26 +542,30 @@ body.wallboard-mode.wallboard-light .footer-row {
 const providers = [
   {
     name: "Cloudflare",
-    url: "https://www.cloudflarestatus.com/api/v2/summary.json"
+    url: "https://www.cloudflarestatus.com/api/v2/summary.json",
+    statusPage: "https://www.cloudflarestatus.com/"
   },
   {
     name: "Worldpay",
-    url: "https://status.worldpay.com/api/v2/summary.json"
+    url: "https://status.worldpay.com/api/v2/summary.json",
+    statusPage: "https://status.worldpay.com/"
   },
   {
     name: "AudienceView Professional",
-    url: "https://professional-status.audienceview.com/api/v2/summary.json"
+    url: "https://professional-status.audienceview.com/api/v2/summary.json",
+    statusPage: "https://professional-status.audienceview.com/"
   },
   {
     name: "AudienceView Unlimited",
-    url: "https://unlimited-status.audienceview.com/api/v2/summary.json"
+    url: "https://unlimited-status.audienceview.com/api/v2/summary.json",
+    statusPage: "https://unlimited-status.audienceview.com/"
   }
 ];
 
 function detectPageMode() {
   const path = window.location.pathname.toLowerCase();
 
-  if (path.includes("/wallboard/")) {
+  if (path.includes("/wallboard/") || path.includes("/wallboardtest/")) {
     document.body.classList.add("wallboard-mode");
     document.getElementById("pageTitle").innerText = "SaaS Status Wallboard";
     document.getElementById("pageSubtitle").innerText = "Live operational status for monitored SaaS services";
@@ -765,6 +747,7 @@ async function fetchProvider(provider) {
 
     return {
       name: provider.name,
+      statusPage: provider.statusPage,
       status: data.status.description,
       incidents: data.incidents || [],
       updated: data.page.updated_at
@@ -772,6 +755,7 @@ async function fetchProvider(provider) {
   } catch (err) {
     return {
       name: provider.name,
+      statusPage: provider.statusPage,
       status: "Unable to fetch",
       incidents: [],
       updated: null
@@ -822,14 +806,18 @@ async function loadStatuses() {
 
     if (pageMode === "wallboard") {
       card.innerHTML = `
-        <div class="service-name">${service.name}</div>
+        <div class="service-name">
+          <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
+        </div>
         <div class="badge ${badgeClass}">${service.status}</div>
         <div class="card-detail"><strong>Active incidents:</strong> ${service.incidents.length}</div>
         <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)}</div>
       `;
     } else {
       card.innerHTML = `
-        <h2>${service.name}</h2>
+        <h2>
+          <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
+        </h2>
         <div class="badge ${badgeClass}">${service.status}</div>
         <p class="small">Updated: ${service.updated || "Unknown"}</p>
         <p><strong>Active Incidents:</strong> ${service.incidents.length}</p>
