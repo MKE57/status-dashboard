@@ -12,25 +12,20 @@
   --light-panel: #ffffff;
   --light-border: #e5e7eb;
   --light-muted: #6b7280;
-
   --dark-bg: #0f172a;
   --dark-text: #e5e7eb;
   --dark-panel: #1e293b;
   --dark-border: #334155;
   --dark-muted: #cbd5e1;
-
   --green-bg: #dcfce7;
   --green-text: #065f46;
   --green-border: #22c55e;
-
   --yellow-bg: #fef3c7;
   --yellow-text: #92400e;
   --yellow-border: #f59e0b;
-
   --red-bg: #fee2e2;
   --red-text: #991b1b;
   --red-border: #ef4444;
-
   --wall-green-bg: #14532d;
   --wall-yellow-bg: #713f12;
   --wall-red-bg: #7f1d1d;
@@ -155,7 +150,8 @@ body.dark-mode button {
   margin-bottom: 15px;
 }
 
-.summary-card {
+.summary-card,
+.card {
   background: var(--light-panel);
   border: 1px solid var(--light-border);
   border-radius: 10px;
@@ -164,7 +160,9 @@ body.dark-mode button {
 }
 
 body.dark-mode .summary-card,
-body.wallboard-mode .summary-card {
+body.dark-mode .card,
+body.wallboard-mode .summary-card,
+body.wallboard-mode .card {
   background: var(--dark-panel);
   border-color: var(--dark-border);
 }
@@ -196,17 +194,8 @@ body.wallboard-mode .summary-label {
 }
 
 .card {
-  background: var(--light-panel);
-  border: 1px solid var(--light-border);
-  border-radius: 10px;
   padding: 15px;
   min-height: 160px;
-}
-
-body.dark-mode .card,
-body.wallboard-mode .card {
-  background: var(--dark-panel);
-  border-color: var(--dark-border);
 }
 
 .provider-link {
@@ -236,7 +225,7 @@ body.wallboard-mode .provider-link:hover {
 
 .service-logo {
   flex-shrink: 0;
-  min-width: 42px;
+  width: 70px;
   height: 42px;
   display: inline-flex;
   align-items: center;
@@ -244,26 +233,24 @@ body.wallboard-mode .provider-link:hover {
   border-radius: 12px;
   font-weight: bold;
   font-size: 13px;
-  letter-spacing: 0.4px;
   border: 1px solid var(--light-border);
+  background: #ffffff;
+  padding: 6px;
+  overflow: hidden;
 }
 
-.logo-cloudflare {
-  background: #fff7ed;
-  color: #c2410c;
-  border-color: #fdba74;
+.service-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
-.logo-worldpay {
-  background: #eff6ff;
-  color: #1d4ed8;
-  border-color: #93c5fd;
-}
-
-.logo-av {
-  background: #f5f3ff;
-  color: #6d28d9;
-  border-color: #c4b5fd;
+body.dark-mode .service-logo,
+body.wallboard-mode .service-logo {
+  background: #ffffff;
+  border-color: var(--dark-border);
+  color: var(--light-text);
 }
 
 .badge {
@@ -535,10 +522,9 @@ body.wallboard-mode .service-header h2 {
 }
 
 body.wallboard-mode .service-logo {
-  min-width: clamp(38px, min(3.4vw, 6vh), 72px);
+  width: clamp(70px, min(6vw, 9vh), 130px);
   height: clamp(38px, min(3.4vw, 6vh), 72px);
   border-radius: clamp(10px, min(1vw, 1.5vh), 18px);
-  font-size: clamp(12px, min(1vw, 2vh), 22px);
 }
 
 body.wallboard-mode .badge {
@@ -715,7 +701,7 @@ body.wallboard-mode.wallboard-light .footer-row {
 <div class="footer-row">
   <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
   <div>Auto-refresh: every 60 seconds</div>
-  <div id="dashboardMeta">Version: v0.5.2 | Built and maintained by Mike Ahrens</div>
+  <div id="dashboardMeta">Version: v0.5.4 | Built and maintained by Mike Ahrens</div>
 </div>
 
 <script>
@@ -726,7 +712,7 @@ const providers = [
     incidentsUrl: "https://www.cloudflarestatus.com/api/v2/incidents.json",
     statusPage: "https://www.cloudflarestatus.com/",
     logoText: "CF",
-    logoClass: "logo-cloudflare"
+    logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/cloudflare.png"
   },
   {
     name: "Worldpay",
@@ -734,7 +720,7 @@ const providers = [
     incidentsUrl: "https://status.worldpay.com/api/v2/incidents.json",
     statusPage: "https://status.worldpay.com/",
     logoText: "WP",
-    logoClass: "logo-worldpay"
+    logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/worldpay.png"
   },
   {
     name: "AudienceView Professional",
@@ -742,7 +728,7 @@ const providers = [
     incidentsUrl: "https://professional-status.audienceview.com/api/v2/incidents.json",
     statusPage: "https://professional-status.audienceview.com/",
     logoText: "AVP",
-    logoClass: "logo-av"
+    logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp"
   },
   {
     name: "AudienceView Unlimited",
@@ -750,11 +736,11 @@ const providers = [
     incidentsUrl: "https://unlimited-status.audienceview.com/api/v2/incidents.json",
     statusPage: "https://unlimited-status.audienceview.com/",
     logoText: "AVU",
-    logoClass: "logo-av"
+    logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp"
   }
 ];
 
-const dashboardVersion = "v0.5.2";
+const dashboardVersion = "v0.5.4";
 const dashboardMaintainer = "Mike Ahrens";
 
 function detectPageMode() {
@@ -963,7 +949,7 @@ async function fetchProvider(provider) {
       name: provider.name,
       statusPage: provider.statusPage,
       logoText: provider.logoText,
-      logoClass: provider.logoClass,
+      logoSrc: provider.logoSrc,
       status: summaryData.status.description,
       activeIncidents: summaryData.incidents || [],
       recentIncidents: incidentData.incidents || [],
@@ -974,7 +960,7 @@ async function fetchProvider(provider) {
       name: provider.name,
       statusPage: provider.statusPage,
       logoText: provider.logoText,
-      logoClass: provider.logoClass,
+      logoSrc: provider.logoSrc,
       status: "Unable to fetch",
       activeIncidents: [],
       recentIncidents: [],
@@ -1053,6 +1039,14 @@ function sortIncidentsNewestFirst(incidents) {
   return [...incidents].sort((a, b) => {
     return new Date(b.updated_at || b.resolved_at || b.created_at || 0) - new Date(a.updated_at || a.resolved_at || a.created_at || 0);
   });
+}
+
+function logoHtml(service) {
+  return `
+    <div class="service-logo">
+      <img src="${service.logoSrc}" alt="${service.name} logo" onerror="this.style.display='none'; this.parentElement.textContent='${service.logoText}';">
+    </div>
+  `;
 }
 
 function buildWebIncidentDetails(service) {
@@ -1153,7 +1147,7 @@ async function loadStatuses() {
           <h2>
             <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
           </h2>
-          <div class="service-logo ${service.logoClass}">${service.logoText}</div>
+          ${logoHtml(service)}
         </div>
         <div class="badge ${badgeClass}">${displayStatus}</div>
         <div class="card-detail"><strong>Active incidents:</strong> ${service.activeIncidents.length}</div>
@@ -1165,7 +1159,7 @@ async function loadStatuses() {
           <h2>
             <a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a>
           </h2>
-          <div class="service-logo ${service.logoClass}">${service.logoText}</div>
+          ${logoHtml(service)}
         </div>
         <div class="badge ${badgeClass}">${displayStatus}</div>
         <p class="small">Provider updated: ${formatDateTime(service.updated)} (${timeAgo(service.updated)})</p>
