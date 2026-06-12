@@ -68,7 +68,6 @@ body.wallboard-mode {
   padding: 0;
   background: transparent;
   border: none;
-  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -223,6 +222,7 @@ body.wallboard-mode .summary-label {
   position: relative;
   padding: 15px;
   min-height: 160px;
+  overflow: hidden;
 }
 
 .provider-link {
@@ -312,6 +312,10 @@ body.wallboard-mode .small {
   color: var(--dark-muted);
 }
 
+.provider-updated-line {
+  padding-right: 42px;
+}
+
 .detail-block {
   margin-top: 12px;
   padding-top: 10px;
@@ -363,14 +367,6 @@ body.wallboard-mode .detail-block {
 
 .card-detail {
   display: none;
-}
-
-body.wallboard-mode .card > p {
-  display: none;
-}
-
-body.wallboard-mode .card-detail {
-  display: block;
 }
 
 .footer-row {
@@ -510,7 +506,6 @@ body.wallboard-mode .summary-card {
   border-radius: clamp(12px, min(1.5vw, 1.8vh), 20px);
   padding: clamp(9px, min(1.4vw, 1.8vh), 18px) clamp(12px, min(1.6vw, 2vh), 22px);
   border-width: 2px;
-  min-width: 0;
   overflow: hidden;
 }
 
@@ -524,9 +519,7 @@ body.wallboard-mode .summary-value {
 }
 
 body.wallboard-mode .controls,
-body.wallboard-mode .desktop-details,
-body.wallboard-mode .mobile-card-toggle,
-body.wallboard-mode .mobile-details {
+body.wallboard-mode .desktop-details {
   display: none;
 }
 
@@ -550,7 +543,14 @@ body.wallboard-mode .card {
   flex-direction: column;
   justify-content: flex-start;
   overflow: hidden;
-  min-width: 0;
+}
+
+body.wallboard-mode .card > p {
+  display: none;
+}
+
+body.wallboard-mode .card-detail {
+  display: block;
 }
 
 body.wallboard-mode .card.good-border {
@@ -645,6 +645,8 @@ body.wallboard-mode.wallboard-light .footer-row {
   color: var(--light-muted);
 }
 
+/* Expand controls for small mobile / small wallboard */
+
 @media (max-width: 1000px) {
   body.wallboard-mode {
     overflow: auto;
@@ -664,15 +666,7 @@ body.wallboard-mode.wallboard-light .footer-row {
     grid-template-rows: none;
   }
 
-  body.wallboard-mode .card {
-    padding-bottom: 52px;
-    overflow: hidden;
-  }
-
-  body.wallboard-mode .mobile-card-toggle {
-    display: flex;
-  }
-
+  body.wallboard-mode .mobile-card-toggle,
   body.wallboard-mode .mobile-details {
     display: grid;
   }
@@ -703,10 +697,9 @@ body.wallboard-mode.wallboard-light .footer-row {
     display: none;
   }
 
-  .card {
-    padding-bottom: 40px;
-    overflow: hidden;
-    transition: padding-bottom 180ms ease, box-shadow 180ms ease;
+  body:not(.wallboard-mode) .mobile-card-toggle,
+  body:not(.wallboard-mode) .mobile-details {
+    display: grid;
   }
 }
 
@@ -725,6 +718,7 @@ body.wallboard-mode.wallboard-light .footer-row {
     background: transparent;
     color: currentColor;
     opacity: 0.85;
+    z-index: 2;
   }
 
   .mobile-card-toggle:hover,
@@ -764,22 +758,8 @@ body.wallboard-mode.wallboard-light .footer-row {
     margin-top: 12px;
   }
 
-  .card.expanded {
-    padding-bottom: 52px;
-  }
-
   .mobile-details .detail-block:first-child {
     margin-top: 0;
-  }
-}
-
-@media (max-width: 800px) {
-  body:not(.wallboard-mode) .mobile-card-toggle {
-    display: flex;
-  }
-
-  body:not(.wallboard-mode) .mobile-details {
-    display: grid;
   }
 }
 
@@ -857,7 +837,7 @@ body.wallboard-mode.wallboard-light .footer-row {
 <div class="footer-row">
   <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
   <div>Auto-refresh: every 60 seconds</div>
-  <div id="dashboardMeta">Version: v0.5.9 | Built and maintained by Mike Ahrens</div>
+  <div id="dashboardMeta">Version: v0.5.10 | Built and maintained by Mike Ahrens</div>
 </div>
 
 <script>
@@ -896,7 +876,7 @@ const providers = [
   }
 ];
 
-const dashboardVersion = "v0.5.9";
+const dashboardVersion = "v0.5.10";
 const dashboardMaintainer = "Mike Ahrens";
 
 function detectPageMode() {
@@ -1292,10 +1272,10 @@ async function loadStatuses() {
         ${logoHtml(service)}
       </div>
       <div class="badge ${badgeClass}">${displayStatus}</div>
-      <p class="small">Provider updated: ${formatDateTime(service.updated)} (${timeAgo(service.updated)})</p>
       <p><strong>Active incidents:</strong> ${service.activeIncidents.length}</p>
+      <p class="small provider-updated-line">Provider updated: ${formatDateTime(service.updated)} (${timeAgo(service.updated)})</p>
       <div class="card-detail"><strong>Active incidents:</strong> ${service.activeIncidents.length}</div>
-      <div class="card-detail"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)} (${timeAgo(service.updated)})</div>
+      <div class="card-detail provider-updated-line"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)} (${timeAgo(service.updated)})</div>
       <div class="desktop-details">${detailsHtml}</div>
       <div class="mobile-details"><div class="mobile-details-inner">${detailsHtml}</div></div>
       <button class="mobile-card-toggle" type="button" aria-label="Expand ${service.name} details" aria-expanded="false" title="Expand details" onclick="toggleMobileCardDetails(this)"></button>
