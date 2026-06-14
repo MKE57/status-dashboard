@@ -2,8 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="SaaS Status" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="apple-touch-icon" href="https://mke57.github.io/status-dashboard/assets/logos/ATG.jpeg" />
+  <link rel="icon" href="https://mke57.github.io/status-dashboard/assets/logos/ATG.jpeg" />
   <title>SaaS Status Dashboard</title>
+
   <style>
     :root {
       --bg: #0f172a;
@@ -27,16 +34,24 @@
 
     * { box-sizing: border-box; }
 
+    html {
+      background: var(--bg);
+      overscroll-behavior: none;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: clamp(10px, min(2vw, 2vh), 28px);
+      min-height: 100vh;
       height: 100vh;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       background: var(--bg);
       color: var(--text);
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .header-row {
@@ -90,23 +105,9 @@
       color: var(--text);
     }
 
-    .time-label {
-      font-size: clamp(12px, min(1vw, 2vh), 22px);
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .time-value {
-      font-size: clamp(28px, min(3vw, 6vh), 68px);
-      font-weight: bold;
-      line-height: 1;
-    }
-
-    .date-value {
-      margin-top: 6px;
-      font-size: clamp(12px, min(1.1vw, 2.2vh), 24px);
-      color: var(--muted);
-    }
+    .time-label { font-size: clamp(12px, min(1vw, 2vh), 22px); color: var(--muted); margin-bottom: 4px; }
+    .time-value { font-size: clamp(28px, min(3vw, 6vh), 68px); font-weight: bold; line-height: 1; }
+    .date-value { margin-top: 6px; font-size: clamp(12px, min(1.1vw, 2.2vh), 24px); color: var(--muted); }
 
     .summary-banner {
       border-radius: clamp(14px, min(1.8vw, 2vh), 24px);
@@ -124,11 +125,7 @@
       user-select: none;
     }
 
-    .summary-banner-text {
-      display: inline-block;
-      transition: opacity 220ms ease;
-    }
-
+    .summary-banner-text { display: inline-block; transition: opacity 220ms ease; }
     .summary-banner-text.hidden { opacity: 0; }
     .summary-good { background: var(--green-bg); color: var(--green-text); border-color: var(--green-border); }
     .summary-warn { background: var(--yellow-bg); color: var(--yellow-text); border-color: var(--yellow-border); }
@@ -152,20 +149,8 @@
       min-width: 0;
     }
 
-    .summary-label {
-      font-size: clamp(12px, min(1vw, 1.9vh), 22px);
-      color: var(--muted);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .summary-value {
-      font-size: clamp(26px, min(2.7vw, 5vh), 62px);
-      font-weight: bold;
-      line-height: 1;
-      margin-top: 4px;
-    }
+    .summary-label { font-size: clamp(12px, min(1vw, 1.9vh), 22px); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .summary-value { font-size: clamp(26px, min(2.7vw, 5vh), 62px); font-weight: bold; line-height: 1; margin-top: 4px; }
 
     .dashboard-grid {
       flex: 1;
@@ -206,15 +191,7 @@
     }
 
     .service-header { grid-column: 1; min-width: 0; }
-
-    .service-header h2 {
-      font-size: var(--title-size, clamp(22px, min(2.3vw, 4.5vh), 50px));
-      font-weight: bold;
-      margin: 0;
-      line-height: 1.08;
-      overflow-wrap: anywhere;
-    }
-
+    .service-header h2 { font-size: var(--title-size, clamp(22px, min(2.3vw, 4.5vh), 50px)); font-weight: bold; margin: 0; line-height: 1.08; overflow-wrap: anywhere; }
     .provider-link, .service-logo-link { color: inherit; text-decoration: none; }
     .service-logo-link { grid-column: 2; grid-row: 1 / span 2; display: inline-flex; align-self: start; }
 
@@ -237,14 +214,14 @@
 
     .badge {
       grid-column: 1;
+      width: fit-content;
+      max-width: 100%;
       padding: var(--badge-py, clamp(6px, min(1vw, 1.2vh), 12px)) var(--badge-px, clamp(10px, min(1.5vw, 1.8vh), 22px));
       border-radius: 999px;
       font-size: var(--badge-size, clamp(15px, min(1.5vw, 3vh), 32px));
       font-weight: bold;
       text-transform: uppercase;
       border: clamp(2px, min(0.25vw, 0.4vh), 3px) solid transparent;
-      width: fit-content;
-      max-width: 100%;
       line-height: 1.1;
     }
 
@@ -253,15 +230,7 @@
     .bad { background: var(--red-bg); color: var(--red-text); border-color: var(--red-border); }
     .maintenance { background: var(--blue-bg); color: var(--blue-text); border-color: var(--blue-border); }
 
-    .card-detail {
-      grid-column: 1 / -1;
-      margin: 0;
-      font-size: var(--detail-size, clamp(14px, min(1.3vw, 2.6vh), 30px));
-      color: var(--muted);
-      line-height: 1.2;
-      min-width: 0;
-    }
-
+    .card-detail { grid-column: 1 / -1; margin: 0; font-size: var(--detail-size, clamp(14px, min(1.3vw, 2.6vh), 30px)); color: var(--muted); line-height: 1.2; min-width: 0; }
     .maintenance-line { color: var(--blue-text); }
     .provider-updated-line { padding-right: 34px; }
     .mobile-details { display: none; }
@@ -297,18 +266,8 @@
       body { overflow: auto; height: auto; }
       .header-row { grid-template-columns: minmax(0, 1fr) auto; }
       .header-time { display: none; }
-      .header-brand-logo {
-        justify-self: end;
-        width: 74px;
-        height: 74px;
-        max-width: 74px;
-        flex-shrink: 0;
-      }
-      .header-brand-logo img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
+      .header-brand-logo { justify-self: end; width: 74px; height: 74px; max-width: 74px; flex-shrink: 0; }
+      .header-brand-logo img { width: 100%; height: 100%; object-fit: contain; }
       .dashboard-grid { grid-template-columns: 1fr; grid-template-rows: none; }
       .card-fit { row-gap: 0; }
       .service-header h2 { font-size: clamp(22px, min(2.3vw, 4.5vh), 50px); margin: 0 0 clamp(8px, min(1.5vw, 1.8vh), 20px); }
@@ -332,13 +291,20 @@
       .summary-label { font-size: 11px; }
       .summary-value { font-size: 22px; }
     }
+
+    @media (max-width: 390px) {
+      .badge {
+        max-width: 230px;
+        white-space: normal;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="header-row">
     <div>
       <h1>SaaS Status Dashboard</h1>
-      <p class="small">Live operational status for monitored SaaS services</p>
+      <p class="small">Live operational status for SaaS services</p>
     </div>
 
     <div class="header-brand-logo">
@@ -363,7 +329,7 @@
   <div class="footer-row">
     <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
     <div id="autoRefreshFooter" class="footer-status-text">Next refresh in: 60s</div>
-    <div id="dashboardMeta">Version: v0.5.38 | Built and maintained by Mike Ahrens</div>
+    <div id="dashboardMeta">Version: v0.5.40 | Built and maintained by Mike Ahrens</div>
   </div>
 
   <script>
@@ -374,7 +340,7 @@
       { name: "AudienceView Unlimited", url: "https://unlimited-status.audienceview.com/api/v2/summary.json", incidentsUrl: "https://unlimited-status.audienceview.com/api/v2/incidents.json", statusPage: "https://unlimited-status.audienceview.com/", logoText: "AVU", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp" }
     ];
 
-    const dashboardVersion = "v0.5.38";
+    const dashboardVersion = "v0.5.40";
     const dashboardMaintainer = "Mike Ahrens";
     const refreshIntervalMs = 60000;
     const fadeDurationMs = 220;
@@ -382,46 +348,16 @@
     const easterEggStorageKey = "statusDashboardEasterEggIndex";
 
     const easterEggMessages = [
-      "THE DASHBOARD IS PLEASED",
-      "STATUS GOBLIN SAYS HELLO",
-      "ALL SYSTEMS ARE FEELING FABULOUS",
-      "NO INCIDENTS, ONLY VIBES",
-      "EVERYTHING IS SHINY",
-      "OPERATIONAL AND LOOKING GOOD",
-      "THE PIXELS ARE BEHAVING",
-      "MONITORING MODE: COSY",
-      "QUIET DAY, HAPPY DASHBOARD",
-      "REFRESH GOBLIN FED SUCCESSFULLY",
-      "THE STATUS ORACLE IS CONTENT",
-      "GREEN IS A LOVELY COLOUR",
-      "NO DRAMA DETECTED",
-      "SERVICE GREMLINS CURRENTLY ASLEEP",
-      "THE STATUS SPRITES APPROVE",
-      "ALL QUIET ON THE DIGITAL FRONT",
-      "NOTHING TO SEE HERE, LOVELY",
-      "THE SERVERS ARE HAVING A NICE DAY",
-      "DASHBOARD VIBES: IMMACULATE",
-      "THE INCIDENT CUPBOARD IS EMPTY",
-      "EVERYTHING IS TICKETY-BOO",
-      "OPERATIONAL BLISS ACHIEVED",
-      "THE GREEN LIGHTS ARE GREENING",
-      "NO CHAOS CURRENTLY SCHEDULED",
-      "THE SYSTEMS ARE BEING VERY POLITE",
-      "ALL CALM IN THE CONTROL ROOM",
-      "WE LOVE A QUIET STATUS PAGE",
-      "THE SERVICE FAIRIES ARE ON DUTY",
-      "ABSOLUTELY NOTHING DRAMATIC TO REPORT",
-      "PEACE REIGNS ACROSS THE DASHBOARD",
-      "THE MONITORING HAMSTER IS CONTENT",
-      "STATUS: DELIGHTFULLY UNEVENTFUL",
-      "THE REFRESH PIXIES ARE SATISFIED",
-      "THE SYSTEMS ARE BEHAVING THEMSELVES",
-      "BUSINESS AS BEAUTIFUL",
-      "ALL QUIET, JUST HOW WE LIKE IT",
-      "ZERO DRAMA, MAXIMUM UPTIME",
-      "THE STATUS LIGHTS ARE ALL GREEN",
-      "TODAY IS A GOOD DAY FOR SYSTEMS",
-      "EVERYTHING IS RUNNING NICE AND SMOOTH",
+      "THE DASHBOARD IS PLEASED", "STATUS GOBLIN SAYS HELLO", "ALL SYSTEMS ARE FEELING FABULOUS", "NO INCIDENTS, ONLY VIBES",
+      "EVERYTHING IS SHINY", "OPERATIONAL AND LOOKING GOOD", "THE PIXELS ARE BEHAVING", "MONITORING MODE: COSY",
+      "QUIET DAY, HAPPY DASHBOARD", "REFRESH GOBLIN FED SUCCESSFULLY", "THE STATUS ORACLE IS CONTENT", "GREEN IS A LOVELY COLOUR",
+      "NO DRAMA DETECTED", "SERVICE GREMLINS CURRENTLY ASLEEP", "THE STATUS SPRITES APPROVE", "ALL QUIET ON THE DIGITAL FRONT",
+      "NOTHING TO SEE HERE, LOVELY", "THE SERVERS ARE HAVING A NICE DAY", "DASHBOARD VIBES: IMMACULATE", "THE INCIDENT CUPBOARD IS EMPTY",
+      "EVERYTHING IS TICKETY-BOO", "OPERATIONAL BLISS ACHIEVED", "THE GREEN LIGHTS ARE GREENING", "NO CHAOS CURRENTLY SCHEDULED",
+      "THE SYSTEMS ARE BEING VERY POLITE", "ALL CALM IN THE CONTROL ROOM", "WE LOVE A QUIET STATUS PAGE", "THE SERVICE FAIRIES ARE ON DUTY",
+      "ABSOLUTELY NOTHING DRAMATIC TO REPORT", "PEACE REIGNS ACROSS THE DASHBOARD", "THE MONITORING HAMSTER IS CONTENT", "STATUS: DELIGHTFULLY UNEVENTFUL",
+      "THE REFRESH PIXIES ARE SATISFIED", "THE SYSTEMS ARE BEHAVING THEMSELVES", "BUSINESS AS BEAUTIFUL", "ALL QUIET, JUST HOW WE LIKE IT",
+      "ZERO DRAMA, MAXIMUM UPTIME", "THE STATUS LIGHTS ARE ALL GREEN", "TODAY IS A GOOD DAY FOR SYSTEMS", "EVERYTHING IS RUNNING NICE AND SMOOTH",
       "NO NEWS IS VERY GOOD NEWS"
     ];
 
@@ -433,86 +369,34 @@
     let easterEggActive = false;
     let lastTapAt = 0;
 
-    let latestBannerState = {
-      text: "All services operational",
-      className: "summary-good",
-      canUseEasterEgg: false
-    };
-
+    let latestBannerState = { text: "All services operational", className: "summary-good", canUseEasterEgg: false };
     const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-    function anyCardExpanded() {
-      return document.querySelector(".card.expanded") !== null;
-    }
+    function anyCardExpanded() { return document.querySelector(".card.expanded") !== null; }
 
     function setFooterText(text, fade = true) {
       const footer = document.getElementById("autoRefreshFooter");
       if (!footer) return;
-
-      if (!fade) {
-        footer.innerText = text;
-        return;
-      }
-
+      if (!fade) { footer.innerText = text; return; }
       footer.classList.add("fading");
-      setTimeout(() => {
-        footer.innerText = text;
-        footer.classList.remove("fading");
-      }, fadeDurationMs);
+      setTimeout(() => { footer.innerText = text; footer.classList.remove("fading"); }, fadeDurationMs);
     }
 
     function updateCountdownFooter() {
-      if (anyCardExpanded()) {
-        setFooterText("Auto-refresh: paused while details are expanded", false);
-        return;
-      }
-
-      if (!nextRefreshAt) {
-        setFooterText("Next refresh in: " + Math.ceil(refreshIntervalMs / 1000) + "s", false);
-        return;
-      }
-
+      if (anyCardExpanded()) { setFooterText("Auto-refresh: paused while details are expanded", false); return; }
+      if (!nextRefreshAt) { setFooterText("Next refresh in: " + Math.ceil(refreshIntervalMs / 1000) + "s", false); return; }
       const remainingSeconds = Math.max(0, Math.ceil((nextRefreshAt - Date.now()) / 1000));
       setFooterText("Next refresh in: " + remainingSeconds + "s", false);
     }
 
-    function startCountdown() {
-      stopCountdown();
-      nextRefreshAt = Date.now() + refreshIntervalMs;
-      updateCountdownFooter();
-      countdownTimer = setInterval(updateCountdownFooter, 1000);
-    }
-
-    function stopCountdown() {
-      if (countdownTimer) {
-        clearInterval(countdownTimer);
-        countdownTimer = null;
-      }
-    }
-
-    function startAutoRefresh() {
-      if (autoRefreshTimer || anyCardExpanded()) return;
-      autoRefreshTimer = setInterval(() => {
-        if (!anyCardExpanded()) loadStatuses();
-      }, refreshIntervalMs);
-    }
-
-    function stopAutoRefresh() {
-      if (autoRefreshTimer) {
-        clearInterval(autoRefreshTimer);
-        autoRefreshTimer = null;
-      }
-    }
+    function startCountdown() { stopCountdown(); nextRefreshAt = Date.now() + refreshIntervalMs; updateCountdownFooter(); countdownTimer = setInterval(updateCountdownFooter, 1000); }
+    function stopCountdown() { if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; } }
+    function startAutoRefresh() { if (autoRefreshTimer || anyCardExpanded()) return; autoRefreshTimer = setInterval(() => { if (!anyCardExpanded()) loadStatuses(); }, refreshIntervalMs); }
+    function stopAutoRefresh() { if (autoRefreshTimer) { clearInterval(autoRefreshTimer); autoRefreshTimer = null; } }
 
     function updateAutoRefreshState() {
-      if (anyCardExpanded()) {
-        stopAutoRefresh();
-        stopCountdown();
-        setFooterText("Auto-refresh: paused while details are expanded");
-      } else {
-        startAutoRefresh();
-        startCountdown();
-      }
+      if (anyCardExpanded()) { stopAutoRefresh(); stopCountdown(); setFooterText("Auto-refresh: paused while details are expanded"); }
+      else { startAutoRefresh(); startCountdown(); }
     }
 
     function handleBackgroundDoubleClick(event) {
@@ -521,11 +405,7 @@
       localStorage.setItem("wallboardTheme", document.body.classList.contains("wallboard-light") ? "light" : "dark");
     }
 
-    function applySavedTheme() {
-      if (localStorage.getItem("wallboardTheme") === "light") {
-        document.body.classList.add("wallboard-light");
-      }
-    }
+    function applySavedTheme() { if (localStorage.getItem("wallboardTheme") === "light") document.body.classList.add("wallboard-light"); }
 
     function toggleMobileCardDetails(button) {
       const card = button.closest(".card");
@@ -543,110 +423,53 @@
         "<div class='date-value'>" + now.toLocaleDateString([], { weekday: "long", day: "2-digit", month: "long", year: "numeric" }) + "</div>";
     }
 
-    function itemText(item, field) {
-      return (item && item[field] ? String(item[field]) : "").toLowerCase();
-    }
-
-    function latestUpdateBody(item) {
-      return ((item.incident_updates && item.incident_updates[0] && item.incident_updates[0].body) || "");
-    }
+    function itemText(item, field) { return (item && item[field] ? String(item[field]) : "").toLowerCase(); }
+    function latestUpdateBody(item) { return ((item.incident_updates && item.incident_updates[0] && item.incident_updates[0].body) || ""); }
 
     function isMaintenanceNotice(item) {
       const name = itemText(item, "name");
       const status = itemText(item, "status");
       const impact = itemText(item, "impact");
       const body = latestUpdateBody(item).toLowerCase();
-
-      return name.includes("scheduled maintenance") ||
-        name.includes("maintenance notice") ||
-        name.includes("upcoming maintenance") ||
-        impact === "maintenance" ||
-        body.includes("scheduled maintenance") ||
-        body.includes("system maintenance") ||
-        status === "scheduled";
+      return name.includes("scheduled maintenance") || name.includes("maintenance notice") || name.includes("upcoming maintenance") || impact === "maintenance" || body.includes("scheduled maintenance") || body.includes("system maintenance") || status === "scheduled";
     }
 
     function isUpcomingMaintenanceNotice(item) {
       const name = itemText(item, "name");
       const status = itemText(item, "status");
       const body = latestUpdateBody(item).toLowerCase();
-
-      return status === "scheduled" ||
-        name.includes("upcoming") ||
-        body.includes("upcoming") ||
-        body.includes("we'll be performing") ||
-        body.includes("we will be performing") ||
-        body.includes("we’ll be performing");
+      return status === "scheduled" || name.includes("upcoming") || body.includes("upcoming") || body.includes("we'll be performing") || body.includes("we will be performing") || body.includes("we’ll be performing");
     }
 
-    function dateValue(value) {
-      const date = value ? new Date(value) : null;
-      return date && !Number.isNaN(date.getTime()) ? date : null;
-    }
+    function dateValue(value) { const date = value ? new Date(value) : null; return date && !Number.isNaN(date.getTime()) ? date : null; }
 
     function parseMaintenanceDateFromText(item) {
       const text = ((item.name || "") + " " + latestUpdateBody(item)).replace(/\s+/g, " ");
-      const months = {
-        january: 0, february: 1, march: 2, april: 3, may: 4, june: 5,
-        july: 6, august: 7, september: 8, october: 9, november: 10, december: 11
-      };
-
+      const months = { january: 0, february: 1, march: 2, april: 3, may: 4, june: 5, july: 6, august: 7, september: 8, october: 9, november: 10, december: 11 };
       const match = text.match(/(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday)?\s*,?\s*(january|february|march|april|may|june|july|august|september|october|november|december)\s+(\d{1,2})(?:,\s*(\d{4}))?\s+at\s+(\d{1,2})(?::(\d{2}))?\s*(am|pm)\s*(est|edt|utc|gmt|bst)?/i);
       if (!match) return null;
-
       let year = match[3] ? Number(match[3]) : new Date().getFullYear();
       let hour = Number(match[4]);
       const minute = match[5] ? Number(match[5]) : 0;
       const meridiem = match[6].toLowerCase();
       const timezone = (match[7] || "UTC").toUpperCase();
-
       if (meridiem === "pm" && hour !== 12) hour += 12;
       if (meridiem === "am" && hour === 12) hour = 0;
-
       const offsets = { EST: -5, EDT: -4, UTC: 0, GMT: 0, BST: 1 };
       const offset = offsets[timezone] ?? 0;
-
       let parsed = new Date(Date.UTC(year, months[match[1].toLowerCase()], Number(match[2]), hour - offset, minute));
       if (parsed < new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) && !match[3]) {
         year += 1;
         parsed = new Date(Date.UTC(year, months[match[1].toLowerCase()], Number(match[2]), hour - offset, minute));
       }
-
       return parsed;
     }
 
-    function getMaintenanceDate(item) {
-      return dateValue(item.scheduled_for) || parseMaintenanceDateFromText(item) || dateValue(item.created_at) || dateValue(item.updated_at);
-    }
-
-    function isWithinNext24Hours(value) {
-      const date = value instanceof Date ? value : dateValue(value);
-      if (!date) return false;
-      const diff = date - new Date();
-      return diff >= 0 && diff <= 24 * 60 * 60 * 1000;
-    }
-
-    function isMaintenanceActive(maintenance) {
-      const now = new Date();
-      const status = itemText(maintenance, "status");
-      const start = dateValue(maintenance.scheduled_for);
-      const end = dateValue(maintenance.scheduled_until);
-
-      return status === "in_progress" ||
-        status === "verifying" ||
-        (start && end && now >= start && now <= end);
-    }
-
-    function isMaintenanceUpcomingWithin24Hours(maintenance) {
-      return !isMaintenanceActive(maintenance) && isWithinNext24Hours(getMaintenanceDate(maintenance));
-    }
-
-    function isMajorIncident(incident) {
-      const impact = itemText(incident, "impact");
-      const name = itemText(incident, "name");
-      const status = itemText(incident, "status");
-      return impact.includes("major") || impact.includes("critical") || name.includes("major") || name.includes("critical") || status.includes("major") || status.includes("critical");
-    }
+    function getMaintenanceDate(item) { return dateValue(item.scheduled_for) || parseMaintenanceDateFromText(item) || dateValue(item.created_at) || dateValue(item.updated_at); }
+    function isWithinNext24Hours(value) { const date = value instanceof Date ? value : dateValue(value); if (!date) return false; const diff = date - new Date(); return diff >= 0 && diff <= 24 * 60 * 60 * 1000; }
+    function isMaintenanceActive(maintenance) { const now = new Date(); const status = itemText(maintenance, "status"); const start = dateValue(maintenance.scheduled_for); const end = dateValue(maintenance.scheduled_until); return status === "in_progress" || status === "verifying" || (start && end && now >= start && now <= end); }
+    function isMaintenanceUpcomingWithin24Hours(maintenance) { return !isMaintenanceActive(maintenance) && isWithinNext24Hours(getMaintenanceDate(maintenance)); }
+    function isMajorIncident(incident) { const impact = itemText(incident, "impact"); const name = itemText(incident, "name"); const status = itemText(incident, "status"); return impact.includes("major") || impact.includes("critical") || name.includes("major") || name.includes("critical") || status.includes("major") || status.includes("critical"); }
 
     function getSeverity(service) {
       if (service.status === "Unable to fetch") return 3;
@@ -655,43 +478,13 @@
       return 1;
     }
 
-    function getStatusClass(service) {
-      const severity = getSeverity(service);
-      if (severity === 3) return "bad";
-      if (severity === 2) return "warn";
-      return service.upcomingMaintenances.length > 0 ? "maintenance" : "good";
-    }
+    function getStatusClass(service) { const severity = getSeverity(service); if (severity === 3) return "bad"; if (severity === 2) return "warn"; return service.upcomingMaintenances.length > 0 ? "maintenance" : "good"; }
+    function getCardBorderClass(service) { const severity = getSeverity(service); if (severity === 3) return "bad-border"; if (severity === 2) return "warn-border"; return service.upcomingMaintenances.length > 0 ? "maintenance-border" : "good-border"; }
+    function getDisplayStatus(service) { const severity = getSeverity(service); if (service.status === "Unable to fetch") return "Unable to fetch"; if (severity === 3) return "Major incident"; if (service.activeIncidents.length > 0) return "Active incident"; if (service.activeMaintenances.length > 0) return "Maintenance in progress"; if (service.upcomingMaintenances.length > 0) return "Upcoming maintenance"; return "Operational"; }
+    function hasIssue(service) { return getSeverity(service) > 1; }
+    function getActiveIssueCount(service) { return service.activeIncidents.length + service.activeMaintenances.length; }
 
-    function getCardBorderClass(service) {
-      const severity = getSeverity(service);
-      if (severity === 3) return "bad-border";
-      if (severity === 2) return "warn-border";
-      return service.upcomingMaintenances.length > 0 ? "maintenance-border" : "good-border";
-    }
-
-    function getDisplayStatus(service) {
-      const severity = getSeverity(service);
-      if (service.status === "Unable to fetch") return "Unable to fetch";
-      if (severity === 3) return "Major incident";
-      if (service.activeIncidents.length > 0) return "Active incident";
-      if (service.activeMaintenances.length > 0) return "Maintenance in progress";
-      if (service.upcomingMaintenances.length > 0) return "Upcoming maintenance";
-      return "Operational";
-    }
-
-    function hasIssue(service) {
-      return getSeverity(service) > 1;
-    }
-
-    function getActiveIssueCount(service) {
-      return service.activeIncidents.length + service.activeMaintenances.length;
-    }
-
-    function setBannerClass(className) {
-      const banner = document.getElementById("summaryBanner");
-      banner.classList.remove("summary-good", "summary-warn", "summary-bad");
-      banner.classList.add(className);
-    }
+    function setBannerClass(className) { const banner = document.getElementById("summaryBanner"); banner.classList.remove("summary-good", "summary-warn", "summary-bad"); banner.classList.add(className); }
 
     async function setBannerTextAnimated(text) {
       const bannerText = document.getElementById("summaryBannerText");
@@ -704,30 +497,20 @@
 
     function applyBannerState(immediate = false) {
       setBannerClass(latestBannerState.className);
-      if (immediate) {
-        document.getElementById("summaryBannerText").innerText = latestBannerState.text;
-      } else {
-        setBannerTextAnimated(latestBannerState.text);
-      }
+      if (immediate) document.getElementById("summaryBannerText").innerText = latestBannerState.text;
+      else setBannerTextAnimated(latestBannerState.text);
     }
 
     function updateSummary(resultsData) {
       const highestSeverity = Math.max(...resultsData.map(getSeverity));
       const servicesWithIssues = resultsData.filter(hasIssue).length;
       const activeIssueTotal = resultsData.reduce((total, service) => total + getActiveIssueCount(service), 0);
-
       document.getElementById("servicesMonitored").innerText = resultsData.length;
       document.getElementById("servicesWithIssues").innerText = servicesWithIssues;
       document.getElementById("activeIncidents").innerText = activeIssueTotal;
-
-      if (highestSeverity === 1) {
-        latestBannerState = { text: "All services operational", className: "summary-good", canUseEasterEgg: activeIssueTotal === 0 && servicesWithIssues === 0 };
-      } else if (highestSeverity === 2) {
-        latestBannerState = { text: "Active incident reported", className: "summary-warn", canUseEasterEgg: false };
-      } else {
-        latestBannerState = { text: "Major incident reported", className: "summary-bad", canUseEasterEgg: false };
-      }
-
+      if (highestSeverity === 1) latestBannerState = { text: "All services operational", className: "summary-good", canUseEasterEgg: activeIssueTotal === 0 && servicesWithIssues === 0 };
+      else if (highestSeverity === 2) latestBannerState = { text: "Active incident reported", className: "summary-warn", canUseEasterEgg: false };
+      else latestBannerState = { text: "Major incident reported", className: "summary-bad", canUseEasterEgg: false };
       if (!easterEggActive) applyBannerState(true);
     }
 
@@ -741,27 +524,19 @@
 
     async function triggerEasterEgg() {
       if (!latestBannerState.canUseEasterEgg || easterEggActive) return;
-
       easterEggActive = true;
       const message = getNextEasterEggMessage();
-
       await setBannerTextAnimated(message);
       await sleep(easterEggDisplayMs);
       await setBannerTextAnimated(latestBannerState.text);
-
       easterEggActive = false;
     }
 
     function handleBannerTap() {
       if (!latestBannerState.canUseEasterEgg || easterEggActive) return;
-
       const now = Date.now();
-      if (now - lastTapAt < 450) {
-        lastTapAt = 0;
-        triggerEasterEgg();
-      } else {
-        lastTapAt = now;
-      }
+      if (now - lastTapAt < 450) { lastTapAt = 0; triggerEasterEgg(); }
+      else lastTapAt = now;
     }
 
     async function fetchProvider(provider) {
@@ -772,7 +547,6 @@
         const rawIncidents = summaryData.incidents || [];
         const scheduledMaintenances = summaryData.scheduled_maintenances || [];
         const maintenanceNotices = rawIncidents.filter(isMaintenanceNotice);
-
         return {
           name: provider.name,
           statusPage: provider.statusPage,
@@ -786,66 +560,29 @@
           updated: summaryData.page.updated_at
         };
       } catch (error) {
-        return {
-          name: provider.name,
-          statusPage: provider.statusPage,
-          logoText: provider.logoText,
-          logoSrc: provider.logoSrc,
-          status: "Unable to fetch",
-          activeIncidents: [],
-          activeMaintenances: [],
-          upcomingMaintenances: [],
-          recentIncidents: [],
-          updated: null
-        };
+        return { name: provider.name, statusPage: provider.statusPage, logoText: provider.logoText, logoSrc: provider.logoSrc, status: "Unable to fetch", activeIncidents: [], activeMaintenances: [], upcomingMaintenances: [], recentIncidents: [], updated: null };
       }
     }
 
-    function formatDateTime(value) {
-      if (!value) return "Unknown";
-      try {
-        return new Date(value).toLocaleString([], { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" });
-      } catch (error) {
-        return value;
-      }
-    }
-
-    function formatUpdatedTime(value) {
-      if (!value) return "Unknown";
-      try {
-        return new Date(value).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-      } catch (error) {
-        return value;
-      }
-    }
-
-    function formatMaintenanceTime(maintenance) {
-      const date = getMaintenanceDate(maintenance);
-      return date ? formatDateTime(date) : "See provider status page";
-    }
+    function formatDateTime(value) { if (!value) return "Unknown"; try { return new Date(value).toLocaleString([], { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }); } catch (error) { return value; } }
+    function formatUpdatedTime(value) { if (!value) return "Unknown"; try { return new Date(value).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }); } catch (error) { return value; } }
+    function formatMaintenanceTime(maintenance) { const date = getMaintenanceDate(maintenance); return date ? formatDateTime(date) : "See provider status page"; }
 
     function timeAgo(value) {
       if (!value) return "Unknown";
       const date = new Date(value);
       if (Number.isNaN(date.getTime())) return "Unknown";
-
       const minutes = Math.max(0, Math.floor((new Date() - date) / 60000));
       const hours = Math.floor(minutes / 60);
       const days = Math.floor(hours / 24);
-
       if (days > 0) return days + "d " + (hours % 24) + "h ago";
       if (hours > 0) return hours + "h " + (minutes % 60) + "m ago";
       if (minutes > 0) return minutes + "m ago";
       return "just now";
     }
 
-    function incidentPillClass(incident) {
-      return isMaintenanceNotice(incident) ? "maintenance" : isMajorIncident(incident) ? "bad" : "warn";
-    }
-
-    function sortIncidentsNewestFirst(incidents) {
-      return [...incidents].sort((a, b) => new Date(b.updated_at || b.resolved_at || b.created_at || 0) - new Date(a.updated_at || a.resolved_at || a.created_at || 0));
-    }
+    function incidentPillClass(incident) { return isMaintenanceNotice(incident) ? "maintenance" : isMajorIncident(incident) ? "bad" : "warn"; }
+    function sortIncidentsNewestFirst(incidents) { return [...incidents].sort((a, b) => new Date(b.updated_at || b.resolved_at || b.created_at || 0) - new Date(a.updated_at || a.resolved_at || a.created_at || 0)); }
 
     function logoHtml(service) {
       return `<a class="service-logo-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer" aria-label="Open ${service.name} status page"><div class="service-logo"><img src="${service.logoSrc}" alt="${service.name} logo" onerror="this.style.display='none';this.parentElement.textContent='${service.logoText}';"></div></a>`;
@@ -854,54 +591,35 @@
     function maintenanceSummaryHtml(service) {
       const activeMaintenance = service.activeMaintenances[0];
       const upcomingMaintenance = service.upcomingMaintenances[0];
-
-      if (activeMaintenance) {
-        return `<div class="card-detail maintenance-line"><strong>Maintenance:</strong> in progress</div>`;
-      }
-
-      if (upcomingMaintenance) {
-        return `<div class="card-detail maintenance-line"><strong>Upcoming maintenance:</strong> ${formatMaintenanceTime(upcomingMaintenance)}</div>`;
-      }
-
+      if (activeMaintenance) return `<div class="card-detail maintenance-line"><strong>Maintenance:</strong> in progress</div>`;
+      if (upcomingMaintenance) return `<div class="card-detail maintenance-line"><strong>Upcoming maintenance:</strong> ${formatMaintenanceTime(upcomingMaintenance)}</div>`;
       return "";
     }
 
     function buildIncidentDetails(service) {
       const sortedIncidents = sortIncidentsNewestFirst(service.recentIncidents);
       const latestIncident = sortedIncidents[0];
-      const resolvedIncidents = sortIncidentsNewestFirst(
-        service.recentIncidents.filter(incident => incident.status === "resolved" && !isMaintenanceNotice(incident))
-      ).slice(0, 3);
-
+      const resolvedIncidents = sortIncidentsNewestFirst(service.recentIncidents.filter(incident => incident.status === "resolved" && !isMaintenanceNotice(incident))).slice(0, 3);
       let detailsHtml = "";
-
       if (service.activeMaintenances.length > 0) {
         detailsHtml += `<div class="detail-block"><p class="detail-heading">Maintenance in progress</p><ul class="detail-list">${service.activeMaintenances.slice(0, 2).map(maintenance => `<li><span class="detail-pill maintenance">Maintenance</span>${maintenance.name} - ${formatMaintenanceTime(maintenance)}</li>`).join("")}</ul></div>`;
       } else if (service.upcomingMaintenances.length > 0) {
         detailsHtml += `<div class="detail-block"><p class="detail-heading">Upcoming maintenance within 24 hours</p><ul class="detail-list">${service.upcomingMaintenances.slice(0, 2).map(maintenance => `<li><span class="detail-pill maintenance">Scheduled</span>${maintenance.name} - ${formatMaintenanceTime(maintenance)}</li>`).join("")}</ul></div>`;
       }
-
       if (service.activeIncidents.length > 0) {
         detailsHtml += `<div class="detail-block"><p class="detail-heading">Active incident details</p><ul class="detail-list">${service.activeIncidents.slice(0, 2).map(incident => `<li><span class="detail-pill ${incidentPillClass(incident)}">${isMajorIncident(incident) ? "Major" : "Active"}</span>${incident.name} - updated ${formatDateTime(incident.updated_at || incident.created_at)}</li>`).join("")}</ul></div>`;
       }
-
       if (resolvedIncidents.length > 0) {
-        detailsHtml += `<div class="detail-block"><p class="detail-heading">Last 3 resolved incidents</p><ul class="detail-list">${resolvedIncidents.map(incident => {
-          const date = incident.updated_at || incident.resolved_at || incident.created_at;
-          return `<li>${incident.name} - ${formatDateTime(date)} (${timeAgo(date)})</li>`;
-        }).join("")}</ul></div>`;
+        detailsHtml += `<div class="detail-block"><p class="detail-heading">Last 3 resolved incidents</p><ul class="detail-list">${resolvedIncidents.map(incident => { const date = incident.updated_at || incident.resolved_at || incident.created_at; return `<li>${incident.name} - ${formatDateTime(date)} (${timeAgo(date)})</li>`; }).join("")}</ul></div>`;
       } else if (latestIncident && !isMaintenanceNotice(latestIncident)) {
         detailsHtml += `<div class="detail-block"><p class="detail-heading">Latest provider update</p><ul class="detail-list"><li><span class="detail-pill ${incidentPillClass(latestIncident)}">${latestIncident.status || "Update"}</span>${latestIncident.name} - updated ${formatDateTime(latestIncident.updated_at || latestIncident.created_at)} (${timeAgo(latestIncident.updated_at || latestIncident.created_at)})</li></ul></div>`;
       } else {
         detailsHtml += `<div class="detail-block"><p class="detail-heading">Incident history</p><p class="small">No recent non-maintenance incident history reported by this provider.</p></div>`;
       }
-
       return detailsHtml;
     }
 
-    function clampNumber(value, min, max) {
-      return Math.max(min, Math.min(max, value));
-    }
+    function clampNumber(value, min, max) { return Math.max(min, Math.min(max, value)); }
 
     function setCardSizing(card, scale) {
       const height = card.clientHeight || 220;
@@ -921,44 +639,28 @@
 
     function fitDesktopCards() {
       const cards = Array.from(document.querySelectorAll(".card"));
-
-      if (window.innerWidth <= 1000) {
-        cards.forEach(clearDesktopCardSizing);
-        return;
-      }
-
+      if (window.innerWidth <= 1000) { cards.forEach(clearDesktopCardSizing); return; }
       let globalScale = 1;
-
       for (let attempt = 0; attempt < 10; attempt += 1) {
         cards.forEach(card => setCardSizing(card, globalScale));
         let nextScale = globalScale;
-
         cards.forEach(card => {
           const content = card.querySelector(".card-fit");
           if (!content) return;
-
           const style = getComputedStyle(card);
           const verticalPadding = parseFloat(style.paddingTop) + parseFloat(style.paddingBottom);
           const available = card.clientHeight - verticalPadding;
           const required = content.scrollHeight;
-
-          if (available && required && required > available - 2) {
-            nextScale = Math.min(nextScale, globalScale * ((available - 2) / required));
-          }
+          if (available && required && required > available - 2) nextScale = Math.min(nextScale, globalScale * ((available - 2) / required));
         });
-
         nextScale = clampNumber(nextScale, 0.55, 1);
         if (Math.abs(nextScale - globalScale) < 0.005) break;
         globalScale = nextScale;
       }
-
       cards.forEach(card => setCardSizing(card, globalScale));
     }
 
-    function scheduleDesktopCardFit() {
-      clearTimeout(cardFitResizeTimer);
-      cardFitResizeTimer = setTimeout(fitDesktopCards, 60);
-    }
+    function scheduleDesktopCardFit() { clearTimeout(cardFitResizeTimer); cardFitResizeTimer = setTimeout(fitDesktopCards, 60); }
 
     function setRefreshing(isRefreshing) {
       document.getElementById("results").classList.toggle("refreshing", isRefreshing);
@@ -966,37 +668,22 @@
     }
 
     async function loadStatuses() {
-      if (isLoadingStatuses || anyCardExpanded()) {
-        updateAutoRefreshState();
-        return;
-      }
-
+      if (isLoadingStatuses || anyCardExpanded()) { updateAutoRefreshState(); return; }
       isLoadingStatuses = true;
       stopCountdown();
-
       const container = document.getElementById("results");
       const firstLoad = !container.children.length;
-
-      if (firstLoad) {
-        container.innerHTML = "<div class='card'><div class='card-fit'>Loading...</div></div>";
-        setFooterText("Loading...", false);
-      } else {
-        setRefreshing(true);
-        setFooterText("Refreshing...");
-      }
-
+      if (firstLoad) { container.innerHTML = "<div class='card'><div class='card-fit'>Loading...</div></div>"; setFooterText("Loading...", false); }
+      else { setRefreshing(true); setFooterText("Refreshing..."); }
       const resultsData = await Promise.all(providers.map(fetchProvider));
       if (!firstLoad) await sleep(fadeDurationMs);
-
       updateSummary(resultsData);
       container.innerHTML = "";
-
       resultsData.forEach(service => {
         const card = document.createElement("div");
         const badgeClass = getStatusClass(service);
         const displayStatus = getDisplayStatus(service);
         const detailHtml = buildIncidentDetails(service);
-
         card.className = "card " + getCardBorderClass(service);
         card.innerHTML = `
           <div class="card-fit">
@@ -1009,27 +696,18 @@
             <div class="mobile-details"><div class="mobile-details-inner">${detailHtml}</div></div>
             <button class="mobile-card-toggle" type="button" aria-label="Expand ${service.name} details" aria-expanded="false" title="Expand details" onclick="toggleMobileCardDetails(this)"></button>
           </div>`;
-
         container.appendChild(card);
       });
-
       document.getElementById("lastRefreshFooter").innerText = "Last refreshed: " + new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" });
       document.getElementById("dashboardMeta").innerText = "Version: " + dashboardVersion + " | Built and maintained by " + dashboardMaintainer;
-
       isLoadingStatuses = false;
       fitDesktopCards();
-      requestAnimationFrame(() => {
-        setRefreshing(false);
-        startCountdown();
-      });
+      requestAnimationFrame(() => { setRefreshing(false); startCountdown(); });
     }
 
     applySavedTheme();
     updateCurrentTime();
-    document.getElementById("summaryBanner").addEventListener("dblclick", event => {
-      event.preventDefault();
-      triggerEasterEgg();
-    });
+    document.getElementById("summaryBanner").addEventListener("dblclick", event => { event.preventDefault(); triggerEasterEgg(); });
     document.getElementById("summaryBanner").addEventListener("touchend", handleBannerTap, { passive: true });
     loadStatuses();
     startAutoRefresh();
