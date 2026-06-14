@@ -6,813 +6,116 @@
 <title>SaaS Status Dashboard</title>
 <style>
 :root {
-  --bg: #0f172a;
-  --text: #e5e7eb;
-  --panel: #1e293b;
-  --border: #334155;
-  --muted: #cbd5e1;
-  --green-bg: #14532d;
-  --green-text: #dcfce7;
-  --green-border: #22c55e;
-  --yellow-bg: #713f12;
-  --yellow-text: #fef3c7;
-  --yellow-border: #f59e0b;
-  --red-bg: #7f1d1d;
-  --red-text: #fee2e2;
-  --red-border: #ef4444;
+  --bg:#0f172a; --text:#e5e7eb; --panel:#1e293b; --border:#334155; --muted:#cbd5e1;
+  --green-bg:#14532d; --green-text:#dcfce7; --green-border:#22c55e;
+  --yellow-bg:#713f12; --yellow-text:#fef3c7; --yellow-border:#f59e0b;
+  --red-bg:#7f1d1d; --red-text:#fee2e2; --red-border:#ef4444;
 }
-
-* { box-sizing: border-box; }
-
+* { box-sizing:border-box; }
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: clamp(10px, min(2vw, 2vh), 28px);
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  background: var(--bg);
-  color: var(--text);
+  font-family:Arial,sans-serif; margin:0; padding:clamp(10px,min(2vw,2vh),28px); height:100vh; overflow:hidden;
+  display:flex; flex-direction:column; background:var(--bg); color:var(--text);
 }
-
-.header-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
-  gap: clamp(10px, min(2vw, 2vh), 28px);
-  align-items: start;
-  margin-bottom: clamp(8px, min(1.5vw, 1.6vh), 18px);
-  flex-shrink: 0;
+.header-row { display:grid; grid-template-columns:minmax(0,1fr) auto auto; gap:clamp(10px,min(2vw,2vh),28px); align-items:start; margin-bottom:clamp(8px,min(1.5vw,1.6vh),18px); flex-shrink:0; }
+h1 { margin:0; font-size:clamp(28px,min(3.2vw,6vh),64px); line-height:1.05; letter-spacing:-1px; }
+.small { margin-top:clamp(3px,min(0.6vw,0.8vh),8px); font-size:clamp(12px,min(1.1vw,2.2vh),24px); color:var(--muted); }
+.header-brand-logo { align-self:start; justify-self:center; height:clamp(96px,min(10vw,18vh),190px); max-width:clamp(280px,min(24vw,44vh),560px); padding:0; background:transparent; border:none; display:flex; align-items:center; justify-content:center; }
+.header-brand-logo img { max-width:100%; max-height:100%; object-fit:contain; display:block; filter:drop-shadow(0 2px 4px rgba(0,0,0,.35)); }
+.header-time { min-width:clamp(260px,26vw,380px); border-radius:22px; padding:clamp(10px,min(1.6vw,2vh),20px) clamp(14px,min(1.8vw,2.4vh),24px); text-align:right; border:2px solid var(--border); background:var(--panel); color:var(--text); }
+.time-label { font-size:clamp(12px,min(1vw,2vh),22px); color:var(--muted); margin-bottom:clamp(3px,min(.5vw,.7vh),6px); }
+.time-value { font-size:clamp(28px,min(3vw,6vh),68px); font-weight:bold; line-height:1; }
+.date-value { margin-top:clamp(4px,min(.7vw,.9vh),8px); font-size:clamp(12px,min(1.1vw,2.2vh),24px); color:var(--muted); }
+.summary-banner { border-radius:clamp(14px,min(1.8vw,2vh),24px); padding:clamp(12px,min(2vw,2.8vh),28px) clamp(16px,min(2.3vw,3vh),32px); font-size:clamp(22px,min(2.7vw,5vh),56px); font-weight:bold; text-align:center; text-transform:uppercase; letter-spacing:.5px; margin:0 0 clamp(8px,min(1.5vw,1.8vh),18px) 0; border:clamp(2px,min(.3vw,.5vh),4px) solid var(--green-border); flex-shrink:0; line-height:1.1; }
+.summary-good { background:var(--green-bg); color:var(--green-text); border-color:var(--green-border); }
+.summary-warn { background:var(--yellow-bg); color:var(--yellow-text); border-color:var(--yellow-border); }
+.summary-bad { background:var(--red-bg); color:var(--red-text); border-color:var(--red-border); }
+.summary-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(8px,min(1.2vw,1.4vh),18px); margin-bottom:clamp(8px,min(1.5vw,1.8vh),18px); flex-shrink:0; }
+.summary-card { background:var(--panel); border:2px solid var(--border); border-radius:clamp(12px,min(1.5vw,1.8vh),20px); padding:clamp(9px,min(1.4vw,1.8vh),18px) clamp(12px,min(1.6vw,2vh),22px); overflow:hidden; min-width:0; }
+.summary-label { font-size:clamp(12px,min(1vw,1.9vh),22px); color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.summary-value { font-size:clamp(26px,min(2.7vw,5vh),62px); font-weight:bold; line-height:1; margin-top:4px; }
+.dashboard-grid { flex:1; min-height:0; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:repeat(2,minmax(0,1fr)); gap:clamp(10px,min(1.6vw,2vh),24px); margin-top:0; }
+.card { position:relative; background:var(--panel); border:2px solid var(--border); border-left-width:clamp(10px,min(1.2vw,1.6vh),16px); border-radius:clamp(14px,min(1.8vw,2vh),24px); padding:clamp(12px,min(2vw,2.5vh),28px); min-height:0; overflow:hidden; }
+.card.good-border { border-left-color:var(--green-border); } .card.warn-border { border-left-color:var(--yellow-border); } .card.bad-border { border-left-color:var(--red-border); }
+.card-fit { height:100%; min-height:0; display:grid; grid-template-columns:minmax(0,1fr) auto; grid-auto-rows:min-content; align-content:start; column-gap:12px; row-gap:var(--card-gap,10px); }
+.service-header { grid-column:1; min-width:0; }
+.service-header h2 { font-size:var(--title-size,clamp(22px,min(2.3vw,4.5vh),50px)); font-weight:bold; margin:0; line-height:1.08; overflow-wrap:anywhere; }
+.provider-link,.service-logo-link { color:inherit; text-decoration:none; }
+.service-logo-link { grid-column:2; grid-row:1 / span 2; display:inline-flex; flex-shrink:0; align-self:start; }
+.service-logo { flex-shrink:0; width:var(--logo-w,clamp(90px,min(7vw,10vh),160px)); height:var(--logo-h,clamp(50px,min(4vw,7vh),90px)); display:inline-flex; align-items:center; justify-content:center; border-radius:clamp(10px,min(1vw,1.5vh),18px); font-weight:bold; font-size:13px; border:1px solid var(--border); background:rgba(255,255,255,.95); color:#1f2937; padding:8px; overflow:hidden; }
+.service-logo img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
+.badge { grid-column:1; padding:var(--badge-py,clamp(6px,min(1vw,1.2vh),12px)) var(--badge-px,clamp(10px,min(1.5vw,1.8vh),22px)); border-radius:999px; font-size:var(--badge-size,clamp(15px,min(1.5vw,3vh),32px)); font-weight:bold; text-transform:uppercase; border:clamp(2px,min(.25vw,.4vh),3px) solid transparent; width:fit-content; max-width:100%; line-height:1.1; white-space:normal; }
+.good { background:var(--green-bg); color:var(--green-text); border-color:var(--green-border); } .warn { background:var(--yellow-bg); color:var(--yellow-text); border-color:var(--yellow-border); } .bad { background:var(--red-bg); color:var(--red-text); border-color:var(--red-border); }
+.card-detail { grid-column:1 / -1; margin:0; font-size:var(--detail-size,clamp(14px,min(1.3vw,2.6vh),30px)); color:var(--muted); line-height:1.2; min-width:0; }
+.provider-updated-line { padding-right:34px; }
+.detail-block { margin-top:12px; padding-top:10px; border-top:1px solid var(--border); }
+.detail-heading { font-weight:bold; margin:0 0 6px 0; } .detail-list { margin-top:6px; padding-left:20px; } .detail-list li { margin-bottom:6px; }
+.detail-pill { display:inline-block; padding:3px 8px; border-radius:999px; font-size:11px; font-weight:bold; margin-right:6px; }
+.detail-pill.warn { background:#fef3c7; color:#92400e; } .detail-pill.bad { background:#fee2e2; color:#991b1b; }
+.mobile-details { display:none; } .mobile-card-toggle { display:none; }
+.footer-row { margin-top:clamp(6px,min(1.3vw,1.5vh),18px); display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:20px; font-size:clamp(12px,min(1vw,1.8vh),24px); color:var(--muted); flex-shrink:0; }
+.footer-row div:nth-child(1) { text-align:left; } .footer-row div:nth-child(2) { text-align:center; } .footer-row div:nth-child(3) { text-align:right; }
+@media (max-width:1000px) {
+  body { overflow:auto; height:auto; }
+  .header-row { grid-template-columns:minmax(0,1fr) auto; }
+  .header-time { display:none; } .dashboard-grid { grid-template-columns:1fr; grid-template-rows:none; }
+  .card-fit { display:grid; grid-template-columns:minmax(0,1fr) auto; grid-auto-rows:min-content; align-content:start; row-gap:0; }
+  .service-header { grid-column:1; } .service-header h2 { font-size:clamp(22px,min(2.3vw,4.5vh),50px); margin:0 0 clamp(8px,min(1.5vw,1.8vh),20px) 0; }
+  .service-logo-link { grid-column:2; grid-row:1 / span 2; }
+  .badge { grid-column:1; font-size:clamp(15px,min(1.5vw,3vh),32px); padding:clamp(6px,min(1vw,1.2vh),12px) clamp(10px,min(1.5vw,1.8vh),22px); }
+  .card-detail { font-size:clamp(14px,min(1.3vw,2.6vh),30px); margin-top:clamp(6px,min(1.3vw,1.5vh),18px); }
+  .service-logo { width:clamp(90px,min(7vw,10vh),160px); height:clamp(50px,min(4vw,7vh),90px); }
+  .mobile-card-toggle,.mobile-details { display:grid; }
+  .mobile-card-toggle { align-items:center; justify-content:center; position:absolute; right:8px; bottom:8px; width:26px; height:26px; padding:0; margin:0; border:none; background:transparent; color:currentColor; opacity:.55; z-index:2; }
+  .mobile-card-toggle:hover,.mobile-card-toggle:focus-visible { opacity:.8; outline:none; }
+  .mobile-card-toggle::before { content:""; width:13px; height:13px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg); transition:transform 180ms ease; }
+  .card.expanded .mobile-card-toggle::before { transform:rotate(225deg); }
+  .mobile-details { grid-column:1 / -1; grid-template-rows:0fr; opacity:0; margin-top:0; transition:grid-template-rows 220ms ease,opacity 180ms ease,margin-top 180ms ease; }
+  .mobile-details-inner { overflow:hidden; } .card.expanded .mobile-details { grid-template-rows:1fr; opacity:1; margin-top:12px; }
+  .mobile-details .detail-block:first-child { margin-top:0; }
 }
-
-h1 {
-  margin: 0;
-  font-size: clamp(28px, min(3.2vw, 6vh), 64px);
-  line-height: 1.05;
-  letter-spacing: -1px;
-}
-
-.small {
-  margin-top: clamp(3px, min(0.6vw, 0.8vh), 8px);
-  font-size: clamp(12px, min(1.1vw, 2.2vh), 24px);
-  color: var(--muted);
-}
-
-.header-brand-logo {
-  align-self: start;
-  justify-self: center;
-  height: clamp(96px, min(10vw, 18vh), 190px);
-  max-width: clamp(280px, min(24vw, 44vh), 560px);
-  padding: 0;
-  background: transparent;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-brand-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
-}
-
-.header-time {
-  min-width: clamp(260px, 26vw, 380px);
-  border-radius: 22px;
-  padding: clamp(10px, min(1.6vw, 2vh), 20px) clamp(14px, min(1.8vw, 2.4vh), 24px);
-  text-align: right;
-  border: 2px solid var(--border);
-  background: var(--panel);
-  color: var(--text);
-}
-
-.time-label {
-  font-size: clamp(12px, min(1vw, 2vh), 22px);
-  color: var(--muted);
-  margin-bottom: clamp(3px, min(0.5vw, 0.7vh), 6px);
-}
-
-.time-value {
-  font-size: clamp(28px, min(3vw, 6vh), 68px);
-  font-weight: bold;
-  line-height: 1;
-}
-
-.date-value {
-  margin-top: clamp(4px, min(0.7vw, 0.9vh), 8px);
-  font-size: clamp(12px, min(1.1vw, 2.2vh), 24px);
-  color: var(--muted);
-}
-
-.summary-banner {
-  border-radius: clamp(14px, min(1.8vw, 2vh), 24px);
-  padding: clamp(12px, min(2vw, 2.8vh), 28px) clamp(16px, min(2.3vw, 3vh), 32px);
-  font-size: clamp(22px, min(2.7vw, 5vh), 56px);
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin: 0 0 clamp(8px, min(1.5vw, 1.8vh), 18px) 0;
-  border: clamp(2px, min(0.3vw, 0.5vh), 4px) solid var(--green-border);
-  flex-shrink: 0;
-  line-height: 1.1;
-}
-
-.summary-good { background: var(--green-bg); color: var(--green-text); border-color: var(--green-border); }
-.summary-warn { background: var(--yellow-bg); color: var(--yellow-text); border-color: var(--yellow-border); }
-.summary-bad { background: var(--red-bg); color: var(--red-text); border-color: var(--red-border); }
-
-.summary-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(8px, min(1.2vw, 1.4vh), 18px);
-  margin-bottom: clamp(8px, min(1.5vw, 1.8vh), 18px);
-  flex-shrink: 0;
-}
-
-.summary-card {
-  background: var(--panel);
-  border: 2px solid var(--border);
-  border-radius: clamp(12px, min(1.5vw, 1.8vh), 20px);
-  padding: clamp(9px, min(1.4vw, 1.8vh), 18px) clamp(12px, min(1.6vw, 2vh), 22px);
-  overflow: hidden;
-  min-width: 0;
-}
-
-.summary-label {
-  font-size: clamp(12px, min(1vw, 1.9vh), 22px);
-  color: var(--muted);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.summary-value {
-  font-size: clamp(26px, min(2.7vw, 5vh), 62px);
-  font-weight: bold;
-  line-height: 1;
-  margin-top: 4px;
-}
-
-.dashboard-grid {
-  flex: 1;
-  min-height: 0;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: clamp(10px, min(1.6vw, 2vh), 24px);
-  margin-top: 0;
-}
-
-.card {
-  position: relative;
-  background: var(--panel);
-  border: 2px solid var(--border);
-  border-left-width: clamp(10px, min(1.2vw, 1.6vh), 16px);
-  border-radius: clamp(14px, min(1.8vw, 2vh), 24px);
-  padding: clamp(12px, min(2vw, 2.5vh), 28px);
-  min-height: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.card.good-border { border-left-color: var(--green-border); }
-.card.warn-border { border-left-color: var(--yellow-border); }
-.card.bad-border { border-left-color: var(--red-border); }
-
-.service-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.service-header h2 {
-  font-size: clamp(22px, min(2.3vw, 4.5vh), 50px);
-  font-weight: bold;
-  margin: 0 0 clamp(8px, min(1.5vw, 1.8vh), 20px) 0;
-  line-height: 1.08;
-}
-
-.provider-link, .service-logo-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-.service-logo-link {
-  display: inline-flex;
-  flex-shrink: 0;
-}
-
-.service-logo {
-  flex-shrink: 0;
-  width: clamp(90px, min(7vw, 10vh), 160px);
-  height: clamp(50px, min(4vw, 7vh), 90px);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: clamp(10px, min(1vw, 1.5vh), 18px);
-  font-weight: bold;
-  font-size: 13px;
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.95);
-  color: #1f2937;
-  padding: 8px;
-  overflow: hidden;
-}
-
-.service-logo img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.badge {
-  padding: clamp(6px, min(1vw, 1.2vh), 12px) clamp(10px, min(1.5vw, 1.8vh), 22px);
-  border-radius: 999px;
-  font-size: clamp(15px, min(1.5vw, 3vh), 32px);
-  font-weight: bold;
-  text-transform: uppercase;
-  border: clamp(2px, min(0.25vw, 0.4vh), 3px) solid transparent;
-  width: fit-content;
-  max-width: 100%;
-  line-height: 1.1;
-  white-space: normal;
-}
-
-.good { background: var(--green-bg); color: var(--green-text); border-color: var(--green-border); }
-.warn { background: var(--yellow-bg); color: var(--yellow-text); border-color: var(--yellow-border); }
-.bad { background: var(--red-bg); color: var(--red-text); border-color: var(--red-border); }
-
-.card-detail {
-  margin-top: clamp(6px, min(1.3vw, 1.5vh), 18px);
-  font-size: clamp(14px, min(1.3vw, 2.6vh), 30px);
-  color: var(--muted);
-  line-height: 1.2;
-}
-
-.provider-updated-line { padding-right: 34px; }
-
-.detail-block {
-  margin-top: 12px;
-  padding-top: 10px;
-  border-top: 1px solid var(--border);
-}
-
-.detail-heading { font-weight: bold; margin: 0 0 6px 0; }
-.detail-list { margin-top: 6px; padding-left: 20px; }
-.detail-list li { margin-bottom: 6px; }
-
-.detail-pill {
-  display: inline-block;
-  padding: 3px 8px;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: bold;
-  margin-right: 6px;
-}
-
-.detail-pill.warn { background: #fef3c7; color: #92400e; }
-.detail-pill.bad { background: #fee2e2; color: #991b1b; }
-
-.mobile-details { display: none; }
-.mobile-card-toggle { display: none; }
-
-.footer-row {
-  margin-top: clamp(6px, min(1.3vw, 1.5vh), 18px);
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 20px;
-  font-size: clamp(12px, min(1vw, 1.8vh), 24px);
-  color: var(--muted);
-  flex-shrink: 0;
-}
-
-.footer-row div:nth-child(1) { text-align: left; }
-.footer-row div:nth-child(2) { text-align: center; }
-.footer-row div:nth-child(3) { text-align: right; }
-
-@media (max-width: 1000px) {
-  body {
-    overflow: auto;
-    height: auto;
-  }
-
-  .header-row { grid-template-columns: minmax(0, 1fr) auto; }
-  .header-time { display: none; }
-  .dashboard-grid { grid-template-columns: 1fr; grid-template-rows: none; }
-
-  .mobile-card-toggle,
-  .mobile-details { display: grid; }
-
-  .mobile-card-toggle {
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    right: 8px;
-    bottom: 8px;
-    width: 26px;
-    height: 26px;
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: transparent;
-    color: currentColor;
-    opacity: 0.55;
-    z-index: 2;
-  }
-
-  .mobile-card-toggle:hover,
-  .mobile-card-toggle:focus-visible {
-    opacity: 0.8;
-    outline: none;
-  }
-
-  .mobile-card-toggle::before {
-    content: "";
-    width: 13px;
-    height: 13px;
-    border-right: 2px solid currentColor;
-    border-bottom: 2px solid currentColor;
-    transform: rotate(45deg);
-    transition: transform 180ms ease;
-  }
-
-  .card.expanded .mobile-card-toggle::before { transform: rotate(225deg); }
-
-  .mobile-details {
-    grid-template-rows: 0fr;
-    opacity: 0;
-    margin-top: 0;
-    transition: grid-template-rows 220ms ease, opacity 180ms ease, margin-top 180ms ease;
-  }
-
-  .mobile-details-inner { overflow: hidden; }
-
-  .card.expanded .mobile-details {
-    grid-template-rows: 1fr;
-    opacity: 1;
-    margin-top: 12px;
-  }
-
-  .mobile-details .detail-block:first-child { margin-top: 0; }
-}
-
-@media (max-width: 800px) {
-  .header-brand-logo {
-    justify-self: end;
-    height: 74px;
-    max-width: 220px;
-  }
-}
-
-@media (max-width: 520px) {
-  .summary-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-  .summary-card { padding: 10px; }
-  .summary-label { font-size: 11px; }
-  .summary-value { font-size: 22px; }
-}
-
-@media (max-width: 340px) {
-  .summary-grid { grid-template-columns: 1fr; }
-}
+@media (max-width:800px) { .header-brand-logo { justify-self:end; height:74px; max-width:220px; } }
+@media (max-width:520px) { .summary-grid { grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; } .summary-card { padding:10px; } .summary-label { font-size:11px; } .summary-value { font-size:22px; } }
+@media (max-width:340px) { .summary-grid { grid-template-columns:1fr; } }
 </style>
 </head>
-
 <body class="wallboard-mode">
-
-<div class="header-row">
-  <div>
-    <h1 id="pageTitle">SaaS Status Dashboard</h1>
-    <p class="small" id="pageSubtitle">Live operational status for monitored SaaS services</p>
-  </div>
-
-  <div class="header-brand-logo">
-    <img src="https://mke57.github.io/status-dashboard/assets/logos/ATG.jpeg" alt="ATG logo">
-  </div>
-
-  <div id="currentTime" class="header-time"></div>
-</div>
-
+<div class="header-row"><div><h1 id="pageTitle">SaaS Status Dashboard</h1><p class="small" id="pageSubtitle">Live operational status for monitored SaaS services</p></div><div class="header-brand-logo"><img src="https://mke57.github.io/status-dashboard/assets/logos/ATG.jpeg" alt="ATG logo"></div><div id="currentTime" class="header-time"></div></div>
 <div id="summaryBanner" class="summary-banner summary-good">Loading service status...</div>
-
-<div class="summary-grid">
-  <div class="summary-card">
-    <div class="summary-label">Services monitored</div>
-    <div id="servicesMonitored" class="summary-value">0</div>
-  </div>
-  <div class="summary-card">
-    <div class="summary-label">Services with issues</div>
-    <div id="servicesWithIssues" class="summary-value">0</div>
-  </div>
-  <div class="summary-card">
-    <div class="summary-label">Active incidents</div>
-    <div id="activeIncidents" class="summary-value">0</div>
-  </div>
-</div>
-
+<div class="summary-grid"><div class="summary-card"><div class="summary-label">Services monitored</div><div id="servicesMonitored" class="summary-value">0</div></div><div class="summary-card"><div class="summary-label">Services with issues</div><div id="servicesWithIssues" class="summary-value">0</div></div><div class="summary-card"><div class="summary-label">Active incidents</div><div id="activeIncidents" class="summary-value">0</div></div></div>
 <div id="results" class="dashboard-grid"></div>
-
-<div class="footer-row">
-  <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
-  <div id="autoRefreshFooter">Auto-refresh: every 60 seconds</div>
-  <div id="dashboardMeta">Version: v0.5.12 | Built and maintained by Mike Ahrens</div>
-</div>
-
+<div class="footer-row"><div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div><div id="autoRefreshFooter">Auto-refresh: every 60 seconds</div><div id="dashboardMeta">Version: v0.5.26 | Built and maintained by Mike Ahrens</div></div>
 <script>
-const providers = [
-  {
-    name: "Cloudflare",
-    url: "https://www.cloudflarestatus.com/api/v2/summary.json",
-    incidentsUrl: "https://www.cloudflarestatus.com/api/v2/incidents.json",
-    statusPage: "https://www.cloudflarestatus.com/",
-    logoText: "CF",
-    logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/cloudflare.png"
-  },
-  {
-    name: "Worldpay",
-    url: "https://status.worldpay.com/api/v2/summary.json",
-    incidentsUrl: "https://status.worldpay.com/api/v2/incidents.json",
-    statusPage: "https://status.worldpay.com/",
-    logoText: "WP",
-    logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/worldpay.png"
-  },
-  {
-    name: "AudienceView Professional",
-    url: "https://professional-status.audienceview.com/api/v2/summary.json",
-    incidentsUrl: "https://professional-status.audienceview.com/api/v2/incidents.json",
-    statusPage: "https://professional-status.audienceview.com/",
-    logoText: "AVP",
-    logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp"
-  },
-  {
-    name: "AudienceView Unlimited",
-    url: "https://unlimited-status.audienceview.com/api/v2/summary.json",
-    incidentsUrl: "https://unlimited-status.audienceview.com/api/v2/incidents.json",
-    statusPage: "https://unlimited-status.audienceview.com/",
-    logoText: "AVU",
-    logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp"
-  }
-];
-
-const dashboardVersion = "v0.5.12";
-const dashboardMaintainer = "Mike Ahrens";
-let autoRefreshTimer = null;
-let isLoadingStatuses = false;
-
-function anyCardExpanded() {
-  return document.querySelector(".card.expanded") !== null;
-}
-
-function updateAutoRefreshState() {
-  const paused = anyCardExpanded();
-  const footer = document.getElementById("autoRefreshFooter");
-
-  if (footer) {
-    footer.innerText = paused
-      ? "Auto-refresh: paused while details are expanded"
-      : "Auto-refresh: every 60 seconds";
-  }
-
-  if (paused) {
-    stopAutoRefresh();
-  } else {
-    startAutoRefresh();
-  }
-}
-
-function startAutoRefresh() {
-  if (autoRefreshTimer || anyCardExpanded()) return;
-
-  autoRefreshTimer = setInterval(() => {
-    if (!anyCardExpanded()) loadStatuses();
-  }, 60000);
-}
-
-function stopAutoRefresh() {
-  if (autoRefreshTimer) {
-    clearInterval(autoRefreshTimer);
-    autoRefreshTimer = null;
-  }
-}
-
-function handleBackgroundDoubleClick(event) {
-  const ignoredElement = event.target.closest("button, a");
-  if (ignoredElement) return;
-
-  document.body.classList.toggle("wallboard-light");
-  localStorage.setItem("wallboardTheme", document.body.classList.contains("wallboard-light") ? "light" : "dark");
-}
-
-function applySavedTheme() {
-  if (localStorage.getItem("wallboardTheme") === "light") {
-    document.body.classList.add("wallboard-light");
-  }
-}
-
-function toggleMobileCardDetails(button) {
-  const card = button.closest(".card");
-  const isExpanded = card.classList.toggle("expanded");
-  button.setAttribute("aria-expanded", isExpanded ? "true" : "false");
-  button.setAttribute("title", isExpanded ? "Collapse details" : "Expand details");
-  updateAutoRefreshState();
-}
-
-function updateCurrentTime() {
-  const now = new Date();
-  document.getElementById("currentTime").innerHTML =
-    "<div class='time-label'>Current time</div>" +
-    "<div class='time-value'>" +
-    now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" }) +
-    "</div>" +
-    "<div class='date-value'>" +
-    now.toLocaleDateString([], { weekday: "long", day: "2-digit", month: "long", year: "numeric" }) +
-    "</div>";
-}
-
-function isMajorIncident(incident) {
-  const impact = (incident.impact || "").toLowerCase();
-  const name = (incident.name || "").toLowerCase();
-  const status = (incident.status || "").toLowerCase();
-
-  return impact.includes("major") ||
-    impact.includes("critical") ||
-    name.includes("major") ||
-    name.includes("critical") ||
-    status.includes("major") ||
-    status.includes("critical");
-}
-
-function getSeverity(service) {
-  if (service.status === "Unable to fetch") return 3;
-  if (service.activeIncidents.some(isMajorIncident)) return 3;
-  if (service.activeIncidents.length > 0) return 2;
-  return 1;
-}
-
-function getStatusClass(service) {
-  const severity = getSeverity(service);
-  if (severity === 3) return "bad";
-  if (severity === 2) return "warn";
-  return "good";
-}
-
-function getDisplayStatus(service) {
-  const severity = getSeverity(service);
-  if (service.status === "Unable to fetch") return "Unable to fetch";
-  if (severity === 3) return "Major incident";
-  if (severity === 2) return "Active incident";
-  return "Operational";
-}
-
-function hasIssue(service) {
-  return getSeverity(service) > 1;
-}
-
-function updateSummary(results) {
-  const servicesMonitored = results.length;
-  const servicesWithIssues = results.filter(hasIssue).length;
-  const activeIncidents = results.reduce((total, service) => total + service.activeIncidents.length, 0);
-  const highestSeverity = Math.max(...results.map(getSeverity));
-
-  document.getElementById("servicesMonitored").innerText = servicesMonitored;
-  document.getElementById("servicesWithIssues").innerText = servicesWithIssues;
-  document.getElementById("activeIncidents").innerText = activeIncidents;
-
-  const banner = document.getElementById("summaryBanner");
-  banner.classList.remove("summary-good", "summary-warn", "summary-bad");
-
-  if (highestSeverity === 1) {
-    banner.classList.add("summary-good");
-    banner.innerText = "All monitored services operational";
-  } else if (highestSeverity === 2) {
-    banner.classList.add("summary-warn");
-    banner.innerText = "Active incident reported";
-  } else {
-    banner.classList.add("summary-bad");
-    banner.innerText = "Major incident reported";
-  }
-}
-
-async function fetchProvider(provider) {
-  try {
-    const [summaryResponse, incidentResponse] = await Promise.all([
-      fetch(provider.url),
-      fetch(provider.incidentsUrl)
-    ]);
-
-    const summaryData = await summaryResponse.json();
-    const incidentData = await incidentResponse.json();
-
-    return {
-      name: provider.name,
-      statusPage: provider.statusPage,
-      logoText: provider.logoText,
-      logoSrc: provider.logoSrc,
-      status: summaryData.status.description,
-      activeIncidents: summaryData.incidents || [],
-      recentIncidents: incidentData.incidents || [],
-      updated: summaryData.page.updated_at
-    };
-  } catch (err) {
-    return {
-      name: provider.name,
-      statusPage: provider.statusPage,
-      logoText: provider.logoText,
-      logoSrc: provider.logoSrc,
-      status: "Unable to fetch",
-      activeIncidents: [],
-      recentIncidents: [],
-      updated: null
-    };
-  }
-}
-
-function formatDateTime(value) {
-  if (!value) return "Unknown";
-  try {
-    return new Date(value).toLocaleString([], { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" });
-  } catch (err) {
-    return value;
-  }
-}
-
-function formatUpdatedTime(value) {
-  if (!value) return "Unknown";
-  try {
-    return new Date(value).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-  } catch (err) {
-    return value;
-  }
-}
-
-function timeAgo(value) {
-  if (!value) return "Unknown";
-  const dateValue = new Date(value);
-  if (Number.isNaN(dateValue.getTime())) return "Unknown";
-
-  const diffMs = new Date() - dateValue;
-  const diffMinutes = Math.max(0, Math.floor(diffMs / 60000));
-  const diffHours = Math.floor(diffMinutes / 60);
-  const diffDays = Math.floor(diffHours / 24);
-
-  if (diffDays > 0) return diffDays + "d " + (diffHours % 24) + "h ago";
-  if (diffHours > 0) return diffHours + "h " + (diffMinutes % 60) + "m ago";
-  if (diffMinutes > 0) return diffMinutes + "m ago";
-  return "just now";
-}
-
-function incidentPillClass(incident) {
-  if (isMajorIncident(incident)) return "bad";
-  return "warn";
-}
-
-function sortIncidentsNewestFirst(incidents) {
-  return [...incidents].sort((a, b) => {
-    return new Date(b.updated_at || b.resolved_at || b.created_at || 0) - new Date(a.updated_at || a.resolved_at || a.created_at || 0);
-  });
-}
-
-function logoHtml(service) {
-  return `
-    <a class="service-logo-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer" aria-label="Open ${service.name} status page">
-      <div class="service-logo">
-        <img src="${service.logoSrc}" alt="${service.name} logo" onerror="this.style.display='none'; this.parentElement.textContent='${service.logoText}';">
-      </div>
-    </a>
-  `;
-}
-
-function buildIncidentDetails(service) {
-  const sortedIncidents = sortIncidentsNewestFirst(service.recentIncidents);
-  const latestIncident = sortedIncidents[0];
-  const latestResolvedIncidents = sortIncidentsNewestFirst(
-    service.recentIncidents.filter(incident => incident.status === "resolved")
-  ).slice(0, 3);
-
-  let activeHtml = "";
-  let resolvedHtml = "";
-  let stabilityHtml = "";
-
-  if (service.activeIncidents.length > 0) {
-    activeHtml = `
-      <div class="detail-block">
-        <p class="detail-heading">Active incident details</p>
-        <ul class="detail-list">
-          ${service.activeIncidents.slice(0, 2).map(incident => {
-            return "<li><span class='detail-pill " + incidentPillClass(incident) + "'>" + (isMajorIncident(incident) ? "Major" : "Active") + "</span>" + incident.name + " - updated " + formatDateTime(incident.updated_at || incident.created_at) + "</li>";
-          }).join("")}
-        </ul>
-      </div>
-    `;
-  }
-
-  if (latestResolvedIncidents.length > 0) {
-    resolvedHtml = `
-      <div class="detail-block">
-        <p class="detail-heading">Last 3 resolved incidents</p>
-        <ul class="detail-list">
-          ${latestResolvedIncidents.map(incident => {
-            const incidentDate = incident.updated_at || incident.resolved_at || incident.created_at;
-            return "<li>" + incident.name + " - " + formatDateTime(incidentDate) + " (" + timeAgo(incidentDate) + ")</li>";
-          }).join("")}
-        </ul>
-      </div>
-    `;
-  } else if (latestIncident) {
-    resolvedHtml = `
-      <div class="detail-block">
-        <p class="detail-heading">Latest provider update</p>
-        <ul class="detail-list">
-          <li><span class="detail-pill ${incidentPillClass(latestIncident)}">${latestIncident.status || "Update"}</span>${latestIncident.name} - updated ${formatDateTime(latestIncident.updated_at || latestIncident.created_at)} (${timeAgo(latestIncident.updated_at || latestIncident.created_at)})</li>
-        </ul>
-      </div>
-    `;
-  } else {
-    resolvedHtml = `
-      <div class="detail-block">
-        <p class="detail-heading">Incident history</p>
-        <p class="small">No incident history reported by this provider.</p>
-      </div>
-    `;
-  }
-
-  if (latestIncident) {
-    const latestIncidentDate = latestIncident.updated_at || latestIncident.resolved_at || latestIncident.created_at;
-    stabilityHtml = `
-      <div class="detail-block">
-        <p class="detail-heading">Last incident update</p>
-        <p class="small">${timeAgo(latestIncidentDate)} (${formatDateTime(latestIncidentDate)})</p>
-      </div>
-    `;
-  }
-
-  return activeHtml + resolvedHtml + stabilityHtml;
-}
-
-async function loadStatuses() {
-  if (isLoadingStatuses || anyCardExpanded()) {
-    updateAutoRefreshState();
-    return;
-  }
-
-  isLoadingStatuses = true;
-  const container = document.getElementById("results");
-  container.innerHTML = "<div class='card'>Loading...</div>";
-
-  const results = await Promise.all(providers.map(fetchProvider));
-  updateSummary(results);
-  container.innerHTML = "";
-
-  results.forEach(service => {
-    const card = document.createElement("div");
-    const badgeClass = getStatusClass(service);
-    const displayStatus = getDisplayStatus(service);
-    const detailsHtml = buildIncidentDetails(service);
-
-    card.className = "card " + badgeClass + "-border";
-    card.innerHTML = `
-      <div class="service-header">
-        <h2><a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a></h2>
-        ${logoHtml(service)}
-      </div>
-      <div class="badge ${badgeClass}">${displayStatus}</div>
-      <div class="card-detail"><strong>Active incidents:</strong> ${service.activeIncidents.length}</div>
-      <div class="card-detail provider-updated-line"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)} (${timeAgo(service.updated)})</div>
-      <div class="mobile-details"><div class="mobile-details-inner">${detailsHtml}</div></div>
-      <button class="mobile-card-toggle" type="button" aria-label="Expand ${service.name} details" aria-expanded="false" title="Expand details" onclick="toggleMobileCardDetails(this)"></button>
-    `;
-
-    container.appendChild(card);
-  });
-
-  document.getElementById("lastRefreshFooter").innerText = "Last refreshed: " + new Date().toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit"
-  });
-
-  document.getElementById("dashboardMeta").innerText = "Version: " + dashboardVersion + " | Built and maintained by " + dashboardMaintainer;
-
-  isLoadingStatuses = false;
-  updateAutoRefreshState();
-}
-
-applySavedTheme();
-updateCurrentTime();
-loadStatuses();
-startAutoRefresh();
-
-document.addEventListener("dblclick", handleBackgroundDoubleClick);
-setInterval(updateCurrentTime, 1000);
+const providers=[{name:"Cloudflare",url:"https://www.cloudflarestatus.com/api/v2/summary.json",incidentsUrl:"https://www.cloudflarestatus.com/api/v2/incidents.json",statusPage:"https://www.cloudflarestatus.com/",logoText:"CF",logoSrc:"https://mke57.github.io/status-dashboard/assets/logos/cloudflare.png"},{name:"Worldpay",url:"https://status.worldpay.com/api/v2/summary.json",incidentsUrl:"https://status.worldpay.com/api/v2/incidents.json",statusPage:"https://status.worldpay.com/",logoText:"WP",logoSrc:"https://mke57.github.io/status-dashboard/assets/logos/worldpay.png"},{name:"AudienceView Professional",url:"https://professional-status.audienceview.com/api/v2/summary.json",incidentsUrl:"https://professional-status.audienceview.com/api/v2/incidents.json",statusPage:"https://professional-status.audienceview.com/",logoText:"AVP",logoSrc:"https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp"},{name:"AudienceView Unlimited",url:"https://unlimited-status.audienceview.com/api/v2/summary.json",incidentsUrl:"https://unlimited-status.audienceview.com/api/v2/incidents.json",statusPage:"https://unlimited-status.audienceview.com/",logoText:"AVU",logoSrc:"https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp"}];
+const dashboardVersion="v0.5.26"; const dashboardMaintainer="Mike Ahrens"; let autoRefreshTimer=null; let isLoadingStatuses=false; let cardFitResizeTimer=null;
+function anyCardExpanded(){return document.querySelector(".card.expanded")!==null;}
+function updateAutoRefreshState(){const paused=anyCardExpanded();const footer=document.getElementById("autoRefreshFooter");if(footer)footer.innerText=paused?"Auto-refresh: paused while details are expanded":"Auto-refresh: every 60 seconds"; if(paused)stopAutoRefresh(); else startAutoRefresh();}
+function startAutoRefresh(){if(autoRefreshTimer||anyCardExpanded())return; autoRefreshTimer=setInterval(()=>{if(!anyCardExpanded())loadStatuses();},60000);}
+function stopAutoRefresh(){if(autoRefreshTimer){clearInterval(autoRefreshTimer);autoRefreshTimer=null;}}
+function handleBackgroundDoubleClick(event){const ignoredElement=event.target.closest("button, a"); if(ignoredElement)return; document.body.classList.toggle("wallboard-light"); localStorage.setItem("wallboardTheme",document.body.classList.contains("wallboard-light")?"light":"dark");}
+function applySavedTheme(){if(localStorage.getItem("wallboardTheme")==="light")document.body.classList.add("wallboard-light");}
+function toggleMobileCardDetails(button){const card=button.closest(".card"); const isExpanded=card.classList.toggle("expanded"); button.setAttribute("aria-expanded",isExpanded?"true":"false"); button.setAttribute("title",isExpanded?"Collapse details":"Expand details"); updateAutoRefreshState();}
+function updateCurrentTime(){const now=new Date();document.getElementById("currentTime").innerHTML="<div class='time-label'>Current time</div><div class='time-value'>"+now.toLocaleTimeString([],{hour:"2-digit",minute:"2-digit",second:"2-digit"})+"</div><div class='date-value'>"+now.toLocaleDateString([],{weekday:"long",day:"2-digit",month:"long",year:"numeric"})+"</div>";}
+function isMajorIncident(incident){const impact=(incident.impact||"").toLowerCase();const name=(incident.name||"").toLowerCase();const status=(incident.status||"").toLowerCase();return impact.includes("major")||impact.includes("critical")||name.includes("major")||name.includes("critical")||status.includes("major")||status.includes("critical");}
+function getSeverity(service){if(service.status==="Unable to fetch")return 3;if(service.activeIncidents.some(isMajorIncident))return 3;if(service.activeIncidents.length>0)return 2;return 1;}
+function getStatusClass(service){const severity=getSeverity(service);if(severity===3)return"bad";if(severity===2)return"warn";return"good";}
+function getDisplayStatus(service){const severity=getSeverity(service);if(service.status==="Unable to fetch")return"Unable to fetch";if(severity===3)return"Major incident";if(severity===2)return"Active incident";return"Operational";}
+function hasIssue(service){return getSeverity(service)>1;}
+function updateSummary(results){const highestSeverity=Math.max(...results.map(getSeverity));document.getElementById("servicesMonitored").innerText=results.length;document.getElementById("servicesWithIssues").innerText=results.filter(hasIssue).length;document.getElementById("activeIncidents").innerText=results.reduce((total,service)=>total+service.activeIncidents.length,0);const banner=document.getElementById("summaryBanner");banner.classList.remove("summary-good","summary-warn","summary-bad");if(highestSeverity===1){banner.classList.add("summary-good");banner.innerText="All monitored services operational";}else if(highestSeverity===2){banner.classList.add("summary-warn");banner.innerText="Active incident reported";}else{banner.classList.add("summary-bad");banner.innerText="Major incident reported";}}
+async function fetchProvider(provider){try{const[summaryResponse,incidentResponse]=await Promise.all([fetch(provider.url),fetch(provider.incidentsUrl)]);const summaryData=await summaryResponse.json();const incidentData=await incidentResponse.json();return{name:provider.name,statusPage:provider.statusPage,logoText:provider.logoText,logoSrc:provider.logoSrc,status:summaryData.status.description,activeIncidents:summaryData.incidents||[],recentIncidents:incidentData.incidents||[],updated:summaryData.page.updated_at};}catch(err){return{name:provider.name,statusPage:provider.statusPage,logoText:provider.logoText,logoSrc:provider.logoSrc,status:"Unable to fetch",activeIncidents:[],recentIncidents:[],updated:null};}}
+function formatDateTime(value){if(!value)return"Unknown";try{return new Date(value).toLocaleString([],{day:"2-digit",month:"2-digit",year:"numeric",hour:"2-digit",minute:"2-digit"});}catch(err){return value;}}
+function formatUpdatedTime(value){if(!value)return"Unknown";try{return new Date(value).toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"});}catch(err){return value;}}
+function timeAgo(value){if(!value)return"Unknown";const dateValue=new Date(value);if(Number.isNaN(dateValue.getTime()))return"Unknown";const diffMs=new Date()-dateValue;const diffMinutes=Math.max(0,Math.floor(diffMs/60000));const diffHours=Math.floor(diffMinutes/60);const diffDays=Math.floor(diffHours/24);if(diffDays>0)return diffDays+"d "+(diffHours%24)+"h ago";if(diffHours>0)return diffHours+"h "+(diffMinutes%60)+"m ago";if(diffMinutes>0)return diffMinutes+"m ago";return"just now";}
+function incidentPillClass(incident){return isMajorIncident(incident)?"bad":"warn";}
+function sortIncidentsNewestFirst(incidents){return[...incidents].sort((a,b)=>new Date(b.updated_at||b.resolved_at||b.created_at||0)-new Date(a.updated_at||a.resolved_at||a.created_at||0));}
+function logoHtml(service){return`<a class="service-logo-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer" aria-label="Open ${service.name} status page"><div class="service-logo"><img src="${service.logoSrc}" alt="${service.name} logo" onerror="this.style.display='none'; this.parentElement.textContent='${service.logoText}';"></div></a>`;}
+function buildIncidentDetails(service){const sortedIncidents=sortIncidentsNewestFirst(service.recentIncidents);const latestIncident=sortedIncidents[0];const latestResolvedIncidents=sortIncidentsNewestFirst(service.recentIncidents.filter(incident=>incident.status==="resolved")).slice(0,3);let activeHtml="";let resolvedHtml="";let stabilityHtml="";if(service.activeIncidents.length>0){activeHtml=`<div class="detail-block"><p class="detail-heading">Active incident details</p><ul class="detail-list">${service.activeIncidents.slice(0,2).map(incident=>"<li><span class='detail-pill "+incidentPillClass(incident)+"'>"+(isMajorIncident(incident)?"Major":"Active")+"</span>"+incident.name+" - updated "+formatDateTime(incident.updated_at||incident.created_at)+"</li>").join("")}</ul></div>`;}if(latestResolvedIncidents.length>0){resolvedHtml=`<div class="detail-block"><p class="detail-heading">Last 3 resolved incidents</p><ul class="detail-list">${latestResolvedIncidents.map(incident=>{const incidentDate=incident.updated_at||incident.resolved_at||incident.created_at;return"<li>"+incident.name+" - "+formatDateTime(incidentDate)+" ("+timeAgo(incidentDate)+")</li>";}).join("")}</ul></div>`;}else if(latestIncident){resolvedHtml=`<div class="detail-block"><p class="detail-heading">Latest provider update</p><ul class="detail-list"><li><span class="detail-pill ${incidentPillClass(latestIncident)}">${latestIncident.status||"Update"}</span>${latestIncident.name} - updated ${formatDateTime(latestIncident.updated_at||latestIncident.created_at)} (${timeAgo(latestIncident.updated_at||latestIncident.created_at)})</li></ul></div>`;}else{resolvedHtml=`<div class="detail-block"><p class="detail-heading">Incident history</p><p class="small">No incident history reported by this provider.</p></div>`;}if(latestIncident){const latestIncidentDate=latestIncident.updated_at||latestIncident.resolved_at||latestIncident.created_at;stabilityHtml=`<div class="detail-block"><p class="detail-heading">Last incident update</p><p class="small">${timeAgo(latestIncidentDate)} (${formatDateTime(latestIncidentDate)})</p></div>`;}return activeHtml+resolvedHtml+stabilityHtml;}
+function clampNumber(value,min,max){return Math.max(min,Math.min(max,value));}
+function setCardSizing(card,scale){const h=card.clientHeight||220;card.style.setProperty("--title-size",clampNumber(h*.135*scale,18,52)+"px");card.style.setProperty("--badge-size",clampNumber(h*.082*scale,12,32)+"px");card.style.setProperty("--badge-py",clampNumber(h*.03*scale,4,12)+"px");card.style.setProperty("--badge-px",clampNumber(h*.06*scale,8,24)+"px");card.style.setProperty("--detail-size",clampNumber(h*.074*scale,11,30)+"px");card.style.setProperty("--card-gap",clampNumber(h*.033*scale,4,14)+"px");card.style.setProperty("--logo-w",clampNumber(h*.36*scale,56,150)+"px");card.style.setProperty("--logo-h",clampNumber(h*.22*scale,36,90)+"px");}
+function clearDesktopCardSizing(card){["--title-size","--badge-size","--badge-py","--badge-px","--detail-size","--card-gap","--logo-w","--logo-h"].forEach(propertyName=>card.style.removeProperty(propertyName));}
+function fitDesktopCards(){const cards=Array.from(document.querySelectorAll(".card"));if(window.innerWidth<=1000){cards.forEach(clearDesktopCardSizing);return;}cards.forEach(card=>{let scale=1;setCardSizing(card,scale);for(let attempt=0;attempt<10;attempt+=1){const available=card.clientHeight;const required=card.scrollHeight;if(!available||!required||required<=available-2)break;scale=clampNumber(scale*((available-2)/required),.5,1);setCardSizing(card,scale);}});}
+function scheduleDesktopCardFit(){clearTimeout(cardFitResizeTimer);cardFitResizeTimer=setTimeout(fitDesktopCards,60);}
+async function loadStatuses(){if(isLoadingStatuses||anyCardExpanded()){updateAutoRefreshState();return;}isLoadingStatuses=true;const container=document.getElementById("results");container.innerHTML="<div class='card'><div class='card-fit'>Loading...</div></div>";const results=await Promise.all(providers.map(fetchProvider));updateSummary(results);container.innerHTML="";results.forEach(service=>{const card=document.createElement("div");const badgeClass=getStatusClass(service);const displayStatus=getDisplayStatus(service);const detailsHtml=buildIncidentDetails(service);card.className="card "+badgeClass+"-border";card.innerHTML=`<div class="card-fit"><div class="service-header"><h2><a class="provider-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer">${service.name}</a></h2></div>${logoHtml(service)}<div class="badge ${badgeClass}">${displayStatus}</div><div class="card-detail"><strong>Active incidents:</strong> ${service.activeIncidents.length}</div><div class="card-detail provider-updated-line"><strong>Provider updated:</strong> ${formatUpdatedTime(service.updated)} (${timeAgo(service.updated)})</div><div class="mobile-details"><div class="mobile-details-inner">${detailsHtml}</div></div><button class="mobile-card-toggle" type="button" aria-label="Expand ${service.name} details" aria-expanded="false" title="Expand details" onclick="toggleMobileCardDetails(this)"></button></div>`;container.appendChild(card);});document.getElementById("lastRefreshFooter").innerText="Last refreshed: "+new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit",second:"2-digit"});document.getElementById("dashboardMeta").innerText="Version: "+dashboardVersion+" | Built and maintained by "+dashboardMaintainer;isLoadingStatuses=false;updateAutoRefreshState();fitDesktopCards();}
+applySavedTheme();updateCurrentTime();loadStatuses();startAutoRefresh();document.addEventListener("dblclick",handleBackgroundDoubleClick);window.addEventListener("resize",scheduleDesktopCardFit);window.addEventListener("orientationchange",scheduleDesktopCardFit);setInterval(updateCurrentTime,1000);
 </script>
-
 </body>
 </html>
