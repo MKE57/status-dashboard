@@ -8,10 +8,17 @@ https://bit.ly/ATG-Status
 https://bit.ly/atg-status
 
 QR code:  
-A QR code is available for the dashboard and can be used where a scannable link is more convenient than typing the URL.
+The QR code is included in the repository assets folder and points directly to the GitHub Pages URL, not to either bit.ly short link.
+
+```text
+assets/qr/atg-status-dashboard-qr.png
+```
+
+![ATG Status Dashboard QR Code](assets/qr/atg-status-dashboard-qr.png)
 
 > Recommended sharing link: `https://bit.ly/ATG-Status`  
-> Lowercase alternative: `https://bit.ly/atg-status`
+> Lowercase alternative: `https://bit.ly/atg-status`  
+> Canonical hosted URL: `https://mke57.github.io/status-dashboard/`
 
 ---
 
@@ -66,41 +73,61 @@ https://bit.ly/ATG-Status
 https://bit.ly/atg-status
 ```
 
-The short links are intended for easier sharing and QR code usage.
+The short links are intended for easier sharing in Teams messages, emails, posters, and other rollout material.
 
 The short links redirect to the GitHub Pages-hosted version. The GitHub Pages URL remains the actual hosted location.
 
 ---
 
-## QR code usage
+## QR code
 
-A QR code is available for quick access to the dashboard.
+The QR code is included in this repository at:
 
-The QR code can point to either of the bit.ly short links:
+```text
+assets/qr/atg-status-dashboard-qr.png
+```
+
+The QR code points directly to the GitHub Pages URL:
+
+```text
+https://mke57.github.io/status-dashboard/
+```
+
+It does **not** point to:
 
 ```text
 https://bit.ly/ATG-Status
-```
-
-or:
-
-```text
 https://bit.ly/atg-status
 ```
 
-Using the bit.ly link or a QR code does not affect dashboard functionality.
+This is intentional. The QR code uses the canonical GitHub Pages URL so that it does not depend on a third-party short link service.
 
-The dashboard JavaScript runs after the redirect has completed, so features such as:
+### Why the QR code points directly to GitHub Pages
 
-- install prompt
-- localStorage dismissal
-- mobile detection
-- pull-to-refresh
+Using the direct GitHub Pages URL means:
+
+- the QR code points to the actual hosted dashboard
+- the QR code is not dependent on bit.ly forwarding
+- the QR code remains clear and predictable in the repository
+- the bit.ly URLs can still be used separately for human-friendly links
+
+### QR code preview
+
+![ATG Status Dashboard QR Code](assets/qr/atg-status-dashboard-qr.png)
+
+### QR code usage notes
+
+Scanning the QR code behaves the same as opening the direct GitHub Pages URL.
+
+Dashboard features continue to work normally when the dashboard is opened via the QR code, including:
+
 - status loading
+- mobile detection
+- first-visit install prompt
+- localStorage dismissal
+- pull-to-refresh
 - card expansion/collapse
-- theme preference
-
-continue to work normally.
+- hidden theme preference
 
 For testing query parameters such as:
 
@@ -108,11 +135,13 @@ For testing query parameters such as:
 ?installprompt=true
 ```
 
-use the direct GitHub Pages URL rather than the bit.ly URL:
+use the direct GitHub Pages URL manually:
 
 ```text
 https://mke57.github.io/status-dashboard/?installprompt=true
 ```
+
+Do not rely on QR code or bit.ly links when testing query-string based behaviour.
 
 ---
 
@@ -632,6 +661,20 @@ https://bit.ly/atg-status
 
 Both should redirect to the live dashboard.
 
+### Test the QR code
+
+Scan the QR code stored at:
+
+```text
+assets/qr/atg-status-dashboard-qr.png
+```
+
+The QR code should open:
+
+```text
+https://mke57.github.io/status-dashboard/
+```
+
 ### Test the install prompt
 
 Open:
@@ -745,33 +788,26 @@ The main dashboard is expected to be served as:
 index.html
 ```
 
-Additional asset references may include:
-
-- provider logos
-- ATG logo
-- touch icon
-- favicon
-- QR code image, if stored in the repository
-
-Provider logo URLs are referenced directly in the dashboard configuration.
-
----
-
-## Adding the QR code to the repository
-
-If the QR code image is added to the repository, a suggested location is:
+Suggested asset structure:
 
 ```text
-assets/qr/atg-status-qr.png
+assets/
+  logos/
+    ATG.jpeg
+    audienceview.webp
+    cloudflare.png
+    worldpay.png
+  qr/
+    atg-status-dashboard-qr.png
 ```
 
-The README can then include it using:
+The QR code image should be stored at:
 
-```markdown
-![ATG Status Dashboard QR Code](assets/qr/atg-status-qr.png)
+```text
+assets/qr/atg-status-dashboard-qr.png
 ```
 
-If the QR code is not stored in the repository, this README can simply describe that a QR code exists and is available for use in rollout material.
+The README references the QR code from that location.
 
 ---
 
@@ -1149,6 +1185,10 @@ https://bit.ly/ATG-Status
 Lowercase alternative:
 
 https://bit.ly/atg-status
+
+A QR code is also available and points directly to:
+
+https://mke57.github.io/status-dashboard/
 
 For best use on mobile, open the link in Safari/your mobile browser and add it to your Home Screen when prompted. This gives quick access and makes the dashboard behave more like an app.
 
