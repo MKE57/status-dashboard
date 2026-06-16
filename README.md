@@ -125,7 +125,7 @@ Using the direct GitHub Pages URL means:
 
 ### QR code preview
 
-![ATG Status Dashboard QR Code](assets/logos/qr/atg-status-dashboard-qr.png)
+![ATG Status Dashboard QR Code](assets/qr/atg-status-dashboard-qr.png)
 
 ### QR code usage notes
 
