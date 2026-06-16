@@ -96,7 +96,7 @@ https://mke57.github.io/status-dashboard/wallboardtest/
 The QR code is included in this repository at:
 
 ```text
-assets/qr/atg-status-dashboard-qr.png
+assets/logos/qr/atg-status-dashboard-qr.png
 ```
 
 The QR code points directly to the GitHub Pages URL:
@@ -125,7 +125,7 @@ Using the direct GitHub Pages URL means:
 
 ### QR code preview
 
-![ATG Status Dashboard QR Code](assets/qr/atg-status-dashboard-qr.png)
+![ATG Status Dashboard QR Code](assets/logos/qr/atg-status-dashboard-qr.png)
 
 ### QR code usage notes
 
