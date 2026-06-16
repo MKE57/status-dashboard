@@ -79,6 +79,18 @@ The short links redirect to the GitHub Pages-hosted version. The GitHub Pages UR
 
 ---
 
+## Additional environments
+
+In addition to the main live dashboard, there are several additional environments available:
+
+```text
+https://mke57.github.io/status-dashboard/test/
+https://mke57.github.io/status-dashboard/wallboard/
+https://mke57.github.io/status-dashboard/wallboardtest/
+```
+
+---
+
 ## QR code
 
 The QR code is included in this repository at:
