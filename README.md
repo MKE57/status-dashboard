@@ -123,10 +123,6 @@ Using the direct GitHub Pages URL means:
 - the QR code remains clear and predictable in the repository
 - the bit.ly URLs can still be used separately for human-friendly links
 
-### QR code preview
-
-![ATG Status Dashboard QR Code](assets/qr/atg-status-dashboard-qr.png)
-
 ### QR code usage notes
 
 Scanning the QR code behaves the same as opening the direct GitHub Pages URL.
