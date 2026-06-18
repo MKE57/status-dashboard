@@ -1,7 +1,7 @@
 name: Update IBM Planning Analytics Status Cache
 
 on:
-  workflow_dispatch:
+  workflow_dispatch: {}
   schedule:
     # GitHub Actions scheduled workflows have a practical minimum interval of 5 minutes.
     # Times are UTC and may be delayed slightly by GitHub Actions load.
