@@ -29,6 +29,7 @@
       --blue-bg: #1e3a8a;
       --blue-text: #dbeafe;
       --blue-border: #60a5fa;
+      --dashboard-columns: 2;
     }
 
     body.wallboard-light {
@@ -219,7 +220,29 @@
     .summary-label { font-size: clamp(12px, min(1vw, 1.9vh), 22px); color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .summary-value { font-size: clamp(26px, min(2.7vw, 5vh), 62px); font-weight: bold; line-height: 1; margin-top: 4px; }
 
-    .dashboard-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: clamp(10px, min(1.6vw, 2vh), 24px); transition: opacity 220ms ease; }
+    .dashboard-grid {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: repeat(var(--dashboard-columns), minmax(0, 1fr));
+      grid-auto-rows: minmax(0, 1fr);
+      gap: clamp(10px, min(1.6vw, 2vh), 24px);
+      transition: opacity 220ms ease;
+    }
+
+    .dashboard-grid.provider-count-1 { --dashboard-columns: 1; }
+    .dashboard-grid.provider-count-2,
+    .dashboard-grid.provider-count-3,
+    .dashboard-grid.provider-count-4 { --dashboard-columns: 2; }
+    .dashboard-grid.provider-count-5,
+    .dashboard-grid.provider-count-6,
+    .dashboard-grid.provider-count-7,
+    .dashboard-grid.provider-count-8,
+    .dashboard-grid.provider-count-9 { --dashboard-columns: 3; }
+    .dashboard-grid.provider-count-10,
+    .dashboard-grid.provider-count-11,
+    .dashboard-grid.provider-count-12 { --dashboard-columns: 4; }
+
     .refreshing { opacity: .66; }
 
     .card { position: relative; background: var(--panel); border: 2px solid var(--border); border-left-width: clamp(10px, min(1.2vw, 1.6vh), 16px); border-radius: clamp(14px, min(1.8vw, 2vh), 24px); padding: clamp(12px, min(2vw, 2.5vh), 28px); min-height: 0; overflow: hidden; }
@@ -234,7 +257,7 @@
     .provider-link, .service-logo-link { color: inherit; text-decoration: none; }
     .service-logo-link { grid-column: 2; grid-row: 1 / span 2; display: inline-flex; align-self: start; }
     .service-logo { width: var(--logo-w, clamp(90px, min(7vw, 10vh), 160px)); height: var(--logo-h, clamp(50px, min(4vw, 7vh), 90px)); display: flex; align-items: center; justify-content: center; border-radius: clamp(10px, min(1vw, 1.5vh), 18px); border: 1px solid var(--border); background: rgba(255, 255, 255, .95); color: #1f2937; padding: 8px; overflow: hidden; font-weight: bold; }
-    .service-logo img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+    .service-logo img, .service-logo video { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
     .badge { grid-column: 1; width: fit-content; max-width: 100%; padding: var(--badge-py, clamp(6px, min(1vw, 1.2vh), 12px)) var(--badge-px, clamp(10px, min(1.5vw, 1.8vh), 22px)); border-radius: 999px; font-size: var(--badge-size, clamp(15px, min(1.5vw, 3vh), 32px)); font-weight: bold; text-transform: uppercase; border: clamp(2px, min(.25vw, .4vh), 3px) solid transparent; line-height: 1.1; }
     .good { background: var(--green-bg); color: var(--green-text); border-color: var(--green-border); }
     .warn { background: var(--yellow-bg); color: var(--yellow-text); border-color: var(--yellow-border); }
@@ -268,13 +291,36 @@
       .card.expanded .mobile-details .detail-block:first-child { margin-top: 0; }
     }
 
+    @media (max-width: 1400px) and (min-width: 1001px) {
+      .dashboard-grid.provider-count-5,
+      .dashboard-grid.provider-count-6,
+      .dashboard-grid.provider-count-7,
+      .dashboard-grid.provider-count-8,
+      .dashboard-grid.provider-count-9,
+      .dashboard-grid.provider-count-10,
+      .dashboard-grid.provider-count-11,
+      .dashboard-grid.provider-count-12 { --dashboard-columns: 3; }
+    }
+
     @media (max-width: 1000px) {
       body { overflow: auto; height: auto; }
       .header-row { grid-template-columns: minmax(0, 1fr) auto; }
       .header-time { display: none; }
       .header-brand-logo { justify-self: end; width: 74px; height: 74px; max-width: 74px; flex-shrink: 0; }
       .header-brand-logo img { width: 100%; height: 100%; object-fit: contain; }
-      .dashboard-grid { grid-template-columns: 1fr; grid-template-rows: none; }
+      .dashboard-grid,
+      .dashboard-grid.provider-count-1,
+      .dashboard-grid.provider-count-2,
+      .dashboard-grid.provider-count-3,
+      .dashboard-grid.provider-count-4,
+      .dashboard-grid.provider-count-5,
+      .dashboard-grid.provider-count-6,
+      .dashboard-grid.provider-count-7,
+      .dashboard-grid.provider-count-8,
+      .dashboard-grid.provider-count-9,
+      .dashboard-grid.provider-count-10,
+      .dashboard-grid.provider-count-11,
+      .dashboard-grid.provider-count-12 { --dashboard-columns: 1; grid-auto-rows: auto; }
       .card-fit { row-gap: 0; }
       .service-header h2 { font-size: clamp(22px, min(2.3vw, 4.5vh), 50px); margin: 0 0 clamp(8px, min(1.5vw, 1.8vh), 20px); }
       .badge { font-size: clamp(15px, min(1.5vw, 3vh), 32px); padding: clamp(6px, min(1vw, 1.2vh), 12px) clamp(10px, min(1.5vw, 1.8vh), 22px); }
@@ -340,18 +386,19 @@
   <div class="footer-row">
     <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
     <div id="autoRefreshFooter" class="footer-status-text">Next refresh in: 60s</div>
-    <div id="dashboardMeta">Version: v0.5.51 | Built and maintained by Mike Ahrens</div>
+    <div id="dashboardMeta">Version: v0.5.56 | Built and maintained by Mike Ahrens</div>
   </div>
 
   <script>
     const providers = [
-      { name: "Cloudflare", url: "https://www.cloudflarestatus.com/api/v2/summary.json", incidentsUrl: "https://www.cloudflarestatus.com/api/v2/incidents.json", statusPage: "https://www.cloudflarestatus.com/", logoText: "CF", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/cloudflare.png" },
-      { name: "Worldpay", url: "https://status.worldpay.com/api/v2/summary.json", incidentsUrl: "https://status.worldpay.com/api/v2/incidents.json", statusPage: "https://status.worldpay.com/", logoText: "WP", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/worldpay.png" },
-      { name: "AudienceView Professional", url: "https://professional-status.audienceview.com/api/v2/summary.json", incidentsUrl: "https://professional-status.audienceview.com/api/v2/incidents.json", statusPage: "https://professional-status.audienceview.com/", logoText: "AVP", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp" },
-      { name: "AudienceView Unlimited", url: "https://unlimited-status.audienceview.com/api/v2/summary.json", incidentsUrl: "https://unlimited-status.audienceview.com/api/v2/incidents.json", statusPage: "https://unlimited-status.audienceview.com/", logoText: "AVU", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp" }
+      { name: "Cloudflare", type: "statuspage", url: "https://www.cloudflarestatus.com/api/v2/summary.json", incidentsUrl: "https://www.cloudflarestatus.com/api/v2/incidents.json", statusPage: "https://www.cloudflarestatus.com/", logoText: "CF", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/cloudflare.png" },
+      { name: "Worldpay", type: "statuspage", url: "https://status.worldpay.com/api/v2/summary.json", incidentsUrl: "https://status.worldpay.com/api/v2/incidents.json", statusPage: "https://status.worldpay.com/", logoText: "WP", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/worldpay.png" },
+      { name: "AudienceView Professional", type: "statuspage", url: "https://professional-status.audienceview.com/api/v2/summary.json", incidentsUrl: "https://professional-status.audienceview.com/api/v2/incidents.json", statusPage: "https://professional-status.audienceview.com/", logoText: "AVP", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp" },
+      { name: "AudienceView Unlimited", type: "statuspage", url: "https://unlimited-status.audienceview.com/api/v2/summary.json", incidentsUrl: "https://unlimited-status.audienceview.com/api/v2/incidents.json", statusPage: "https://unlimited-status.audienceview.com/", logoText: "AVU", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp" },
+      { name: "IBM Planning Analytics", type: "cached-json", url: "https://mke57.github.io/status-dashboard/data/ibm-planning-analytics.json", statusPage: "https://status.ai-apps-comms.ibm.com/planninganalytics", logoText: "IBM", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/IBMPlanningAnalytics.webm" }
     ];
 
-    const dashboardVersion = "v0.5.51";
+    const dashboardVersion = "v0.5.56";
     const dashboardMaintainer = "Mike Ahrens";
     const refreshIntervalMs = 60000;
     const fadeDurationMs = 220;
@@ -444,12 +491,12 @@
     }
 
     function itemText(item, field) { return (item && item[field] ? String(item[field]) : "").toLowerCase(); }
-    function latestUpdateBody(item) { return ((item.incident_updates && item.incident_updates[0] && item.incident_updates[0].body) || ""); }
+    function latestUpdateBody(item) { return ((item.incident_updates && item.incident_updates[0] && item.incident_updates[0].body) || item.body || ""); }
     function noticeText(item) { return ((item.name || "") + " " + latestUpdateBody(item)).replace(/\s+/g, " "); }
 
     function isMaintenanceNotice(item) {
       const name = itemText(item, "name"), status = itemText(item, "status"), impact = itemText(item, "impact"), body = latestUpdateBody(item).toLowerCase();
-      return name.includes("scheduled maintenance") || name.includes("maintenance notice") || name.includes("upcoming maintenance") || impact === "maintenance" || body.includes("scheduled maintenance") || body.includes("system maintenance") || status === "scheduled";
+      return name.includes("scheduled maintenance") || name.includes("maintenance notice") || name.includes("upcoming maintenance") || name.includes("maintenance") || impact === "maintenance" || body.includes("scheduled maintenance") || body.includes("system maintenance") || status === "scheduled" || status.includes("maintenance");
     }
 
     function isUpcomingMaintenanceNotice(item) {
@@ -496,7 +543,7 @@
     function isInferredMaintenanceActive(item) { const windowInfo = getInferredMaintenanceWindow(item); if (!windowInfo) return false; const now = new Date(); return now >= windowInfo.start && now <= windowInfo.end; }
     function isInferredMaintenanceUpcomingWithin24Hours(item) { if (isInferredMaintenanceActive(item)) return false; const windowInfo = getInferredMaintenanceWindow(item); return windowInfo ? isWithinNext24Hours(windowInfo.start) : isWithinNext24Hours(getMaintenanceDate(item)); }
     function isWithinNext24Hours(value) { const date = value instanceof Date ? value : dateValue(value); if (!date) return false; const diff = date - new Date(); return diff >= 0 && diff <= 24 * 60 * 60 * 1000; }
-    function isMaintenanceActive(maintenance) { const now = new Date(), status = itemText(maintenance, "status"), start = dateValue(maintenance.scheduled_for), end = dateValue(maintenance.scheduled_until); return status === "in_progress" || status === "verifying" || (start && end && now >= start && now <= end); }
+    function isMaintenanceActive(maintenance) { const now = new Date(), status = itemText(maintenance, "status"), start = dateValue(maintenance.scheduled_for), end = dateValue(maintenance.scheduled_until); return status === "in_progress" || status === "verifying" || status === "active" || (start && end && now >= start && now <= end); }
     function isMaintenanceUpcomingWithin24Hours(maintenance) { return !isMaintenanceActive(maintenance) && isWithinNext24Hours(getMaintenanceDate(maintenance)); }
 
     function isMajorIncident(incident) { const impact = itemText(incident, "impact"), name = itemText(incident, "name"), status = itemText(incident, "status"); return impact.includes("major") || impact.includes("critical") || name.includes("major") || name.includes("critical") || status.includes("major") || status.includes("critical"); }
@@ -505,7 +552,7 @@
     function hasUpcomingMaintenance(service) { return service.upcomingMaintenances.length > 0; }
     function getStatusClass(service) { const severity = getSeverity(service); if (severity === 3) return "bad"; if (severity === 2) return "warn"; if (hasActiveMaintenance(service) || hasUpcomingMaintenance(service)) return "maintenance"; return "good"; }
     function getCardBorderClass(service) { const severity = getSeverity(service); if (severity === 3) return "bad-border"; if (severity === 2) return "warn-border"; if (hasActiveMaintenance(service) || hasUpcomingMaintenance(service)) return "maintenance-border"; return "good-border"; }
-    function getDisplayStatus(service) { const severity = getSeverity(service); if (service.status === "Unable to fetch") return "Unable to fetch"; if (severity === 3) return "Major incident"; if (service.activeIncidents.length > 0) return "Active incident"; if (service.activeMaintenances.length > 0) return "Maintenance"; if (service.upcomingMaintenances.length > 0) return window.innerWidth <= 390 ? "Upcoming maint." : "Upcoming maintenance"; return "Operational"; }
+    function getDisplayStatus(service) { const severity = getSeverity(service); if (service.status === "Unable to fetch") return "Unable to fetch"; if (severity === 3) return "Major incident"; if (service.activeIncidents.length > 0) return "Minor incident"; if (service.activeMaintenances.length > 0) return "Maintenance"; if (service.upcomingMaintenances.length > 0) return window.innerWidth <= 390 ? "Upcoming maint." : "Upcoming maintenance"; return "Operational"; }
     function hasIssue(service) { return service.status === "Unable to fetch" || service.activeIncidents.length > 0; }
     function getActiveIssueCount(service) { return service.activeIncidents.length; }
     function getActiveMaintenanceCount(service) { return service.activeMaintenances.length; }
@@ -515,15 +562,18 @@
     function applyBannerState(immediate = false) { setBannerClass(latestBannerState.className); if (immediate) document.getElementById("summaryBannerText").innerText = latestBannerState.text; else setBannerTextAnimated(latestBannerState.text); }
 
     function updateSummary(resultsData) {
-      const highestSeverity = Math.max(...resultsData.map(getSeverity));
       const servicesWithIssues = resultsData.filter(hasIssue).length;
       const activeIssueTotal = resultsData.reduce((total, service) => total + getActiveIssueCount(service), 0);
       const activeMaintenanceTotal = resultsData.reduce((total, service) => total + getActiveMaintenanceCount(service), 0);
+      const majorIssueTotal = resultsData.reduce((total, service) => total + service.activeIncidents.filter(isMajorIncident).length, 0);
+      const unavailableTotal = resultsData.filter(service => service.status === "Unable to fetch").length;
+      const allProvidersUnavailable = resultsData.length > 0 && unavailableTotal === resultsData.length;
       document.getElementById("servicesMonitored").innerText = resultsData.length;
       document.getElementById("servicesWithIssues").innerText = servicesWithIssues;
       document.getElementById("activeIncidents").innerText = activeIssueTotal;
-      if (highestSeverity === 3) latestBannerState = { text: "Major incident reported", className: "summary-bad", canUseEasterEgg: false };
-      else if (activeIssueTotal > 0) latestBannerState = { text: "Active incident reported", className: "summary-warn", canUseEasterEgg: false };
+      if (allProvidersUnavailable) latestBannerState = { text: "Unable to fetch service statuses", className: "summary-bad", canUseEasterEgg: false };
+      else if (majorIssueTotal > 0) latestBannerState = { text: "Major incident reported", className: "summary-bad", canUseEasterEgg: false };
+      else if (activeIssueTotal > 0) latestBannerState = { text: "Minor incident reported", className: "summary-warn", canUseEasterEgg: false };
       else if (activeMaintenanceTotal > 0) latestBannerState = { text: "Maintenance in progress", className: "summary-maintenance", canUseEasterEgg: false };
       else latestBannerState = { text: "All services operational", className: "summary-good", canUseEasterEgg: servicesWithIssues === 0 };
       if (!easterEggActive) applyBannerState(true);
@@ -533,9 +583,100 @@
     async function triggerEasterEgg() { if (!latestBannerState.canUseEasterEgg || easterEggActive) return; easterEggActive = true; const message = getNextEasterEggMessage(); await setBannerTextAnimated(message); await sleep(easterEggDisplayMs); await setBannerTextAnimated(latestBannerState.text); easterEggActive = false; }
     function handleBannerTap() { if (!latestBannerState.canUseEasterEgg || easterEggActive) return; const now = Date.now(); if (now - lastTapAt < 450) { lastTapAt = 0; triggerEasterEgg(); } else lastTapAt = now; }
 
+    function stripHtml(value) { return String(value || "").replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim(); }
+    function valueFromPath(source, path) { return path.split(".").reduce((value, key) => value && value[key] !== undefined ? value[key] : undefined, source); }
+    function firstPath(source, paths) { for (const path of paths) { const value = valueFromPath(source, path); if (value !== undefined && value !== null && value !== "") return value; } return undefined; }
+    function normaliseIbmNotice(notice) {
+      const title = firstPath(notice, ["title", "name", "summary", "subject", "notificationTitle", "headline", "eventTitle", "shortDescription", "attributes.title"]) || "IBM notice";
+      const body = stripHtml(firstPath(notice, ["description", "body", "message", "notificationContent", "content", "details", "longDescription", "attributes.description", "attributes.body"]) || "");
+      const status = firstPath(notice, ["status", "state", "category", "notificationStatus", "eventStatus", "attributes.status"]) || "";
+      const impact = firstPath(notice, ["impact", "severity", "priority", "eventType", "type", "attributes.severity"]) || "";
+      const createdAt = firstPath(notice, ["created_at", "createdAt", "creationDate", "createdDate", "startDate", "date", "publishDate", "published", "attributes.createdAt"]);
+      const updatedAt = firstPath(notice, ["updated_at", "updatedAt", "lastUpdated", "modifiedDate", "updateDate", "updated", "attributes.updatedAt"]) || createdAt;
+      const scheduledFor = firstPath(notice, ["scheduled_for", "scheduledFor", "start_time", "startTime", "startDate", "plannedStartTime", "eventStartTime", "attributes.startTime"]);
+      const scheduledUntil = firstPath(notice, ["scheduled_until", "scheduledUntil", "end_time", "endTime", "endDate", "plannedEndTime", "eventEndTime", "attributes.endTime"]);
+      return { name: stripHtml(title), body, status: String(status), impact: String(impact), created_at: createdAt, updated_at: updatedAt, scheduled_for: scheduledFor, scheduled_until: scheduledUntil, incident_updates: body ? [{ body }] : [] };
+    }
+    function collectNoticeArrays(value, arrays = []) {
+      if (Array.isArray(value)) {
+        if (value.some(item => item && typeof item === "object")) arrays.push(value);
+        value.forEach(item => collectNoticeArrays(item, arrays));
+      } else if (value && typeof value === "object") {
+        Object.values(value).forEach(item => collectNoticeArrays(item, arrays));
+      }
+      return arrays;
+    }
+    function scoreNoticeArray(items) {
+      const keys = ["title", "name", "summary", "subject", "description", "body", "message", "status", "severity", "createdAt", "updatedAt", "date"];
+      return items.reduce((score, item) => score + (item && typeof item === "object" ? keys.filter(key => item[key] !== undefined).length : 0), 0);
+    }
+    function getIbmNoticeArray(data) {
+      if (Array.isArray(data)) return data;
+      const preferred = [data?.notices, data?.items, data?.data, data?.notifications, data?.announcements, data?.results, data?.records];
+      const direct = preferred.find(Array.isArray);
+      if (direct) return direct;
+      const arrays = collectNoticeArrays(data).filter(items => items.length > 0);
+      if (!arrays.length) return [];
+      return arrays.sort((a, b) => scoreNoticeArray(b) - scoreNoticeArray(a))[0];
+    }
+    function isResolvedNotice(notice) {
+      const status = itemText(notice, "status"), body = latestUpdateBody(notice).toLowerCase();
+      return status.includes("resolved") || status.includes("closed") || status.includes("complete") || status.includes("completed") || status.includes("cancelled") || body.includes("resolved") || body.includes("has been resolved") || body.includes("completed successfully");
+    }
+    function isIbmActiveNotice(notice) {
+      if (isResolvedNotice(notice)) return false;
+      const status = itemText(notice, "status"), impact = itemText(notice, "impact"), name = itemText(notice, "name"), body = latestUpdateBody(notice).toLowerCase();
+      return status.includes("active") || status.includes("open") || status.includes("progress") || status.includes("investigating") || impact.includes("critical") || impact.includes("major") || impact.includes("minor") || name.includes("incident") || body.includes("incident") || body.includes("degraded") || body.includes("unavailable") || body.includes("outage") || body.includes("disruption") || body.includes("interruption");
+    }
+    async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+      try { return await fetch(url, { ...options, signal: controller.signal, cache: "no-store" }); }
+      finally { clearTimeout(timeoutId); }
+    }
+    async function fetchIbmNoticesProvider(provider) {
+      const response = await fetchWithTimeout(provider.url, {}, 8000);
+      if (!response.ok) throw new Error("IBM notices fetch failed: " + response.status);
+      const data = await response.json();
+      console.info("IBM Planning Analytics raw notices response", data);
+      const notices = getIbmNoticeArray(data).map(normaliseIbmNotice);
+      console.info("IBM Planning Analytics parsed notices", notices);
+      const maintenanceNotices = notices.filter(isMaintenanceNotice);
+      const activeMaintenanceNotices = maintenanceNotices.filter(notice => !isResolvedNotice(notice)).filter(notice => isMaintenanceActive(notice) || isInferredMaintenanceActive(notice));
+      const upcomingMaintenanceNotices = maintenanceNotices.filter(notice => !isResolvedNotice(notice)).filter(item => !isInferredMaintenanceActive(item)).filter(isUpcomingMaintenanceNotice).filter(isInferredMaintenanceUpcomingWithin24Hours);
+      const activeIncidents = notices.filter(notice => !isMaintenanceNotice(notice)).filter(isIbmActiveNotice);
+      const recentIncidents = sortIncidentsNewestFirst(notices.filter(notice => !isMaintenanceNotice(notice)));
+      const latestUpdated = sortIncidentsNewestFirst(notices)[0]?.updated_at || data.updated_at || data.updatedAt || data.lastUpdated || new Date().toISOString();
+      return { name: provider.name, statusPage: provider.statusPage, logoText: provider.logoText, logoSrc: provider.logoSrc, status: activeIncidents.length > 0 ? "Active incident" : "Operational", activeIncidents, activeMaintenances: activeMaintenanceNotices, upcomingMaintenances: upcomingMaintenanceNotices, recentIncidents, updated: latestUpdated };
+    }
+
+    async function fetchCachedJsonProvider(provider) {
+      const cacheBuster = Math.floor(Date.now() / 60000);
+      const separator = provider.url.includes("?") ? "&" : "?";
+      const response = await fetch(provider.url + separator + "cacheBust=" + cacheBuster, { cache: "no-store" });
+      if (!response.ok) throw new Error("Cached provider fetch failed: " + response.status);
+      const data = await response.json();
+      if (!data || data.cacheStatus !== "ok") throw new Error(data && data.error ? data.error : "Cached provider returned an error state");
+      return {
+        name: provider.name,
+        statusPage: provider.statusPage,
+        logoText: provider.logoText,
+        logoSrc: provider.logoSrc,
+        status: data.status || "Operational",
+        activeIncidents: Array.isArray(data.activeIncidents) ? data.activeIncidents : [],
+        activeMaintenances: Array.isArray(data.activeMaintenances) ? data.activeMaintenances : [],
+        upcomingMaintenances: Array.isArray(data.upcomingMaintenances) ? data.upcomingMaintenances : [],
+        recentIncidents: Array.isArray(data.recentIncidents) ? data.recentIncidents : [],
+        updated: data.updated || data.sourceUpdatedAt || data.fetchedAt || null
+      };
+    }
+
     async function fetchProvider(provider) {
       try {
+        if (provider.type === "cached-json") return await fetchCachedJsonProvider(provider);
+        if (provider.type === "ibm-notices") return await fetchIbmNoticesProvider(provider);
         const [summaryResponse, incidentResponse] = await Promise.all([fetch(provider.url), fetch(provider.incidentsUrl)]);
+        if (!summaryResponse.ok || !incidentResponse.ok) throw new Error("Statuspage fetch failed");
         const summaryData = await summaryResponse.json();
         const incidentData = await incidentResponse.json();
         const rawIncidents = summaryData.incidents || [];
@@ -556,6 +697,7 @@
           updated: summaryData.page.updated_at
         };
       } catch (error) {
+        console.warn("Unable to fetch provider status", provider.name, error);
         return { name: provider.name, statusPage: provider.statusPage, logoText: provider.logoText, logoSrc: provider.logoSrc, status: "Unable to fetch", activeIncidents: [], activeMaintenances: [], upcomingMaintenances: [], recentIncidents: [], updated: null };
       }
     }
@@ -567,11 +709,16 @@
     function incidentPillClass(incident) { return isMaintenanceNotice(incident) ? "maintenance" : isMajorIncident(incident) ? "bad" : "warn"; }
     function sortIncidentsNewestFirst(incidents) { return [...incidents].sort((a, b) => new Date(b.updated_at || b.resolved_at || b.created_at || 0) - new Date(a.updated_at || a.resolved_at || a.created_at || 0)); }
     function escapeHtml(value) { return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;"); }
-    function logoHtml(service) { return `<a class="service-logo-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHtml(service.name)} status page"><div class="service-logo"><img src="${service.logoSrc}" alt="${escapeHtml(service.name)} logo" onerror="this.style.display='none';this.parentElement.textContent='${service.logoText}';"></div></a>`; }
+    function isVideoLogo(src) { return /\.(webm|mp4|mov)(\?|#|$)/i.test(src || ""); }
+    function logoMediaHtml(service) {
+      if (isVideoLogo(service.logoSrc)) return `<video src="${service.logoSrc}" autoplay muted loop playsinline aria-label="${escapeHtml(service.name)} logo" onerror="this.style.display='none';this.parentElement.textContent='${escapeHtml(service.logoText)}';"></video>`;
+      return `<img src="${service.logoSrc}" alt="${escapeHtml(service.name)} logo" onerror="this.style.display='none';this.parentElement.textContent='${escapeHtml(service.logoText)}';">`;
+    }
+    function logoHtml(service) { return `<a class="service-logo-link" href="${service.statusPage}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHtml(service.name)} status page"><div class="service-logo">${logoMediaHtml(service)}</div></a>`; }
     function maintenanceSummaryHtml(service) { const activeMaintenance = service.activeMaintenances[0], upcomingMaintenance = service.upcomingMaintenances[0]; if (activeMaintenance) return `<div class="card-detail maintenance-line"><strong>Maintenance:</strong> in progress</div>`; if (upcomingMaintenance) return `<div class="card-detail maintenance-line"><strong>Upcoming maintenance:</strong> ${formatMaintenanceTime(upcomingMaintenance)}</div>`; return ""; }
 
     function buildIncidentDetails(service) {
-      const sortedIncidents = sortIncidentsNewestFirst(service.recentIncidents), latestIncident = sortedIncidents[0], resolvedIncidents = sortIncidentsNewestFirst(service.recentIncidents.filter(incident => incident.status === "resolved" && !isMaintenanceNotice(incident))).slice(0, 3);
+      const sortedIncidents = sortIncidentsNewestFirst(service.recentIncidents), latestIncident = sortedIncidents[0], resolvedIncidents = sortIncidentsNewestFirst(service.recentIncidents.filter(incident => (incident.status === "resolved" || isResolvedNotice(incident)) && !isMaintenanceNotice(incident))).slice(0, 3);
       let detailsHtml = "";
       if (service.activeMaintenances.length > 0) detailsHtml += `<div class="detail-block"><p class="detail-heading">Maintenance in progress</p><ul class="detail-list">${service.activeMaintenances.slice(0, 2).map(maintenance => `<li><span class="detail-pill maintenance">Maintenance</span>${escapeHtml(maintenance.name)} - ${formatMaintenanceTime(maintenance)}</li>`).join("")}</ul></div>`;
       else if (service.upcomingMaintenances.length > 0) detailsHtml += `<div class="detail-block"><p class="detail-heading">Upcoming maintenance within 24 hours</p><ul class="detail-list">${service.upcomingMaintenances.slice(0, 2).map(maintenance => `<li><span class="detail-pill maintenance">Scheduled</span>${escapeHtml(maintenance.name)} - ${formatMaintenanceTime(maintenance)}</li>`).join("")}</ul></div>`;
@@ -606,14 +753,21 @@
     function handlePullRefreshMove(event) { if (pullStartY === null) return; if (!event.touches || event.touches.length !== 1) { resetPullRefreshState(); return; } pullDistance = event.touches[0].clientY - pullStartY; if (window.scrollY !== 0 && !pullRefreshGestureCaptured) { resetPullRefreshState(); return; } if (!pullRefreshGestureCaptured && pullDistance > pullRefreshCaptureThreshold) { pullRefreshGestureCaptured = true; document.body.classList.add("pull-refresh-capturing"); } if (pullRefreshGestureCaptured) { event.preventDefault(); event.stopPropagation(); } if (pullDistance <= pullRefreshStartThreshold) { pullRefreshTriggered = false; setPullRefreshIndicator("", ""); return; } if (pullDistance < pullRefreshThreshold) { pullRefreshTriggered = false; setPullRefreshIndicator("Pull to refresh", "pulling"); return; } pullRefreshTriggered = true; setPullRefreshIndicator("Release to refresh", "ready"); }
     function handlePullRefreshEnd() { const shouldRefresh = pullRefreshTriggered && pullDistance >= pullRefreshThreshold; if (shouldRefresh) { setPullRefreshIndicator("Refreshing...", "ready"); setTimeout(() => window.location.replace(getReloadUrlWithCacheBust()), 120); } else { setPullRefreshIndicator("", ""); } pullStartY = null; pullDistance = 0; pullRefreshTriggered = false; pullRefreshGestureCaptured = false; document.body.classList.remove("pull-refresh-capturing"); }
 
+    function applyProviderCountClass(container, count) {
+      Array.from(container.classList).filter(className => className.startsWith("provider-count-")).forEach(className => container.classList.remove(className));
+      container.classList.add("provider-count-" + Math.min(Math.max(count, 1), 12));
+    }
+
     async function loadStatuses() {
       if (isLoadingStatuses || anyCardExpanded()) { updateAutoRefreshState(); return; }
       isLoadingStatuses = true;
       stopCountdown();
       const container = document.getElementById("results"), firstLoad = !container.children.length;
+      applyProviderCountClass(container, providers.length);
       if (firstLoad) { container.innerHTML = "<div class='card'><div class='card-fit'>Loading...</div></div>"; setFooterText("Loading...", false); }
       else { setRefreshing(true); setFooterText("Refreshing..."); }
       const resultsData = await Promise.all(providers.map(fetchProvider));
+      applyProviderCountClass(container, resultsData.length);
       if (!firstLoad) await sleep(fadeDurationMs);
       updateSummary(resultsData);
       container.innerHTML = "";
