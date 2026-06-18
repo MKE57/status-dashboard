@@ -6,20 +6,20 @@
   "fetchedAt": "2026-06-18T07:27:21.671729Z",
   "sourceUpdatedAt": "2026-06-18T07:22:21.671729Z",
   "updated": "2026-06-18T07:22:21.671729Z",
-  "status": "Active incident",
+  "status": "Major incident",
   "activeIncidents": [
     {
-      "name": "TEST - IBM Planning Analytics minor service degradation",
-      "body": "This is a test notice for dashboard validation. Customers may experience intermittent slowness when accessing IBM Planning Analytics Workspace. Engineering teams are investigating.",
+      "name": "TEST - IBM Planning Analytics major outage",
+      "body": "This is a test notice for dashboard validation. IBM Planning Analytics Workspace is currently unavailable for some customers. Engineering teams are actively working to restore service.",
       "status": "active",
-      "impact": "minor",
+      "impact": "major",
       "created_at": "2026-06-18T06:42:21.671729Z",
       "updated_at": "2026-06-18T07:22:21.671729Z",
       "scheduled_for": null,
       "scheduled_until": null,
       "incident_updates": [
         {
-          "body": "This is a test notice for dashboard validation. Customers may experience intermittent slowness when accessing IBM Planning Analytics Workspace. Engineering teams are investigating."
+          "body": "This is a test notice for dashboard validation. IBM Planning Analytics Workspace is currently unavailable for some customers. Engineering teams are actively working to restore service."
         }
       ]
     }
