@@ -3,9 +3,9 @@ name: Update IBM Planning Analytics Status Cache
 on:
   workflow_dispatch: {}
   schedule:
-    # Runs every 5 minutes, offset from the top of the hour to reduce scheduling delays.
+    # GitHub Actions scheduled workflows have a practical minimum interval of 5 minutes.
     # Times are UTC and may be delayed slightly by GitHub Actions load.
-    - cron: "2-59/5 * * * *"
+    - cron: "*/5 * * * *"
 
 permissions:
   contents: write
@@ -29,7 +29,7 @@ jobs:
 
       - name: Fetch IBM Planning Analytics status
         run: node wallboardtest/scripts/fetch-ibm-planning-analytics.js
-
+      
       - name: Commit updated IBM cache
         run: |
           if git diff --quiet -- wallboardtest/data/ibm-planning-analytics.json; then
