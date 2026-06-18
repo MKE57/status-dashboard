@@ -1,0 +1,48 @@
+name: Update IBM Planning Analytics Status Cache
+run-name: IBM cache update via ${{ github.event_name }}
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+  schedule:
+    # Runs every 5 minutes, offset from the top of the hour to reduce scheduling delays.
+    # Times are UTC and may be delayed slightly by GitHub Actions load.
+    - cron: "*/6 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-ibm-planning-analytics-status-cache
+  cancel-in-progress: false
+
+jobs:
+  update-ibm-cache:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+
+      - name: Fetch IBM Planning Analytics status
+        run: node wallboardtest/scripts/fetch-ibm-planning-analytics.js
+
+      - name: Commit updated IBM cache
+        run: |
+          if git diff --quiet -- wallboardtest/data/ibm-planning-analytics.json; then
+            echo "No IBM cache changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add wallboardtest/data/ibm-planning-analytics.json
+          git commit -m "Update IBM Planning Analytics status cache"
+          git push
