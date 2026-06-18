@@ -2,7 +2,7 @@ const fs = require("node:fs/promises");
 const path = require("node:path");
 
 const IBM_NOTICES_URL = "https://status.ai-apps-comms.ibm.com/announcement/iotm/api/v1/ext/1nS00axYWJZEkaNISKwKAi4ZaLCXam495VbYfjO6y%2BM%3D/notices.json";
-const OUTPUT_PATH = path.join("data", "ibm-planning-analytics.json");
+const OUTPUT_PATH = path.join("wallboardtest", "data", "ibm-planning-analytics.json")
 const STATUS_PAGE = "https://status.ai-apps-comms.ibm.com/planninganalytics";
 
 function nowIso() {
