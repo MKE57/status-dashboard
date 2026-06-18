@@ -6,26 +6,26 @@
   "fetchedAt": "2026-06-18T07:27:21.671729Z",
   "sourceUpdatedAt": "2026-06-18T07:22:21.671729Z",
   "updated": "2026-06-18T07:22:21.671729Z",
-  "status": "Maintenance",
+  "status": "Upcoming maintenance",
   "activeIncidents": [],
-  "activeMaintenances": [
+  "activeMaintenances": [],
+  "upcomingMaintenances": [
     {
-      "name": "TEST - IBM Planning Analytics maintenance in progress",
-      "body": "This is a test notice for dashboard validation. Scheduled maintenance is currently in progress for IBM Planning Analytics Workspace.",
-      "status": "in_progress",
+      "name": "TEST - IBM Planning Analytics upcoming scheduled maintenance",
+      "body": "This is a test notice for dashboard validation. Scheduled maintenance is planned for IBM Planning Analytics Workspace within the next 24 hours.",
+      "status": "scheduled",
       "impact": "maintenance",
-      "created_at": "2026-06-18T05:27:21.671729Z",
+      "created_at": "2026-06-18T06:27:21.671729Z",
       "updated_at": "2026-06-18T07:22:21.671729Z",
-      "scheduled_for": "2026-06-18T07:07:21.671729Z",
-      "scheduled_until": "2026-06-18T08:07:21.671729Z",
+      "scheduled_for": "2026-06-18T09:27:21.671729Z",
+      "scheduled_until": "2026-06-18T10:27:21.671729Z",
       "incident_updates": [
         {
-          "body": "This is a test notice for dashboard validation. Scheduled maintenance is currently in progress for IBM Planning Analytics Workspace."
+          "body": "This is a test notice for dashboard validation. Scheduled maintenance is planned for IBM Planning Analytics Workspace within the next 24 hours."
         }
       ]
     }
   ],
-  "upcomingMaintenances": [],
   "recentIncidents": [],
   "noticeCount": 1,
   "testFileNote": "Temporary dashboard test file. Rename to ibm-planning-analytics.json and upload to wallboardtest/data for testing. Do not leave this test data in production."
