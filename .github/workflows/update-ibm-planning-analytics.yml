@@ -1,11 +1,12 @@
 name: Update IBM Planning Analytics Status Cache
+run-name: IBM cache update via ${{ github.event_name }}
 
 on:
   workflow_dispatch: {}
   schedule:
     # GitHub Actions scheduled workflows have a practical minimum interval of 5 minutes.
     # Times are UTC and may be delayed slightly by GitHub Actions load.
-    - cron: "*/5 * * * *"
+    - cron: "2-59/5 * * * *"
 
 permissions:
   contents: write
