@@ -6,25 +6,25 @@
   "fetchedAt": "2026-06-18T07:27:21.671729Z",
   "sourceUpdatedAt": "2026-06-18T07:22:21.671729Z",
   "updated": "2026-06-18T07:22:21.671729Z",
-  "status": "Major incident",
-  "activeIncidents": [
+  "status": "Maintenance",
+  "activeIncidents": [],
+  "activeMaintenances": [
     {
-      "name": "TEST - IBM Planning Analytics major outage",
-      "body": "This is a test notice for dashboard validation. IBM Planning Analytics Workspace is currently unavailable for some customers. Engineering teams are actively working to restore service.",
-      "status": "active",
-      "impact": "major",
-      "created_at": "2026-06-18T06:42:21.671729Z",
+      "name": "TEST - IBM Planning Analytics maintenance in progress",
+      "body": "This is a test notice for dashboard validation. Scheduled maintenance is currently in progress for IBM Planning Analytics Workspace.",
+      "status": "in_progress",
+      "impact": "maintenance",
+      "created_at": "2026-06-18T05:27:21.671729Z",
       "updated_at": "2026-06-18T07:22:21.671729Z",
-      "scheduled_for": null,
-      "scheduled_until": null,
+      "scheduled_for": "2026-06-18T07:07:21.671729Z",
+      "scheduled_until": "2026-06-18T08:07:21.671729Z",
       "incident_updates": [
         {
-          "body": "This is a test notice for dashboard validation. IBM Planning Analytics Workspace is currently unavailable for some customers. Engineering teams are actively working to restore service."
+          "body": "This is a test notice for dashboard validation. Scheduled maintenance is currently in progress for IBM Planning Analytics Workspace."
         }
       ]
     }
   ],
-  "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [],
   "noticeCount": 1,
