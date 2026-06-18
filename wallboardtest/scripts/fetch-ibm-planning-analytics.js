@@ -249,6 +249,35 @@ async function writeJsonFile(payload) {
   await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 }
 
+function comparablePayload(payload) {
+  const clone = JSON.parse(JSON.stringify(payload));
+
+  // Exclude check-time-only values so the workflow does not commit every 5 minutes.
+  delete clone.fetchedAt;
+
+  return clone;
+}
+
+async function writeJsonFileIfChanged(payload) {
+  try {
+    const existingRaw = await fs.readFile(OUTPUT_PATH, "utf8");
+    const existing = JSON.parse(existingRaw);
+
+    const existingComparable = JSON.stringify(comparablePayload(existing));
+    const nextComparable = JSON.stringify(comparablePayload(payload));
+
+    if (existingComparable === nextComparable) {
+      console.log("IBM Planning Analytics cache checked. No material status change.");
+      return false;
+    }
+  } catch (error) {
+    console.log("Existing IBM cache could not be compared. Writing new cache file.");
+  }
+
+  await writeJsonFileIfChanged(payload);
+  return true;
+}
+
 async function main() {
   const fetchedAt = nowIso();
 
@@ -280,7 +309,7 @@ async function main() {
       noticeCount: notices.length
     };
 
-    await writeJsonFile(payload);
+    await writeJsonFileIfChanged(payload);
     console.log(`IBM Planning Analytics cache updated: ${payload.status}; notices=${notices.length}; activeIncidents=${activeIncidents.length}`);
   } catch (error) {
     const payload = {
@@ -298,7 +327,7 @@ async function main() {
       error: error && error.message ? error.message : String(error)
     };
 
-    await writeJsonFile(payload);
+    await writeJsonFileIfChanged(payload);
     console.error("IBM Planning Analytics cache update failed:", payload.error);
     process.exitCode = 0;
   }
