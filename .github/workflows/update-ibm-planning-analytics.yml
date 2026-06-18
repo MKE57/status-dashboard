@@ -7,9 +7,9 @@ on:
     branches:
       - main
   schedule:
-    # Runs every 5 minutes, offset from the top of the hour to reduce scheduling delays.
+    # Runs every 15 minutes.
     # Times are UTC and may be delayed slightly by GitHub Actions load.
-    - cron: "*/6 * * * *"
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write
