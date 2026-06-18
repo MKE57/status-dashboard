@@ -25,14 +25,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
 
       - name: Fetch IBM Planning Analytics status
         run: node wallboardtest/scripts/fetch-ibm-planning-analytics.js
 
       - name: Commit updated IBM cache
         run: |
-          if git diff --quiet -- data/ibm-planning-analytics.json; then
+          if git diff --quiet -- wallboardtest/data/ibm-planning-analytics.json; then
             echo "No IBM cache changes to commit."
             exit 0
           fi
