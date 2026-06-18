@@ -9,7 +9,7 @@ on:
   schedule:
     # Runs every 5 minutes, offset from the top of the hour to reduce scheduling delays.
     # Times are UTC and may be delayed slightly by GitHub Actions load.
-    - cron: "*/6 * * * *"
+    - cron: "*6 * * * *"
 
 permissions:
   contents: write
