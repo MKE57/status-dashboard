@@ -32,7 +32,7 @@ jobs:
           npm install playwright
           npx playwright install --with-deps chromium
 
-      - name: Fetch Adyen status with rendered page scrape
+      - name: Fetch Adyen current status and incident history
         run: node scripts/fetch-statuspage-cache.js
 
       - name: Commit updated Adyen cache
