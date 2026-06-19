@@ -4,12 +4,12 @@
   "source": "https://status.adyen.com/api/v2/summary.json",
   "incidentsSource": "https://status.adyen.com/api/v2/incidents.json",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "Not yet fetched by GitHub Actions",
-  "updated": null,
+  "fetchedAt": "2026-06-19T13:31:32.887Z",
+  "updated": "2026-06-19T13:31:32.887Z",
   "status": "Unable to fetch",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [],
-  "error": "Initial placeholder. Run the GitHub Actions workflow to populate this file."
+  "error": "Unexpected token '<', \"<!doctype \"... is not valid JSON"
 }

@@ -4,12 +4,12 @@
   "source": "https://atgtickets.statuspage.io/api/v2/summary.json",
   "incidentsSource": "https://atgtickets.statuspage.io/api/v2/incidents.json",
   "statusPage": "https://atgtickets.statuspage.io/",
-  "fetchedAt": "Not yet fetched by GitHub Actions",
-  "updated": null,
+  "fetchedAt": "2026-06-19T13:31:33.059Z",
+  "updated": "2026-06-19T13:31:33.059Z",
   "status": "Unable to fetch",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [],
-  "error": "Initial placeholder. Run the GitHub Actions workflow to populate this file."
+  "error": "HTTP 401 Unauthorized"
 }
