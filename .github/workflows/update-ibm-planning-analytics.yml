@@ -32,17 +32,17 @@ jobs:
           node-version: "24"
 
       - name: Fetch IBM Planning Analytics status
-        run: node wallboardtest/scripts/fetch-ibm-planning-analytics.js
+        run: node scripts/fetch-ibm-planning-analytics.js
 
       - name: Commit updated IBM cache
         run: |
-          if git diff --quiet -- wallboardtest/data/ibm-planning-analytics.json; then
+          if git diff --quiet -- data/ibm-planning-analytics.json; then
             echo "No IBM cache changes to commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add wallboardtest/data/ibm-planning-analytics.json
+          git add data/ibm-planning-analytics.json
           git commit -m "Update IBM Planning Analytics status cache"
           git push
