@@ -1,42 +1,16 @@
 {
   "provider": "Adyen",
-  "cacheStatus": "ok",
+  "cacheStatus": "error",
   "source": "https://status.adyen.com/",
+  "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-06-19T14:24:41.601Z",
-  "sourceUpdatedAt": "2026-06-19T14:24:41.601Z",
-  "updated": "2026-06-19T14:24:41.601Z",
-  "status": "Operational",
+  "fetchedAt": "Not yet fetched by GitHub Actions",
+  "updated": null,
+  "status": "Unable to fetch",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [],
-  "noticeCount": 0,
-  "scrapeMode": "playwright-rendered-page",
-  "componentStatuses": [
-    {
-      "name": "Payments",
-      "status": "Operational"
-    },
-    {
-      "name": "Payment methods and issuers",
-      "status": "Operational"
-    },
-    {
-      "name": "Interfaces and reporting",
-      "status": "Operational"
-    },
-    {
-      "name": "Settlement and payouts",
-      "status": "Operational"
-    },
-    {
-      "name": "Adyen for Platforms",
-      "status": "Operational"
-    },
-    {
-      "name": "Financial products",
-      "status": "Operational"
-    }
-  ]
+  "error": "Initial placeholder. Run the GitHub Actions workflow to populate this file.",
+  "scrapeMode": "playwright-rendered-page-with-history"
 }
