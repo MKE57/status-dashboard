@@ -27,7 +27,12 @@ jobs:
         with:
           node-version: "24"
 
-      - name: Fetch Adyen status
+      - name: Install Playwright
+        run: |
+          npm install playwright
+          npx playwright install --with-deps chromium
+
+      - name: Fetch Adyen status with rendered page scrape
         run: node scripts/fetch-statuspage-cache.js
 
       - name: Commit updated Adyen cache
