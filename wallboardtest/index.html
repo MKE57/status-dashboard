@@ -386,7 +386,7 @@
   <div class="footer-row">
     <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
     <div id="autoRefreshFooter" class="footer-status-text">Next refresh in: 60s</div>
-    <div id="dashboardMeta">Version: v0.5.57 | Built and maintained by Mike Ahrens</div>
+    <div id="dashboardMeta">Version: v0.5.61 | Built and maintained by Mike Ahrens</div>
   </div>
 
   <script>
@@ -398,7 +398,7 @@
         incidentsUrl: "https://www.cloudflarestatus.com/api/v2/incidents.json",
         statusPage: "https://www.cloudflarestatus.com/",
         logoText: "CF",
-        logoSrc: "assets/logos/cloudflare.png"
+        logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/cloudflare.png"
       },
       {
         name: "Worldpay",
@@ -407,7 +407,7 @@
         incidentsUrl: "https://status.worldpay.com/api/v2/incidents.json",
         statusPage: "https://status.worldpay.com/",
         logoText: "WP",
-        logoSrc: "assets/logos/worldpay.png"
+        logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/worldpay.png"
       },
       {
         name: "AudienceView Professional",
@@ -416,7 +416,7 @@
         incidentsUrl: "https://professional-status.audienceview.com/api/v2/incidents.json",
         statusPage: "https://professional-status.audienceview.com/",
         logoText: "AVP",
-        logoSrc: "assets/logos/audienceview.webp"
+        logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp"
       },
       {
         name: "AudienceView Unlimited",
@@ -425,7 +425,7 @@
         incidentsUrl: "https://unlimited-status.audienceview.com/api/v2/incidents.json",
         statusPage: "https://unlimited-status.audienceview.com/",
         logoText: "AVU",
-        logoSrc: "assets/logos/audienceview.webp"
+        logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp"
       },
       {
         name: "IBM Planning Analytics",
@@ -433,7 +433,7 @@
         url: "data/ibm-planning-analytics.json",
         statusPage: "https://status.ai-apps-comms.ibm.com/planninganalytics",
         logoText: "IBM",
-        logoSrc: "assets/logos/IBMPlanningAnalytics.webp"
+        logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/IBMPlanningAnalytics.webp"
       },
       {
         name: "Adyen",
@@ -453,7 +453,7 @@
       }
     ];
 
-    const dashboardVersion = "v0.5.57";
+    const dashboardVersion = "v0.5.61";
     const dashboardMaintainer = "Mike Ahrens";
     const refreshIntervalMs = 60000;
     const fadeDurationMs = 220;
@@ -730,15 +730,35 @@
       try {
         if (provider.type === "cached-json") return await fetchCachedJsonProvider(provider);
         if (provider.type === "ibm-notices") return await fetchIbmNoticesProvider(provider);
-        const [summaryResponse, incidentResponse] = await Promise.all([fetch(provider.url), fetch(provider.incidentsUrl)]);
-        if (!summaryResponse.ok || !incidentResponse.ok) throw new Error("Statuspage fetch failed");
+
+        const summaryResponse = await fetch(provider.url);
+        if (!summaryResponse.ok) throw new Error("Statuspage summary fetch failed");
+
         const summaryData = await summaryResponse.json();
-        const incidentData = await incidentResponse.json();
+
+        let incidentData = { incidents: [] };
+        if (provider.incidentsUrl) {
+          try {
+            const incidentResponse = await fetch(provider.incidentsUrl);
+            if (incidentResponse.ok) {
+              incidentData = await incidentResponse.json();
+            } else {
+              console.warn("Incidents endpoint not available for", provider.name, incidentResponse.status);
+            }
+          } catch (incidentError) {
+            console.warn("Incidents fetch failed for", provider.name, incidentError);
+          }
+        }
+
         const rawIncidents = summaryData.incidents || [];
         const scheduledMaintenances = summaryData.scheduled_maintenances || [];
         const maintenanceNotices = rawIncidents.filter(isMaintenanceNotice);
         const activeMaintenanceNotices = maintenanceNotices.filter(isInferredMaintenanceActive);
-        const upcomingMaintenanceNotices = maintenanceNotices.filter(item => !isInferredMaintenanceActive(item)).filter(isUpcomingMaintenanceNotice).filter(isInferredMaintenanceUpcomingWithin24Hours);
+        const upcomingMaintenanceNotices = maintenanceNotices
+          .filter(item => !isInferredMaintenanceActive(item))
+          .filter(isUpcomingMaintenanceNotice)
+          .filter(isInferredMaintenanceUpcomingWithin24Hours);
+
         return {
           name: provider.name,
           statusPage: provider.statusPage,
@@ -753,7 +773,18 @@
         };
       } catch (error) {
         console.warn("Unable to fetch provider status", provider.name, error);
-        return { name: provider.name, statusPage: provider.statusPage, logoText: provider.logoText, logoSrc: provider.logoSrc, status: "Unable to fetch", activeIncidents: [], activeMaintenances: [], upcomingMaintenances: [], recentIncidents: [], updated: null };
+        return {
+          name: provider.name,
+          statusPage: provider.statusPage,
+          logoText: provider.logoText,
+          logoSrc: provider.logoSrc,
+          status: "Unable to fetch",
+          activeIncidents: [],
+          activeMaintenances: [],
+          upcomingMaintenances: [],
+          recentIncidents: [],
+          updated: null
+        };
       }
     }
 
