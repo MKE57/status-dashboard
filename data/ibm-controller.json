@@ -1,0 +1,10 @@
+{
+  "provider": "IBM Controller",
+  "cacheStatus": "error",
+  "fetchedAt": "Not yet fetched",
+  "status": "Unknown",
+  "activeIncidents": [],
+  "activeMaintenances": [],
+  "upcomingMaintenances": [],
+  "recentIncidents": []
+}
