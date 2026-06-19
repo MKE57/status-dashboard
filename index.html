@@ -7,8 +7,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="SaaS Status" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-  <link rel="apple-touch-icon" href="https://mke57.github.io/status-dashboard/assets/logos/ATG.jpeg" />
-  <link rel="icon" href="https://mke57.github.io/status-dashboard/assets/logos/ATG.jpeg" />
+  <link rel="apple-touch-icon" href="assets/logos/ATG.jpeg" />
+  <link rel="icon" href="assets/logos/ATG.jpeg" />
   <title>SaaS Status Dashboard</title>
   <style>
     :root {
@@ -366,7 +366,7 @@
       <p class="small">Live operational status for SaaS services</p>
     </div>
     <div class="header-brand-logo" aria-label="ATG logo">
-      <img src="https://mke57.github.io/status-dashboard/assets/logos/ATG.jpeg" alt="ATG logo" />
+      <img src="assets/logos/ATG.jpeg" alt="ATG logo" />
     </div>
     <div id="currentTime" class="header-time"></div>
   </div>
@@ -386,21 +386,74 @@
   <div class="footer-row">
     <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
     <div id="autoRefreshFooter" class="footer-status-text">Next refresh in: 60s</div>
-    <div id="dashboardMeta">Version: v0.5.56 | Built and maintained by Mike Ahrens</div>
+    <div id="dashboardMeta">Version: v0.5.57 | Built and maintained by Mike Ahrens</div>
   </div>
 
   <script>
     const providers = [
-      { name: "Cloudflare", type: "statuspage", url: "https://www.cloudflarestatus.com/api/v2/summary.json", incidentsUrl: "https://www.cloudflarestatus.com/api/v2/incidents.json", statusPage: "https://www.cloudflarestatus.com/", logoText: "CF", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/cloudflare.png" },
-      { name: "Worldpay", type: "statuspage", url: "https://status.worldpay.com/api/v2/summary.json", incidentsUrl: "https://status.worldpay.com/api/v2/incidents.json", statusPage: "https://status.worldpay.com/", logoText: "WP", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/worldpay.png" },
-      { name: "AudienceView Professional", type: "statuspage", url: "https://professional-status.audienceview.com/api/v2/summary.json", incidentsUrl: "https://professional-status.audienceview.com/api/v2/incidents.json", statusPage: "https://professional-status.audienceview.com/", logoText: "AVP", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp" },
-      { name: "AudienceView Unlimited", type: "statuspage", url: "https://unlimited-status.audienceview.com/api/v2/summary.json", incidentsUrl: "https://unlimited-status.audienceview.com/api/v2/incidents.json", statusPage: "https://unlimited-status.audienceview.com/", logoText: "AVU", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/audienceview.webp" },
-      { name: "IBM Planning Analytics", type: "cached-json", url: "data/ibm-planning-analytics.json", statusPage: "https://status.ai-apps-comms.ibm.com/planninganalytics", logoText: "IBM", logoSrc: "https://mke57.github.io/status-dashboard/assets/logos/IBMPlanningAnalytics.webp" },
-      { name: "ATG Tickets",  type: "statuspage",  url: "https://atgtickets.statuspage.io/api/v2/summary.json",  incidentsUrl: "https://atgtickets.statuspage.io/api/v2/incidents.json",  statusPage: https://atgtickets.statuspage.io/",  logoText: "ATG"}
-
+      {
+        name: "Cloudflare",
+        type: "statuspage",
+        url: "https://www.cloudflarestatus.com/api/v2/summary.json",
+        incidentsUrl: "https://www.cloudflarestatus.com/api/v2/incidents.json",
+        statusPage: "https://www.cloudflarestatus.com/",
+        logoText: "CF",
+        logoSrc: "assets/logos/cloudflare.png"
+      },
+      {
+        name: "Worldpay",
+        type: "statuspage",
+        url: "https://status.worldpay.com/api/v2/summary.json",
+        incidentsUrl: "https://status.worldpay.com/api/v2/incidents.json",
+        statusPage: "https://status.worldpay.com/",
+        logoText: "WP",
+        logoSrc: "assets/logos/worldpay.png"
+      },
+      {
+        name: "AudienceView Professional",
+        type: "statuspage",
+        url: "https://professional-status.audienceview.com/api/v2/summary.json",
+        incidentsUrl: "https://professional-status.audienceview.com/api/v2/incidents.json",
+        statusPage: "https://professional-status.audienceview.com/",
+        logoText: "AVP",
+        logoSrc: "assets/logos/audienceview.webp"
+      },
+      {
+        name: "AudienceView Unlimited",
+        type: "statuspage",
+        url: "https://unlimited-status.audienceview.com/api/v2/summary.json",
+        incidentsUrl: "https://unlimited-status.audienceview.com/api/v2/incidents.json",
+        statusPage: "https://unlimited-status.audienceview.com/",
+        logoText: "AVU",
+        logoSrc: "assets/logos/audienceview.webp"
+      },
+      {
+        name: "IBM Planning Analytics",
+        type: "cached-json",
+        url: "data/ibm-planning-analytics.json",
+        statusPage: "https://status.ai-apps-comms.ibm.com/planninganalytics",
+        logoText: "IBM",
+        logoSrc: "assets/logos/IBMPlanningAnalytics.webp"
+      },
+      {
+        name: "Adyen",
+        type: "statuspage",
+        url: "https://status.adyen.com/api/v2/summary.json",
+        incidentsUrl: "https://status.adyen.com/api/v2/incidents.json",
+        statusPage: "https://status.adyen.com/",
+        logoText: "Adyen"
+      },
+      {
+        name: "ATG Tickets",
+        type: "statuspage",
+        url: "https://atgtickets.statuspage.io/api/v2/summary.json",
+        incidentsUrl: "https://atgtickets.statuspage.io/api/v2/incidents.json",
+        statusPage: "https://atgtickets.statuspage.io/",
+        logoText: "ATG"
+      }
     ];
 
-    const dashboardVersion = "v0.5.56";
+    const dashboardVersion = "v0.5.57";
     const dashboardMaintainer = "Mike Ahrens";
     const refreshIntervalMs = 60000;
     const fadeDurationMs = 220;
