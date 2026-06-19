@@ -386,7 +386,7 @@
   <div class="footer-row">
     <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
     <div id="autoRefreshFooter" class="footer-status-text">Next refresh in: 60s</div>
-    <div id="dashboardMeta">Version: v0.5.58 | Built and maintained by Mike Ahrens</div>
+    <div id="dashboardMeta">Version: v0.5.59 | Built and maintained by Mike Ahrens</div>
   </div>
 
   <script>
@@ -453,7 +453,7 @@
       }
     ];
 
-    const dashboardVersion = "v0.5.58";
+    const dashboardVersion = "v0.5.59";
     const dashboardMaintainer = "Mike Ahrens";
     const refreshIntervalMs = 60000;
     const fadeDurationMs = 220;
@@ -726,17 +726,7 @@
       };
     }
 
-        async function fetchProvider(provider) {
-      try {
-        if (provider.type === "cached-json") return await fetchCachedJsonProvider(provider);
-        if (provider.type === "ibm-notices") return await fetchIbmNoticesProvider(provider);
-
-        // ✅ NEW: Summary required, incidents optional
-        const summaryResponse = await fetch(provider.url);
-
-        if (!summaryResponse.ok) {
-          throw new Error("Summary fetch failed");
-        }
+        
 
         const summaryData = await summaryResponse.json();
 
@@ -800,7 +790,72 @@
       }
     }
 
-    function formatDateTime(value) { if (!value) return "Unknown"; try { return new Date(value).toLocaleString([], { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }); } catch (error) { return value; } }
+    async function fetchProvider(provider) {
+  try {
+    if (provider.type === "cached-json") return await fetchCachedJsonProvider(provider);
+    if (provider.type === "ibm-notices") return await fetchIbmNoticesProvider(provider);
+
+    const summaryResponse = await fetch(provider.url);
+    if (!summaryResponse.ok) throw new Error("Summary fetch failed");
+
+    const summaryData = await summaryResponse.json();
+
+    let incidentData = { incidents: [] };
+
+    if (provider.incidentsUrl) {
+      try {
+        const incidentResponse = await fetch(provider.incidentsUrl);
+        if (incidentResponse.ok) {
+          incidentData = await incidentResponse.json();
+        } else {
+          console.warn("Incidents endpoint not available for", provider.name);
+        }
+      } catch (err) {
+        console.warn("Incidents fetch failed for", provider.name);
+      }
+    }
+
+    const rawIncidents = summaryData.incidents || [];
+    const scheduledMaintenances = summaryData.scheduled_maintenances || [];
+
+    const maintenanceNotices = rawIncidents.filter(isMaintenanceNotice);
+    const activeMaintenanceNotices = maintenanceNotices.filter(isInferredMaintenanceActive);
+    const upcomingMaintenanceNotices = maintenanceNotices
+      .filter(item => !isInferredMaintenanceActive(item))
+      .filter(isUpcomingMaintenanceNotice)
+      .filter(isInferredMaintenanceUpcomingWithin24Hours);
+
+    return {
+      name: provider.name,
+      statusPage: provider.statusPage,
+      logoText: provider.logoText,
+      logoSrc: provider.logoSrc,
+      status: summaryData.status.description,
+      activeIncidents: rawIncidents.filter(incident => !isMaintenanceNotice(incident)),
+      activeMaintenances: scheduledMaintenances.filter(isMaintenanceActive).concat(activeMaintenanceNotices),
+      upcomingMaintenances: scheduledMaintenances.filter(isMaintenanceUpcomingWithin24Hours).concat(upcomingMaintenanceNotices),
+      recentIncidents: incidentData.incidents || [],
+      updated: summaryData.page.updated_at
+    };
+
+  } catch (error) {
+    console.warn("Unable to fetch provider status", provider.name, error);
+    return {
+      name: provider.name,
+      statusPage: provider.statusPage,
+      logoText: provider.logoText,
+      logoSrc: provider.logoSrc,
+      status: "Unable to fetch",
+      activeIncidents: [],
+      activeMaintenances: [],
+      upcomingMaintenances: [],
+      recentIncidents: [],
+      updated: null
+    };
+  }
+}
+
+function formatDateTime(value) { if (!value) return "Unknown"; try { return new Date(value).toLocaleString([], { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }); } catch (error) { return value; } }
     function formatUpdatedTime(value) { if (!value) return "Unknown"; try { return new Date(value).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }); } catch (error) { return value; } }
     function formatMaintenanceTime(maintenance) { const date = getMaintenanceDate(maintenance); return date ? formatDateTime(date) : "See provider status page"; }
     function timeAgo(value) { if (!value) return "Unknown"; const date = new Date(value); if (Number.isNaN(date.getTime())) return "Unknown"; const minutes = Math.max(0, Math.floor((new Date() - date) / 60000)), hours = Math.floor(minutes / 60), days = Math.floor(hours / 24); if (days > 0) return days + "d " + (hours % 24) + "h ago"; if (hours > 0) return hours + "h " + (minutes % 60) + "m ago"; if (minutes > 0) return minutes + "m ago"; return "just now"; }
