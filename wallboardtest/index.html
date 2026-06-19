@@ -386,7 +386,7 @@
   <div class="footer-row">
     <div id="lastRefreshFooter">Last refreshed: Not yet refreshed</div>
     <div id="autoRefreshFooter" class="footer-status-text">Next refresh in: 60s</div>
-    <div id="dashboardMeta">Version: v0.5.60 | Built and maintained by Mike Ahrens</div>
+    <div id="dashboardMeta">Version: v0.5.57 | Built and maintained by Mike Ahrens</div>
   </div>
 
   <script>
@@ -453,7 +453,7 @@
       }
     ];
 
-    const dashboardVersion = "v0.5.60";
+    const dashboardVersion = "v0.5.57";
     const dashboardMaintainer = "Mike Ahrens";
     const refreshIntervalMs = 60000;
     const fadeDurationMs = 220;
@@ -727,67 +727,30 @@
     }
 
     async function fetchProvider(provider) {
-  try {
-    if (provider.type === "cached-json") return await fetchCachedJsonProvider(provider);
-    if (provider.type === "ibm-notices") return await fetchIbmNoticesProvider(provider);
-
-    const summaryResponse = await fetch(provider.url);
-    if (!summaryResponse.ok) throw new Error("Summary fetch failed");
-
-    const summaryData = await summaryResponse.json();
-
-    let incidentData = { incidents: [] };
-
-    if (provider.incidentsUrl) {
       try {
-        const incidentResponse = await fetch(provider.incidentsUrl);
-        if (incidentResponse.ok) {
-          incidentData = await incidentResponse.json();
-        }
-      } catch (err) {
-        console.warn("Incidents fetch failed for", provider.name);
-      }
-    }
-
-    const rawIncidents = summaryData.incidents || [];
-    const scheduledMaintenances = summaryData.scheduled_maintenances || [];
-
-    const maintenanceNotices = rawIncidents.filter(isMaintenanceNotice);
-    const activeMaintenanceNotices = maintenanceNotices.filter(isInferredMaintenanceActive);
-    const upcomingMaintenanceNotices = maintenanceNotices
-      .filter(item => !isInferredMaintenanceActive(item))
-      .filter(isUpcomingMaintenanceNotice)
-      .filter(isInferredMaintenanceUpcomingWithin24Hours);
-
-    return {
-      name: provider.name,
-      statusPage: provider.statusPage,
-      logoText: provider.logoText,
-      logoSrc: provider.logoSrc,
-      status: summaryData.status.description,
-      activeIncidents: rawIncidents.filter(incident => !isMaintenanceNotice(incident)),
-      activeMaintenances: scheduledMaintenances.filter(isMaintenanceActive).concat(activeMaintenanceNotices),
-      upcomingMaintenances: scheduledMaintenances.filter(isMaintenanceUpcomingWithin24Hours).concat(upcomingMaintenanceNotices),
-      recentIncidents: incidentData.incidents || [],
-      updated: summaryData.page.updated_at
-    };
-
-  } catch (error) {
-    console.warn("Unable to fetch provider status", provider.name, error);
-    return {
-      name: provider.name,
-      statusPage: provider.statusPage,
-      logoText: provider.logoText,
-      logoSrc: provider.logoSrc,
-      status: "Unable to fetch",
-      activeIncidents: [],
-      activeMaintenances: [],
-      upcomingMaintenances: [],
-      recentIncidents: [],
-      updated: null
-    };
-  }
-};
+        if (provider.type === "cached-json") return await fetchCachedJsonProvider(provider);
+        if (provider.type === "ibm-notices") return await fetchIbmNoticesProvider(provider);
+        const [summaryResponse, incidentResponse] = await Promise.all([fetch(provider.url), fetch(provider.incidentsUrl)]);
+        if (!summaryResponse.ok || !incidentResponse.ok) throw new Error("Statuspage fetch failed");
+        const summaryData = await summaryResponse.json();
+        const incidentData = await incidentResponse.json();
+        const rawIncidents = summaryData.incidents || [];
+        const scheduledMaintenances = summaryData.scheduled_maintenances || [];
+        const maintenanceNotices = rawIncidents.filter(isMaintenanceNotice);
+        const activeMaintenanceNotices = maintenanceNotices.filter(isInferredMaintenanceActive);
+        const upcomingMaintenanceNotices = maintenanceNotices.filter(item => !isInferredMaintenanceActive(item)).filter(isUpcomingMaintenanceNotice).filter(isInferredMaintenanceUpcomingWithin24Hours);
+        return {
+          name: provider.name,
+          statusPage: provider.statusPage,
+          logoText: provider.logoText,
+          logoSrc: provider.logoSrc,
+          status: summaryData.status.description,
+          activeIncidents: rawIncidents.filter(incident => !isMaintenanceNotice(incident)),
+          activeMaintenances: scheduledMaintenances.filter(isMaintenanceActive).concat(activeMaintenanceNotices),
+          upcomingMaintenances: scheduledMaintenances.filter(isMaintenanceUpcomingWithin24Hours).concat(upcomingMaintenanceNotices),
+          recentIncidents: incidentData.incidents || [],
+          updated: summaryData.page.updated_at
+        };
       } catch (error) {
         console.warn("Unable to fetch provider status", provider.name, error);
         return { name: provider.name, statusPage: provider.statusPage, logoText: provider.logoText, logoSrc: provider.logoSrc, status: "Unable to fetch", activeIncidents: [], activeMaintenances: [], upcomingMaintenances: [], recentIncidents: [], updated: null };
