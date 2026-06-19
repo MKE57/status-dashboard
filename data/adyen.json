@@ -1,0 +1,15 @@
+{
+  "provider": "Adyen",
+  "cacheStatus": "error",
+  "source": "https://status.adyen.com/api/v2/summary.json",
+  "incidentsSource": "https://status.adyen.com/api/v2/incidents.json",
+  "statusPage": "https://status.adyen.com/",
+  "fetchedAt": "Not yet fetched by GitHub Actions",
+  "updated": null,
+  "status": "Unable to fetch",
+  "activeIncidents": [],
+  "activeMaintenances": [],
+  "upcomingMaintenances": [],
+  "recentIncidents": [],
+  "error": "Initial placeholder. Run the GitHub Actions workflow to populate this file."
+}

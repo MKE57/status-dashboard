@@ -1,0 +1,15 @@
+{
+  "provider": "ATG Tickets",
+  "cacheStatus": "error",
+  "source": "https://atgtickets.statuspage.io/api/v2/summary.json",
+  "incidentsSource": "https://atgtickets.statuspage.io/api/v2/incidents.json",
+  "statusPage": "https://atgtickets.statuspage.io/",
+  "fetchedAt": "Not yet fetched by GitHub Actions",
+  "updated": null,
+  "status": "Unable to fetch",
+  "activeIncidents": [],
+  "activeMaintenances": [],
+  "upcomingMaintenances": [],
+  "recentIncidents": [],
+  "error": "Initial placeholder. Run the GitHub Actions workflow to populate this file."
+}
