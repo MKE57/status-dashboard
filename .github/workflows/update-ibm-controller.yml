@@ -1,0 +1,27 @@
+name: Update IBM Controller
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "20"
+      - run: node scripts/fetch-ibm-controller.js
+      - run: |
+          if git diff --quiet -- data/ibm-controller.json; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ibm-controller.json
+          git commit -m "Update IBM Controller cache"
+          git push
