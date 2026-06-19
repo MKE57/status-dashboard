@@ -4,14 +4,56 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-06-19T14:42:22.671Z",
-  "sourceUpdatedAt": "2026-06-19T14:42:22.671Z",
-  "updated": "2026-06-19T14:42:22.671Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-06-19T18:26:32.080Z",
+  "sourceUpdatedAt": "2026-06-19T18:26:32.080Z",
+  "updated": "2026-06-19T18:26:32.080Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Accel is experiencing higher error rates June 19 2026, 19:10 CEST Payment methods and issuers Identified June 19 2026, 19:10 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Accel starting at 19:00 CEST. We have contacted Accel and we will provide an update as soon as it becomes available. Flutterwave MPGS is experiencing higher error rates June 19 2026, 19:04 CEST Payment methods and issuers",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-06-19T18:26:32.080Z",
+      "updated_at": "2026-06-19T18:26:32.080Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Accel is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-19T17:10:00.000Z",
+      "updated_at": "2026-06-19T17:10:00.000Z",
+      "resolved_at": "2026-06-19T17:10:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Flutterwave MPGS is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-19T17:04:00.000Z",
+      "updated_at": "2026-06-19T17:04:00.000Z",
+      "resolved_at": "2026-06-19T17:04:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Elevated error rate for a subset of transactions processed through China UnionPay (CUP)",
       "body": "Component: Payment methods and issuers",
@@ -20,34 +62,6 @@
       "created_at": "2026-06-19T11:26:00.000Z",
       "updated_at": "2026-06-19T11:26:00.000Z",
       "resolved_at": "2026-06-19T11:26:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Intersolve is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-06-18T10:48:00.000Z",
-      "updated_at": "2026-06-18T10:48:00.000Z",
-      "resolved_at": "2026-06-18T10:48:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Ticket is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-06-17T22:09:00.000Z",
-      "updated_at": "2026-06-17T22:09:00.000Z",
-      "resolved_at": "2026-06-17T22:09:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
