@@ -1,10 +1,11 @@
 {
   "provider": "IBM Controller",
-  "cacheStatus": "error",
-  "fetchedAt": "Not yet fetched",
-  "status": "Unknown",
+  "cacheStatus": "ok",
+  "fetchedAt": "2026-06-19T15:34:37.359Z",
+  "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
-  "recentIncidents": []
+  "recentIncidents": [],
+  "noticeCount": 0
 }
