@@ -1,16 +1,170 @@
 {
   "provider": "Adyen",
-  "cacheStatus": "error",
+  "cacheStatus": "ok",
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "Not yet fetched by GitHub Actions",
-  "updated": null,
-  "status": "Unable to fetch",
+  "fetchedAt": "2026-06-19T14:42:22.671Z",
+  "sourceUpdatedAt": "2026-06-19T14:42:22.671Z",
+  "updated": "2026-06-19T14:42:22.671Z",
+  "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
-  "recentIncidents": [],
-  "error": "Initial placeholder. Run the GitHub Actions workflow to populate this file.",
-  "scrapeMode": "playwright-rendered-page-with-history"
+  "recentIncidents": [
+    {
+      "name": "Elevated error rate for a subset of transactions processed through China UnionPay (CUP)",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-19T11:26:00.000Z",
+      "updated_at": "2026-06-19T11:26:00.000Z",
+      "resolved_at": "2026-06-19T11:26:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Intersolve is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-18T10:48:00.000Z",
+      "updated_at": "2026-06-18T10:48:00.000Z",
+      "resolved_at": "2026-06-18T10:48:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Ticket is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-17T22:09:00.000Z",
+      "updated_at": "2026-06-17T22:09:00.000Z",
+      "resolved_at": "2026-06-17T22:09:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "TWINT is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-05-31T05:56:00.000Z",
+      "updated_at": "2026-05-31T05:56:00.000Z",
+      "resolved_at": "2026-05-31T05:56:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Chase Stratus is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-05-30T14:33:00.000Z",
+      "updated_at": "2026-05-30T14:33:00.000Z",
+      "resolved_at": "2026-05-30T14:33:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "iDEAL | Wero is experiencing offer conversion issues with ABN Amro",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-05-30T07:04:00.000Z",
+      "updated_at": "2026-05-30T07:04:00.000Z",
+      "resolved_at": "2026-05-30T07:04:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "BBVA MEXICO S.A. is experiencing higher refusal rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-04-30T23:00:00.000Z",
+      "updated_at": "2026-04-30T23:00:00.000Z",
+      "resolved_at": "2026-04-30T23:00:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Pix is experiencing offer conversion issues",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-04-30T19:15:00.000Z",
+      "updated_at": "2026-04-30T19:15:00.000Z",
+      "resolved_at": "2026-04-30T19:15:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Prosa is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-04-30T18:28:00.000Z",
+      "updated_at": "2026-04-30T18:28:00.000Z",
+      "resolved_at": "2026-04-30T18:28:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    }
+  ],
+  "noticeCount": 9,
+  "scrapeMode": "playwright-rendered-page-with-history",
+  "componentStatuses": [
+    {
+      "name": "Payments",
+      "status": "Operational"
+    },
+    {
+      "name": "Payment methods and issuers",
+      "status": "Operational"
+    },
+    {
+      "name": "Interfaces and reporting",
+      "status": "Operational"
+    },
+    {
+      "name": "Settlement and payouts",
+      "status": "Operational"
+    },
+    {
+      "name": "Adyen for Platforms",
+      "status": "Operational"
+    },
+    {
+      "name": "Financial products",
+      "status": "Operational"
+    }
+  ]
 }
