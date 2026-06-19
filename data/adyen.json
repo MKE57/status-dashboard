@@ -3,13 +3,13 @@
   "cacheStatus": "error",
   "source": "https://status.adyen.com/",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-06-19T14:05:41.843Z",
-  "updated": "2026-06-19T14:05:41.843Z",
+  "fetchedAt": "Not yet fetched by GitHub Actions",
+  "updated": null,
   "status": "Unable to fetch",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [],
-  "error": "Adyen status page HTML did not contain expected status markers. Page may be blocked or changed.",
-  "scrapeMode": true
+  "error": "Initial placeholder. Run the GitHub Actions workflow to populate this file.",
+  "scrapeMode": "playwright-rendered-page"
 }
