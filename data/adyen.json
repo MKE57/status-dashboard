@@ -1,15 +1,15 @@
 {
   "provider": "Adyen",
   "cacheStatus": "error",
-  "source": "https://status.adyen.com/api/v2/summary.json",
-  "incidentsSource": "https://status.adyen.com/api/v2/incidents.json",
+  "source": "https://status.adyen.com/",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-06-19T13:50:57.006Z",
-  "updated": "2026-06-19T13:50:57.006Z",
+  "fetchedAt": "2026-06-19T14:05:28.906Z",
+  "updated": "2026-06-19T14:05:28.906Z",
   "status": "Unable to fetch",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [],
-  "error": "Unexpected token '<', \"<!doctype \"... is not valid JSON"
+  "error": "Adyen status page HTML did not contain expected status markers. Page may be blocked or changed.",
+  "scrapeMode": true
 }
