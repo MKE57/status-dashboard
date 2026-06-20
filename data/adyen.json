@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-06-19T20:19:41.938Z",
-  "sourceUpdatedAt": "2026-06-19T20:19:41.938Z",
-  "updated": "2026-06-19T20:19:41.938Z",
+  "fetchedAt": "2026-06-20T23:23:06.068Z",
+  "sourceUpdatedAt": "2026-06-20T23:23:06.068Z",
+  "updated": "2026-06-20T23:23:06.068Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Partial degradation for a subset of EU endpoints",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-20T22:47:00.000Z",
+      "updated_at": "2026-06-20T22:47:00.000Z",
+      "resolved_at": "2026-06-20T22:47:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
     {
       "name": "Accel is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +48,6 @@
       "created_at": "2026-06-19T17:04:00.000Z",
       "updated_at": "2026-06-19T17:04:00.000Z",
       "resolved_at": "2026-06-19T17:04:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Elevated error rate for a subset of transactions processed through China UnionPay (CUP)",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-06-19T11:26:00.000Z",
-      "updated_at": "2026-06-19T11:26:00.000Z",
-      "resolved_at": "2026-06-19T11:26:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
