@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-06-20T23:23:06.068Z",
-  "sourceUpdatedAt": "2026-06-20T23:23:06.068Z",
-  "updated": "2026-06-20T23:23:06.068Z",
+  "fetchedAt": "2026-06-21T07:04:01.924Z",
+  "sourceUpdatedAt": "2026-06-21T07:04:01.924Z",
+  "updated": "2026-06-21T07:04:01.924Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Interac is experiencing higher refusal rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-21T04:26:00.000Z",
+      "updated_at": "2026-06-21T04:26:00.000Z",
+      "resolved_at": "2026-06-21T04:26:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Partial degradation for a subset of EU endpoints",
       "body": "Component: Payments",
@@ -34,20 +48,6 @@
       "created_at": "2026-06-19T17:10:00.000Z",
       "updated_at": "2026-06-19T17:10:00.000Z",
       "resolved_at": "2026-06-19T17:10:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Flutterwave MPGS is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-06-19T17:04:00.000Z",
-      "updated_at": "2026-06-19T17:04:00.000Z",
-      "resolved_at": "2026-06-19T17:04:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
