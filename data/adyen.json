@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-06-21T07:04:01.924Z",
-  "sourceUpdatedAt": "2026-06-21T07:04:01.924Z",
-  "updated": "2026-06-21T07:04:01.924Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-06-22T11:25:45.685Z",
+  "sourceUpdatedAt": "2026-06-22T11:25:45.685Z",
+  "updated": "2026-06-22T11:25:45.685Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: MALAYAN BANKING BERHAD is experiencing higher refusal rates June 22 2026, 13:05 CEST Payment methods and issuers Identified June 22 2026, 13:05 CEST We have identified an issue outside of our platform resulting in higher refusal rates for VISA transactions processed for MALAYAN BANKING BERHAD issued cards starting at 12:22 CEST.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-06-22T11:25:45.685Z",
+      "updated_at": "2026-06-22T11:25:45.685Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "MALAYAN BANKING BERHAD is experiencing higher refusal rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-22T11:05:00.000Z",
+      "updated_at": "2026-06-22T11:05:00.000Z",
+      "resolved_at": "2026-06-22T11:05:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Interac is experiencing higher refusal rates",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Payments"
-        }
-      ]
-    },
-    {
-      "name": "Accel is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-06-19T17:10:00.000Z",
-      "updated_at": "2026-06-19T17:10:00.000Z",
-      "resolved_at": "2026-06-19T17:10:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
