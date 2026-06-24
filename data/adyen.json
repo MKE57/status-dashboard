@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-06-23T21:21:15.599Z",
-  "sourceUpdatedAt": "2026-06-23T21:21:15.599Z",
-  "updated": "2026-06-23T21:21:15.599Z",
+  "fetchedAt": "2026-06-24T05:57:08.814Z",
+  "sourceUpdatedAt": "2026-06-24T05:57:08.814Z",
+  "updated": "2026-06-24T05:57:08.814Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Elo is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-24T01:54:00.000Z",
+      "updated_at": "2026-06-24T01:54:00.000Z",
+      "resolved_at": "2026-06-24T01:54:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Worldpay (RBS) is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +48,6 @@
       "created_at": "2026-06-23T18:50:00.000Z",
       "updated_at": "2026-06-23T18:50:00.000Z",
       "resolved_at": "2026-06-23T18:50:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "PayU LATAM is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-06-23T08:10:00.000Z",
-      "updated_at": "2026-06-23T08:10:00.000Z",
-      "resolved_at": "2026-06-23T08:10:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
