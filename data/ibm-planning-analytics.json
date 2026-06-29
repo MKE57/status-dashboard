@@ -3,14 +3,44 @@
   "cacheStatus": "ok",
   "source": "https://status.ai-apps-comms.ibm.com/announcement/iotm/api/v1/ext/1nS00axYWJZEkaNISKwKAi4ZaLCXam495VbYfjO6y%2BM%3D/notices.json",
   "statusPage": "https://status.ai-apps-comms.ibm.com/planninganalytics",
-  "fetchedAt": "2026-06-27T17:31:10.743Z",
-  "sourceUpdatedAt": "2026-06-22T14:11:06.000Z",
-  "updated": "2026-06-22T14:11:06.000Z",
+  "fetchedAt": "2026-06-29T09:16:23.728Z",
+  "sourceUpdatedAt": "2026-06-29T05:34:23.000Z",
+  "updated": "2026-06-29T05:34:23.000Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "IBM Planning Analytics – Planning Analytics Workspace Upgrade - Asia Pacfic",
+      "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.22 overnight on July 8th 2026, 14:00_to_16:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.22 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here",
+      "status": "published",
+      "impact": "",
+      "created_at": "2026-06-29T05:34:23.000Z",
+      "updated_at": "2026-06-29T05:34:23.000Z",
+      "scheduled_for": null,
+      "scheduled_until": null,
+      "incident_updates": [
+        {
+          "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.22 overnight on July 8th 2026, 14:00_to_16:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.22 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here"
+        }
+      ]
+    },
+    {
+      "name": "IBM Planning Analytics – Planning Analytics Workspace Upgrade - EU/North America",
+      "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.22 on July 9th 2026, 2:00_to_5:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.22 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here",
+      "status": "published",
+      "impact": "",
+      "created_at": "2026-06-29T05:28:39.000Z",
+      "updated_at": "2026-06-29T05:28:39.000Z",
+      "scheduled_for": null,
+      "scheduled_until": null,
+      "incident_updates": [
+        {
+          "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.22 on July 9th 2026, 2:00_to_5:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.22 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here"
+        }
+      ]
+    },
     {
       "name": "IBM Planning Analytics on Cloud and Controller on Cloud - Planning Analytics Workspace Service Outage in EU region - RESOLVED",
       "body": "Resolved 06/17/2026 10:11 AM UTC The issue impacting customer in Europe region has been resolved. Services are operating normally. Our team has completed monitoring and confirmed service stability. We apologize for any inconvenience and thank you for your patience. Updated 06/17/2026 8:58 AM UTC Dear Customer, IBM has observed a brief interruption affecting one of the planning analytics workspace services. Our teams are currently investigating and working to restore normal functionality. Customers in EU region can may encounter problems accessing their environments. We are still working on resolving the issue. Thank you for your patience. Kind regards, Planning Analytics on Workspace Team Updated 06/17/2026 8:25 AM UTC Dear Customer, IBM has observed a brief interruption affecting one of the planning analytics workspace services. Our teams are currently investigating and working to restore normal functionality. We are still working on resolving the issue. Thank you for your patience. Kind regards, Planning Analytics on Workspace Team Published 06/17/2026 7:18 AM UTC Dear Customer, IBM has observed a brief interruption affecting one of the planning analytics workspace services. Our teams are currently investigating and working to restore normal functionality. Thank you for your patience. Kind regards, Planning Analytics on Workspace Team",
@@ -130,37 +160,7 @@
           "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.20 overnight on May 12th 2026, 14:00_to_16:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.20 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here"
         }
       ]
-    },
-    {
-      "name": "IBM Planning Analytics – Planning Analytics Workspace Upgrade - EU/North America",
-      "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.20 on May 13th 2026, 2:00_to_5:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.20 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here",
-      "status": "closed",
-      "impact": "",
-      "created_at": "2026-05-06T04:28:10.000Z",
-      "updated_at": "2026-05-06T04:28:10.000Z",
-      "scheduled_for": null,
-      "scheduled_until": null,
-      "incident_updates": [
-        {
-          "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.20 on May 13th 2026, 2:00_to_5:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.20 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here"
-        }
-      ]
-    },
-    {
-      "name": "Network performance degradation in Frankfurt datacenter",
-      "body": "Resolved 04/15/2026 5:41 PM UTC Issue has been addressed. The network performance is back to normal and we will continue to monitor. Our apologies for the inconvenience it may have caused. Updated 04/15/2026 4:29 PM UTC The network performance degradation previously reported has been successfully mitigated. We will continue to monitor the environment closely to ensure stability and prevent recurrence. Published 04/15/2026 2:51 PM UTC We are currently experiencing network performance degradation in Frankfurt datacenter, which may result in increased latency or slower connectivity for some services. Our engineering team is actively working to mitigate the impact and restore normal performance levels as quickly as possible. At this time, services remain operational, but you may notice intermittent slowness.",
-      "status": "resolved",
-      "impact": "",
-      "created_at": "2026-04-15T14:51:49.000Z",
-      "updated_at": "2026-04-15T17:41:21.000Z",
-      "scheduled_for": null,
-      "scheduled_until": null,
-      "incident_updates": [
-        {
-          "body": "Resolved 04/15/2026 5:41 PM UTC Issue has been addressed. The network performance is back to normal and we will continue to monitor. Our apologies for the inconvenience it may have caused. Updated 04/15/2026 4:29 PM UTC The network performance degradation previously reported has been successfully mitigated. We will continue to monitor the environment closely to ensure stability and prevent recurrence. Published 04/15/2026 2:51 PM UTC We are currently experiencing network performance degradation in Frankfurt datacenter, which may result in increased latency or slower connectivity for some services. Our engineering team is actively working to mitigate the impact and restore normal performance levels as quickly as possible. At this time, services remain operational, but you may notice intermittent slowness."
-        }
-      ]
     }
   ],
-  "noticeCount": 83
+  "noticeCount": 85
 }
