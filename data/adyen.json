@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-06-30T09:58:25.403Z",
-  "sourceUpdatedAt": "2026-06-30T09:58:25.403Z",
-  "updated": "2026-06-30T09:58:25.403Z",
+  "fetchedAt": "2026-06-30T17:20:15.068Z",
+  "sourceUpdatedAt": "2026-06-30T17:20:15.068Z",
+  "updated": "2026-06-30T17:20:15.068Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Partial payout delay for a subset of USD transactions via CashApp June 30 2026, 11:33 CEST Settlement and payouts Identified June 30 2026, 11:33 CEST We have identified an external issue which started at 20:00 CEST on June 25, 2026 resulting in a partial payout delay for a subset of USD transactions processed via CashApp between June 25 to 26, 2026. As a result, a subset of customers might experience a delay in receiving their payouts scheduled for June 29, 2026. Our engineering teams are actively monitoring the situation and coordinating with the affected partner to support resolution efforts. We will provide further updates on the delay as soon as we have more information.",
+      "name": "Adyen reports degraded performance: Interfaces and reporting",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-06-30T09:58:25.403Z",
-      "updated_at": "2026-06-30T09:58:25.403Z",
+      "created_at": "2026-06-30T17:20:15.068Z",
+      "updated_at": "2026-06-30T17:20:15.068Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Degraded performance for Customer Area communications interfaces",
+      "body": "Component: Interfaces and reporting",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-30T15:20:00.000Z",
+      "updated_at": "2026-06-30T15:20:00.000Z",
+      "resolved_at": "2026-06-30T15:20:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Interfaces and reporting"
+        }
+      ]
+    },
     {
       "name": "Partial payout delay for a subset of USD transactions via CashApp",
       "body": "Component: Settlement and payouts",
@@ -48,20 +62,6 @@
       "created_at": "2026-06-27T06:07:00.000Z",
       "updated_at": "2026-06-27T06:07:00.000Z",
       "resolved_at": "2026-06-27T06:07:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Pix is experiencing higher refusal rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-06-26T20:21:00.000Z",
-      "updated_at": "2026-06-26T20:21:00.000Z",
-      "resolved_at": "2026-06-26T20:21:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -166,7 +166,7 @@
     },
     {
       "name": "Interfaces and reporting",
-      "status": "Operational"
+      "status": "Degraded performance"
     },
     {
       "name": "Settlement and payouts",
