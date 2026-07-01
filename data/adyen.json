@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-01T13:58:03.796Z",
-  "sourceUpdatedAt": "2026-07-01T13:58:03.796Z",
-  "updated": "2026-07-01T13:58:03.796Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: Partial payout delay for a subset of USD transactions via CashApp June 30 2026, 11:33 CEST Settlement and payouts Identified June 30 2026, 11:33 CEST We have identified an external issue which started at 20:00 CEST on June 25, 2026 resulting in a partial payout delay for a subset of USD transactions processed via CashApp between June 25 to 26, 2026. As a result, a subset of customers might experience a delay in receiving their payouts scheduled for June 29, 2026. Our engineering teams are actively monitoring the situation and coordinating with the affected partner to support resolution efforts. We will provide further updates on the delay as soon as we have more information.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-07-01T13:58:03.796Z",
-      "updated_at": "2026-07-01T13:58:03.796Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-07-01T16:37:31.277Z",
+  "sourceUpdatedAt": "2026-07-01T16:37:31.277Z",
+  "updated": "2026-07-01T16:37:31.277Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -139,7 +125,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 8,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
