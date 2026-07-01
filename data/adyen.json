@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-01T04:50:34.659Z",
-  "sourceUpdatedAt": "2026-07-01T04:50:34.659Z",
-  "updated": "2026-07-01T04:50:34.659Z",
+  "fetchedAt": "2026-07-01T08:44:28.231Z",
+  "sourceUpdatedAt": "2026-07-01T08:44:28.231Z",
+  "updated": "2026-07-01T08:44:28.231Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Partial payout delay for a subset of DKK transactions June 30 2026, 21:43 CEST Settlement and payouts Identified June 30 2026, 21:43 CEST We have identified an external technical issue resulting in a partial payout delay for DKK transactions processed through Citibank. As a result, a subset of customers will experience a delay in receiving their payouts scheduled for June 30, 2026. Our engineering teams are actively monitoring the situation and coordinating with the affected partner to support resolution efforts. We will provide further updates on the estimated delay as soon as we have more information. Partial payout delay for a subset of USD transactions via CashApp June 30 2026, 11:33 CEST Settlement and payouts",
+      "name": "Adyen active incident: Prosa is experiencing higher error rates July 01 2026, 08:30 CEST Payment methods and issuers Updated July 01 2026, 09:17 CEST We have implemented mitigation measures, and the Prosa service is currently being closely monitored to ensure stability. We will provide an update as soon as it becomes available. Identified July 01 2026, 08:30 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Prosa starting at 07:58 CEST. We have contacted Prosa and we will provide an update as soon as it becomes available. Partial payout delay for a subset of DKK transactions June 30 2026, 21:43 CEST Settlement and payouts Partial payout delay for a subset of USD transactions via CashApp June 30 2026, 11:33 CEST Settlement and payouts",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-07-01T04:50:34.659Z",
-      "updated_at": "2026-07-01T04:50:34.659Z",
+      "created_at": "2026-07-01T08:44:28.231Z",
+      "updated_at": "2026-07-01T08:44:28.231Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Prosa is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-01T06:30:00.000Z",
+      "updated_at": "2026-07-01T06:30:00.000Z",
+      "resolved_at": "2026-07-01T06:30:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "PayPay is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -125,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 8,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
