@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-01T08:44:28.231Z",
-  "sourceUpdatedAt": "2026-07-01T08:44:28.231Z",
-  "updated": "2026-07-01T08:44:28.231Z",
+  "fetchedAt": "2026-07-01T13:58:03.796Z",
+  "sourceUpdatedAt": "2026-07-01T13:58:03.796Z",
+  "updated": "2026-07-01T13:58:03.796Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Prosa is experiencing higher error rates July 01 2026, 08:30 CEST Payment methods and issuers Updated July 01 2026, 09:17 CEST We have implemented mitigation measures, and the Prosa service is currently being closely monitored to ensure stability. We will provide an update as soon as it becomes available. Identified July 01 2026, 08:30 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Prosa starting at 07:58 CEST. We have contacted Prosa and we will provide an update as soon as it becomes available. Partial payout delay for a subset of DKK transactions June 30 2026, 21:43 CEST Settlement and payouts Partial payout delay for a subset of USD transactions via CashApp June 30 2026, 11:33 CEST Settlement and payouts",
+      "name": "Adyen active incident: Partial payout delay for a subset of USD transactions via CashApp June 30 2026, 11:33 CEST Settlement and payouts Identified June 30 2026, 11:33 CEST We have identified an external issue which started at 20:00 CEST on June 25, 2026 resulting in a partial payout delay for a subset of USD transactions processed via CashApp between June 25 to 26, 2026. As a result, a subset of customers might experience a delay in receiving their payouts scheduled for June 29, 2026. Our engineering teams are actively monitoring the situation and coordinating with the affected partner to support resolution efforts. We will provide further updates on the delay as soon as we have more information.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-07-01T08:44:28.231Z",
-      "updated_at": "2026-07-01T08:44:28.231Z",
+      "created_at": "2026-07-01T13:58:03.796Z",
+      "updated_at": "2026-07-01T13:58:03.796Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
