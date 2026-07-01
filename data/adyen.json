@@ -4,9 +4,9 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-06-30T21:10:41.702Z",
-  "sourceUpdatedAt": "2026-06-30T21:10:41.702Z",
-  "updated": "2026-06-30T21:10:41.702Z",
+  "fetchedAt": "2026-07-01T04:50:34.659Z",
+  "sourceUpdatedAt": "2026-07-01T04:50:34.659Z",
+  "updated": "2026-07-01T04:50:34.659Z",
   "status": "Active incident",
   "activeIncidents": [
     {
@@ -14,8 +14,8 @@
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-06-30T21:10:41.702Z",
-      "updated_at": "2026-06-30T21:10:41.702Z",
+      "created_at": "2026-07-01T04:50:34.659Z",
+      "updated_at": "2026-07-01T04:50:34.659Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "PayPay is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-01T00:08:00.000Z",
+      "updated_at": "2026-07-01T00:08:00.000Z",
+      "resolved_at": "2026-07-01T00:08:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Partial payout delay for a subset of DKK transactions",
       "body": "Component: Settlement and payouts",
@@ -109,51 +123,9 @@
           "body": "Component: Payment methods and issuers"
         }
       ]
-    },
-    {
-      "name": "BBVA MEXICO S.A. is experiencing higher refusal rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-04-30T23:00:00.000Z",
-      "updated_at": "2026-04-30T23:00:00.000Z",
-      "resolved_at": "2026-04-30T23:00:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Pix is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-04-30T19:15:00.000Z",
-      "updated_at": "2026-04-30T19:15:00.000Z",
-      "resolved_at": "2026-04-30T19:15:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Prosa is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-04-30T18:28:00.000Z",
-      "updated_at": "2026-04-30T18:28:00.000Z",
-      "resolved_at": "2026-04-30T18:28:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 8,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
