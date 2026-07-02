@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-02T09:39:42.306Z",
-  "sourceUpdatedAt": "2026-07-02T09:39:42.306Z",
-  "updated": "2026-07-02T09:39:42.306Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: China UnionPay (CUP) is experiencing higher error rates July 02 2026, 10:46 CEST Payment methods and issuers Identified July 02 2026, 10:46 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through China UnionPay (CUP) starting at 05:45 CEST. We have contacted CUP and will provide an update as soon as it becomes available.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-07-02T09:39:42.306Z",
-      "updated_at": "2026-07-02T09:39:42.306Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-07-02T14:26:32.714Z",
+  "sourceUpdatedAt": "2026-07-02T14:26:32.714Z",
+  "updated": "2026-07-02T14:26:32.714Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
