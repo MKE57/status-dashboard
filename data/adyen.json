@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-06T14:47:34.565Z",
-  "sourceUpdatedAt": "2026-07-06T14:47:34.565Z",
-  "updated": "2026-07-06T14:47:34.565Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: iDEAL | Wero is experiencing offer conversion issues July 06 2026, 16:38 CEST Payment methods and issuers Identified July 06 2026, 16:38 CEST We have identified an issue outside of our platform resulting in an elevated error rate for iDEAL | Wero transactions performed by Revolut and ABN Amro cardholders starting at 16:05 CEST. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with iDEAL and we will provide an update as soon as it becomes available.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-07-06T14:47:34.565Z",
-      "updated_at": "2026-07-06T14:47:34.565Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-07-06T17:31:28.475Z",
+  "sourceUpdatedAt": "2026-07-06T17:31:28.475Z",
+  "updated": "2026-07-06T17:31:28.475Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
