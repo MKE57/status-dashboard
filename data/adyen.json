@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-06T11:43:27.755Z",
-  "sourceUpdatedAt": "2026-07-06T11:43:27.755Z",
-  "updated": "2026-07-06T11:43:27.755Z",
+  "fetchedAt": "2026-07-06T14:47:34.565Z",
+  "sourceUpdatedAt": "2026-07-06T14:47:34.565Z",
+  "updated": "2026-07-06T14:47:34.565Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Partial payout delay for a subset of AUD transactions July 06 2026, 10:15 CEST Settlement and payouts Identified July 06 2026, 10:15 CEST We have identified a technical issue which started at 01:47 CEST on July 6, 2026, resulting in a partial payout delay for a subset of AUD transactions processed through one of our partner banks. As a result of this issue, a subset of customers may experience a delay in receiving their payouts scheduled for July 6, 2026. This affects captures processed after July 3 at 09:15 CEST that were intended to be reflected in the payout scheduled for July 6, 2026. Our engineering teams are actively monitoring the situation and coordinating with the affected partner to support resolution efforts. We will provide further updates as soon as we have more information.",
+      "name": "Adyen active incident: iDEAL | Wero is experiencing offer conversion issues July 06 2026, 16:38 CEST Payment methods and issuers Identified July 06 2026, 16:38 CEST We have identified an issue outside of our platform resulting in an elevated error rate for iDEAL | Wero transactions performed by Revolut and ABN Amro cardholders starting at 16:05 CEST. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with iDEAL and we will provide an update as soon as it becomes available.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-07-06T11:43:27.755Z",
-      "updated_at": "2026-07-06T11:43:27.755Z",
+      "created_at": "2026-07-06T14:47:34.565Z",
+      "updated_at": "2026-07-06T14:47:34.565Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "iDEAL | Wero is experiencing offer conversion issues",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-06T14:38:00.000Z",
+      "updated_at": "2026-07-06T14:38:00.000Z",
+      "resolved_at": "2026-07-06T14:38:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Partial payout delay for a subset of AUD transactions",
       "body": "Component: Settlement and payouts",
@@ -48,20 +62,6 @@
       "created_at": "2026-07-06T07:54:00.000Z",
       "updated_at": "2026-07-06T07:54:00.000Z",
       "resolved_at": "2026-07-06T07:54:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "GCash Philippines is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-06T05:23:00.000Z",
-      "updated_at": "2026-07-06T05:23:00.000Z",
-      "resolved_at": "2026-07-06T05:23:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
