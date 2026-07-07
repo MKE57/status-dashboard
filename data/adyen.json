@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-07T11:18:06.584Z",
-  "sourceUpdatedAt": "2026-07-07T11:18:06.584Z",
-  "updated": "2026-07-07T11:18:06.584Z",
+  "fetchedAt": "2026-07-07T16:07:55.713Z",
+  "sourceUpdatedAt": "2026-07-07T16:07:55.713Z",
+  "updated": "2026-07-07T16:07:55.713Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: PayU Online banking Czech Republic is experiencing higher error rates July 07 2026, 12:28 CEST Payment methods and issuers Identified July 07 2026, 12:28 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through PayU Online banking Czech Republic starting at 12:10 CEST. We have contacted PayU Online banking Czech Republic and we will provide an update as soon as it becomes available.",
+      "name": "Adyen active incident: UATP is experiencing higher error rates July 07 2026, 17:51 CEST Payment methods and issuers Identified July 07 2026, 17:51 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through UATP starting at 17:32 CEST. We have contacted UATP and we will provide an update as soon as it becomes available. PayNow is experiencing offer conversion issues July 07 2026, 15:42 CEST Payment methods and issuers",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-07-07T11:18:06.584Z",
-      "updated_at": "2026-07-07T11:18:06.584Z",
+      "created_at": "2026-07-07T16:07:55.712Z",
+      "updated_at": "2026-07-07T16:07:55.712Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -27,13 +27,13 @@
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "PayU Online banking Czech Republic is experiencing higher error rates",
+      "name": "UATP is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-07-07T10:28:00.000Z",
-      "updated_at": "2026-07-07T10:28:00.000Z",
-      "resolved_at": "2026-07-07T10:28:00.000Z",
+      "created_at": "2026-07-07T15:51:00.000Z",
+      "updated_at": "2026-07-07T15:51:00.000Z",
+      "resolved_at": "2026-07-07T15:51:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -41,30 +41,30 @@
       ]
     },
     {
-      "name": "iDEAL | Wero is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
+      "name": "Delay in processing of modifications for the India region",
+      "body": "Component: Payments",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-07-06T14:38:00.000Z",
-      "updated_at": "2026-07-06T14:38:00.000Z",
-      "resolved_at": "2026-07-06T14:38:00.000Z",
+      "created_at": "2026-07-07T14:17:00.000Z",
+      "updated_at": "2026-07-07T14:17:00.000Z",
+      "resolved_at": "2026-07-07T14:17:00.000Z",
       "incident_updates": [
         {
-          "body": "Component: Payment methods and issuers"
+          "body": "Component: Payments"
         }
       ]
     },
     {
-      "name": "Partial payout delay for a subset of AUD transactions",
-      "body": "Component: Settlement and payouts",
+      "name": "PayNow is experiencing offer conversion issues",
+      "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-07-06T08:15:00.000Z",
-      "updated_at": "2026-07-06T08:15:00.000Z",
-      "resolved_at": "2026-07-06T08:15:00.000Z",
+      "created_at": "2026-07-07T13:42:00.000Z",
+      "updated_at": "2026-07-07T13:42:00.000Z",
+      "resolved_at": "2026-07-07T13:42:00.000Z",
       "incident_updates": [
         {
-          "body": "Component: Settlement and payouts"
+          "body": "Component: Payment methods and issuers"
         }
       ]
     },
