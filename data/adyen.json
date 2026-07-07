@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-07T16:07:55.713Z",
-  "sourceUpdatedAt": "2026-07-07T16:07:55.713Z",
-  "updated": "2026-07-07T16:07:55.713Z",
+  "fetchedAt": "2026-07-07T18:25:19.740Z",
+  "sourceUpdatedAt": "2026-07-07T18:25:19.740Z",
+  "updated": "2026-07-07T18:25:19.740Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: UATP is experiencing higher error rates July 07 2026, 17:51 CEST Payment methods and issuers Identified July 07 2026, 17:51 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through UATP starting at 17:32 CEST. We have contacted UATP and we will provide an update as soon as it becomes available. PayNow is experiencing offer conversion issues July 07 2026, 15:42 CEST Payment methods and issuers",
+      "name": "Adyen active incident: PayNow is experiencing offer conversion issues July 07 2026, 15:42 CEST Payment methods and issuers Identified July 07 2026, 15:42 CEST We have been informed of issues with PayNow starting at 14:37 CET. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with PayNow and we will provide an update as soon as it becomes available.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-07-07T16:07:55.712Z",
-      "updated_at": "2026-07-07T16:07:55.712Z",
+      "created_at": "2026-07-07T18:25:19.740Z",
+      "updated_at": "2026-07-07T18:25:19.740Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
