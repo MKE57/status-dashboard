@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-06T17:31:28.475Z",
-  "sourceUpdatedAt": "2026-07-06T17:31:28.475Z",
-  "updated": "2026-07-06T17:31:28.475Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-07-07T11:18:06.584Z",
+  "sourceUpdatedAt": "2026-07-07T11:18:06.584Z",
+  "updated": "2026-07-07T11:18:06.584Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: PayU Online banking Czech Republic is experiencing higher error rates July 07 2026, 12:28 CEST Payment methods and issuers Identified July 07 2026, 12:28 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through PayU Online banking Czech Republic starting at 12:10 CEST. We have contacted PayU Online banking Czech Republic and we will provide an update as soon as it becomes available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-07-07T11:18:06.584Z",
+      "updated_at": "2026-07-07T11:18:06.584Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "PayU Online banking Czech Republic is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-07T10:28:00.000Z",
+      "updated_at": "2026-07-07T10:28:00.000Z",
+      "resolved_at": "2026-07-07T10:28:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "iDEAL | Wero is experiencing offer conversion issues",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Settlement and payouts"
-        }
-      ]
-    },
-    {
-      "name": "Cellulant is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-06T07:54:00.000Z",
-      "updated_at": "2026-07-06T07:54:00.000Z",
-      "resolved_at": "2026-07-06T07:54:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
