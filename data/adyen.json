@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-08T17:05:02.264Z",
-  "sourceUpdatedAt": "2026-07-08T17:05:02.264Z",
-  "updated": "2026-07-08T17:05:02.264Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: KCP is experiencing higher error rates July 08 2026, 18:47 CEST Payment methods and issuers Identified July 08 2026, 18:47 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through KCP starting at 17:45 CEST. We have contacted KCP and we will provide an update as soon as it becomes available.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-07-08T17:05:02.264Z",
-      "updated_at": "2026-07-08T17:05:02.264Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-07-08T23:55:37.386Z",
+  "sourceUpdatedAt": "2026-07-08T23:55:37.386Z",
+  "updated": "2026-07-08T23:55:37.386Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
