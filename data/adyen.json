@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-07T18:25:19.740Z",
-  "sourceUpdatedAt": "2026-07-07T18:25:19.740Z",
-  "updated": "2026-07-07T18:25:19.740Z",
+  "fetchedAt": "2026-07-08T17:05:02.264Z",
+  "sourceUpdatedAt": "2026-07-08T17:05:02.264Z",
+  "updated": "2026-07-08T17:05:02.264Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: PayNow is experiencing offer conversion issues July 07 2026, 15:42 CEST Payment methods and issuers Identified July 07 2026, 15:42 CEST We have been informed of issues with PayNow starting at 14:37 CET. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with PayNow and we will provide an update as soon as it becomes available.",
+      "name": "Adyen active incident: KCP is experiencing higher error rates July 08 2026, 18:47 CEST Payment methods and issuers Identified July 08 2026, 18:47 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through KCP starting at 17:45 CEST. We have contacted KCP and we will provide an update as soon as it becomes available.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-07-07T18:25:19.740Z",
-      "updated_at": "2026-07-07T18:25:19.740Z",
+      "created_at": "2026-07-08T17:05:02.264Z",
+      "updated_at": "2026-07-08T17:05:02.264Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "KCP is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-08T16:47:00.000Z",
+      "updated_at": "2026-07-08T16:47:00.000Z",
+      "resolved_at": "2026-07-08T16:47:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "UATP is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -51,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Payments"
-        }
-      ]
-    },
-    {
-      "name": "PayNow is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-07T13:42:00.000Z",
-      "updated_at": "2026-07-07T13:42:00.000Z",
-      "resolved_at": "2026-07-07T13:42:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
