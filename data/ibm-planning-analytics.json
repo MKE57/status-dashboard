@@ -3,7 +3,7 @@
   "cacheStatus": "ok",
   "source": "https://status.ai-apps-comms.ibm.com/announcement/iotm/api/v1/ext/1nS00axYWJZEkaNISKwKAi4ZaLCXam495VbYfjO6y%2BM%3D/notices.json",
   "statusPage": "https://status.ai-apps-comms.ibm.com/planninganalytics",
-  "fetchedAt": "2026-07-05T22:42:12.202Z",
+  "fetchedAt": "2026-07-08T16:14:43.228Z",
   "sourceUpdatedAt": "2026-06-29T05:34:23.000Z",
   "updated": "2026-06-29T05:34:23.000Z",
   "status": "Operational",
@@ -14,7 +14,7 @@
     {
       "name": "IBM Planning Analytics – Planning Analytics Workspace Upgrade - Asia Pacfic",
       "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.22 overnight on July 8th 2026, 14:00_to_16:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.22 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here",
-      "status": "published",
+      "status": "closed",
       "impact": "",
       "created_at": "2026-06-29T05:34:23.000Z",
       "updated_at": "2026-06-29T05:34:23.000Z",
