@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-08T23:55:37.386Z",
-  "sourceUpdatedAt": "2026-07-08T23:55:37.386Z",
-  "updated": "2026-07-08T23:55:37.386Z",
+  "fetchedAt": "2026-07-09T11:21:40.116Z",
+  "sourceUpdatedAt": "2026-07-09T11:21:40.116Z",
+  "updated": "2026-07-09T11:21:40.116Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Payout delay for a subset of PLN transactions",
+      "body": "Component: Settlement and payouts",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-09T09:27:00.000Z",
+      "updated_at": "2026-07-09T09:27:00.000Z",
+      "resolved_at": "2026-07-09T09:27:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Settlement and payouts"
+        }
+      ]
+    },
+    {
+      "name": "Partially degraded performance for payment method creation",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-09T04:55:00.000Z",
+      "updated_at": "2026-07-09T04:55:00.000Z",
+      "resolved_at": "2026-07-09T04:55:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "KCP is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -23,34 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "UATP is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-07T15:51:00.000Z",
-      "updated_at": "2026-07-07T15:51:00.000Z",
-      "resolved_at": "2026-07-07T15:51:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Delay in processing of modifications for the India region",
-      "body": "Component: Payments",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-07T14:17:00.000Z",
-      "updated_at": "2026-07-07T14:17:00.000Z",
-      "resolved_at": "2026-07-07T14:17:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payments"
         }
       ]
     },
