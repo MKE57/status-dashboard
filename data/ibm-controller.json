@@ -1,7 +1,7 @@
 {
   "provider": "IBM Controller",
   "cacheStatus": "ok",
-  "fetchedAt": "2026-07-09T23:23:58.617Z",
+  "fetchedAt": "2026-07-10T01:11:50.901Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
@@ -101,7 +101,7 @@
     {
       "name": "IBM Controller - Service Outage in Amsterdam",
       "body": "Resolved 04/09/2026 11:41 PM UTC The incident has been resolved. IBM Controller service is fully operational now. Our apologies for this inconvenience it has caused. Published 04/09/2026 10:24 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to IBM Controller services in Amsterdam data center. Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours.",
-      "status": "resolved",
+      "status": "closed",
       "impact": "",
       "created_at": "Apr 9, 2026, 10:24:47 PM",
       "updated_at": "Apr 9, 2026, 10:24:47 PM",
