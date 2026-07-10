@@ -1,12 +1,25 @@
 {
   "provider": "IBM Controller",
   "cacheStatus": "ok",
-  "fetchedAt": "2026-07-10T13:31:16.612Z",
+  "fetchedAt": "2026-07-10T15:58:39.605Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "IBM ID Authentication Outage",
+      "body": "Updated 07/10/2026 3:47 PM UTC Dear Customers, Service has been restored. ID/password logins should now be working as expected. We apologize for the disruption and appreciate your patience while the issue was being addressed. We will continue monitoring to ensure stability. Published 07/10/2026 3:37 PM UTC Dear Planning Analytics and Controller Customers, We are currently impacted by an authentication outage affecting IBM ID. The issue is being addressed, and once the authentication service is restored, the affected functionality should return to normal.",
+      "status": "resolved",
+      "impact": "",
+      "created_at": "Jul 10, 2026, 3:37:44 PM",
+      "updated_at": "Jul 10, 2026, 3:37:44 PM",
+      "incident_updates": [
+        {
+          "body": "Updated 07/10/2026 3:47 PM UTC Dear Customers, Service has been restored. ID/password logins should now be working as expected. We apologize for the disruption and appreciate your patience while the issue was being addressed. We will continue monitoring to ensure stability. Published 07/10/2026 3:37 PM UTC Dear Planning Analytics and Controller Customers, We are currently impacted by an authentication outage affecting IBM ID. The issue is being addressed, and once the authentication service is restored, the affected functionality should return to normal."
+        }
+      ]
+    },
     {
       "name": "IBM Planning Analytics on Cloud and Controller on Cloud - Planning Analytics Workspace Service Outage in EU region - RESOLVED",
       "body": "Resolved 06/17/2026 10:11 AM UTC The issue impacting customer in Europe region has been resolved. Services are operating normally. Our team has completed monitoring and confirmed service stability. We apologize for any inconvenience and thank you for your patience. Updated 06/17/2026 8:58 AM UTC Dear Customer, IBM has observed a brief interruption affecting one of the planning analytics workspace services. Our teams are currently investigating and working to restore normal functionality. Customers in EU region can may encounter problems accessing their environments. We are still working on resolving the issue. Thank you for your patience. Kind regards, Planning Analytics on Workspace Team Updated 06/17/2026 8:25 AM UTC Dear Customer, IBM has observed a brief interruption affecting one of the planning analytics workspace services. Our teams are currently investigating and working to restore normal functionality. We are still working on resolving the issue. Thank you for your patience. Kind regards, Planning Analytics on Workspace Team Published 06/17/2026 7:18 AM UTC Dear Customer, IBM has observed a brief interruption affecting one of the planning analytics workspace services. Our teams are currently investigating and working to restore normal functionality. Thank you for your patience. Kind regards, Planning Analytics on Workspace Team",
@@ -123,20 +136,7 @@
           "body": "Resolved 02/17/2026 4:55 PM UTC Dear Customers, The file transfer services are restored for our customers in EU region. Thank you for your patience while we worked on addressing this. Regards Planning Analytics Team Updated 02/17/2026 4:37 PM UTC Dear Customers, Please note that this file share user access issue is only impacting our customers in EU region. The other regions - NA and AP are working as per expectations. We apologize for the confusion and inconvenience. Regards Planning Analytics Team Updated 02/17/2026 4:22 PM UTC We are still investigating that unplanned outage with highest priority. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour. Updated 02/17/2026 2:53 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU Region File Transfer services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour. Published 02/17/2026 2:35 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU SFTP (Secure File Transfer Protocol) services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour."
         }
       ]
-    },
-    {
-      "name": "FilesTransfer Service interruption on NA and AP regions",
-      "body": "Resolved 12/21/2025 5:47 AM UTC The incident has been resolved, and the File Transfer service is now stable and fully operational in the North America and Asia Pacific regions. Thank you for your patience and understanding. Updated 12/21/2025 4:09 AM UTC We are still investigating the issue and working diligently to stabilize the FilesTransfer service in the North America and Asia Pacific regions. Thank you for your patience and understanding. Published 12/21/2025 2:15 AM UTC Dear Customer, This email is to inform you that we are currently investigating an unplanned interruption affecting the File Transfer Service in Controller on Cloud environments for the North America and Asia Pacific regions. We will provide the next update within one hour or sooner if more information becomes available.",
-      "status": "resolved",
-      "impact": "",
-      "created_at": "Dec 21, 2025, 2:14:59 AM",
-      "updated_at": "Dec 21, 2025, 2:14:59 AM",
-      "incident_updates": [
-        {
-          "body": "Resolved 12/21/2025 5:47 AM UTC The incident has been resolved, and the File Transfer service is now stable and fully operational in the North America and Asia Pacific regions. Thank you for your patience and understanding. Updated 12/21/2025 4:09 AM UTC We are still investigating the issue and working diligently to stabilize the FilesTransfer service in the North America and Asia Pacific regions. Thank you for your patience and understanding. Published 12/21/2025 2:15 AM UTC Dear Customer, This email is to inform you that we are currently investigating an unplanned interruption affecting the File Transfer Service in Controller on Cloud environments for the North America and Asia Pacific regions. We will provide the next update within one hour or sooner if more information becomes available."
-        }
-      ]
     }
   ],
-  "noticeCount": 35
+  "noticeCount": 36
 }
