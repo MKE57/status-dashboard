@@ -3,14 +3,29 @@
   "cacheStatus": "ok",
   "source": "https://status.ai-apps-comms.ibm.com/announcement/iotm/api/v1/ext/1nS00axYWJZEkaNISKwKAi4ZaLCXam495VbYfjO6y%2BM%3D/notices.json",
   "statusPage": "https://status.ai-apps-comms.ibm.com/planninganalytics",
-  "fetchedAt": "2026-07-09T09:00:17.005Z",
-  "sourceUpdatedAt": "2026-07-09T04:45:39.000Z",
-  "updated": "2026-07-09T04:45:39.000Z",
+  "fetchedAt": "2026-07-10T17:28:32.221Z",
+  "sourceUpdatedAt": "2026-07-10T15:55:14.000Z",
+  "updated": "2026-07-10T15:55:14.000Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "IBM ID Authentication Outage",
+      "body": "Updated 07/10/2026 3:47 PM UTC Dear Customers, Service has been restored. ID/password logins should now be working as expected. We apologize for the disruption and appreciate your patience while the issue was being addressed. We will continue monitoring to ensure stability. Published 07/10/2026 3:37 PM UTC Dear Planning Analytics and Controller Customers, We are currently impacted by an authentication outage affecting IBM ID. The issue is being addressed, and once the authentication service is restored, the affected functionality should return to normal.",
+      "status": "resolved",
+      "impact": "",
+      "created_at": "2026-07-10T15:37:44.000Z",
+      "updated_at": "2026-07-10T15:55:14.000Z",
+      "scheduled_for": null,
+      "scheduled_until": null,
+      "incident_updates": [
+        {
+          "body": "Updated 07/10/2026 3:47 PM UTC Dear Customers, Service has been restored. ID/password logins should now be working as expected. We apologize for the disruption and appreciate your patience while the issue was being addressed. We will continue monitoring to ensure stability. Published 07/10/2026 3:37 PM UTC Dear Planning Analytics and Controller Customers, We are currently impacted by an authentication outage affecting IBM ID. The issue is being addressed, and once the authentication service is restored, the affected functionality should return to normal."
+        }
+      ]
+    },
     {
       "name": "IBM Planning Analytics – Planning Analytics Workspace Upgrade - EU/North America",
       "body": "Closed 07/09/2026 4:45 AM UTC Planning Analytics Workspace 2.1.22 Deployment completed. Updated 07/09/2026 1:58 AM UTC Deployment has started Published 06/29/2026 5:28 AM UTC Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.22 on July 9th 2026, 2:00_to_5:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.22 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here",
@@ -145,22 +160,7 @@
           "body": "Resolved 05/09/2026 1:36 AM UTC We have successfully re‑established the File Transfer service in our Frankfurt region. The service is now operational. Thank you for your continued patience as we complete the remaining recovery activities. Updated 05/08/2026 4:34 PM UTC Recovery efforts for the impacted services are ongoing. IBM teams are working around the clock, and we anticipate that restoration activities will continue over the next several days. Our immediate focus remains on restoring production environments. We are committed to keeping you informed with timely and transparent updates as progress is made. As more information becomes available, clients will receive environment-specific details directly through their existing support cases. Updated 05/08/2026 7:44 AM UTC NorthC continues to make progress toward restoring temporary power capabilities to initiate basic services at the Amsterdam data center. Site preparations are ongoing to support potential access, with IBM clearance still pending. There is no ETA for recovery at this point. Updated 05/08/2026 1:23 AM UTC The Amsterdam data center operator, NorthC, continues its assessment to determine the extent of damage, impact to the underlying power infrastructure, and associated repair timelines. The landlord's remediation and assessment activities are progressing as expected. Clearance for IBM to access the facility remains pending completion of NorthC's evaluation. Recovery is underway for services impacted. There is no ETA for recovery at this point Updated 05/07/2026 1:32 PM UTC Dear Customers, We would like to inform you that the File Transfer Service hosted in the Europe region is currently experiencing a service outage due to an ongoing incident at the Amsterdam data centre facility. This issue is impacting File Transfer Services and Drive Explorer functionality.Our teams are actively investigating the issue and working to restore services as quickly as possible while ensuring operational stability.We will continue to provide updates as more information becomes available. Thank you for your patience and understanding. Published 05/07/2026 12:15 PM UTC Dear Customers, We would like to inform you that the File Transfer Service hosted in the Europe region is currently experiencing a service outage due to an ongoing incident at the Amsterdam data centre facility. This issue is impacting File Transfer Services and Drive Explorer functionality. Our teams are actively investigating the issue and working to restore services as quickly as possible while ensuring operational stability. We will continue to provide updates as more information becomes available. Thank you for your patience and understanding."
         }
       ]
-    },
-    {
-      "name": "IBM Planning Analytics – Planning Analytics Workspace Upgrade - Asia Pacfic",
-      "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.20 overnight on May 12th 2026, 14:00_to_16:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.20 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here",
-      "status": "closed",
-      "impact": "",
-      "created_at": "2026-05-06T04:32:47.000Z",
-      "updated_at": "2026-05-06T04:32:47.000Z",
-      "scheduled_for": null,
-      "scheduled_until": null,
-      "incident_updates": [
-        {
-          "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.20 overnight on May 12th 2026, 14:00_to_16:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.20 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here"
-        }
-      ]
     }
   ],
-  "noticeCount": 84
+  "noticeCount": 85
 }
