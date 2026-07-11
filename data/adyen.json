@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-10T19:49:20.695Z",
-  "sourceUpdatedAt": "2026-07-10T19:49:20.695Z",
-  "updated": "2026-07-10T19:49:20.695Z",
+  "fetchedAt": "2026-07-11T21:02:02.989Z",
+  "sourceUpdatedAt": "2026-07-11T21:02:02.989Z",
+  "updated": "2026-07-11T21:02:02.989Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: AfterPayTouch is experiencing offer conversion issues July 10 2026, 20:21 CEST Payment methods and issuers Identified July 10 2026, 20:21 CEST We have been informed of issues with AfterPayTouch starting at 19:00 CEST. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with AfterPayTouch and we will provide an update as soon as it becomes available.",
+      "name": "Adyen active incident: Intersolve is experiencing higher error rates July 11 2026, 22:27 CEST Payment methods and issuers Identified July 11 2026, 22:27 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Intersolve starting at 22:06 CEST. We have contacted Intersolve and we will provide an update as soon as it becomes available. AfterPayTouch is experiencing offer conversion issues July 10 2026, 20:21 CEST Payment methods and issuers",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-07-10T19:49:20.695Z",
-      "updated_at": "2026-07-10T19:49:20.695Z",
+      "created_at": "2026-07-11T21:02:02.989Z",
+      "updated_at": "2026-07-11T21:02:02.989Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Intersolve is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-11T20:27:00.000Z",
+      "updated_at": "2026-07-11T20:27:00.000Z",
+      "resolved_at": "2026-07-11T20:27:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "AfterPayTouch is experiencing offer conversion issues",
       "body": "Component: Payment methods and issuers",
@@ -51,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Payout delay for a subset of PLN transactions",
-      "body": "Component: Settlement and payouts",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-09T09:27:00.000Z",
-      "updated_at": "2026-07-09T09:27:00.000Z",
-      "resolved_at": "2026-07-09T09:27:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Settlement and payouts"
         }
       ]
     },
