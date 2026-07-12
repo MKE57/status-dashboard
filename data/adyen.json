@@ -4,9 +4,9 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-11T21:02:02.989Z",
-  "sourceUpdatedAt": "2026-07-11T21:02:02.989Z",
-  "updated": "2026-07-11T21:02:02.989Z",
+  "fetchedAt": "2026-07-12T08:56:36.144Z",
+  "sourceUpdatedAt": "2026-07-12T08:56:36.144Z",
+  "updated": "2026-07-12T08:56:36.144Z",
   "status": "Active incident",
   "activeIncidents": [
     {
@@ -14,8 +14,8 @@
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-07-11T21:02:02.989Z",
-      "updated_at": "2026-07-11T21:02:02.989Z",
+      "created_at": "2026-07-12T08:56:36.144Z",
+      "updated_at": "2026-07-12T08:56:36.144Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -31,9 +31,9 @@
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-07-11T20:27:00.000Z",
-      "updated_at": "2026-07-11T20:27:00.000Z",
-      "resolved_at": "2026-07-11T20:27:00.000Z",
+      "created_at": "2026-07-12T07:04:00.000Z",
+      "updated_at": "2026-07-12T07:04:00.000Z",
+      "resolved_at": "2026-07-12T07:04:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -41,13 +41,13 @@
       ]
     },
     {
-      "name": "AfterPayTouch is experiencing offer conversion issues",
+      "name": "Intersolve is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-07-10T19:14:00.000Z",
-      "updated_at": "2026-07-10T19:14:00.000Z",
-      "resolved_at": "2026-07-10T19:14:00.000Z",
+      "created_at": "2026-07-11T20:27:00.000Z",
+      "updated_at": "2026-07-11T20:27:00.000Z",
+      "resolved_at": "2026-07-11T20:27:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
