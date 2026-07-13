@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-12T16:32:27.805Z",
-  "sourceUpdatedAt": "2026-07-12T16:32:27.805Z",
-  "updated": "2026-07-12T16:32:27.805Z",
+  "fetchedAt": "2026-07-13T16:02:00.862Z",
+  "sourceUpdatedAt": "2026-07-13T16:02:00.862Z",
+  "updated": "2026-07-13T16:02:00.862Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Samsung Pay is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-13T15:32:00.000Z",
+      "updated_at": "2026-07-13T15:32:00.000Z",
+      "resolved_at": "2026-07-13T15:32:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Payout delay for a subset of PLN transactions",
       "body": "Component: Settlement and payouts",
@@ -34,20 +48,6 @@
       "created_at": "2026-07-09T04:55:00.000Z",
       "updated_at": "2026-07-09T04:55:00.000Z",
       "resolved_at": "2026-07-09T04:55:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "KCP is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-08T16:47:00.000Z",
-      "updated_at": "2026-07-08T16:47:00.000Z",
-      "resolved_at": "2026-07-08T16:47:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
