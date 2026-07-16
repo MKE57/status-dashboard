@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-16T15:11:50.076Z",
-  "sourceUpdatedAt": "2026-07-16T15:11:50.076Z",
-  "updated": "2026-07-16T15:11:50.076Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-07-16T19:31:57.383Z",
+  "sourceUpdatedAt": "2026-07-16T19:31:57.383Z",
+  "updated": "2026-07-16T19:31:57.383Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Partially degraded performance of the Payments Accounting Report Advancements generation July 16 2026, 21:16 CEST Interfaces and reporting Identified July 16 2026, 21:16 CEST We have identified an issue, which started at 20:37 CEST on July 16, 2026, resulting in Payments Accounting Report Advancements generation delays. For scheduled reports, it is not necessary to manually request them via the Customer Area as they will be generated automatically once the issue is resolved. If any of these reports are urgently required, they may still be obtained through manual generation. Merchants configured to receive webhook notifications will be able to download their reports once the REPORT_AVAILABLE webhook notification is received. Our engineering teams are actively investigating and implementing mitigation measures.We will provide further updates as soon as we have more information.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-07-16T19:31:57.383Z",
+      "updated_at": "2026-07-16T19:31:57.383Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Partially degraded performance of the Payments Accounting Report Advancements generation",
+      "body": "Component: Interfaces and reporting",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-16T19:16:00.000Z",
+      "updated_at": "2026-07-16T19:16:00.000Z",
+      "resolved_at": "2026-07-16T19:16:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Interfaces and reporting"
+        }
+      ]
+    },
     {
       "name": "PayPay is experiencing offer conversion issues",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +62,6 @@
       "created_at": "2026-07-16T04:46:00.000Z",
       "updated_at": "2026-07-16T04:46:00.000Z",
       "resolved_at": "2026-07-16T04:46:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Dragonpay is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-16T00:09:00.000Z",
-      "updated_at": "2026-07-16T00:09:00.000Z",
-      "resolved_at": "2026-07-16T00:09:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
