@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-15T23:36:42.659Z",
-  "sourceUpdatedAt": "2026-07-15T23:36:42.659Z",
-  "updated": "2026-07-15T23:36:42.659Z",
+  "fetchedAt": "2026-07-16T01:06:48.092Z",
+  "sourceUpdatedAt": "2026-07-16T01:06:48.092Z",
+  "updated": "2026-07-16T01:06:48.092Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Multibanco is experiencing higher error rates July 16 2026, 01:28 CEST Payment methods and issuers Identified July 16 2026, 01:28 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Multibanco starting at 20:00 CEST. We have contacted Multibanco and we will provide an update as soon as it becomes available. Pix is experiencing offer conversion issues July 16 2026, 00:42 CEST Payment methods and issuers",
+      "name": "Adyen active incident: Dragonpay is experiencing higher error rates July 16 2026, 02:09 CEST Payment methods and issuers Identified July 16 2026, 02:09 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Dragonpay starting at 20:00 CEST. We have contacted Dragonpay and we will provide an update as soon as it becomes available. Multibanco is experiencing higher error rates July 16 2026, 01:28 CEST Payment methods and issuers",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-07-15T23:36:42.659Z",
-      "updated_at": "2026-07-15T23:36:42.659Z",
+      "created_at": "2026-07-16T01:06:48.092Z",
+      "updated_at": "2026-07-16T01:06:48.092Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Dragonpay is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-16T00:09:00.000Z",
+      "updated_at": "2026-07-16T00:09:00.000Z",
+      "resolved_at": "2026-07-16T00:09:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Multibanco is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -51,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Degraded performance for 3D Secure authentications for Mastercard",
-      "body": "Component: Payments",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-15T07:23:00.000Z",
-      "updated_at": "2026-07-15T07:23:00.000Z",
-      "resolved_at": "2026-07-15T07:23:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payments"
         }
       ]
     },
