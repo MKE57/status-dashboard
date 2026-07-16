@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-16T09:26:44.926Z",
-  "sourceUpdatedAt": "2026-07-16T09:26:44.926Z",
-  "updated": "2026-07-16T09:26:44.926Z",
+  "fetchedAt": "2026-07-16T11:20:50.983Z",
+  "sourceUpdatedAt": "2026-07-16T11:20:50.983Z",
+  "updated": "2026-07-16T11:20:50.983Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: PayPay is experiencing offer conversion issues July 16 2026, 11:11 CEST Payment methods and issuers Identified July 16 2026, 11:11 CEST We have identified an issue outside of our platform for PayPay transactions starting at 09:50 CEST. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. PayPay technical team is actively investigating. We will continue to monitor and will provide an update as soon as it becomes available. Dragonpay is experiencing higher error rates July 16 2026, 02:09 CEST Payment methods and issuers",
+      "name": "Adyen active incident: Dragonpay is experiencing higher error rates July 16 2026, 02:09 CEST Payment methods and issuers Identified July 16 2026, 02:09 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Dragonpay starting at 20:00 CEST. We have contacted Dragonpay and we will provide an update as soon as it becomes available.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-07-16T09:26:44.926Z",
-      "updated_at": "2026-07-16T09:26:44.926Z",
+      "created_at": "2026-07-16T11:20:50.983Z",
+      "updated_at": "2026-07-16T11:20:50.983Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
