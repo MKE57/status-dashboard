@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-18T08:26:10.490Z",
-  "sourceUpdatedAt": "2026-07-18T08:26:10.490Z",
-  "updated": "2026-07-18T08:26:10.490Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-07-20T07:38:48.346Z",
+  "sourceUpdatedAt": "2026-07-20T07:38:48.346Z",
+  "updated": "2026-07-20T07:38:48.346Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: DANA is experiencing offer conversion issues July 20 2026, 06:39 CEST Payment methods and issuers Identified July 20 2026, 06:39 CEST We have been informed of issues with DANA starting at 04:30 CEST. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with DANA and we will provide an update as soon as it becomes available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-07-20T07:38:48.346Z",
+      "updated_at": "2026-07-20T07:38:48.346Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "DANA is experiencing offer conversion issues",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-20T04:39:00.000Z",
+      "updated_at": "2026-07-20T04:39:00.000Z",
+      "resolved_at": "2026-07-20T04:39:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Iyzico is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Partially degraded performance of the Payments Accounting Report Advancements generation",
-      "body": "Component: Interfaces and reporting",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-16T19:16:00.000Z",
-      "updated_at": "2026-07-16T19:16:00.000Z",
-      "resolved_at": "2026-07-16T19:16:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Interfaces and reporting"
         }
       ]
     },
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
