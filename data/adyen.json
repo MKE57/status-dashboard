@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-20T07:38:48.346Z",
-  "sourceUpdatedAt": "2026-07-20T07:38:48.346Z",
-  "updated": "2026-07-20T07:38:48.346Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: DANA is experiencing offer conversion issues July 20 2026, 06:39 CEST Payment methods and issuers Identified July 20 2026, 06:39 CEST We have been informed of issues with DANA starting at 04:30 CEST. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with DANA and we will provide an update as soon as it becomes available.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-07-20T07:38:48.346Z",
-      "updated_at": "2026-07-20T07:38:48.346Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-07-20T15:19:37.262Z",
+  "sourceUpdatedAt": "2026-07-20T15:19:37.262Z",
+  "updated": "2026-07-20T15:19:37.262Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
