@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-21T14:17:56.631Z",
-  "sourceUpdatedAt": "2026-07-21T14:17:56.631Z",
-  "updated": "2026-07-21T14:17:56.631Z",
+  "fetchedAt": "2026-07-21T18:58:43.950Z",
+  "sourceUpdatedAt": "2026-07-21T18:58:43.950Z",
+  "updated": "2026-07-21T18:58:43.950Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Intersolve is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-21T18:04:00.000Z",
+      "updated_at": "2026-07-21T18:04:00.000Z",
+      "resolved_at": "2026-07-21T18:04:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Dragonpay is experiencing offer conversion issues",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +48,6 @@
       "created_at": "2026-07-20T21:55:00.000Z",
       "updated_at": "2026-07-20T21:55:00.000Z",
       "resolved_at": "2026-07-20T21:55:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Touch n Go is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-20T16:25:00.000Z",
-      "updated_at": "2026-07-20T16:25:00.000Z",
-      "resolved_at": "2026-07-20T16:25:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
