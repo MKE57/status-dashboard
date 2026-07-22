@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-22T18:47:41.042Z",
-  "sourceUpdatedAt": "2026-07-22T18:47:41.042Z",
-  "updated": "2026-07-22T18:47:41.042Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: Star is experiencing higher error rates July 22 2026, 19:50 CEST Payment methods and issuers Identified July 22 2026, 19:50 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Star starting at 09:40 CEST. We have contacted Star and we will provide an update as soon as it becomes available.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-07-22T18:47:41.042Z",
-      "updated_at": "2026-07-22T18:47:41.042Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-07-22T21:19:31.777Z",
+  "sourceUpdatedAt": "2026-07-22T21:19:31.777Z",
+  "updated": "2026-07-22T21:19:31.777Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
