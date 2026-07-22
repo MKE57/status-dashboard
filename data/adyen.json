@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-22T12:02:05.087Z",
-  "sourceUpdatedAt": "2026-07-22T12:02:05.087Z",
-  "updated": "2026-07-22T12:02:05.087Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: BillDesk India is experiencing higher error rates July 22 2026, 12:31 CEST Payment methods and issuers Identified July 22 2026, 12:31 CEST We have identified an issue outside of our platform with BillDesk India starting at 12:04 CEST resulting in higher error rates over the following payment methods for a subset of transactions: Visa Mastercard Diners We have contacted our external partner and we will provide an update as soon as it becomes available.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-07-22T12:02:05.087Z",
-      "updated_at": "2026-07-22T12:02:05.087Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-07-22T14:19:02.468Z",
+  "sourceUpdatedAt": "2026-07-22T14:19:02.468Z",
+  "updated": "2026-07-22T14:19:02.468Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
