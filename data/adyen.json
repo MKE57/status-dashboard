@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-22T04:39:36.801Z",
-  "sourceUpdatedAt": "2026-07-22T04:39:36.801Z",
-  "updated": "2026-07-22T04:39:36.801Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-07-22T12:02:05.087Z",
+  "sourceUpdatedAt": "2026-07-22T12:02:05.087Z",
+  "updated": "2026-07-22T12:02:05.087Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: BillDesk India is experiencing higher error rates July 22 2026, 12:31 CEST Payment methods and issuers Identified July 22 2026, 12:31 CEST We have identified an issue outside of our platform with BillDesk India starting at 12:04 CEST resulting in higher error rates over the following payment methods for a subset of transactions: Visa Mastercard Diners We have contacted our external partner and we will provide an update as soon as it becomes available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-07-22T12:02:05.087Z",
+      "updated_at": "2026-07-22T12:02:05.087Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "BillDesk India is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-22T10:31:00.000Z",
+      "updated_at": "2026-07-22T10:31:00.000Z",
+      "resolved_at": "2026-07-22T10:31:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Iyzico is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +62,6 @@
       "created_at": "2026-07-21T18:04:00.000Z",
       "updated_at": "2026-07-21T18:04:00.000Z",
       "resolved_at": "2026-07-21T18:04:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Dragonpay is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-21T07:19:00.000Z",
-      "updated_at": "2026-07-21T07:19:00.000Z",
-      "resolved_at": "2026-07-21T07:19:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
