@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-23T16:12:34.697Z",
-  "sourceUpdatedAt": "2026-07-23T16:12:34.697Z",
-  "updated": "2026-07-23T16:12:34.697Z",
+  "fetchedAt": "2026-07-24T11:28:00.104Z",
+  "sourceUpdatedAt": "2026-07-24T11:28:00.104Z",
+  "updated": "2026-07-24T11:28:00.104Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "CashApp is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-24T11:10:00.000Z",
+      "updated_at": "2026-07-24T11:10:00.000Z",
+      "resolved_at": "2026-07-24T11:10:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Intermittently degraded performance to payment processing services in North America",
       "body": "Component: Payments",
@@ -37,20 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Payments"
-        }
-      ]
-    },
-    {
-      "name": "Star is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-22T17:50:00.000Z",
-      "updated_at": "2026-07-22T17:50:00.000Z",
-      "resolved_at": "2026-07-22T17:50:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
