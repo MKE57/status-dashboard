@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-26T07:28:25.013Z",
-  "sourceUpdatedAt": "2026-07-26T07:28:25.013Z",
-  "updated": "2026-07-26T07:28:25.013Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-07-27T21:33:09.199Z",
+  "sourceUpdatedAt": "2026-07-27T21:33:09.199Z",
+  "updated": "2026-07-27T21:33:09.199Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Partial degradation for 3D Secure authentications in Italy July 27 2026, 22:52 CEST Payments Identified July 27 2026, 22:52 CEST We have identified an external issue which started at 21:20 CEST on July 27, 2026, resulting in a number of 3DS transactions originating in Italy being unable to trigger or complete 3D Secure authentication flows. As a result of this issue, merchants may experience increased refusal rates for non-authenticated transactions and elevated shopper drop-off during checkout. Our engineering teams are actively engaged to monitor the situation and implement mitigation measures where possible. We will provide further updates as soon as we have more information.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-07-27T21:33:09.199Z",
+      "updated_at": "2026-07-27T21:33:09.199Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Partial degradation for 3D Secure authentications in Italy",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-27T20:52:00.000Z",
+      "updated_at": "2026-07-27T20:52:00.000Z",
+      "resolved_at": "2026-07-27T20:52:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
     {
       "name": "S2BPay/PayNow is experiencing offer conversion issues",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Settlement and payouts"
-        }
-      ]
-    },
-    {
-      "name": "CashApp is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-24T11:10:00.000Z",
-      "updated_at": "2026-07-24T11:10:00.000Z",
-      "resolved_at": "2026-07-24T11:10:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
