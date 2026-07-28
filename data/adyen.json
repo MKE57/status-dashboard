@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-28T10:13:11.416Z",
-  "sourceUpdatedAt": "2026-07-28T10:13:11.416Z",
-  "updated": "2026-07-28T10:13:11.416Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-07-28T18:11:47.940Z",
+  "sourceUpdatedAt": "2026-07-28T18:11:47.940Z",
+  "updated": "2026-07-28T18:11:47.940Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Cellular connectivity issues for in-person payments in Brazil July 28 2026, 20:01 CEST Payments Identified July 28 2026, 20:01 CEST We have identified an external issue which started at 02:54 CEST on July 28, 2026, resulting in cellular connectivity issues for in-person transactions in Brazil. As a result, customers in Brazil might experience an elevated error rate for a subset of transactions with an error code “Failed to go online”. Our engineering teams are actively working with the service provider to resolve the issue as soon as possible. We will provide further updates as soon as more information becomes available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-07-28T18:11:47.940Z",
+      "updated_at": "2026-07-28T18:11:47.940Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Cellular connectivity issues for in-person payments in Brazil",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-28T18:01:00.000Z",
+      "updated_at": "2026-07-28T18:01:00.000Z",
+      "resolved_at": "2026-07-28T18:01:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
     {
       "name": "GoPay is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Partial degradation for 3D Secure authentications in Italy",
-      "body": "Component: Payments",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-27T20:52:00.000Z",
-      "updated_at": "2026-07-27T20:52:00.000Z",
-      "resolved_at": "2026-07-27T20:52:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payments"
         }
       ]
     },
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
