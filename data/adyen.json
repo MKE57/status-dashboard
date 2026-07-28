@@ -4,14 +4,56 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-07-27T22:39:08.288Z",
-  "sourceUpdatedAt": "2026-07-27T22:39:08.288Z",
-  "updated": "2026-07-27T22:39:08.288Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-07-28T07:28:06.625Z",
+  "sourceUpdatedAt": "2026-07-28T07:28:06.625Z",
+  "updated": "2026-07-28T07:28:06.625Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: GoPay is experiencing higher error rates July 28 2026, 08:57 CEST Payment methods and issuers Identified July 28 2026, 08:57 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through GoPay starting at 08:15 CEST. We have contacted GoPay and we will provide an update as soon as it becomes available. Doku is experiencing higher error rates July 28 2026, 07:36 CEST Payment methods and issuers",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-07-28T07:28:06.625Z",
+      "updated_at": "2026-07-28T07:28:06.625Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "GoPay is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-28T06:57:00.000Z",
+      "updated_at": "2026-07-28T06:57:00.000Z",
+      "resolved_at": "2026-07-28T06:57:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Doku is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-28T05:36:00.000Z",
+      "updated_at": "2026-07-28T05:36:00.000Z",
+      "resolved_at": "2026-07-28T05:36:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Partial degradation for 3D Secure authentications in Italy",
       "body": "Component: Payments",
@@ -23,34 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Payments"
-        }
-      ]
-    },
-    {
-      "name": "S2BPay/PayNow is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-26T02:19:00.000Z",
-      "updated_at": "2026-07-26T02:19:00.000Z",
-      "resolved_at": "2026-07-26T02:19:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Settlement delay for a subset of transactions processed through Visa",
-      "body": "Component: Settlement and payouts",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-25T14:35:00.000Z",
-      "updated_at": "2026-07-25T14:35:00.000Z",
-      "resolved_at": "2026-07-25T14:35:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Settlement and payouts"
         }
       ]
     },
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
