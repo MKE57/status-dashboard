@@ -4,9 +4,9 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-01T01:20:38.328Z",
-  "sourceUpdatedAt": "2026-08-01T01:20:38.328Z",
-  "updated": "2026-08-01T01:20:38.328Z",
+  "fetchedAt": "2026-08-01T04:47:06.490Z",
+  "sourceUpdatedAt": "2026-08-01T04:47:06.490Z",
+  "updated": "2026-08-01T04:47:06.490Z",
   "status": "Active incident",
   "activeIncidents": [
     {
@@ -14,8 +14,8 @@
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-01T01:20:38.328Z",
-      "updated_at": "2026-08-01T01:20:38.328Z",
+      "created_at": "2026-08-01T04:47:06.490Z",
+      "updated_at": "2026-08-01T04:47:06.490Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,20 +26,6 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
-    {
-      "name": "GREEN DOT BANK DBA BONNEVILLE BANK is experiencing higher refusal rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-07-31T22:17:00.000Z",
-      "updated_at": "2026-07-31T22:17:00.000Z",
-      "resolved_at": "2026-07-31T22:17:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
     {
       "name": "INTESA SANPAOLO S.P.A. is experiencing higher refusal rates",
       "body": "Component: Payment methods and issuers",
@@ -65,6 +51,20 @@
       "incident_updates": [
         {
           "body": "Component: Settlement and payouts"
+        }
+      ]
+    },
+    {
+      "name": "Payout delay for Adyen for Platform sub-merchants",
+      "body": "Component: Adyen for Platforms",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-30T19:10:00.000Z",
+      "updated_at": "2026-07-30T19:10:00.000Z",
+      "resolved_at": "2026-07-30T19:10:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Adyen for Platforms"
         }
       ]
     },
