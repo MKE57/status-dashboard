@@ -4,9 +4,9 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-01T04:47:06.490Z",
-  "sourceUpdatedAt": "2026-08-01T04:47:06.490Z",
-  "updated": "2026-08-01T04:47:06.490Z",
+  "fetchedAt": "2026-08-03T14:13:00.272Z",
+  "sourceUpdatedAt": "2026-08-03T14:13:00.272Z",
+  "updated": "2026-08-03T14:13:00.272Z",
   "status": "Active incident",
   "activeIncidents": [
     {
@@ -14,8 +14,8 @@
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-01T04:47:06.490Z",
-      "updated_at": "2026-08-01T04:47:06.490Z",
+      "created_at": "2026-08-03T14:13:00.272Z",
+      "updated_at": "2026-08-03T14:13:00.272Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Payout delay for a subset of BRL transactions",
+      "body": "Component: Settlement and payouts",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-03T13:22:00.000Z",
+      "updated_at": "2026-08-03T13:22:00.000Z",
+      "resolved_at": "2026-08-03T13:22:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Settlement and payouts"
+        }
+      ]
+    },
     {
       "name": "INTESA SANPAOLO S.P.A. is experiencing higher refusal rates",
       "body": "Component: Payment methods and issuers",
@@ -111,7 +125,7 @@
       ]
     }
   ],
-  "noticeCount": 7,
+  "noticeCount": 8,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
