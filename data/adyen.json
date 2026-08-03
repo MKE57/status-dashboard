@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-03T16:52:53.473Z",
-  "sourceUpdatedAt": "2026-08-03T16:52:53.473Z",
-  "updated": "2026-08-03T16:52:53.473Z",
+  "fetchedAt": "2026-08-03T18:29:52.597Z",
+  "sourceUpdatedAt": "2026-08-03T18:29:52.597Z",
+  "updated": "2026-08-03T18:29:52.597Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Payout delay for a subset of BRL transactions August 03 2026, 15:22 CEST Settlement and payouts Identified August 03 2026, 15:22 CEST We have identified an external issue starting at 14:23 CEST on August 3, 2026, resulting in a payout delay for a subset of customers in Brazil. This affects only payouts scheduled for August 3, 2026. Our engineering teams have been engaged and are working with our banking partners to resolve this issue. We will provide an update on the expected delay as soon as we have more information. INTESA SANPAOLO S.P.A. is experiencing higher refusal rates August 01 2026, 00:09 CEST Payment methods and issuers",
+      "name": "Adyen active incident: Swish is experiencing higher error rates August 03 2026, 20:11 CEST Payment methods and issuers Identified August 03 2026, 20:11 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Swish starting at 20:00 CEST. We have contacted Swish and we will provide an update as soon as it becomes available. Payout delay for a subset of BRL transactions August 03 2026, 15:22 CEST Settlement and payouts INTESA SANPAOLO S.P.A. is experiencing higher refusal rates August 01 2026, 00:09 CEST Payment methods and issuers",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-03T16:52:53.473Z",
-      "updated_at": "2026-08-03T16:52:53.473Z",
+      "created_at": "2026-08-03T18:29:52.597Z",
+      "updated_at": "2026-08-03T18:29:52.597Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Swish is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-03T18:11:00.000Z",
+      "updated_at": "2026-08-03T18:11:00.000Z",
+      "resolved_at": "2026-08-03T18:11:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Payout delay for a subset of BRL transactions",
       "body": "Component: Settlement and payouts",
@@ -125,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 8,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
