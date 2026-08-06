@@ -4,9 +4,9 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-06T12:17:53.393Z",
-  "sourceUpdatedAt": "2026-08-06T12:17:53.393Z",
-  "updated": "2026-08-06T12:17:53.393Z",
+  "fetchedAt": "2026-08-06T14:41:11.811Z",
+  "sourceUpdatedAt": "2026-08-06T14:41:11.811Z",
+  "updated": "2026-08-06T14:41:11.811Z",
   "status": "Active incident",
   "activeIncidents": [
     {
@@ -14,8 +14,8 @@
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-06T12:17:53.393Z",
-      "updated_at": "2026-08-06T12:17:53.393Z",
+      "created_at": "2026-08-06T14:41:11.811Z",
+      "updated_at": "2026-08-06T14:41:11.811Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,20 +26,6 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
-    {
-      "name": "Degraded performance for multiple services on the Test environment",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-06T11:24:00.000Z",
-      "updated_at": "2026-08-06T11:24:00.000Z",
-      "resolved_at": "2026-08-06T11:24:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
     {
       "name": "Delayed response time for support requests",
       "body": "Component: Interfaces and reporting",
@@ -65,6 +51,20 @@
       "incident_updates": [
         {
           "body": "Component: Payments"
+        }
+      ]
+    },
+    {
+      "name": "Payout delay for a subset of BRL transactions",
+      "body": "Component: Settlement and payouts",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-03T13:22:00.000Z",
+      "updated_at": "2026-08-03T13:22:00.000Z",
+      "resolved_at": "2026-08-03T13:22:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Settlement and payouts"
         }
       ]
     },
