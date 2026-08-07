@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-06T14:41:11.811Z",
-  "sourceUpdatedAt": "2026-08-06T14:41:11.811Z",
-  "updated": "2026-08-06T14:41:11.811Z",
+  "fetchedAt": "2026-08-07T00:20:19.874Z",
+  "sourceUpdatedAt": "2026-08-07T00:20:19.874Z",
+  "updated": "2026-08-07T00:20:19.874Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen reports degraded performance: Interfaces and reporting",
+      "name": "Adyen active incident: Degraded performance for in-person payments on a subset of Android devices August 05 2026, 14:42 CEST Payments Updated August 05 2026, 15:02 CEST As of 14:52 CEST on August 5, 2026, we have implemented mitigation measures for the issue affecting Android Tap to Pay on devices with Rockchip processors, first identified at 14:05 CEST. Following these measures, we are seeing a decrease in transaction failures caused by attestation errors. Our engineering teams continue to monitor the situation closely and are working towards a full resolution. We will share a further update as soon as it becomes available. Identified August 05 2026, 14:42 CEST We have identified an externally caused issue that started at 14:05 CEST on August 5, 2026, affecting Android Tap to Pay on devices with Rockchip processors. This issue is resulting in failures during attestation, which in turn cause transaction failures. As a result, affected devices are unable to process Tap to Pay transactions. Our engineering teams are actively investigating and implementing mitigation measures to restore service. We will share a further update as soon as it becomes available. Payout delay for a subset of BRL transactions August 03 2026, 15:22 CEST Settlement and payouts",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-06T14:41:11.811Z",
-      "updated_at": "2026-08-06T14:41:11.811Z",
+      "created_at": "2026-08-07T00:20:19.874Z",
+      "updated_at": "2026-08-07T00:20:19.874Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -27,16 +27,16 @@
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "Delayed response time for support requests",
-      "body": "Component: Interfaces and reporting",
+      "name": "Degraded performance for multiple services on the Test environment",
+      "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-08-05T17:11:00.000Z",
-      "updated_at": "2026-08-05T17:11:00.000Z",
-      "resolved_at": "2026-08-05T17:11:00.000Z",
+      "created_at": "2026-08-06T11:24:00.000Z",
+      "updated_at": "2026-08-06T11:24:00.000Z",
+      "resolved_at": "2026-08-06T11:24:00.000Z",
       "incident_updates": [
         {
-          "body": "Component: Interfaces and reporting"
+          "body": "Component: Payment methods and issuers"
         }
       ]
     },
@@ -166,7 +166,7 @@
     },
     {
       "name": "Interfaces and reporting",
-      "status": "Degraded performance"
+      "status": "Operational"
     },
     {
       "name": "Settlement and payouts",
