@@ -1,7 +1,7 @@
 {
   "provider": "IBM Controller",
   "cacheStatus": "ok",
-  "fetchedAt": "2026-08-09T00:02:09.194Z",
+  "fetchedAt": "2026-08-09T02:22:40.553Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
@@ -75,7 +75,7 @@
     {
       "name": "File Transfer Services & Drive Explorer Functionality Outage – EU Region",
       "body": "Resolved 05/09/2026 1:36 AM UTC We have successfully re‑established the File Transfer service in our Frankfurt region. The service is now operational. Thank you for your continued patience as we complete the remaining recovery activities. Updated 05/08/2026 4:34 PM UTC Recovery efforts for the impacted services are ongoing. IBM teams are working around the clock, and we anticipate that restoration activities will continue over the next several days. Our immediate focus remains on restoring production environments. We are committed to keeping you informed with timely and transparent updates as progress is made. As more information becomes available, clients will receive environment-specific details directly through their existing support cases. Updated 05/08/2026 7:44 AM UTC NorthC continues to make progress toward restoring temporary power capabilities to initiate basic services at the Amsterdam data center. Site preparations are ongoing to support potential access, with IBM clearance still pending. There is no ETA for recovery at this point. Updated 05/08/2026 1:23 AM UTC The Amsterdam data center operator, NorthC, continues its assessment to determine the extent of damage, impact to the underlying power infrastructure, and associated repair timelines. The landlord's remediation and assessment activities are progressing as expected. Clearance for IBM to access the facility remains pending completion of NorthC's evaluation. Recovery is underway for services impacted. There is no ETA for recovery at this point Updated 05/07/2026 1:32 PM UTC Dear Customers, We would like to inform you that the File Transfer Service hosted in the Europe region is currently experiencing a service outage due to an ongoing incident at the Amsterdam data centre facility. This issue is impacting File Transfer Services and Drive Explorer functionality.Our teams are actively investigating the issue and working to restore services as quickly as possible while ensuring operational stability.We will continue to provide updates as more information becomes available. Thank you for your patience and understanding. Published 05/07/2026 12:15 PM UTC Dear Customers, We would like to inform you that the File Transfer Service hosted in the Europe region is currently experiencing a service outage due to an ongoing incident at the Amsterdam data centre facility. This issue is impacting File Transfer Services and Drive Explorer functionality. Our teams are actively investigating the issue and working to restore services as quickly as possible while ensuring operational stability. We will continue to provide updates as more information becomes available. Thank you for your patience and understanding.",
-      "status": "resolved",
+      "status": "closed",
       "impact": "",
       "created_at": "May 7, 2026, 12:15:17 PM",
       "updated_at": "May 7, 2026, 12:15:17 PM",
