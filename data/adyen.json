@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-10T04:49:47.492Z",
-  "sourceUpdatedAt": "2026-08-10T04:49:47.492Z",
-  "updated": "2026-08-10T04:49:47.492Z",
+  "fetchedAt": "2026-08-10T06:05:23.923Z",
+  "sourceUpdatedAt": "2026-08-10T06:05:23.923Z",
+  "updated": "2026-08-10T06:05:23.923Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Molpay is experiencing higher error rates August 10 2026, 06:24 CEST Payment methods and issuers Identified August 10 2026, 06:24 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Molpay starting at 06:00 CEST. We have contacted Molpay and we will provide an update as soon as it becomes available. Payout delay for a subset of BRL transactions August 03 2026, 15:22 CEST Settlement and payouts",
+      "name": "Adyen active incident: Molpay is experiencing higher error rates August 10 2026, 06:24 CEST Payment methods and issuers Updated August 10 2026, 06:50 CEST Processing over Molpay is back to normal since 06:38 CEST. We will continue monitoring and provide a new update if required. Identified August 10 2026, 06:24 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Molpay starting at 06:00 CEST. We have contacted Molpay and we will provide an update as soon as it becomes available. Payout delay for a subset of BRL transactions August 03 2026, 15:22 CEST Settlement and payouts",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-10T04:49:47.492Z",
-      "updated_at": "2026-08-10T04:49:47.492Z",
+      "created_at": "2026-08-10T06:05:23.923Z",
+      "updated_at": "2026-08-10T06:05:23.923Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
