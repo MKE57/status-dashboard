@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-10T00:39:46.740Z",
-  "sourceUpdatedAt": "2026-08-10T00:39:46.740Z",
-  "updated": "2026-08-10T00:39:46.740Z",
+  "fetchedAt": "2026-08-10T04:49:47.492Z",
+  "sourceUpdatedAt": "2026-08-10T04:49:47.492Z",
+  "updated": "2026-08-10T04:49:47.492Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Payout delay for a subset of BRL transactions August 03 2026, 15:22 CEST Settlement and payouts Updated August 05 2026, 21:58 CEST We are providing an update regarding the payout delay affecting BRL transactions that began on August 3, 2026. As of today, approximately 97% of the delayed payouts have been successfully processed and should now be reflected in your accounts. We continue working to resolve the remaining payouts and will provide further updates as they become available. Updated August 04 2026, 18:51 CEST We are providing an update regarding the payout delay affecting BRL transactions that began on August 3, 2026. As of today, approximately 77% of the delayed payouts have been successfully processed and should now be reflected in your accounts. We continue working to resolve the remaining payouts and will provide further updates as they become available. Identified August 03 2026, 15:22 CEST We have identified an external issue starting at 14:23 CEST on August 3, 2026, resulting in a payout delay for a subset of customers in Brazil. This affects only payouts scheduled for August 3, 2026. Our engineering teams have been engaged and are working with our banking partners to resolve this issue. We will provide an update on the expected delay as soon as we have more information.",
+      "name": "Adyen active incident: Molpay is experiencing higher error rates August 10 2026, 06:24 CEST Payment methods and issuers Identified August 10 2026, 06:24 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Molpay starting at 06:00 CEST. We have contacted Molpay and we will provide an update as soon as it becomes available. Payout delay for a subset of BRL transactions August 03 2026, 15:22 CEST Settlement and payouts",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-10T00:39:46.740Z",
-      "updated_at": "2026-08-10T00:39:46.740Z",
+      "created_at": "2026-08-10T04:49:47.492Z",
+      "updated_at": "2026-08-10T04:49:47.492Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -27,6 +27,20 @@
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
+      "name": "Molpay is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-10T04:24:00.000Z",
+      "updated_at": "2026-08-10T04:24:00.000Z",
+      "resolved_at": "2026-08-10T04:24:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
       "name": "Bank of Georgia (MPGS) is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
@@ -37,20 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Degraded performance for in-person payments on a subset of Android devices",
-      "body": "Component: Payments",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-07T07:27:00.000Z",
-      "updated_at": "2026-08-07T07:27:00.000Z",
-      "resolved_at": "2026-08-07T07:27:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payments"
         }
       ]
     },
