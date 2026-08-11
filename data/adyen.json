@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-10T23:47:05.000Z",
-  "sourceUpdatedAt": "2026-08-10T23:47:05.000Z",
-  "updated": "2026-08-10T23:47:05.000Z",
+  "fetchedAt": "2026-08-11T00:39:42.551Z",
+  "sourceUpdatedAt": "2026-08-11T00:39:42.551Z",
+  "updated": "2026-08-11T00:39:42.551Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Prosa is experiencing higher error rates August 11 2026, 01:27 CEST Payment methods and issuers Identified August 11 2026, 01:27 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Prosa starting at 23:05 CEST. We have contacted Prosa and we will provide an update as soon as it becomes available. Payout delay for a subset of BRL transactions August 03 2026, 15:22 CEST Settlement and payouts",
+      "name": "Adyen active incident: Swish is experiencing higher error rates August 11 2026, 02:31 CEST Payment methods and issuers Identified August 11 2026, 02:31 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Swish starting at 02:05 CEST. We have contacted Swish and we will provide an update as soon as it becomes available. Prosa is experiencing higher error rates August 11 2026, 01:27 CEST Payment methods and issuers Payout delay for a subset of BRL transactions August 03 2026, 15:22 CEST Settlement and payouts",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-10T23:47:05.000Z",
-      "updated_at": "2026-08-10T23:47:05.000Z",
+      "created_at": "2026-08-11T00:39:42.551Z",
+      "updated_at": "2026-08-11T00:39:42.551Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -27,13 +27,13 @@
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "Prosa is experiencing higher error rates",
+      "name": "Swish is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-08-10T23:27:00.000Z",
-      "updated_at": "2026-08-10T23:27:00.000Z",
-      "resolved_at": "2026-08-10T23:27:00.000Z",
+      "created_at": "2026-08-11T00:31:00.000Z",
+      "updated_at": "2026-08-11T00:31:00.000Z",
+      "resolved_at": "2026-08-11T00:31:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -41,13 +41,13 @@
       ]
     },
     {
-      "name": "Twint is experiencing higher error rates",
+      "name": "Prosa is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-08-10T21:57:00.000Z",
-      "updated_at": "2026-08-10T21:57:00.000Z",
-      "resolved_at": "2026-08-10T21:57:00.000Z",
+      "created_at": "2026-08-10T23:27:00.000Z",
+      "updated_at": "2026-08-10T23:27:00.000Z",
+      "resolved_at": "2026-08-10T23:27:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
