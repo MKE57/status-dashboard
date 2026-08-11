@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-11T00:39:42.551Z",
-  "sourceUpdatedAt": "2026-08-11T00:39:42.551Z",
-  "updated": "2026-08-11T00:39:42.551Z",
+  "fetchedAt": "2026-08-11T02:56:11.610Z",
+  "sourceUpdatedAt": "2026-08-11T02:56:11.610Z",
+  "updated": "2026-08-11T02:56:11.610Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Swish is experiencing higher error rates August 11 2026, 02:31 CEST Payment methods and issuers Identified August 11 2026, 02:31 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Swish starting at 02:05 CEST. We have contacted Swish and we will provide an update as soon as it becomes available. Prosa is experiencing higher error rates August 11 2026, 01:27 CEST Payment methods and issuers Payout delay for a subset of BRL transactions August 03 2026, 15:22 CEST Settlement and payouts",
+      "name": "Adyen active incident: Payout delay for a subset of BRL transactions August 03 2026, 15:22 CEST Settlement and payouts Updated August 05 2026, 21:58 CEST We are providing an update regarding the payout delay affecting BRL transactions that began on August 3, 2026. As of today, approximately 97% of the delayed payouts have been successfully processed and should now be reflected in your accounts. We continue working to resolve the remaining payouts and will provide further updates as they become available. Updated August 04 2026, 18:51 CEST We are providing an update regarding the payout delay affecting BRL transactions that began on August 3, 2026. As of today, approximately 77% of the delayed payouts have been successfully processed and should now be reflected in your accounts. We continue working to resolve the remaining payouts and will provide further updates as they become available. Identified August 03 2026, 15:22 CEST We have identified an external issue starting at 14:23 CEST on August 3, 2026, resulting in a payout delay for a subset of customers in Brazil. This affects only payouts scheduled for August 3, 2026. Our engineering teams have been engaged and are working with our banking partners to resolve this issue. We will provide an update on the expected delay as soon as we have more information.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-11T00:39:42.551Z",
-      "updated_at": "2026-08-11T00:39:42.551Z",
+      "created_at": "2026-08-11T02:56:11.610Z",
+      "updated_at": "2026-08-11T02:56:11.610Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
