@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-13T02:41:52.996Z",
-  "sourceUpdatedAt": "2026-08-13T02:41:52.996Z",
-  "updated": "2026-08-13T02:41:52.996Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-08-13T11:25:53.697Z",
+  "sourceUpdatedAt": "2026-08-13T11:25:53.697Z",
+  "updated": "2026-08-13T11:25:53.697Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Pix is experiencing offer conversion issues August 13 2026, 12:39 CEST Payment methods and issuers Identified August 13 2026, 12:39 CEST We have been informed of issues with Pix starting at 12:12 CEST. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with Pix and we will provide an update as soon as it becomes available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-08-13T11:25:53.697Z",
+      "updated_at": "2026-08-13T11:25:53.697Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Pix is experiencing offer conversion issues",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-13T10:39:00.000Z",
+      "updated_at": "2026-08-13T10:39:00.000Z",
+      "resolved_at": "2026-08-13T10:39:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Pix is experiencing offer conversion issues",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +62,6 @@
       "created_at": "2026-08-12T16:32:00.000Z",
       "updated_at": "2026-08-12T16:32:00.000Z",
       "resolved_at": "2026-08-12T16:32:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Swish is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-11T00:31:00.000Z",
-      "updated_at": "2026-08-11T00:31:00.000Z",
-      "resolved_at": "2026-08-11T00:31:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
