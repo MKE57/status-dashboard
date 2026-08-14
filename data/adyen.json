@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-14T02:43:39.093Z",
-  "sourceUpdatedAt": "2026-08-14T02:43:39.093Z",
-  "updated": "2026-08-14T02:43:39.093Z",
+  "fetchedAt": "2026-08-14T11:07:01.145Z",
+  "sourceUpdatedAt": "2026-08-14T11:07:01.145Z",
+  "updated": "2026-08-14T11:07:01.145Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Prosa is experiencing higher error rates August 14 2026, 02:10 CEST Payment methods and issuers Identified August 14 2026, 02:10 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Prosa starting at 01:20 CEST. We have contacted Prosa and we will provide an update as soon as it becomes available.",
+      "name": "Adyen active incident: PayU India is experiencing higher error rates August 14 2026, 12:10 CEST Payment methods and issuers Identified August 14 2026, 12:10 CEST We have identified an issue outside of our platform with PayU India starting at 11:30 CEST resulting in higher error rates over the following payment methods for a subset of transactions: Visa Mastercard We have contacted our external partner and we will provide an update as soon as it becomes available. Prosa is experiencing higher error rates August 14 2026, 02:10 CEST Payment methods and issuers",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-14T02:43:39.093Z",
-      "updated_at": "2026-08-14T02:43:39.093Z",
+      "created_at": "2026-08-14T11:07:01.145Z",
+      "updated_at": "2026-08-14T11:07:01.145Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "PayU India is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-14T10:10:00.000Z",
+      "updated_at": "2026-08-14T10:10:00.000Z",
+      "resolved_at": "2026-08-14T10:10:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Prosa is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -48,20 +62,6 @@
       "created_at": "2026-08-13T10:39:00.000Z",
       "updated_at": "2026-08-13T10:39:00.000Z",
       "resolved_at": "2026-08-13T10:39:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Pix is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-13T00:07:00.000Z",
-      "updated_at": "2026-08-13T00:07:00.000Z",
-      "resolved_at": "2026-08-13T00:07:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
