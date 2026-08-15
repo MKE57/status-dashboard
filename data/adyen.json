@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-14T22:45:00.794Z",
-  "sourceUpdatedAt": "2026-08-14T22:45:00.794Z",
-  "updated": "2026-08-14T22:45:00.794Z",
+  "fetchedAt": "2026-08-15T03:01:06.967Z",
+  "sourceUpdatedAt": "2026-08-15T03:01:06.967Z",
+  "updated": "2026-08-15T03:01:06.967Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Pix is experiencing offer conversion issues August 15 2026, 00:37 CEST Payment methods and issuers Identified August 15 2026, 00:37 CEST We have been informed of issues with Pix starting at 00:18 CEST. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with Pix and we will provide an update as soon as it becomes available. Prosa is experiencing higher error rates August 14 2026, 20:15 CEST Payment methods and issuers",
+      "name": "Adyen active incident: Prosa is experiencing higher error rates August 14 2026, 20:15 CEST Payment methods and issuers Identified August 14 2026, 20:15 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Prosa starting at 20:05 CEST. We have contacted Prosa and we will provide an update as soon as it becomes available.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-14T22:45:00.794Z",
-      "updated_at": "2026-08-14T22:45:00.794Z",
+      "created_at": "2026-08-15T03:01:06.967Z",
+      "updated_at": "2026-08-15T03:01:06.967Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
