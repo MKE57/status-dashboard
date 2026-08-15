@@ -1,7 +1,7 @@
 {
   "provider": "IBM Controller",
   "cacheStatus": "ok",
-  "fetchedAt": "2026-08-15T17:27:58.885Z",
+  "fetchedAt": "2026-08-15T17:49:11.434Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
@@ -56,19 +56,6 @@
       "incident_updates": [
         {
           "body": "Resolved 06/05/2026 12:55 PM UTC We have successfully re‑established the File Transfer service in our Europe region. The service is now operational. Thank you for your continued patience as we complete the remaining recovery activities. Published 06/05/2026 12:22 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU File Transfer Service. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour."
-        }
-      ]
-    },
-    {
-      "name": "IBM Controller on Cloud - Controller Web UI login issue",
-      "body": "Updated 05/19/2026 5:43 PM UTC Dear Customer, The issue affecting the Controller Web UI login for some Controller on Cloud environments is resolved. Thank you for your patience and understanding. Updated 05/19/2026 4:02 PM UTC Dear Customer, The issue affecting the Controller Web UI login for some Controller on Cloud environments has been identified, and the fix is currently being rolled out. Please expect the next update within the next 30 to 45 minutes. Thank you for your patience and understanding. Published 05/19/2026 12:46 PM UTC Dear Customer, We would like to inform you that some Controller on Cloud environments may currently experience issues with logging into the Controller Web UI. The Controller Client login remains unaffected and should continue to work as expected. Our teams are aware of the situation and are actively investigating the issue with high priority. We will provide the next update within the next 45 to 60 minutes. Thank you for your patience and understanding.",
-      "status": "closed",
-      "impact": "",
-      "created_at": "May 19, 2026, 12:46:25 PM",
-      "updated_at": "May 19, 2026, 12:46:25 PM",
-      "incident_updates": [
-        {
-          "body": "Updated 05/19/2026 5:43 PM UTC Dear Customer, The issue affecting the Controller Web UI login for some Controller on Cloud environments is resolved. Thank you for your patience and understanding. Updated 05/19/2026 4:02 PM UTC Dear Customer, The issue affecting the Controller Web UI login for some Controller on Cloud environments has been identified, and the fix is currently being rolled out. Please expect the next update within the next 30 to 45 minutes. Thank you for your patience and understanding. Published 05/19/2026 12:46 PM UTC Dear Customer, We would like to inform you that some Controller on Cloud environments may currently experience issues with logging into the Controller Web UI. The Controller Client login remains unaffected and should continue to work as expected. Our teams are aware of the situation and are actively investigating the issue with high priority. We will provide the next update within the next 45 to 60 minutes. Thank you for your patience and understanding."
         }
       ]
     },
@@ -136,7 +123,20 @@
           "body": "Resolved 02/17/2026 4:55 PM UTC Dear Customers, The file transfer services are restored for our customers in EU region. Thank you for your patience while we worked on addressing this. Regards Planning Analytics Team Updated 02/17/2026 4:37 PM UTC Dear Customers, Please note that this file share user access issue is only impacting our customers in EU region. The other regions - NA and AP are working as per expectations. We apologize for the confusion and inconvenience. Regards Planning Analytics Team Updated 02/17/2026 4:22 PM UTC We are still investigating that unplanned outage with highest priority. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour. Updated 02/17/2026 2:53 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU Region File Transfer services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour. Published 02/17/2026 2:35 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU SFTP (Secure File Transfer Protocol) services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour."
         }
       ]
+    },
+    {
+      "name": "FilesTransfer Service interruption on NA and AP regions",
+      "body": "Resolved 12/21/2025 5:47 AM UTC The incident has been resolved, and the File Transfer service is now stable and fully operational in the North America and Asia Pacific regions. Thank you for your patience and understanding. Updated 12/21/2025 4:09 AM UTC We are still investigating the issue and working diligently to stabilize the FilesTransfer service in the North America and Asia Pacific regions. Thank you for your patience and understanding. Published 12/21/2025 2:15 AM UTC Dear Customer, This email is to inform you that we are currently investigating an unplanned interruption affecting the File Transfer Service in Controller on Cloud environments for the North America and Asia Pacific regions. We will provide the next update within one hour or sooner if more information becomes available.",
+      "status": "resolved",
+      "impact": "",
+      "created_at": "Dec 21, 2025, 2:14:59 AM",
+      "updated_at": "Dec 21, 2025, 2:14:59 AM",
+      "incident_updates": [
+        {
+          "body": "Resolved 12/21/2025 5:47 AM UTC The incident has been resolved, and the File Transfer service is now stable and fully operational in the North America and Asia Pacific regions. Thank you for your patience and understanding. Updated 12/21/2025 4:09 AM UTC We are still investigating the issue and working diligently to stabilize the FilesTransfer service in the North America and Asia Pacific regions. Thank you for your patience and understanding. Published 12/21/2025 2:15 AM UTC Dear Customer, This email is to inform you that we are currently investigating an unplanned interruption affecting the File Transfer Service in Controller on Cloud environments for the North America and Asia Pacific regions. We will provide the next update within one hour or sooner if more information becomes available."
+        }
+      ]
     }
   ],
-  "noticeCount": 33
+  "noticeCount": 32
 }
