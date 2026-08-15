@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-15T03:01:06.967Z",
-  "sourceUpdatedAt": "2026-08-15T03:01:06.967Z",
-  "updated": "2026-08-15T03:01:06.967Z",
+  "fetchedAt": "2026-08-15T04:53:13.410Z",
+  "sourceUpdatedAt": "2026-08-15T04:53:13.410Z",
+  "updated": "2026-08-15T04:53:13.410Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Prosa is experiencing higher error rates August 14 2026, 20:15 CEST Payment methods and issuers Identified August 14 2026, 20:15 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Prosa starting at 20:05 CEST. We have contacted Prosa and we will provide an update as soon as it becomes available.",
+      "name": "Adyen active incident: Mastercard Australia is experiencing offer conversion issues August 15 2026, 06:34 CEST Payment methods and issuers Identified August 15 2026, 06:34 CEST We have been informed of issues with Mastercard Australia starting at 06:00 CEST. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with Mastercard and we will provide an update as soon as it becomes available. Global Payments Taiwan (MPGS) is experiencing higher error rates August 15 2026, 06:31 CEST Payment methods and issuers Prosa is experiencing higher error rates August 14 2026, 20:15 CEST Payment methods and issuers",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-15T03:01:06.967Z",
-      "updated_at": "2026-08-15T03:01:06.967Z",
+      "created_at": "2026-08-15T04:53:13.410Z",
+      "updated_at": "2026-08-15T04:53:13.410Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -27,13 +27,27 @@
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "Pix is experiencing offer conversion issues",
+      "name": "Mastercard Australia is experiencing offer conversion issues",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-08-14T22:37:00.000Z",
-      "updated_at": "2026-08-14T22:37:00.000Z",
-      "resolved_at": "2026-08-14T22:37:00.000Z",
+      "created_at": "2026-08-15T04:34:00.000Z",
+      "updated_at": "2026-08-15T04:34:00.000Z",
+      "resolved_at": "2026-08-15T04:34:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Global Payments Taiwan (MPGS) is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-15T04:31:00.000Z",
+      "updated_at": "2026-08-15T04:31:00.000Z",
+      "resolved_at": "2026-08-15T04:31:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -51,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Partial Instant bank transfers delay for BRL",
-      "body": "Component: Settlement and payouts",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-14T11:28:00.000Z",
-      "updated_at": "2026-08-14T11:28:00.000Z",
-      "resolved_at": "2026-08-14T11:28:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Settlement and payouts"
         }
       ]
     },
