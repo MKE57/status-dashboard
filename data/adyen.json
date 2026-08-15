@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-15T04:53:13.410Z",
-  "sourceUpdatedAt": "2026-08-15T04:53:13.410Z",
-  "updated": "2026-08-15T04:53:13.410Z",
+  "fetchedAt": "2026-08-15T05:36:30.076Z",
+  "sourceUpdatedAt": "2026-08-15T05:36:30.076Z",
+  "updated": "2026-08-15T05:36:30.076Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Mastercard Australia is experiencing offer conversion issues August 15 2026, 06:34 CEST Payment methods and issuers Identified August 15 2026, 06:34 CEST We have been informed of issues with Mastercard Australia starting at 06:00 CEST. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with Mastercard and we will provide an update as soon as it becomes available. Global Payments Taiwan (MPGS) is experiencing higher error rates August 15 2026, 06:31 CEST Payment methods and issuers Prosa is experiencing higher error rates August 14 2026, 20:15 CEST Payment methods and issuers",
+      "name": "Adyen active incident: Mastercard is experiencing higher error rates August 15 2026, 07:22 CEST Payments Identified August 15 2026, 07:22 CEST Mastercard has confirmed that they are experiencing an issue starting at 06:00 CEST. We are in contact with Mastercard and we will provide an update as soon as it becomes available. Global Payments Taiwan (MPGS) is experiencing higher error rates August 15 2026, 06:31 CEST Payment methods and issuers Prosa is experiencing higher error rates August 14 2026, 20:15 CEST Payment methods and issuers",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-15T04:53:13.410Z",
-      "updated_at": "2026-08-15T04:53:13.410Z",
+      "created_at": "2026-08-15T05:36:30.076Z",
+      "updated_at": "2026-08-15T05:36:30.076Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -27,16 +27,16 @@
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "Mastercard Australia is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
+      "name": "Mastercard is experiencing higher error rates",
+      "body": "Component: Payments",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-08-15T04:34:00.000Z",
-      "updated_at": "2026-08-15T04:34:00.000Z",
-      "resolved_at": "2026-08-15T04:34:00.000Z",
+      "created_at": "2026-08-15T05:22:00.000Z",
+      "updated_at": "2026-08-15T05:22:00.000Z",
+      "resolved_at": "2026-08-15T05:22:00.000Z",
       "incident_updates": [
         {
-          "body": "Component: Payment methods and issuers"
+          "body": "Component: Payments"
         }
       ]
     },
