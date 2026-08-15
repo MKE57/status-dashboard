@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-15T05:36:30.076Z",
-  "sourceUpdatedAt": "2026-08-15T05:36:30.076Z",
-  "updated": "2026-08-15T05:36:30.076Z",
+  "fetchedAt": "2026-08-15T06:55:01.228Z",
+  "sourceUpdatedAt": "2026-08-15T06:55:01.228Z",
+  "updated": "2026-08-15T06:55:01.228Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Mastercard is experiencing higher error rates August 15 2026, 07:22 CEST Payments Identified August 15 2026, 07:22 CEST Mastercard has confirmed that they are experiencing an issue starting at 06:00 CEST. We are in contact with Mastercard and we will provide an update as soon as it becomes available. Global Payments Taiwan (MPGS) is experiencing higher error rates August 15 2026, 06:31 CEST Payment methods and issuers Prosa is experiencing higher error rates August 14 2026, 20:15 CEST Payment methods and issuers",
+      "name": "Adyen active incident: Prosa is experiencing higher error rates August 14 2026, 20:15 CEST Payment methods and issuers Identified August 14 2026, 20:15 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Prosa starting at 20:05 CEST. We have contacted Prosa and we will provide an update as soon as it becomes available.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-15T05:36:30.076Z",
-      "updated_at": "2026-08-15T05:36:30.076Z",
+      "created_at": "2026-08-15T06:55:01.228Z",
+      "updated_at": "2026-08-15T06:55:01.228Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
