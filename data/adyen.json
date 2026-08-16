@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-16T17:39:55.896Z",
-  "sourceUpdatedAt": "2026-08-16T17:39:55.896Z",
-  "updated": "2026-08-16T17:39:55.896Z",
+  "fetchedAt": "2026-08-16T18:43:17.318Z",
+  "sourceUpdatedAt": "2026-08-16T18:43:17.318Z",
+  "updated": "2026-08-16T18:43:17.318Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Eftpos is experiencing higher error rates August 16 2026, 19:22 CEST Payment methods and issuers Identified August 16 2026, 19:22 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Eftpos starting at 19:05 CEST. We have contacted Eftpos and we will provide an update as soon as it becomes available. Prosa is experiencing higher error rates August 14 2026, 20:15 CEST Payment methods and issuers",
+      "name": "Adyen active incident: Prosa is experiencing higher error rates August 14 2026, 20:15 CEST Payment methods and issuers Identified August 14 2026, 20:15 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Prosa starting at 20:05 CEST. We have contacted Prosa and we will provide an update as soon as it becomes available.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-16T17:39:55.896Z",
-      "updated_at": "2026-08-16T17:39:55.896Z",
+      "created_at": "2026-08-16T18:43:17.318Z",
+      "updated_at": "2026-08-16T18:43:17.318Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
