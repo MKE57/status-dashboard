@@ -4,9 +4,9 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-16T09:21:14.357Z",
-  "sourceUpdatedAt": "2026-08-16T09:21:14.357Z",
-  "updated": "2026-08-16T09:21:14.357Z",
+  "fetchedAt": "2026-08-16T09:49:35.149Z",
+  "sourceUpdatedAt": "2026-08-16T09:49:35.149Z",
+  "updated": "2026-08-16T09:49:35.149Z",
   "status": "Active incident",
   "activeIncidents": [
     {
@@ -14,8 +14,8 @@
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-16T09:21:14.357Z",
-      "updated_at": "2026-08-16T09:21:14.357Z",
+      "created_at": "2026-08-16T09:49:35.149Z",
+      "updated_at": "2026-08-16T09:49:35.149Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -25,8 +25,135 @@
   ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
-  "recentIncidents": [],
-  "noticeCount": 1,
+  "recentIncidents": [
+    {
+      "name": "Bank of Georgia (MPGS) is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-15T07:29:00.000Z",
+      "updated_at": "2026-08-15T07:29:00.000Z",
+      "resolved_at": "2026-08-15T07:29:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Mastercard is experiencing higher error rates",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-15T05:22:00.000Z",
+      "updated_at": "2026-08-15T05:22:00.000Z",
+      "resolved_at": "2026-08-15T05:22:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
+    {
+      "name": "Prosa is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-14T18:15:00.000Z",
+      "updated_at": "2026-08-14T18:15:00.000Z",
+      "resolved_at": "2026-08-14T18:15:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "GREEN DOT BANK DBA BONNEVILLE BANK is experiencing higher refusal rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-31T22:17:00.000Z",
+      "updated_at": "2026-07-31T22:17:00.000Z",
+      "resolved_at": "2026-07-31T22:17:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "INTESA SANPAOLO S.P.A. is experiencing higher refusal rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-31T22:09:00.000Z",
+      "updated_at": "2026-07-31T22:09:00.000Z",
+      "resolved_at": "2026-07-31T22:09:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Payout delay affecting multiple currencies",
+      "body": "Component: Settlement and payouts",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-07-31T15:23:00.000Z",
+      "updated_at": "2026-07-31T15:23:00.000Z",
+      "resolved_at": "2026-07-31T15:23:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Settlement and payouts"
+        }
+      ]
+    },
+    {
+      "name": "Partial payout delay for a subset of DKK transactions",
+      "body": "Component: Settlement and payouts",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-30T19:43:00.000Z",
+      "updated_at": "2026-06-30T19:43:00.000Z",
+      "resolved_at": "2026-06-30T19:43:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Settlement and payouts"
+        }
+      ]
+    },
+    {
+      "name": "Degraded performance for Customer Area communications interfaces",
+      "body": "Component: Interfaces and reporting",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-30T15:20:00.000Z",
+      "updated_at": "2026-06-30T15:20:00.000Z",
+      "resolved_at": "2026-06-30T15:20:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Interfaces and reporting"
+        }
+      ]
+    },
+    {
+      "name": "Partial payout delay for a subset of USD transactions via CashApp",
+      "body": "Component: Settlement and payouts",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-06-30T09:33:00.000Z",
+      "updated_at": "2026-06-30T09:33:00.000Z",
+      "resolved_at": "2026-06-30T09:33:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Settlement and payouts"
+        }
+      ]
+    }
+  ],
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
