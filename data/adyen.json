@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-17T08:05:18.977Z",
-  "sourceUpdatedAt": "2026-08-17T08:05:18.977Z",
-  "updated": "2026-08-17T08:05:18.977Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-08-17T20:10:56.267Z",
+  "sourceUpdatedAt": "2026-08-17T20:10:56.267Z",
+  "updated": "2026-08-17T20:10:56.267Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: UPI Collect is experiencing higher error rates August 17 2026, 21:43 CEST Payment methods and issuers Identified August 17 2026, 21:43 CEST We have identified an issue outside of our platform resulting in higher error rates for UPI Collect transactions processed through BillDesk and PayU India starting at 21:00 CEST. We have contacted our acquiring partners and we will provide an update as soon as it becomes available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-08-17T20:10:56.267Z",
+      "updated_at": "2026-08-17T20:10:56.267Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "UPI Collect is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-17T19:43:00.000Z",
+      "updated_at": "2026-08-17T19:43:00.000Z",
+      "resolved_at": "2026-08-17T19:43:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "REVOLUT is experiencing higher refusal rates",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +62,6 @@
       "created_at": "2026-08-16T17:22:00.000Z",
       "updated_at": "2026-08-16T17:22:00.000Z",
       "resolved_at": "2026-08-16T17:22:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Bank of Georgia (MPGS) is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-15T07:29:00.000Z",
-      "updated_at": "2026-08-15T07:29:00.000Z",
-      "resolved_at": "2026-08-15T07:29:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
