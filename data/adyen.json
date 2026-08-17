@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-16T22:42:33.835Z",
-  "sourceUpdatedAt": "2026-08-16T22:42:33.835Z",
-  "updated": "2026-08-16T22:42:33.835Z",
+  "fetchedAt": "2026-08-17T00:57:13.005Z",
+  "sourceUpdatedAt": "2026-08-17T00:57:13.005Z",
+  "updated": "2026-08-17T00:57:13.005Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: REVOLUT is experiencing higher refusal rates August 17 2026, 00:17 CEST Payment methods and issuers Identified August 17 2026, 00:17 CEST We have identified an issue outside of our platform resulting in higher refusal rates for Visa and Mastercard transactions processed for REVOLUT issued cards starting at 23:00 CEST. We have contacted the schemes to confirm and will provide an update as soon as it becomes available. Prosa is experiencing higher error rates August 14 2026, 20:15 CEST Payment methods and issuers",
+      "name": "Adyen active incident: REVOLUT is experiencing higher refusal rates August 17 2026, 00:17 CEST Payment methods and issuers Identified August 17 2026, 00:17 CEST We have identified an issue outside of our platform resulting in higher refusal rates for Visa and Mastercard transactions processed for REVOLUT issued cards starting at 23:00 CEST. We have contacted the schemes to confirm and will provide an update as soon as it becomes available.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-16T22:42:33.835Z",
-      "updated_at": "2026-08-16T22:42:33.835Z",
+      "created_at": "2026-08-17T00:57:13.005Z",
+      "updated_at": "2026-08-17T00:57:13.005Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -55,13 +55,13 @@
       ]
     },
     {
-      "name": "Prosa is experiencing higher error rates",
+      "name": "Bank of Georgia (MPGS) is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-08-14T18:15:00.000Z",
-      "updated_at": "2026-08-14T18:15:00.000Z",
-      "resolved_at": "2026-08-14T18:15:00.000Z",
+      "created_at": "2026-08-15T07:29:00.000Z",
+      "updated_at": "2026-08-15T07:29:00.000Z",
+      "resolved_at": "2026-08-15T07:29:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
