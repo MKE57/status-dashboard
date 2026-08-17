@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-17T00:57:13.005Z",
-  "sourceUpdatedAt": "2026-08-17T00:57:13.005Z",
-  "updated": "2026-08-17T00:57:13.005Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: REVOLUT is experiencing higher refusal rates August 17 2026, 00:17 CEST Payment methods and issuers Identified August 17 2026, 00:17 CEST We have identified an issue outside of our platform resulting in higher refusal rates for Visa and Mastercard transactions processed for REVOLUT issued cards starting at 23:00 CEST. We have contacted the schemes to confirm and will provide an update as soon as it becomes available.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-08-17T00:57:13.005Z",
-      "updated_at": "2026-08-17T00:57:13.005Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-08-17T08:05:18.977Z",
+  "sourceUpdatedAt": "2026-08-17T08:05:18.977Z",
+  "updated": "2026-08-17T08:05:18.977Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
