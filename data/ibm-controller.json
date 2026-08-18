@@ -1,7 +1,7 @@
 {
   "provider": "IBM Controller",
   "cacheStatus": "ok",
-  "fetchedAt": "2026-08-18T02:41:56.521Z",
+  "fetchedAt": "2026-08-18T03:27:18.881Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
@@ -125,18 +125,18 @@
       ]
     },
     {
-      "name": "IBM Planning Analytics - File Transfer Service Outage in EU Region",
-      "body": "Resolved 02/17/2026 4:55 PM UTC Dear Customers, The file transfer services are restored for our customers in EU region. Thank you for your patience while we worked on addressing this. Regards Planning Analytics Team Updated 02/17/2026 4:37 PM UTC Dear Customers, Please note that this file share user access issue is only impacting our customers in EU region. The other regions - NA and AP are working as per expectations. We apologize for the confusion and inconvenience. Regards Planning Analytics Team Updated 02/17/2026 4:22 PM UTC We are still investigating that unplanned outage with highest priority. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour. Updated 02/17/2026 2:53 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU Region File Transfer services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour. Published 02/17/2026 2:35 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU SFTP (Secure File Transfer Protocol) services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour.",
-      "status": "closed",
+      "name": "FilesTransfer Service interruption on NA and AP regions",
+      "body": "Resolved 12/21/2025 5:47 AM UTC The incident has been resolved, and the File Transfer service is now stable and fully operational in the North America and Asia Pacific regions. Thank you for your patience and understanding. Updated 12/21/2025 4:09 AM UTC We are still investigating the issue and working diligently to stabilize the FilesTransfer service in the North America and Asia Pacific regions. Thank you for your patience and understanding. Published 12/21/2025 2:15 AM UTC Dear Customer, This email is to inform you that we are currently investigating an unplanned interruption affecting the File Transfer Service in Controller on Cloud environments for the North America and Asia Pacific regions. We will provide the next update within one hour or sooner if more information becomes available.",
+      "status": "resolved",
       "impact": "",
-      "created_at": "Feb 17, 2026, 2:35:37 PM",
-      "updated_at": "Feb 17, 2026, 2:35:37 PM",
+      "created_at": "Dec 21, 2025, 2:14:59 AM",
+      "updated_at": "Dec 21, 2025, 2:14:59 AM",
       "incident_updates": [
         {
-          "body": "Resolved 02/17/2026 4:55 PM UTC Dear Customers, The file transfer services are restored for our customers in EU region. Thank you for your patience while we worked on addressing this. Regards Planning Analytics Team Updated 02/17/2026 4:37 PM UTC Dear Customers, Please note that this file share user access issue is only impacting our customers in EU region. The other regions - NA and AP are working as per expectations. We apologize for the confusion and inconvenience. Regards Planning Analytics Team Updated 02/17/2026 4:22 PM UTC We are still investigating that unplanned outage with highest priority. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour. Updated 02/17/2026 2:53 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU Region File Transfer services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour. Published 02/17/2026 2:35 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU SFTP (Secure File Transfer Protocol) services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour."
+          "body": "Resolved 12/21/2025 5:47 AM UTC The incident has been resolved, and the File Transfer service is now stable and fully operational in the North America and Asia Pacific regions. Thank you for your patience and understanding. Updated 12/21/2025 4:09 AM UTC We are still investigating the issue and working diligently to stabilize the FilesTransfer service in the North America and Asia Pacific regions. Thank you for your patience and understanding. Published 12/21/2025 2:15 AM UTC Dear Customer, This email is to inform you that we are currently investigating an unplanned interruption affecting the File Transfer Service in Controller on Cloud environments for the North America and Asia Pacific regions. We will provide the next update within one hour or sooner if more information becomes available."
         }
       ]
     }
   ],
-  "noticeCount": 33
+  "noticeCount": 32
 }
