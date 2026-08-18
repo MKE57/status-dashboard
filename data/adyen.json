@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-18T09:06:36.104Z",
-  "sourceUpdatedAt": "2026-08-18T09:06:36.104Z",
-  "updated": "2026-08-18T09:06:36.104Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: Partially degraded performance for Onboarding-on-Invite in Adyen for Platforms August 18 2026, 04:16 CEST Adyen for Platforms Identified August 18 2026, 04:16 CEST We have identified an issue which started at 12:50 CEST on August 17, 2026, resulting in partially degraded performance with Onboarding-on-Invite in Adyen for Platforms. As a result of this issue, the following onboarding flows may be impacted: Creation of account holders via the Customer Area in both TEST and LIVE environments Our engineering teams are actively investigating and implementing mitigation measures.We will provide further updates as soon as we have more information.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-08-18T09:06:36.104Z",
-      "updated_at": "2026-08-18T09:06:36.104Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-08-18T14:48:03.515Z",
+  "sourceUpdatedAt": "2026-08-18T14:48:03.515Z",
+  "updated": "2026-08-18T14:48:03.515Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
