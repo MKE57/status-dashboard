@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-17T23:18:48.247Z",
-  "sourceUpdatedAt": "2026-08-17T23:18:48.247Z",
-  "updated": "2026-08-17T23:18:48.247Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-08-18T09:06:36.104Z",
+  "sourceUpdatedAt": "2026-08-18T09:06:36.104Z",
+  "updated": "2026-08-18T09:06:36.104Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Partially degraded performance for Onboarding-on-Invite in Adyen for Platforms August 18 2026, 04:16 CEST Adyen for Platforms Identified August 18 2026, 04:16 CEST We have identified an issue which started at 12:50 CEST on August 17, 2026, resulting in partially degraded performance with Onboarding-on-Invite in Adyen for Platforms. As a result of this issue, the following onboarding flows may be impacted: Creation of account holders via the Customer Area in both TEST and LIVE environments Our engineering teams are actively investigating and implementing mitigation measures.We will provide further updates as soon as we have more information.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-08-18T09:06:36.104Z",
+      "updated_at": "2026-08-18T09:06:36.104Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Partially degraded performance for Onboarding-on-Invite in Adyen for Platforms",
+      "body": "Component: Adyen for Platforms",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-18T02:16:00.000Z",
+      "updated_at": "2026-08-18T02:16:00.000Z",
+      "resolved_at": "2026-08-18T02:16:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Adyen for Platforms"
+        }
+      ]
+    },
     {
       "name": "Twint is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +62,6 @@
       "created_at": "2026-08-17T19:43:00.000Z",
       "updated_at": "2026-08-17T19:43:00.000Z",
       "resolved_at": "2026-08-17T19:43:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "REVOLUT is experiencing higher refusal rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-16T22:17:00.000Z",
-      "updated_at": "2026-08-16T22:17:00.000Z",
-      "resolved_at": "2026-08-16T22:17:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
