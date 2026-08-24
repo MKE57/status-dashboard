@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-24T20:14:05.700Z",
-  "sourceUpdatedAt": "2026-08-24T20:14:05.700Z",
-  "updated": "2026-08-24T20:14:05.700Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: UPI Collect is experiencing higher error rates August 24 2026, 22:00 CEST Payment methods and issuers Identified August 24 2026, 22:00 CEST We have identified an issue outside of our platform resulting in higher error rates for UPI Collect transactions processed through PayU India and BillDesk India starting at 21:30 CEST. We have just been informed by the acquirers that HDFC Bank is performing an unscheduled maintenance activity at their end and therefore HDFC Bank UPI Services will be unavailable during this event. We will continue to monitor and provide updates as needed.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-08-24T20:14:05.700Z",
-      "updated_at": "2026-08-24T20:14:05.700Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-08-24T22:48:39.459Z",
+  "sourceUpdatedAt": "2026-08-24T22:48:39.459Z",
+  "updated": "2026-08-24T22:48:39.459Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
