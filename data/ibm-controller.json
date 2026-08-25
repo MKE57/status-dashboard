@@ -1,22 +1,22 @@
 {
   "provider": "IBM Controller",
   "cacheStatus": "ok",
-  "fetchedAt": "2026-08-25T15:51:47.692Z",
+  "fetchedAt": "2026-08-25T16:47:39.483Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "IBM Planning Analytics - File Transfer Service Outage in NA region",
-      "body": "This email is to advise you that we are currently investigating an unplanned interruption to NA File Transfer service, impacting Driver Explorer functionality. Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours.",
-      "status": "published",
+      "name": "IBM Planning Analytics - File Transfer Service Outage in NA region Resolved",
+      "body": "Resolved 08/25/2026 4:02 PM UTC Dear Customers, File Transfer Service has been restored. Driver Explorer should now be working as expected. We apologize for the disruption and appreciate your patience while the issue was being addressed. We will continue monitoring to ensure stability. Published 08/25/2026 2:07 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to NA File Transfer service, impacting Driver Explorer functionality. Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours.",
+      "status": "resolved",
       "impact": "",
       "created_at": "Aug 25, 2026, 2:07:41 PM",
       "updated_at": "Aug 25, 2026, 2:07:41 PM",
       "incident_updates": [
         {
-          "body": "This email is to advise you that we are currently investigating an unplanned interruption to NA File Transfer service, impacting Driver Explorer functionality. Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours."
+          "body": "Resolved 08/25/2026 4:02 PM UTC Dear Customers, File Transfer Service has been restored. Driver Explorer should now be working as expected. We apologize for the disruption and appreciate your patience while the issue was being addressed. We will continue monitoring to ensure stability. Published 08/25/2026 2:07 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to NA File Transfer service, impacting Driver Explorer functionality. Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours."
         }
       ]
     },
