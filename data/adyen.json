@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-24T22:48:39.459Z",
-  "sourceUpdatedAt": "2026-08-24T22:48:39.459Z",
-  "updated": "2026-08-24T22:48:39.459Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-08-25T19:43:48.801Z",
+  "sourceUpdatedAt": "2026-08-25T19:43:48.801Z",
+  "updated": "2026-08-25T19:43:48.801Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: UPI Collect is experiencing higher refusal rates August 25 2026, 21:08 CEST Payment methods and issuers Identified August 25 2026, 21:08 CEST We have identified an issue outside of our platform resulting in higher refusal rates for UPI Collect transactions processed through PayU India starting at 20:25 CEST. We have contacted PayU India and we will provide an update as soon as it becomes available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-08-25T19:43:48.801Z",
+      "updated_at": "2026-08-25T19:43:48.801Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "UPI Collect is experiencing higher refusal rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-25T19:08:00.000Z",
+      "updated_at": "2026-08-25T19:08:00.000Z",
+      "resolved_at": "2026-08-25T19:08:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "UPI Collect is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +62,6 @@
       "created_at": "2026-08-23T06:40:00.000Z",
       "updated_at": "2026-08-23T06:40:00.000Z",
       "resolved_at": "2026-08-23T06:40:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Pix is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-23T03:09:00.000Z",
-      "updated_at": "2026-08-23T03:09:00.000Z",
-      "resolved_at": "2026-08-23T03:09:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
