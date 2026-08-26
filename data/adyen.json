@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-25T20:51:13.750Z",
-  "sourceUpdatedAt": "2026-08-25T20:51:13.750Z",
-  "updated": "2026-08-25T20:51:13.750Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-08-26T09:09:24.950Z",
+  "sourceUpdatedAt": "2026-08-26T09:09:24.950Z",
+  "updated": "2026-08-26T09:09:24.950Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Degraded connectivity for In-Person Payment terminals using Cloud Terminal API and Cloud OPI August 26 2026, 11:01 CEST Payments Identified August 26 2026, 11:01 CEST We have identified an internal issue which started as on August 25, 2026 at 16:30 CEST, affecting network connectivity for IPP terminals for a subset of merchants using Cloud Terminal API and Cloud OPI. As a result, affected terminals may be unable to establish a connection. Workaround: We recommend that affected merchants reboot their terminals. Restarting the affected terminal reloads its working configuration and restores connectivity. Our engineering teams are actively investigating the issue and applying mitigation to restore connectivity for affected terminals. We will provide a further update as soon as more information is available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-08-26T09:09:24.950Z",
+      "updated_at": "2026-08-26T09:09:24.950Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Degraded connectivity for In-Person Payment terminals using Cloud Terminal API and Cloud OPI",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-26T09:01:00.000Z",
+      "updated_at": "2026-08-26T09:01:00.000Z",
+      "resolved_at": "2026-08-26T09:01:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
     {
       "name": "UPI Collect is experiencing higher refusal rates",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +62,6 @@
       "created_at": "2026-08-24T20:00:00.000Z",
       "updated_at": "2026-08-24T20:00:00.000Z",
       "resolved_at": "2026-08-24T20:00:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Pix is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-23T06:40:00.000Z",
-      "updated_at": "2026-08-23T06:40:00.000Z",
-      "resolved_at": "2026-08-23T06:40:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
