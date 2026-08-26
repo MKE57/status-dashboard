@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-26T09:09:24.950Z",
-  "sourceUpdatedAt": "2026-08-26T09:09:24.950Z",
-  "updated": "2026-08-26T09:09:24.950Z",
+  "fetchedAt": "2026-08-26T14:30:38.332Z",
+  "sourceUpdatedAt": "2026-08-26T14:30:38.332Z",
+  "updated": "2026-08-26T14:30:38.332Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Degraded connectivity for In-Person Payment terminals using Cloud Terminal API and Cloud OPI August 26 2026, 11:01 CEST Payments Identified August 26 2026, 11:01 CEST We have identified an internal issue which started as on August 25, 2026 at 16:30 CEST, affecting network connectivity for IPP terminals for a subset of merchants using Cloud Terminal API and Cloud OPI. As a result, affected terminals may be unable to establish a connection. Workaround: We recommend that affected merchants reboot their terminals. Restarting the affected terminal reloads its working configuration and restores connectivity. Our engineering teams are actively investigating the issue and applying mitigation to restore connectivity for affected terminals. We will provide a further update as soon as more information is available.",
+      "name": "Adyen active incident: Partially degraded performance for SDR & PAR generation August 26 2026, 16:18 CEST Interfaces and reporting Identified August 26 2026, 16:18 CEST We have resolved an internal issue that began at 16:00 CEST on August 25, 2026, which caused delays in report generation. Currently, we are working through a backlog that affects the generation of the following reports: Settlement Detail Report (SDR) Payment Account Report (PAR) For scheduled reports, it is not necessary to manually request them via the Customer Area as they will be generated automatically once the backlog has caught up. Merchants configured to receive webhook notifications will be able to download their reports once the REPORT_AVAILABLE webhook notification is received. Our engineering teams are actively investigating and implementing mitigation measures. We will provide further updates as soon as we have more information.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-08-26T09:09:24.950Z",
-      "updated_at": "2026-08-26T09:09:24.950Z",
+      "created_at": "2026-08-26T14:30:38.332Z",
+      "updated_at": "2026-08-26T14:30:38.332Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Partially degraded performance for SDR & PAR generation",
+      "body": "Component: Interfaces and reporting",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-26T14:18:00.000Z",
+      "updated_at": "2026-08-26T14:18:00.000Z",
+      "resolved_at": "2026-08-26T14:18:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Interfaces and reporting"
+        }
+      ]
+    },
     {
       "name": "Degraded connectivity for In-Person Payment terminals using Cloud Terminal API and Cloud OPI",
       "body": "Component: Payments",
@@ -48,20 +62,6 @@
       "created_at": "2026-08-25T19:08:00.000Z",
       "updated_at": "2026-08-25T19:08:00.000Z",
       "resolved_at": "2026-08-25T19:08:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "UPI Collect is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-24T20:00:00.000Z",
-      "updated_at": "2026-08-24T20:00:00.000Z",
-      "resolved_at": "2026-08-24T20:00:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
