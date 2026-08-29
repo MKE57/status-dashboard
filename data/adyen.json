@@ -4,50 +4,64 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-29T10:18:20.419Z",
-  "sourceUpdatedAt": "2026-08-29T10:18:20.419Z",
-  "updated": "2026-08-29T10:18:20.419Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-08-29T15:08:21.030Z",
+  "sourceUpdatedAt": "2026-08-29T15:08:21.030Z",
+  "updated": "2026-08-29T15:08:21.030Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen reports degraded performance: Interfaces and reporting",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-08-29T15:08:21.030Z",
+      "updated_at": "2026-08-29T15:08:21.030Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "BBVA MEXICO S.A.is experiencing higher refusal rates",
-      "body": "Component: Payment methods and issuers",
+      "name": "Settlement Details Advancements report generation delay",
+      "body": "Component: Interfaces and reporting",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-08-29T06:55:00.000Z",
-      "updated_at": "2026-08-29T06:55:00.000Z",
-      "resolved_at": "2026-08-29T06:55:00.000Z",
+      "created_at": "2026-08-29T14:22:00.000Z",
+      "updated_at": "2026-08-29T14:22:00.000Z",
+      "resolved_at": "2026-08-29T14:22:00.000Z",
       "incident_updates": [
         {
-          "body": "Component: Payment methods and issuers"
+          "body": "Component: Interfaces and reporting"
         }
       ]
     },
     {
-      "name": "Prosa is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
+      "name": "Instant bank transfers delay for EUR and USD",
+      "body": "Component: Settlement and payouts",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-08-29T05:40:00.000Z",
-      "updated_at": "2026-08-29T05:40:00.000Z",
-      "resolved_at": "2026-08-29T05:40:00.000Z",
+      "created_at": "2026-08-29T13:15:00.000Z",
+      "updated_at": "2026-08-29T13:15:00.000Z",
+      "resolved_at": "2026-08-29T13:15:00.000Z",
       "incident_updates": [
         {
-          "body": "Component: Payment methods and issuers"
+          "body": "Component: Settlement and payouts"
         }
       ]
     },
     {
-      "name": "iDEAL is experiencing higher error rates",
+      "name": "Visa Brasil (credit) is experiencing higher refusal rates",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-08-28T19:50:00.000Z",
-      "updated_at": "2026-08-28T19:50:00.000Z",
-      "resolved_at": "2026-08-28T19:50:00.000Z",
+      "created_at": "2026-08-29T11:17:00.000Z",
+      "updated_at": "2026-08-29T11:17:00.000Z",
+      "resolved_at": "2026-08-29T11:17:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
@@ -152,7 +166,7 @@
     },
     {
       "name": "Interfaces and reporting",
-      "status": "Operational"
+      "status": "Degraded performance"
     },
     {
       "name": "Settlement and payouts",
