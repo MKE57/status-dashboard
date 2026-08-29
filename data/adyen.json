@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-28T21:27:58.281Z",
-  "sourceUpdatedAt": "2026-08-28T21:27:58.281Z",
-  "updated": "2026-08-28T21:27:58.281Z",
+  "fetchedAt": "2026-08-29T10:18:20.419Z",
+  "sourceUpdatedAt": "2026-08-29T10:18:20.419Z",
+  "updated": "2026-08-29T10:18:20.419Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "BBVA MEXICO S.A.is experiencing higher refusal rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-29T06:55:00.000Z",
+      "updated_at": "2026-08-29T06:55:00.000Z",
+      "resolved_at": "2026-08-29T06:55:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Prosa is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-29T05:40:00.000Z",
+      "updated_at": "2026-08-29T05:40:00.000Z",
+      "resolved_at": "2026-08-29T05:40:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "iDEAL is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -20,34 +48,6 @@
       "created_at": "2026-08-28T19:50:00.000Z",
       "updated_at": "2026-08-28T19:50:00.000Z",
       "resolved_at": "2026-08-28T19:50:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Pay by PayMaya is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-26T17:27:00.000Z",
-      "updated_at": "2026-08-26T17:27:00.000Z",
-      "resolved_at": "2026-08-26T17:27:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Billdesk India is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-26T17:07:00.000Z",
-      "updated_at": "2026-08-26T17:07:00.000Z",
-      "resolved_at": "2026-08-26T17:07:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
