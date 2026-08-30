@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-29T23:28:07.056Z",
-  "sourceUpdatedAt": "2026-08-29T23:28:07.056Z",
-  "updated": "2026-08-29T23:28:07.056Z",
+  "fetchedAt": "2026-08-30T17:37:49.424Z",
+  "sourceUpdatedAt": "2026-08-30T17:37:49.424Z",
+  "updated": "2026-08-30T17:37:49.424Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Swish is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-08-30T13:16:00.000Z",
+      "updated_at": "2026-08-30T13:16:00.000Z",
+      "resolved_at": "2026-08-30T13:16:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Settlement Details Advancements report generation delay",
       "body": "Component: Interfaces and reporting",
@@ -37,20 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Settlement and payouts"
-        }
-      ]
-    },
-    {
-      "name": "Visa Brasil (credit) is experiencing higher refusal rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-08-29T11:17:00.000Z",
-      "updated_at": "2026-08-29T11:17:00.000Z",
-      "resolved_at": "2026-08-29T11:17:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
