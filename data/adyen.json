@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-01T00:08:52.194Z",
-  "sourceUpdatedAt": "2026-09-01T00:08:52.194Z",
-  "updated": "2026-09-01T00:08:52.194Z",
+  "fetchedAt": "2026-09-01T14:59:31.190Z",
+  "sourceUpdatedAt": "2026-09-01T14:59:31.190Z",
+  "updated": "2026-09-01T14:59:31.190Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Payout delay for a subset of DKK transactions",
+      "body": "Component: Settlement and payouts",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-01T10:33:00.000Z",
+      "updated_at": "2026-09-01T10:33:00.000Z",
+      "resolved_at": "2026-09-01T10:33:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Settlement and payouts"
+        }
+      ]
+    },
     {
       "name": "PayPo Buy Now Pay Later is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -97,7 +111,7 @@
       ]
     }
   ],
-  "noticeCount": 6,
+  "noticeCount": 7,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
