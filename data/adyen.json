@@ -4,9 +4,9 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-08-31T15:02:48.954Z",
-  "sourceUpdatedAt": "2026-08-31T15:02:48.954Z",
-  "updated": "2026-08-31T15:02:48.954Z",
+  "fetchedAt": "2026-09-01T00:08:52.194Z",
+  "sourceUpdatedAt": "2026-09-01T00:08:52.194Z",
+  "updated": "2026-09-01T00:08:52.194Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
@@ -95,51 +95,9 @@
           "body": "Component: Settlement and payouts"
         }
       ]
-    },
-    {
-      "name": "Partial payout delay for a subset of DKK transactions",
-      "body": "Component: Settlement and payouts",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-06-30T19:43:00.000Z",
-      "updated_at": "2026-06-30T19:43:00.000Z",
-      "resolved_at": "2026-06-30T19:43:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Settlement and payouts"
-        }
-      ]
-    },
-    {
-      "name": "Degraded performance for Customer Area communications interfaces",
-      "body": "Component: Interfaces and reporting",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-06-30T15:20:00.000Z",
-      "updated_at": "2026-06-30T15:20:00.000Z",
-      "resolved_at": "2026-06-30T15:20:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Interfaces and reporting"
-        }
-      ]
-    },
-    {
-      "name": "Partial payout delay for a subset of USD transactions via CashApp",
-      "body": "Component: Settlement and payouts",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-06-30T09:33:00.000Z",
-      "updated_at": "2026-06-30T09:33:00.000Z",
-      "resolved_at": "2026-06-30T09:33:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Settlement and payouts"
-        }
-      ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 6,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
