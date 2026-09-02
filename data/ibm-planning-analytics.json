@@ -3,12 +3,12 @@
   "cacheStatus": "error",
   "source": "https://status.ai-apps-comms.ibm.com/announcement/iotm/api/v1/ext/1nS00axYWJZEkaNISKwKAi4ZaLCXam495VbYfjO6y%2BM%3D/notices.json",
   "statusPage": "https://status.ai-apps-comms.ibm.com/planninganalytics",
-  "fetchedAt": "2026-09-02T00:33:07.874Z",
-  "updated": "2026-09-02T00:33:07.874Z",
+  "fetchedAt": "2026-09-02T05:06:32.797Z",
+  "updated": "2026-09-02T05:06:32.797Z",
   "status": "Unable to fetch",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [],
-  "error": "HTTP 500 Internal Server Error"
+  "error": "This operation was aborted"
 }
