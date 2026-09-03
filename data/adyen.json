@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-03T18:47:17.750Z",
-  "sourceUpdatedAt": "2026-09-03T18:47:17.750Z",
-  "updated": "2026-09-03T18:47:17.750Z",
+  "fetchedAt": "2026-09-03T21:26:14.338Z",
+  "sourceUpdatedAt": "2026-09-03T21:26:14.338Z",
+  "updated": "2026-09-03T21:26:14.338Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Bank of Georgia (MPGS) is experiencing higher error rates September 03 2026, 17:08 CEST Payment methods and issuers Identified September 03 2026, 17:08 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Bank of Georgia (MPGS) starting at 16:03 CEST. We have contacted Bank of Georgia (MPGS) and we will provide an update as soon as it becomes available. Partially degraded performance for Mastercard network tokens September 03 2026, 16:47 CEST Payments",
+      "name": "Adyen active incident: Partially degraded performance for Mastercard network tokens September 03 2026, 16:47 CEST Payment methods and issuers Updated September 03 2026, 22:09 CEST The issue originating outside of our platform leading to degraded performance during the creation and modification of Mastercard network tokens has been mitigated and performance is returning to normal. Our engineering team remains engaged with Mastercard and will continue to monitor performance. We will provide an update as soon as performance has normalized. Identified September 03 2026, 16:47 CEST We have identified an issue outside of our platform starting at 15:28 CEST, causing degraded performance during the creation and modification of Mastercard network tokens. As a result, creation of new network tokens during shopper sign-up is unavailable/degraded for Mastercard. Other network tokenized payment methods are working correctly. Mastercard network tokens can not be used for transaction processing, but fallback to the FPAN remains operational. This means payment processing is not directly affected by this outage. TokenConnect and Network Token Sharing users may notice the impact most. TokenConnect processing is not possible or severely degraded as part of this Mastercard-side outage. Additionally, Realtime Account Updater (RTAU) services are intermittently experiencing degraded performance when attempting to update Mastercard details. This means that RTAU might not be able to provide updates for Mastercard cards. Our engineering team is engaged with Mastercard while they work to mitigate the issue. We will provide an update as soon as we have more information.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-09-03T18:47:17.750Z",
-      "updated_at": "2026-09-03T18:47:17.750Z",
+      "created_at": "2026-09-03T21:26:14.337Z",
+      "updated_at": "2026-09-03T21:26:14.337Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -56,7 +56,7 @@
     },
     {
       "name": "Partially degraded performance for Mastercard network tokens",
-      "body": "Component: Payments",
+      "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
       "created_at": "2026-09-03T14:47:00.000Z",
@@ -64,7 +64,7 @@
       "resolved_at": "2026-09-03T14:47:00.000Z",
       "incident_updates": [
         {
-          "body": "Component: Payments"
+          "body": "Component: Payment methods and issuers"
         }
       ]
     },
