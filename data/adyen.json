@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-03T11:41:26.181Z",
-  "sourceUpdatedAt": "2026-09-03T11:41:26.181Z",
-  "updated": "2026-09-03T11:41:26.181Z",
+  "fetchedAt": "2026-09-03T15:15:32.727Z",
+  "sourceUpdatedAt": "2026-09-03T15:15:32.727Z",
+  "updated": "2026-09-03T15:15:32.727Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Prosa is experiencing higher error rates September 03 2026, 13:09 CEST Payment methods and issuers Identified September 03 2026, 13:09 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Prosa starting at 12:40 CEST. We have contacted Prosa and we will provide an update as soon as it becomes available.",
+      "name": "Adyen active incident: Bank of Georgia (MPGS) is experiencing higher error rates September 03 2026, 17:08 CEST Payment methods and issuers Identified September 03 2026, 17:08 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Bank of Georgia (MPGS) starting at 16:03 CEST. We have contacted Bank of Georgia (MPGS) and we will provide an update as soon as it becomes available. Partially degraded performance for Mastercard network tokens September 03 2026, 16:47 CEST Payments",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-09-03T11:41:26.181Z",
-      "updated_at": "2026-09-03T11:41:26.181Z",
+      "created_at": "2026-09-03T15:15:32.727Z",
+      "updated_at": "2026-09-03T15:15:32.727Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -27,6 +27,34 @@
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
+      "name": "Bank of Georgia (MPGS) is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-03T15:08:00.000Z",
+      "updated_at": "2026-09-03T15:08:00.000Z",
+      "resolved_at": "2026-09-03T15:08:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Partially degraded performance for Mastercard network tokens",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-03T14:47:00.000Z",
+      "updated_at": "2026-09-03T14:47:00.000Z",
+      "resolved_at": "2026-09-03T14:47:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
+    {
       "name": "Prosa is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
@@ -34,34 +62,6 @@
       "created_at": "2026-09-03T11:09:00.000Z",
       "updated_at": "2026-09-03T11:09:00.000Z",
       "resolved_at": "2026-09-03T11:09:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Vipps/MobilePay is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-02T10:21:00.000Z",
-      "updated_at": "2026-09-02T10:21:00.000Z",
-      "resolved_at": "2026-09-02T10:21:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "iDEAL Rabobank is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-02T09:41:00.000Z",
-      "updated_at": "2026-09-02T09:41:00.000Z",
-      "resolved_at": "2026-09-02T09:41:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
