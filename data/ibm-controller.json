@@ -1,7 +1,7 @@
 {
   "provider": "IBM Controller",
   "cacheStatus": "ok",
-  "fetchedAt": "2026-09-05T12:48:03.614Z",
+  "fetchedAt": "2026-09-05T15:55:51.009Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
@@ -62,7 +62,7 @@
     {
       "name": "File Transfer Services and Drive Explorer Functionality Outage – EU Region - RESOLVED",
       "body": "Resolved 06/05/2026 12:55 PM UTC We have successfully re‑established the File Transfer service in our Europe region. The service is now operational. Thank you for your continued patience as we complete the remaining recovery activities. Published 06/05/2026 12:22 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU File Transfer Service. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour.",
-      "status": "resolved",
+      "status": "closed",
       "impact": "",
       "created_at": "Jun 5, 2026, 12:22:53 PM",
       "updated_at": "Jun 5, 2026, 12:22:53 PM",
