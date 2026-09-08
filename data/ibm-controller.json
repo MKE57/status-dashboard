@@ -1,7 +1,7 @@
 {
   "provider": "IBM Controller",
   "cacheStatus": "ok",
-  "fetchedAt": "2026-09-08T00:42:17.109Z",
+  "fetchedAt": "2026-09-08T05:17:19.016Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
@@ -49,7 +49,7 @@
     {
       "name": "Login Issues - Singapore Region",
       "body": "Resolved 06/08/2026 4:44 AM UTC The issue impacting customer logins in the Singapore region has been resolved. Services are operating normally. Our team has completed monitoring and confirmed service stability. We apologize for any inconvenience and thank you for your patience. Updated 06/08/2026 3:16 AM UTC The issue impacting environment logins in the Singapore region has been resolved. Our team is continuing to monitor the services to ensure stability. Published 06/08/2026 2:34 AM UTC We are currently investigating an issue impacting customer logins in the Singapore region. The issue may impact Planning Analytics environments and Controller environments that are integrated with Planning Analytics. Our team is actively working to identify the cause and restore normal operations. We will provide further updates as soon as more information becomes available.",
-      "status": "resolved",
+      "status": "closed",
       "impact": "",
       "created_at": "Jun 8, 2026, 2:34:44 AM",
       "updated_at": "Jun 8, 2026, 2:34:44 AM",
