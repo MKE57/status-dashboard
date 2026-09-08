@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-08T01:30:00.091Z",
-  "sourceUpdatedAt": "2026-09-08T01:30:00.091Z",
-  "updated": "2026-09-08T01:30:00.091Z",
+  "fetchedAt": "2026-09-08T15:23:41.844Z",
+  "sourceUpdatedAt": "2026-09-08T15:23:41.844Z",
+  "updated": "2026-09-08T15:23:41.844Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Intermittent connectivity issues affecting some online payment flows in the Europe region",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-08T13:13:00.000Z",
+      "updated_at": "2026-09-08T13:13:00.000Z",
+      "resolved_at": "2026-09-08T13:13:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
     {
       "name": "iDEAL Rabobank is experiencing offer conversion issues",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Payments"
-        }
-      ]
-    },
-    {
-      "name": "Twint is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-07T13:28:00.000Z",
-      "updated_at": "2026-09-07T13:28:00.000Z",
-      "resolved_at": "2026-09-07T13:28:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
