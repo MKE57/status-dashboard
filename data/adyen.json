@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-08T21:48:26.091Z",
-  "sourceUpdatedAt": "2026-09-08T21:48:26.091Z",
-  "updated": "2026-09-08T21:48:26.091Z",
+  "fetchedAt": "2026-09-09T11:59:23.375Z",
+  "sourceUpdatedAt": "2026-09-09T11:59:23.375Z",
+  "updated": "2026-09-09T11:59:23.375Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Delay in processing of modifications",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-09T09:52:00.000Z",
+      "updated_at": "2026-09-09T09:52:00.000Z",
+      "resolved_at": "2026-09-09T09:52:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
     {
       "name": "Swish is experiencing offer conversion issues",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Payments"
-        }
-      ]
-    },
-    {
-      "name": "iDEAL Rabobank is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-08T00:14:00.000Z",
-      "updated_at": "2026-09-08T00:14:00.000Z",
-      "resolved_at": "2026-09-08T00:14:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
