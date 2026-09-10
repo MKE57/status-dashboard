@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-09T11:59:23.375Z",
-  "sourceUpdatedAt": "2026-09-09T11:59:23.375Z",
-  "updated": "2026-09-09T11:59:23.375Z",
+  "fetchedAt": "2026-09-10T22:34:20.850Z",
+  "sourceUpdatedAt": "2026-09-10T22:34:20.850Z",
+  "updated": "2026-09-10T22:34:20.850Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Interac is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-10T20:23:00.000Z",
+      "updated_at": "2026-09-10T20:23:00.000Z",
+      "resolved_at": "2026-09-10T20:23:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Delay in processing of modifications",
       "body": "Component: Payments",
@@ -37,20 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Intermittent connectivity issues affecting some online payment flows in the Europe region",
-      "body": "Component: Payments",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-08T13:13:00.000Z",
-      "updated_at": "2026-09-08T13:13:00.000Z",
-      "resolved_at": "2026-09-08T13:13:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payments"
         }
       ]
     },
