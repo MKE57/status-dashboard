@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-12T20:56:09.098Z",
-  "sourceUpdatedAt": "2026-09-12T20:56:09.098Z",
-  "updated": "2026-09-12T20:56:09.098Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-09-12T23:00:37.534Z",
+  "sourceUpdatedAt": "2026-09-12T23:00:37.534Z",
+  "updated": "2026-09-12T23:00:37.535Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Prosa is experiencing higher error rates September 13 2026, 00:47 CEST Payment methods and issuers Identified September 13 2026, 00:47 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Prosa starting at 00:35 CEST. We have contacted Prosa and we will provide an update as soon as it becomes available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-09-12T23:00:37.534Z",
+      "updated_at": "2026-09-12T23:00:37.534Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Prosa is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-12T22:47:00.000Z",
+      "updated_at": "2026-09-12T22:47:00.000Z",
+      "resolved_at": "2026-09-12T22:47:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "UPI is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Delay in processing of modifications",
-      "body": "Component: Payments",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-09T09:52:00.000Z",
-      "updated_at": "2026-09-09T09:52:00.000Z",
-      "resolved_at": "2026-09-09T09:52:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payments"
         }
       ]
     },
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
