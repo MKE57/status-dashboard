@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-10T22:34:20.850Z",
-  "sourceUpdatedAt": "2026-09-10T22:34:20.850Z",
-  "updated": "2026-09-10T22:34:20.850Z",
+  "fetchedAt": "2026-09-12T20:56:09.098Z",
+  "sourceUpdatedAt": "2026-09-12T20:56:09.098Z",
+  "updated": "2026-09-12T20:56:09.098Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "UPI is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-12T20:09:00.000Z",
+      "updated_at": "2026-09-12T20:09:00.000Z",
+      "resolved_at": "2026-09-12T20:09:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Interac is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Payments"
-        }
-      ]
-    },
-    {
-      "name": "Swish is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-08T19:16:00.000Z",
-      "updated_at": "2026-09-08T19:16:00.000Z",
-      "resolved_at": "2026-09-08T19:16:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
