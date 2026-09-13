@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-13T00:55:27.664Z",
-  "sourceUpdatedAt": "2026-09-13T00:55:27.664Z",
-  "updated": "2026-09-13T00:55:27.664Z",
+  "fetchedAt": "2026-09-13T06:02:49.343Z",
+  "sourceUpdatedAt": "2026-09-13T06:02:49.343Z",
+  "updated": "2026-09-13T06:02:49.343Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Delay in processing of modifications",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-13T00:56:00.000Z",
+      "updated_at": "2026-09-13T00:56:00.000Z",
+      "resolved_at": "2026-09-13T00:56:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
     {
       "name": "Prosa is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +48,6 @@
       "created_at": "2026-09-12T20:09:00.000Z",
       "updated_at": "2026-09-12T20:09:00.000Z",
       "resolved_at": "2026-09-12T20:09:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Interac is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-10T20:23:00.000Z",
-      "updated_at": "2026-09-10T20:23:00.000Z",
-      "resolved_at": "2026-09-10T20:23:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
