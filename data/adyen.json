@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-12T23:00:37.534Z",
-  "sourceUpdatedAt": "2026-09-12T23:00:37.534Z",
-  "updated": "2026-09-12T23:00:37.535Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: Prosa is experiencing higher error rates September 13 2026, 00:47 CEST Payment methods and issuers Identified September 13 2026, 00:47 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Prosa starting at 00:35 CEST. We have contacted Prosa and we will provide an update as soon as it becomes available.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-09-12T23:00:37.534Z",
-      "updated_at": "2026-09-12T23:00:37.534Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-09-13T00:55:27.664Z",
+  "sourceUpdatedAt": "2026-09-13T00:55:27.664Z",
+  "updated": "2026-09-13T00:55:27.664Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
