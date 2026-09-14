@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-14T13:03:35.131Z",
-  "sourceUpdatedAt": "2026-09-14T13:03:35.131Z",
-  "updated": "2026-09-14T13:03:35.131Z",
+  "fetchedAt": "2026-09-14T18:34:30.192Z",
+  "sourceUpdatedAt": "2026-09-14T18:34:30.192Z",
+  "updated": "2026-09-14T18:34:30.192Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Iyzico is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-14T17:53:00.000Z",
+      "updated_at": "2026-09-14T17:53:00.000Z",
+      "resolved_at": "2026-09-14T17:53:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "GREEN DOT BANK DBA BONNEVILLE BANK is experiencing higher refusal rates",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Payments"
-        }
-      ]
-    },
-    {
-      "name": "Prosa is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-12T22:47:00.000Z",
-      "updated_at": "2026-09-12T22:47:00.000Z",
-      "resolved_at": "2026-09-12T22:47:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
