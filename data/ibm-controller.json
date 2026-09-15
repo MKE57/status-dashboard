@@ -1,12 +1,25 @@
 {
   "provider": "IBM Controller",
   "cacheStatus": "ok",
-  "fetchedAt": "2026-09-15T05:12:42.803Z",
+  "fetchedAt": "2026-09-15T10:08:19.248Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Resolved - IBM Planning Analytics and Controller on Cloud- SFTP Service Outage EU region",
+      "body": "Resolved 09/15/2026 8:05 AM UTC Hello Team, IBM confirm that service are stable and File Transfer Service working as expected. Thanks and regards, Planning analytics and Controller on Cloud team Published 09/15/2026 7:32 AM UTC Hello Team This email is to inform you that the File Transfer Service experienced an issue in the EU region. The issue was identified and has now been resolved.IBM continues to monitor the service closely to ensure stability. Our apologies for this inconvenience. Thanks and regards, Planning analytics and Controller on Cloud team",
+      "status": "resolved",
+      "impact": "",
+      "created_at": "Sep 15, 2026, 7:32:21 AM",
+      "updated_at": "Sep 15, 2026, 7:32:21 AM",
+      "incident_updates": [
+        {
+          "body": "Resolved 09/15/2026 8:05 AM UTC Hello Team, IBM confirm that service are stable and File Transfer Service working as expected. Thanks and regards, Planning analytics and Controller on Cloud team Published 09/15/2026 7:32 AM UTC Hello Team This email is to inform you that the File Transfer Service experienced an issue in the EU region. The issue was identified and has now been resolved.IBM continues to monitor the service closely to ensure stability. Our apologies for this inconvenience. Thanks and regards, Planning analytics and Controller on Cloud team"
+        }
+      ]
+    },
     {
       "name": "IBM Planning Analytics - File Transfer Service Outage in NA region Resolved",
       "body": "Resolved 08/25/2026 4:02 PM UTC Dear Customers, File Transfer Service has been restored. Driver Explorer should now be working as expected. We apologize for the disruption and appreciate your patience while the issue was being addressed. We will continue monitoring to ensure stability. Published 08/25/2026 2:07 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to NA File Transfer service, impacting Driver Explorer functionality. Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours.",
@@ -123,20 +136,7 @@
           "body": "Resolved 04/15/2026 5:41 PM UTC Issue has been addressed. The network performance is back to normal and we will continue to monitor. Our apologies for the inconvenience it may have caused. Updated 04/15/2026 4:29 PM UTC The network performance degradation previously reported has been successfully mitigated. We will continue to monitor the environment closely to ensure stability and prevent recurrence. Published 04/15/2026 2:51 PM UTC We are currently experiencing network performance degradation in Frankfurt datacenter, which may result in increased latency or slower connectivity for some services. Our engineering team is actively working to mitigate the impact and restore normal performance levels as quickly as possible. At this time, services remain operational, but you may notice intermittent slowness."
         }
       ]
-    },
-    {
-      "name": "IBM Controller - Service Outage in Amsterdam",
-      "body": "Resolved 04/09/2026 11:41 PM UTC The incident has been resolved. IBM Controller service is fully operational now. Our apologies for this inconvenience it has caused. Published 04/09/2026 10:24 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to IBM Controller services in Amsterdam data center. Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours.",
-      "status": "closed",
-      "impact": "",
-      "created_at": "Apr 9, 2026, 10:24:47 PM",
-      "updated_at": "Apr 9, 2026, 10:24:47 PM",
-      "incident_updates": [
-        {
-          "body": "Resolved 04/09/2026 11:41 PM UTC The incident has been resolved. IBM Controller service is fully operational now. Our apologies for this inconvenience it has caused. Published 04/09/2026 10:24 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to IBM Controller services in Amsterdam data center. Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours."
-        }
-      ]
     }
   ],
-  "noticeCount": 34
+  "noticeCount": 35
 }
