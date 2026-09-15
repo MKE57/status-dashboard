@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-14T18:34:30.192Z",
-  "sourceUpdatedAt": "2026-09-14T18:34:30.192Z",
-  "updated": "2026-09-14T18:34:30.192Z",
+  "fetchedAt": "2026-09-15T10:11:23.493Z",
+  "sourceUpdatedAt": "2026-09-15T10:11:23.493Z",
+  "updated": "2026-09-15T10:11:23.493Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Iyzico is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-15T09:45:00.000Z",
+      "updated_at": "2026-09-15T09:45:00.000Z",
+      "resolved_at": "2026-09-15T09:45:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Iyzico is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Delay in processing of modifications",
-      "body": "Component: Payments",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-13T00:56:00.000Z",
-      "updated_at": "2026-09-13T00:56:00.000Z",
-      "resolved_at": "2026-09-13T00:56:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payments"
         }
       ]
     },
