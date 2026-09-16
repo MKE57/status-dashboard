@@ -4,14 +4,56 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-15T15:05:55.022Z",
-  "sourceUpdatedAt": "2026-09-15T15:05:55.022Z",
-  "updated": "2026-09-15T15:05:55.022Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-09-16T10:04:32.663Z",
+  "sourceUpdatedAt": "2026-09-16T10:04:32.663Z",
+  "updated": "2026-09-16T10:04:32.663Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Iyzico is experiencing higher error rates September 16 2026, 11:46 CEST Payment methods and issuers Identified September 16 2026, 11:46 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Iyzico starting at 11:15 CEST. We have contacted Iyzico and we will provide an update as soon as it becomes available. Delayed response time for support requests September 16 2026, 11:01 CEST Interfaces and reporting",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-09-16T10:04:32.663Z",
+      "updated_at": "2026-09-16T10:04:32.663Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Iyzico is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-16T09:46:00.000Z",
+      "updated_at": "2026-09-16T09:46:00.000Z",
+      "resolved_at": "2026-09-16T09:46:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Delayed response time for support requests",
+      "body": "Component: Interfaces and reporting",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-16T09:01:00.000Z",
+      "updated_at": "2026-09-16T09:01:00.000Z",
+      "resolved_at": "2026-09-16T09:01:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Interfaces and reporting"
+        }
+      ]
+    },
     {
       "name": "Partially degraded performance of Essentials",
       "body": "Component: Interfaces and reporting",
@@ -23,34 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Interfaces and reporting"
-        }
-      ]
-    },
-    {
-      "name": "Iyzico is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-15T09:45:00.000Z",
-      "updated_at": "2026-09-15T09:45:00.000Z",
-      "resolved_at": "2026-09-15T09:45:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Iyzico is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-14T17:53:00.000Z",
-      "updated_at": "2026-09-14T17:53:00.000Z",
-      "resolved_at": "2026-09-14T17:53:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
