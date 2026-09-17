@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-16T21:49:29.717Z",
-  "sourceUpdatedAt": "2026-09-16T21:49:29.717Z",
-  "updated": "2026-09-16T21:49:29.717Z",
+  "fetchedAt": "2026-09-17T04:46:21.048Z",
+  "sourceUpdatedAt": "2026-09-17T04:46:21.048Z",
+  "updated": "2026-09-17T04:46:21.048Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "GCash Philippines is experiencing offer conversion issues",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-17T02:26:00.000Z",
+      "updated_at": "2026-09-17T02:26:00.000Z",
+      "resolved_at": "2026-09-17T02:26:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "UPI is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +48,6 @@
       "created_at": "2026-09-16T16:02:00.000Z",
       "updated_at": "2026-09-16T16:02:00.000Z",
       "resolved_at": "2026-09-16T16:02:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Iyzico is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-16T09:46:00.000Z",
-      "updated_at": "2026-09-16T09:46:00.000Z",
-      "resolved_at": "2026-09-16T09:46:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
