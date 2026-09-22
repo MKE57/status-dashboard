@@ -3,14 +3,45 @@
   "cacheStatus": "ok",
   "source": "https://status.ai-apps-comms.ibm.com/announcement/iotm/api/v1/ext/1nS00axYWJZEkaNISKwKAi4ZaLCXam495VbYfjO6y%2BM%3D/notices.json",
   "statusPage": "https://status.ai-apps-comms.ibm.com/planninganalytics",
-  "fetchedAt": "2026-09-20T12:23:36.495Z",
-  "sourceUpdatedAt": "2026-09-17T16:29:37.000Z",
-  "updated": "2026-09-17T16:29:37.000Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-09-22T01:12:23.863Z",
+  "sourceUpdatedAt": "2026-09-22T00:57:21.000Z",
+  "updated": "2026-09-22T00:57:21.000Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "IBM Planning Analytics on Cloud and IBM Controller on Cloud - File Transfer Service Outage in NA Region",
+      "body": "Updated 09/22/2026 12:57 AM UTC Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours. Published 09/21/2026 11:12 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to NA File Transfer service, impacting Driver Explorer functionality. Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours.",
+      "status": "updated",
+      "impact": "",
+      "created_at": "2026-09-21T23:12:57.000Z",
+      "updated_at": "2026-09-22T00:57:21.000Z",
+      "scheduled_for": null,
+      "scheduled_until": null,
+      "incident_updates": [
+        {
+          "body": "Updated 09/22/2026 12:57 AM UTC Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours. Published 09/21/2026 11:12 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to NA File Transfer service, impacting Driver Explorer functionality. Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "IBM Planning Analytics on Cloud and IBM Controller on Cloud - File Transfer Service Outage in NA Region",
+      "body": "Updated 09/22/2026 12:57 AM UTC Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours. Published 09/21/2026 11:12 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to NA File Transfer service, impacting Driver Explorer functionality. Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours.",
+      "status": "updated",
+      "impact": "",
+      "created_at": "2026-09-21T23:12:57.000Z",
+      "updated_at": "2026-09-22T00:57:21.000Z",
+      "scheduled_for": null,
+      "scheduled_until": null,
+      "incident_updates": [
+        {
+          "body": "Updated 09/22/2026 12:57 AM UTC Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours. Published 09/21/2026 11:12 PM UTC This email is to advise you that we are currently investigating an unplanned interruption to NA File Transfer service, impacting Driver Explorer functionality. Our apologies for this inconvenience. We are investigating and will provide further update every 2 hours."
+        }
+      ]
+    },
     {
       "name": "Resolved - IBM Planning Analytics and Controller on Cloud- SFTP Service Outage EU region",
       "body": "Resolved 09/15/2026 8:05 AM UTC Hello Team, IBM confirm that service are stable and File Transfer Service working as expected. Thanks and regards, Planning analytics and Controller on Cloud team Published 09/15/2026 7:32 AM UTC Hello Team This email is to inform you that the File Transfer Service experienced an issue in the EU region. The issue was identified and has now been resolved.IBM continues to monitor the service closely to ensure stability. Our apologies for this inconvenience. Thanks and regards, Planning analytics and Controller on Cloud team",
@@ -145,22 +176,7 @@
           "body": "Updated 06/10/2026 6:40 AM UTC Apologies for the delay in the status update. Maintenance has been completed. Updated 06/10/2026 2:05 AM UTC Maintenance has started Published 06/03/2026 5:07 AM UTC Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.21 on June 10th 2026, 2:00_to_5:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.21 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here"
         }
       ]
-    },
-    {
-      "name": "Login Issues - Singapore Region",
-      "body": "Resolved 06/08/2026 4:44 AM UTC The issue impacting customer logins in the Singapore region has been resolved. Services are operating normally. Our team has completed monitoring and confirmed service stability. We apologize for any inconvenience and thank you for your patience. Updated 06/08/2026 3:16 AM UTC The issue impacting environment logins in the Singapore region has been resolved. Our team is continuing to monitor the services to ensure stability. Published 06/08/2026 2:34 AM UTC We are currently investigating an issue impacting customer logins in the Singapore region. The issue may impact Planning Analytics environments and Controller environments that are integrated with Planning Analytics. Our team is actively working to identify the cause and restore normal operations. We will provide further updates as soon as more information becomes available.",
-      "status": "closed",
-      "impact": "",
-      "created_at": "2026-06-08T02:34:44.000Z",
-      "updated_at": "2026-06-08T04:44:13.000Z",
-      "scheduled_for": null,
-      "scheduled_until": null,
-      "incident_updates": [
-        {
-          "body": "Resolved 06/08/2026 4:44 AM UTC The issue impacting customer logins in the Singapore region has been resolved. Services are operating normally. Our team has completed monitoring and confirmed service stability. We apologize for any inconvenience and thank you for your patience. Updated 06/08/2026 3:16 AM UTC The issue impacting environment logins in the Singapore region has been resolved. Our team is continuing to monitor the services to ensure stability. Published 06/08/2026 2:34 AM UTC We are currently investigating an issue impacting customer logins in the Singapore region. The issue may impact Planning Analytics environments and Controller environments that are integrated with Planning Analytics. Our team is actively working to identify the cause and restore normal operations. We will provide further updates as soon as more information becomes available."
-        }
-      ]
     }
   ],
-  "noticeCount": 83
+  "noticeCount": 84
 }
