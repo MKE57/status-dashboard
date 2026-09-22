@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-21T19:38:03.354Z",
-  "sourceUpdatedAt": "2026-09-21T19:38:03.354Z",
-  "updated": "2026-09-21T19:38:03.354Z",
+  "fetchedAt": "2026-09-22T16:55:23.167Z",
+  "sourceUpdatedAt": "2026-09-22T16:55:23.167Z",
+  "updated": "2026-09-22T16:55:23.167Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Exchange Rate Report generation delay on September 21, 2026 September 21 2026, 12:53 CEST Interfaces and reporting Identified September 21 2026, 12:53 CEST Due to an internal issue which occurred on September 21, 2026, within our reporting system, the generation of the daily Exchange Rate Report has not yet been completed. Our teams are actively investigating the root cause and are working to resolve the issue so that the report can be published as soon as possible. We have verified that all other reports remain unaffected by this delay. Action required: Until today's file is successfully generated, please continue to utilize yesterday’s Exchange Rate Report and rates for your operations. We will notify you as soon as the new report is available. If you have any questions or require further technical assistance regarding your reports, please reach out to your Adyen point of contact or visit help.adyen.com/contact.",
+      "name": "Adyen active incident: Settlement delay for a subset of transactions processed through HDFC Bank September 22 2026, 17:33 CEST Settlement and payouts Identified September 22 2026, 17:33 CEST We have identified a technical issue starting on September 17, 2026, resulting in a settlement delay for a subset of transactions processed through HDFC Bank between September 17 – 21, 2026. As a result, a subset of customers might experience a delay in receiving their settlements. The delay timeframe is currently unknown as the incident is still ongoing. Adyen engineering teams are already engaged and working with HDFC Bank to resolve the issue. Please note that only HDFC Bank transaction settlements between September 17 and 21, are expected to be delayed. We will provide an update as soon as we have more information. Data quality issue affecting Daily Finance Report generated on September 21, 2026 September 22 2026, 17:15 CEST Interfaces and reporting",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-09-21T19:38:03.354Z",
-      "updated_at": "2026-09-21T19:38:03.354Z",
+      "created_at": "2026-09-22T16:55:23.167Z",
+      "updated_at": "2026-09-22T16:55:23.167Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -27,27 +27,27 @@
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "iDEAL is experiencing offer conversion issues",
-      "body": "Component: Payment methods and issuers",
+      "name": "Settlement delay for a subset of transactions processed through HDFC Bank",
+      "body": "Component: Settlement and payouts",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-09-21T15:11:00.000Z",
-      "updated_at": "2026-09-21T15:11:00.000Z",
-      "resolved_at": "2026-09-21T15:11:00.000Z",
+      "created_at": "2026-09-22T15:33:00.000Z",
+      "updated_at": "2026-09-22T15:33:00.000Z",
+      "resolved_at": "2026-09-22T15:33:00.000Z",
       "incident_updates": [
         {
-          "body": "Component: Payment methods and issuers"
+          "body": "Component: Settlement and payouts"
         }
       ]
     },
     {
-      "name": "Exchange Rate Report generation delay on September 21, 2026",
+      "name": "Data quality issue affecting Daily Finance Report generated on September 21, 2026",
       "body": "Component: Interfaces and reporting",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-09-21T10:53:00.000Z",
-      "updated_at": "2026-09-21T10:53:00.000Z",
-      "resolved_at": "2026-09-21T10:53:00.000Z",
+      "created_at": "2026-09-22T15:15:00.000Z",
+      "updated_at": "2026-09-22T15:15:00.000Z",
+      "resolved_at": "2026-09-22T15:15:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Interfaces and reporting"
@@ -55,13 +55,13 @@
       ]
     },
     {
-      "name": "Iyzico is experiencing higher error rates",
+      "name": "iDEAL is experiencing offer conversion issues",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-09-17T21:12:00.000Z",
-      "updated_at": "2026-09-17T21:12:00.000Z",
-      "resolved_at": "2026-09-17T21:12:00.000Z",
+      "created_at": "2026-09-21T15:11:00.000Z",
+      "updated_at": "2026-09-21T15:11:00.000Z",
+      "resolved_at": "2026-09-21T15:11:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
