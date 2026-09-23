@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-23T12:11:17.697Z",
-  "sourceUpdatedAt": "2026-09-23T12:11:17.697Z",
-  "updated": "2026-09-23T12:11:17.697Z",
+  "fetchedAt": "2026-09-23T17:16:05.817Z",
+  "sourceUpdatedAt": "2026-09-23T17:16:05.817Z",
+  "updated": "2026-09-23T17:16:05.817Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Settlement delay for a subset of transactions processed through HDFC Bank September 22 2026, 17:33 CEST Settlement and payouts Identified September 22 2026, 17:33 CEST We have identified a technical issue starting on September 17, 2026, resulting in a settlement delay for a subset of transactions processed through HDFC Bank between September 17 – 21, 2026. As a result, a subset of customers might experience a delay in receiving their settlements. The delay timeframe is currently unknown as the incident is still ongoing. Adyen engineering teams are already engaged and working with HDFC Bank to resolve the issue. Please note that only HDFC Bank transaction settlements between September 17 and 21, are expected to be delayed. We will provide an update as soon as we have more information.",
+      "name": "Adyen active incident: Degraded performance for AdyenPOS iOS SDK (v3.20.0) September 23 2026, 16:50 CEST Payments Identified September 23 2026, 16:50 CEST We have identified an internal technical issue resulting in degraded transaction speed affecting payments processed using version (v3.20.0) of the AdyenPOS iOS SDK. As a result of this issue, payments processed through the affected version may experience elevated authorization times. We strongly recommend refraining from upgrading to version (v3.20.0). If you are currently on version (v3.20.0), we strongly recommend reverting your SDK to the previous version you had installed. Our engineering teams are actively investigating and implementing mitigation measures. We will provide further updates as soon as we have more information. Settlement delay for a subset of transactions processed through HDFC Bank September 22 2026, 17:33 CEST Settlement and payouts",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-09-23T12:11:17.697Z",
-      "updated_at": "2026-09-23T12:11:17.697Z",
+      "created_at": "2026-09-23T17:16:05.817Z",
+      "updated_at": "2026-09-23T17:16:05.817Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Degraded performance for AdyenPOS iOS SDK (v3.20.0)",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-23T14:50:00.000Z",
+      "updated_at": "2026-09-23T14:50:00.000Z",
+      "resolved_at": "2026-09-23T14:50:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
     {
       "name": "Major incident impacting multiple services",
       "body": "Component: Payments",
@@ -51,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Settlement and payouts"
-        }
-      ]
-    },
-    {
-      "name": "Data quality issue affecting Daily Finance Report generated on September 21, 2026",
-      "body": "Component: Interfaces and reporting",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-22T15:15:00.000Z",
-      "updated_at": "2026-09-22T15:15:00.000Z",
-      "resolved_at": "2026-09-22T15:15:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Interfaces and reporting"
         }
       ]
     },
