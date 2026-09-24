@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-24T17:23:33.976Z",
-  "sourceUpdatedAt": "2026-09-24T17:23:33.976Z",
-  "updated": "2026-09-24T17:23:33.976Z",
+  "fetchedAt": "2026-09-24T23:34:53.454Z",
+  "sourceUpdatedAt": "2026-09-24T23:34:53.454Z",
+  "updated": "2026-09-24T23:34:53.454Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Degraded performance for AdyenPOS iOS SDK (v3.20.0) September 23 2026, 16:50 CEST Payments Updated September 24 2026, 15:41 CEST Please be advised that version (v3.20.0) of the AdyenPOS iOS SDK has been revoked and is no longer available for download. Our engineering teams are actively working on the next SDK version incorporating a full fix, which we expect to be ready before the end of the week. Recommended action: If you are currently on (v3.20.0): Please revert to your previously installed SDK version. If you have not yet upgraded: Please remain on your current stable version until the new release is available. We will follow up over these same channels as soon as the new version has been thoroughly tested, released, and is ready for download. Identified September 23 2026, 16:50 CEST We have identified an internal technical issue resulting in degraded transaction speed affecting payments processed using version (v3.20.0) of the AdyenPOS iOS SDK. As a result of this issue, payments processed through the affected version may experience elevated authorization times. We strongly recommend refraining from upgrading to version (v3.20.0). If you are currently on version (v3.20.0), we strongly recommend reverting your SDK to the previous version you had installed. Our engineering teams are actively investigating and implementing mitigation measures. We will provide further updates as soon as we have more information. Settlement delay for a subset of transactions processed through HDFC Bank September 22 2026, 17:33 CEST Settlement and payouts",
+      "name": "Adyen active incident: Swish is experiencing higher error rates September 25 2026, 00:18 CEST Payment methods and issuers Identified September 25 2026, 00:18 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Swish starting at 00:01 CEST. Swish has acknowledged this in their status page: https://status.swish.nu/ We will continue to monitor and will provide an update as soon as it becomes available. Degraded performance for AdyenPOS iOS SDK (v3.20.0) September 23 2026, 16:50 CEST Payments Settlement delay for a subset of transactions processed through HDFC Bank September 22 2026, 17:33 CEST Settlement and payouts",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-09-24T17:23:33.976Z",
-      "updated_at": "2026-09-24T17:23:33.976Z",
+      "created_at": "2026-09-24T23:34:53.454Z",
+      "updated_at": "2026-09-24T23:34:53.454Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -27,13 +27,13 @@
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "iDEAL is experiencing offer conversion issues",
+      "name": "Swish is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-09-24T15:16:00.000Z",
-      "updated_at": "2026-09-24T15:16:00.000Z",
-      "resolved_at": "2026-09-24T15:16:00.000Z",
+      "created_at": "2026-09-24T22:18:00.000Z",
+      "updated_at": "2026-09-24T22:18:00.000Z",
+      "resolved_at": "2026-09-24T22:18:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
