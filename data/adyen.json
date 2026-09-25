@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-25T13:02:39.446Z",
-  "sourceUpdatedAt": "2026-09-25T13:02:39.446Z",
-  "updated": "2026-09-25T13:02:39.446Z",
+  "fetchedAt": "2026-09-25T17:55:56.102Z",
+  "sourceUpdatedAt": "2026-09-25T17:55:56.102Z",
+  "updated": "2026-09-25T17:55:56.102Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Degraded performance for AdyenPOS iOS SDK (v3.20.0) September 23 2026, 16:50 CEST Payments Updated September 24 2026, 15:41 CEST Please be advised that version (v3.20.0) of the AdyenPOS iOS SDK has been revoked and is no longer available for download. Our engineering teams are actively working on the next SDK version incorporating a full fix, which we expect to be ready before the end of the week. Recommended action: If you are currently on (v3.20.0): Please revert to your previously installed SDK version. If you have not yet upgraded: Please remain on your current stable version until the new release is available. We will follow up over these same channels as soon as the new version has been thoroughly tested, released, and is ready for download. Identified September 23 2026, 16:50 CEST We have identified an internal technical issue resulting in degraded transaction speed affecting payments processed using version (v3.20.0) of the AdyenPOS iOS SDK. As a result of this issue, payments processed through the affected version may experience elevated authorization times. We strongly recommend refraining from upgrading to version (v3.20.0). If you are currently on version (v3.20.0), we strongly recommend reverting your SDK to the previous version you had installed. Our engineering teams are actively investigating and implementing mitigation measures. We will provide further updates as soon as we have more information. Settlement delay for a subset of transactions processed through HDFC Bank September 22 2026, 17:33 CEST Settlement and payouts",
+      "name": "Adyen active incident: DANA is experiencing offer conversion issues September 25 2026, 16:47 CEST Payment methods and issuers Identified September 25 2026, 16:47 CEST We have been informed of issues with DANA starting at 14:30 CEST. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with DANA and we will provide an update as soon as it becomes available. Potential settlement delay in India between September 28 – 30, 2026 September 25 2026, 15:26 CEST Settlement and payouts Settlement delay for a subset of transactions processed through HDFC Bank September 22 2026, 17:33 CEST Settlement and payouts",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-09-25T13:02:39.446Z",
-      "updated_at": "2026-09-25T13:02:39.446Z",
+      "created_at": "2026-09-25T17:55:56.102Z",
+      "updated_at": "2026-09-25T17:55:56.102Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -27,13 +27,13 @@
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "Swish is experiencing higher error rates",
+      "name": "DANA is experiencing offer conversion issues",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-09-25T10:55:00.000Z",
-      "updated_at": "2026-09-25T10:55:00.000Z",
-      "resolved_at": "2026-09-25T10:55:00.000Z",
+      "created_at": "2026-09-25T14:47:00.000Z",
+      "updated_at": "2026-09-25T14:47:00.000Z",
+      "resolved_at": "2026-09-25T14:47:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -41,16 +41,16 @@
       ]
     },
     {
-      "name": "Degraded performance for AdyenPOS iOS SDK (v3.20.0)",
-      "body": "Component: Payments",
+      "name": "Potential settlement delay in India between September 28 – 30, 2026",
+      "body": "Component: Settlement and payouts",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-09-23T14:50:00.000Z",
-      "updated_at": "2026-09-23T14:50:00.000Z",
-      "resolved_at": "2026-09-23T14:50:00.000Z",
+      "created_at": "2026-09-25T13:26:00.000Z",
+      "updated_at": "2026-09-25T13:26:00.000Z",
+      "resolved_at": "2026-09-25T13:26:00.000Z",
       "incident_updates": [
         {
-          "body": "Component: Payments"
+          "body": "Component: Settlement and payouts"
         }
       ]
     },
