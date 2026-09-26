@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-25T17:55:56.102Z",
-  "sourceUpdatedAt": "2026-09-25T17:55:56.102Z",
-  "updated": "2026-09-25T17:55:56.102Z",
+  "fetchedAt": "2026-09-26T05:10:30.669Z",
+  "sourceUpdatedAt": "2026-09-26T05:10:30.669Z",
+  "updated": "2026-09-26T05:10:30.669Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: DANA is experiencing offer conversion issues September 25 2026, 16:47 CEST Payment methods and issuers Identified September 25 2026, 16:47 CEST We have been informed of issues with DANA starting at 14:30 CEST. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with DANA and we will provide an update as soon as it becomes available. Potential settlement delay in India between September 28 – 30, 2026 September 25 2026, 15:26 CEST Settlement and payouts Settlement delay for a subset of transactions processed through HDFC Bank September 22 2026, 17:33 CEST Settlement and payouts",
+      "name": "Adyen active incident: Potential settlement delay in India between September 28 – 30, 2026 September 25 2026, 15:26 CEST Settlement and payouts Identified September 25 2026, 15:26 CEST We have been notified of potential settlement disruptions starting September 28, 2026, affecting all processing volume in India due to a nationwide bank strike called by the United Forum of Bank Unions (UFBU). As a result of this issue, a subset of customers may experience a delay in the settlement of funds expected between September 28 and September 30. The exact delay is currently unknown as the issue originates external to our platform and is actively being monitored. Adyen teams are actively monitoring the situation alongside our local banking partners. Please note that this event is outside of Adyen’s platform and influence, and that this delay applies to all Indian volume processed between September 28 and September 30. We will provide an update as soon as we have more information. Settlement delay for a subset of transactions processed through HDFC Bank September 22 2026, 17:33 CEST Settlement and payouts",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-09-25T17:55:56.102Z",
-      "updated_at": "2026-09-25T17:55:56.102Z",
+      "created_at": "2026-09-26T05:10:30.669Z",
+      "updated_at": "2026-09-26T05:10:30.669Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
