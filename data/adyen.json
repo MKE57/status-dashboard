@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-09-29T20:02:52.159Z",
-  "sourceUpdatedAt": "2026-09-29T20:02:52.159Z",
-  "updated": "2026-09-29T20:02:52.159Z",
+  "fetchedAt": "2026-09-30T08:59:17.677Z",
+  "sourceUpdatedAt": "2026-09-30T08:59:17.677Z",
+  "updated": "2026-09-30T08:59:17.677Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "MB WAY is experiencing higher refusal rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-30T08:09:00.000Z",
+      "updated_at": "2026-09-30T08:09:00.000Z",
+      "resolved_at": "2026-09-30T08:09:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "GCash Philippines is experiencing offer conversion issues",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-09-30T02:56:00.000Z",
+      "updated_at": "2026-09-30T02:56:00.000Z",
+      "resolved_at": "2026-09-30T02:56:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "NETS is experiencing higher refusal rates",
       "body": "Component: Payment methods and issuers",
@@ -20,34 +48,6 @@
       "created_at": "2026-09-29T10:18:00.000Z",
       "updated_at": "2026-09-29T10:18:00.000Z",
       "resolved_at": "2026-09-29T10:18:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Partially degraded performance for Pay by Link payments",
-      "body": "Component: Payments",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-28T12:39:00.000Z",
-      "updated_at": "2026-09-28T12:39:00.000Z",
-      "resolved_at": "2026-09-28T12:39:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payments"
-        }
-      ]
-    },
-    {
-      "name": "PayPay is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-09-27T16:55:00.000Z",
-      "updated_at": "2026-09-27T16:55:00.000Z",
-      "resolved_at": "2026-09-27T16:55:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
