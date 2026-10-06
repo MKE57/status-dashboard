@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-06T08:54:21.613Z",
-  "sourceUpdatedAt": "2026-10-06T08:54:21.613Z",
-  "updated": "2026-10-06T08:54:21.613Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-10-06T15:53:48.194Z",
+  "sourceUpdatedAt": "2026-10-06T15:53:48.194Z",
+  "updated": "2026-10-06T15:53:48.194Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Partially degraded performance for report generation October 06 2026, 15:41 CEST Interfaces and reporting Identified October 06 2026, 15:41 CEST We have identified an issue resulting in report generation delays as of October 5, 2026. Our engineering team is engaged and working on expediting the generation of the reports. The following manually generated and automatically scheduled reports may be affected by this generation delay: Dispute transaction details report Payment accounting report Received payment details report Daily finance report 3D Secure Authentication report 3D Secure Conversion report External settlement detail report Payments accounting report (advancements variant) Referral list report Forecast report Modifications not processed report Offer report Settlement details report Aggregate settlement details report In the case of automatically generated reports, it is not required to manually request reports from our Customer Area. Merchants listening to notifications will be able to download the reports once they receive the REPORT_AVAILABLE notification. We will provide an update as soon as we have more information.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-10-06T15:53:48.194Z",
+      "updated_at": "2026-10-06T15:53:48.194Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Partially degraded performance for report generation",
+      "body": "Component: Interfaces and reporting",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-10-06T13:41:00.000Z",
+      "updated_at": "2026-10-06T13:41:00.000Z",
+      "resolved_at": "2026-10-06T13:41:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Interfaces and reporting"
+        }
+      ]
+    },
     {
       "name": "Swish is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Payout delay affecting multiple currencies",
-      "body": "Component: Settlement and payouts",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-10-05T11:27:00.000Z",
-      "updated_at": "2026-10-05T11:27:00.000Z",
-      "resolved_at": "2026-10-05T11:27:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Settlement and payouts"
         }
       ]
     },
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
