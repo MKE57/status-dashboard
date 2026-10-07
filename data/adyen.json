@@ -4,14 +4,56 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-07T13:56:01.048Z",
-  "sourceUpdatedAt": "2026-10-07T13:56:01.048Z",
-  "updated": "2026-10-07T13:56:01.048Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-10-07T19:56:11.291Z",
+  "sourceUpdatedAt": "2026-10-07T19:56:11.291Z",
+  "updated": "2026-10-07T19:56:11.291Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: iDEAL is experiencing higher refusal rates October 07 2026, 17:03 CEST Payment methods and issuers Identified October 07 2026, 17:03 CEST We have identified an issue outside our platform causing an elevated refusal rate for iDEAL transactions by Revolut cardholders starting at 16:28 CEST. We are in contact with iDEAL and we will provide an update as soon as it becomes available. The status of iDEAL can also be tracked here: https://availability.ideal.nl/",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-10-07T19:56:11.291Z",
+      "updated_at": "2026-10-07T19:56:11.291Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Partial delay in batch processing modification requests",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-10-07T17:25:00.000Z",
+      "updated_at": "2026-10-07T17:25:00.000Z",
+      "resolved_at": "2026-10-07T17:25:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
+    {
+      "name": "iDEAL is experiencing higher refusal rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-10-07T15:03:00.000Z",
+      "updated_at": "2026-10-07T15:03:00.000Z",
+      "resolved_at": "2026-10-07T15:03:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Degraded performance for Pix returns and transfer approvals",
       "body": "Component: Settlement and payouts",
@@ -23,34 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Settlement and payouts"
-        }
-      ]
-    },
-    {
-      "name": "Degraded performance on Test environment",
-      "body": "Component: Payments",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-10-07T08:57:00.000Z",
-      "updated_at": "2026-10-07T08:57:00.000Z",
-      "resolved_at": "2026-10-07T08:57:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payments"
-        }
-      ]
-    },
-    {
-      "name": "Partially degraded performance for report generation",
-      "body": "Component: Interfaces and reporting",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-10-06T13:41:00.000Z",
-      "updated_at": "2026-10-06T13:41:00.000Z",
-      "resolved_at": "2026-10-06T13:41:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Interfaces and reporting"
         }
       ]
     },
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
