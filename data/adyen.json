@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-06T20:56:34.959Z",
-  "sourceUpdatedAt": "2026-10-06T20:56:34.959Z",
-  "updated": "2026-10-06T20:56:34.959Z",
+  "fetchedAt": "2026-10-07T13:56:01.048Z",
+  "sourceUpdatedAt": "2026-10-07T13:56:01.048Z",
+  "updated": "2026-10-07T13:56:01.048Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Degraded performance for Pix returns and transfer approvals",
+      "body": "Component: Settlement and payouts",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-10-07T10:33:00.000Z",
+      "updated_at": "2026-10-07T10:33:00.000Z",
+      "resolved_at": "2026-10-07T10:33:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Settlement and payouts"
+        }
+      ]
+    },
+    {
+      "name": "Degraded performance on Test environment",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-10-07T08:57:00.000Z",
+      "updated_at": "2026-10-07T08:57:00.000Z",
+      "resolved_at": "2026-10-07T08:57:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
     {
       "name": "Partially degraded performance for report generation",
       "body": "Component: Interfaces and reporting",
@@ -23,34 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Interfaces and reporting"
-        }
-      ]
-    },
-    {
-      "name": "Swish is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-10-06T00:37:00.000Z",
-      "updated_at": "2026-10-06T00:37:00.000Z",
-      "resolved_at": "2026-10-06T00:37:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Elo is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-10-05T21:14:00.000Z",
-      "updated_at": "2026-10-05T21:14:00.000Z",
-      "resolved_at": "2026-10-05T21:14:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
