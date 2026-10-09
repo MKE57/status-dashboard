@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-08T06:19:41.603Z",
-  "sourceUpdatedAt": "2026-10-08T06:19:41.603Z",
-  "updated": "2026-10-08T06:19:41.603Z",
+  "fetchedAt": "2026-10-09T18:52:35.749Z",
+  "sourceUpdatedAt": "2026-10-09T18:52:35.749Z",
+  "updated": "2026-10-09T18:52:35.749Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Swish is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-10-09T16:48:00.000Z",
+      "updated_at": "2026-10-09T16:48:00.000Z",
+      "resolved_at": "2026-10-09T16:48:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Partial delay in batch processing modification requests",
       "body": "Component: Payments",
@@ -37,20 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Degraded performance for Pix returns and transfer approvals",
-      "body": "Component: Settlement and payouts",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-10-07T10:33:00.000Z",
-      "updated_at": "2026-10-07T10:33:00.000Z",
-      "resolved_at": "2026-10-07T10:33:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Settlement and payouts"
         }
       ]
     },
