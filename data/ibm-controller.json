@@ -1,7 +1,7 @@
 {
   "provider": "IBM Controller",
   "cacheStatus": "ok",
-  "fetchedAt": "2026-10-10T15:13:22.265Z",
+  "fetchedAt": "2026-10-10T19:19:21.936Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
@@ -49,7 +49,7 @@
     {
       "name": "IBM ID Authentication Outage",
       "body": "Updated 07/10/2026 3:47 PM UTC Dear Customers, Service has been restored. ID/password logins should now be working as expected. We apologize for the disruption and appreciate your patience while the issue was being addressed. We will continue monitoring to ensure stability. Published 07/10/2026 3:37 PM UTC Dear Planning Analytics and Controller Customers, We are currently impacted by an authentication outage affecting IBM ID. The issue is being addressed, and once the authentication service is restored, the affected functionality should return to normal.",
-      "status": "resolved",
+      "status": "closed",
       "impact": "",
       "created_at": "Jul 10, 2026, 3:37:44 PM",
       "updated_at": "Jul 10, 2026, 3:37:44 PM",
