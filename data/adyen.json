@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-09T18:52:35.749Z",
-  "sourceUpdatedAt": "2026-10-09T18:52:35.749Z",
-  "updated": "2026-10-09T18:52:35.749Z",
+  "fetchedAt": "2026-10-12T18:59:14.045Z",
+  "sourceUpdatedAt": "2026-10-12T18:59:14.045Z",
+  "updated": "2026-10-12T18:59:14.045Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Partial delay in processing modification requests",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-10-12T15:30:00.000Z",
+      "updated_at": "2026-10-12T15:30:00.000Z",
+      "resolved_at": "2026-10-12T15:30:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
     {
       "name": "Swish is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Payments"
-        }
-      ]
-    },
-    {
-      "name": "iDEAL is experiencing higher refusal rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-10-07T15:03:00.000Z",
-      "updated_at": "2026-10-07T15:03:00.000Z",
-      "resolved_at": "2026-10-07T15:03:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
