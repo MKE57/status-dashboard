@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-14T18:59:47.246Z",
-  "sourceUpdatedAt": "2026-10-14T18:59:47.246Z",
-  "updated": "2026-10-14T18:59:47.246Z",
+  "fetchedAt": "2026-10-19T17:26:35.149Z",
+  "sourceUpdatedAt": "2026-10-19T17:26:35.149Z",
+  "updated": "2026-10-19T17:26:35.149Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Elevated error rate for transactions processed through Visa",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-10-19T12:09:00.000Z",
+      "updated_at": "2026-10-19T12:09:00.000Z",
+      "resolved_at": "2026-10-19T12:09:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Swish is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +51,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Payout delay for subset of USD transactions",
-      "body": "Component: Settlement and payouts",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-10-13T07:58:00.000Z",
-      "updated_at": "2026-10-13T07:58:00.000Z",
-      "resolved_at": "2026-10-13T07:58:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Settlement and payouts"
         }
       ]
     },
