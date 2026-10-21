@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-21T00:57:22.000Z",
-  "sourceUpdatedAt": "2026-10-21T00:57:22.000Z",
-  "updated": "2026-10-21T00:57:22.000Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-10-21T11:40:25.088Z",
+  "sourceUpdatedAt": "2026-10-21T11:40:25.088Z",
+  "updated": "2026-10-21T11:40:25.088Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen reports degraded performance: Financial products",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-10-21T11:40:25.088Z",
+      "updated_at": "2026-10-21T11:40:25.088Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Emergency maintenance to Adyen’s European data centers on October 21, 2026",
+      "body": "Component: Financial products",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-10-21T09:59:00.000Z",
+      "updated_at": "2026-10-21T09:59:00.000Z",
+      "resolved_at": "2026-10-21T09:59:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Financial products"
+        }
+      ]
+    },
     {
       "name": "Eftpos is experiencing higher error rates due to planned maintenance",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +62,6 @@
       "created_at": "2026-10-19T12:09:00.000Z",
       "updated_at": "2026-10-19T12:09:00.000Z",
       "resolved_at": "2026-10-19T12:09:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Swish is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-10-14T17:55:00.000Z",
-      "updated_at": "2026-10-14T17:55:00.000Z",
-      "resolved_at": "2026-10-14T17:55:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
@@ -164,7 +178,7 @@
     },
     {
       "name": "Financial products",
-      "status": "Operational"
+      "status": "Degraded performance"
     }
   ]
 }
