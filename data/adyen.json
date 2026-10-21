@@ -4,28 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-21T11:40:25.088Z",
-  "sourceUpdatedAt": "2026-10-21T11:40:25.088Z",
-  "updated": "2026-10-21T11:40:25.088Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen reports degraded performance: Financial products",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-10-21T11:40:25.088Z",
-      "updated_at": "2026-10-21T11:40:25.088Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-10-21T16:08:39.209Z",
+  "sourceUpdatedAt": "2026-10-21T16:08:39.209Z",
+  "updated": "2026-10-21T16:08:39.209Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Partial delay in processing Pix refund requests",
+      "body": "Component: Payments",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-10-21T12:18:00.000Z",
+      "updated_at": "2026-10-21T12:18:00.000Z",
+      "resolved_at": "2026-10-21T12:18:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payments"
+        }
+      ]
+    },
     {
       "name": "Emergency maintenance to Adyen’s European data centers on October 21, 2026",
       "body": "Component: Financial products",
@@ -48,20 +48,6 @@
       "created_at": "2026-10-20T16:50:00.000Z",
       "updated_at": "2026-10-20T16:50:00.000Z",
       "resolved_at": "2026-10-20T16:50:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Elevated error rate for transactions processed through Visa",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-10-19T12:09:00.000Z",
-      "updated_at": "2026-10-19T12:09:00.000Z",
-      "resolved_at": "2026-10-19T12:09:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
@@ -178,7 +164,7 @@
     },
     {
       "name": "Financial products",
-      "status": "Degraded performance"
+      "status": "Operational"
     }
   ]
 }
