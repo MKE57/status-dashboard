@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-20T19:26:13.099Z",
-  "sourceUpdatedAt": "2026-10-20T19:26:13.099Z",
-  "updated": "2026-10-20T19:26:13.099Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: Eftpos is experiencing higher error rates due to planned maintenance October 20 2026, 18:50 CEST Payment methods and issuers Identified October 20 2026, 18:50 CEST We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Eftpos starting at 17:25 CEST. Eftpos has confirmed there is a last minute programmed maintenance taking place at this time. The expected downtime is as follows: Maintenance Window: Start: 21 October 2026, 00:00 AEDT End: 21 October 2026, 07:00 AEDT We will continue to monitor and provide an update once Eftpos confirms the maintenance has concluded.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-10-20T19:26:13.098Z",
-      "updated_at": "2026-10-20T19:26:13.098Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-10-21T00:57:22.000Z",
+  "sourceUpdatedAt": "2026-10-21T00:57:22.000Z",
+  "updated": "2026-10-21T00:57:22.000Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
