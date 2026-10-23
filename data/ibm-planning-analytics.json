@@ -3,9 +3,9 @@
   "cacheStatus": "ok",
   "source": "https://status.ai-apps-comms.ibm.com/announcement/iotm/api/v1/ext/1nS00axYWJZEkaNISKwKAi4ZaLCXam495VbYfjO6y%2BM%3D/notices.json",
   "statusPage": "https://status.ai-apps-comms.ibm.com/planninganalytics",
-  "fetchedAt": "2026-10-23T12:09:18.624Z",
-  "sourceUpdatedAt": "2026-10-22T16:16:13.000Z",
-  "updated": "2026-10-22T16:16:13.000Z",
+  "fetchedAt": "2026-10-23T17:09:31.045Z",
+  "sourceUpdatedAt": "2026-10-23T13:45:00.000Z",
+  "updated": "2026-10-23T13:45:00.000Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
@@ -13,16 +13,16 @@
   "recentIncidents": [
     {
       "name": "Authentication Outage",
-      "body": "We are aware of an authentication service-impacting issue that affected a subset of customers. The issue has been mitigated and service is currently restoring, and we are monitoring recovery. We will provide additional updates as needed and will confirm once service has been fully restored. Additional details can be found here: https://statuspage.ibmcloudsecurity.com/",
-      "status": "published",
+      "body": "Resolved 10/23/2026 1:44 PM UTC Authentication services have stabilized. We continue to monitor and will update should there be any additional information. Published 10/22/2026 4:16 PM UTC We are aware of an authentication service-impacting issue that affected a subset of customers. The issue has been mitigated and service is currently restoring, and we are monitoring recovery. We will provide additional updates as needed and will confirm once service has been fully restored. Additional details can be found here: https://statuspage.ibmcloudsecurity.com/",
+      "status": "resolved",
       "impact": "",
       "created_at": "2026-10-22T16:16:13.000Z",
-      "updated_at": "2026-10-22T16:16:13.000Z",
+      "updated_at": "2026-10-23T13:45:00.000Z",
       "scheduled_for": null,
       "scheduled_until": null,
       "incident_updates": [
         {
-          "body": "We are aware of an authentication service-impacting issue that affected a subset of customers. The issue has been mitigated and service is currently restoring, and we are monitoring recovery. We will provide additional updates as needed and will confirm once service has been fully restored. Additional details can be found here: https://statuspage.ibmcloudsecurity.com/"
+          "body": "Resolved 10/23/2026 1:44 PM UTC Authentication services have stabilized. We continue to monitor and will update should there be any additional information. Published 10/22/2026 4:16 PM UTC We are aware of an authentication service-impacting issue that affected a subset of customers. The issue has been mitigated and service is currently restoring, and we are monitoring recovery. We will provide additional updates as needed and will confirm once service has been fully restored. Additional details can be found here: https://statuspage.ibmcloudsecurity.com/"
         }
       ]
     },
@@ -162,5 +162,5 @@
       ]
     }
   ],
-  "noticeCount": 81
+  "noticeCount": 82
 }
