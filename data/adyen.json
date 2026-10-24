@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-24T12:05:59.803Z",
-  "sourceUpdatedAt": "2026-10-24T12:05:59.803Z",
-  "updated": "2026-10-24T12:05:59.803Z",
+  "fetchedAt": "2026-10-24T15:52:41.062Z",
+  "sourceUpdatedAt": "2026-10-24T15:52:41.062Z",
+  "updated": "2026-10-24T15:52:41.062Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen reports degraded performance: Payment methods and issuers, Settlement and payouts",
+      "name": "Adyen reports degraded performance: Payment methods and issuers",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-10-24T12:05:59.803Z",
-      "updated_at": "2026-10-24T12:05:59.803Z",
+      "created_at": "2026-10-24T15:52:41.062Z",
+      "updated_at": "2026-10-24T15:52:41.062Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -170,7 +170,7 @@
     },
     {
       "name": "Settlement and payouts",
-      "status": "Degraded performance"
+      "status": "Operational"
     },
     {
       "name": "Adyen for Platforms",
