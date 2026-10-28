@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-28T19:50:45.285Z",
-  "sourceUpdatedAt": "2026-10-28T19:50:45.285Z",
-  "updated": "2026-10-28T19:50:45.285Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-10-28T23:44:00.395Z",
+  "sourceUpdatedAt": "2026-10-28T23:44:00.395Z",
+  "updated": "2026-10-28T23:44:00.395Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen reports degraded performance: Adyen for Platforms",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-10-28T23:44:00.395Z",
+      "updated_at": "2026-10-28T23:44:00.395Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Customer Area internal transfers and bank payouts issue",
+      "body": "Component: Adyen for Platforms",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-10-28T21:53:00.000Z",
+      "updated_at": "2026-10-28T21:53:00.000Z",
+      "resolved_at": "2026-10-28T21:53:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Adyen for Platforms"
+        }
+      ]
+    },
     {
       "name": "Swish is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -37,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Partial delay in clearing and reconciliation on a subset of Mastercard transactions",
-      "body": "Component: Settlement and payouts",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-10-24T02:42:00.000Z",
-      "updated_at": "2026-10-24T02:42:00.000Z",
-      "resolved_at": "2026-10-24T02:42:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Settlement and payouts"
         }
       ]
     },
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
@@ -160,7 +174,7 @@
     },
     {
       "name": "Adyen for Platforms",
-      "status": "Operational"
+      "status": "Degraded performance"
     },
     {
       "name": "Financial products",
