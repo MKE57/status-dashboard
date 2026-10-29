@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-29T02:57:03.035Z",
-  "sourceUpdatedAt": "2026-10-29T02:57:03.035Z",
-  "updated": "2026-10-29T02:57:03.035Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-10-29T09:50:10.659Z",
+  "sourceUpdatedAt": "2026-10-29T09:50:10.659Z",
+  "updated": "2026-10-29T09:50:10.659Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: MoMo is experiencing higher error rates October 29 2026, 08:02 CET Payment methods and issuers Updated October 29 2026, 10:22 CET MoMo has confirmed that they are experiencing an issue. Their technical teams are working to resolve it as soon as possible. We will provide an update as soon as it becomes available. Identified October 29 2026, 08:02 CET We have identified an issue outside of our platform resulting in higher error rates for transactions processed through MoMo starting at 07:39 CET. We have contacted MoMo and we will provide an update as soon as it becomes available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-10-29T09:50:10.659Z",
+      "updated_at": "2026-10-29T09:50:10.659Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "MoMo is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-10-29T07:02:00.000Z",
+      "updated_at": "2026-10-29T07:02:00.000Z",
+      "resolved_at": "2026-10-29T07:02:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Customer Area internal transfers and bank payouts issue",
       "body": "Component: Adyen for Platforms",
@@ -34,20 +62,6 @@
       "created_at": "2026-10-28T18:42:00.000Z",
       "updated_at": "2026-10-28T18:42:00.000Z",
       "resolved_at": "2026-10-28T18:42:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Intersolve is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-10-24T09:05:00.000Z",
-      "updated_at": "2026-10-24T09:05:00.000Z",
-      "resolved_at": "2026-10-24T09:05:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
