@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-10-29T21:24:19.189Z",
-  "sourceUpdatedAt": "2026-10-29T21:24:19.189Z",
-  "updated": "2026-10-29T21:24:19.189Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: MoMo is experiencing higher error rates October 29 2026, 08:02 CET Payment methods and issuers Updated October 29 2026, 10:22 CET MoMo has confirmed that they are experiencing an issue. Their technical teams are working to resolve it as soon as possible. We will provide an update as soon as it becomes available. Identified October 29 2026, 08:02 CET We have identified an issue outside of our platform resulting in higher error rates for transactions processed through MoMo starting at 07:39 CET. We have contacted MoMo and we will provide an update as soon as it becomes available.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-10-29T21:24:19.189Z",
-      "updated_at": "2026-10-29T21:24:19.189Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-10-30T19:39:40.856Z",
+  "sourceUpdatedAt": "2026-10-30T19:39:40.856Z",
+  "updated": "2026-10-30T19:39:40.856Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
