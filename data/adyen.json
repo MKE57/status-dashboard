@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-11-05T03:43:23.510Z",
-  "sourceUpdatedAt": "2026-11-05T03:43:23.510Z",
-  "updated": "2026-11-05T03:43:23.510Z",
+  "fetchedAt": "2026-11-05T11:38:59.716Z",
+  "sourceUpdatedAt": "2026-11-05T11:38:59.716Z",
+  "updated": "2026-11-05T11:38:59.716Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: MoMo is experiencing higher error rates November 05 2026, 03:15 CET Payment methods and issuers Identified November 05 2026, 03:15 CET We have identified an issue outside of our platform resulting in higher error rates for transactions processed through MoMo starting at 02:40 CET. We have contacted MoMo and we will provide an update as soon as it becomes available. Missing or changed payout descriptors for a subset of payouts November 04 2026, 18:34 CET Settlement and payouts Givex is experiencing higher error rates on TEST November 03 2026, 17:37 CET Payment methods and issuers",
+      "name": "Adyen active incident: Missing or changed payout descriptors for a subset of payouts November 04 2026, 18:34 CET Settlement and payouts Identified November 04 2026, 18:34 CET We have identified an external issue starting on November 2, 2026, resulting in missing or changed descriptors for a subset of payouts. As a result, a subset of customers may see a payout descriptor that is missing or different from the one configured on their account. Our engineering teams are engaged and are currently investigating. We will provide an update as soon as we have more information. Givex is experiencing higher error rates on TEST November 03 2026, 17:37 CET Payment methods and issuers",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-11-05T03:43:23.510Z",
-      "updated_at": "2026-11-05T03:43:23.510Z",
+      "created_at": "2026-11-05T11:38:59.716Z",
+      "updated_at": "2026-11-05T11:38:59.716Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -27,16 +27,16 @@
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "MoMo is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
+      "name": "Payout delay affecting multiple currencies",
+      "body": "Component: Settlement and payouts",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-11-05T02:15:00.000Z",
-      "updated_at": "2026-11-05T02:15:00.000Z",
-      "resolved_at": "2026-11-05T02:15:00.000Z",
+      "created_at": "2026-11-05T11:24:00.000Z",
+      "updated_at": "2026-11-05T11:24:00.000Z",
+      "resolved_at": "2026-11-05T11:24:00.000Z",
       "incident_updates": [
         {
-          "body": "Component: Payment methods and issuers"
+          "body": "Component: Settlement and payouts"
         }
       ]
     },
