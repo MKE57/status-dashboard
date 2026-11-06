@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-11-05T11:38:59.716Z",
-  "sourceUpdatedAt": "2026-11-05T11:38:59.716Z",
-  "updated": "2026-11-05T11:38:59.716Z",
+  "fetchedAt": "2026-11-06T00:10:00.285Z",
+  "sourceUpdatedAt": "2026-11-06T00:10:00.285Z",
+  "updated": "2026-11-06T00:10:00.285Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: Missing or changed payout descriptors for a subset of payouts November 04 2026, 18:34 CET Settlement and payouts Identified November 04 2026, 18:34 CET We have identified an external issue starting on November 2, 2026, resulting in missing or changed descriptors for a subset of payouts. As a result, a subset of customers may see a payout descriptor that is missing or different from the one configured on their account. Our engineering teams are engaged and are currently investigating. We will provide an update as soon as we have more information. Givex is experiencing higher error rates on TEST November 03 2026, 17:37 CET Payment methods and issuers",
+      "name": "Adyen active incident: Missing or changed payout descriptors for a subset of payouts November 04 2026, 18:34 CET Settlement and payouts Identified November 04 2026, 18:34 CET We have identified an external issue starting on November 2, 2026, resulting in missing or changed descriptors for a subset of payouts. As a result, a subset of customers may see a payout descriptor that is missing or different from the one configured on their account. Our engineering teams are engaged and are currently investigating. We will provide an update as soon as we have more information.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-11-05T11:38:59.716Z",
-      "updated_at": "2026-11-05T11:38:59.716Z",
+      "created_at": "2026-11-06T00:10:00.285Z",
+      "updated_at": "2026-11-06T00:10:00.285Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -26,6 +26,20 @@
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Delay in Balance Platform transfer webhook notifications",
+      "body": "Component: Interfaces and reporting",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-11-05T15:35:00.000Z",
+      "updated_at": "2026-11-05T15:35:00.000Z",
+      "resolved_at": "2026-11-05T15:35:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Interfaces and reporting"
+        }
+      ]
+    },
     {
       "name": "Payout delay affecting multiple currencies",
       "body": "Component: Settlement and payouts",
@@ -51,20 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Settlement and payouts"
-        }
-      ]
-    },
-    {
-      "name": "Givex is experiencing higher error rates on TEST",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-11-03T16:37:00.000Z",
-      "updated_at": "2026-11-03T16:37:00.000Z",
-      "resolved_at": "2026-11-03T16:37:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
         }
       ]
     },
