@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-11-07T00:30:43.066Z",
-  "sourceUpdatedAt": "2026-11-07T00:30:43.066Z",
-  "updated": "2026-11-07T00:30:43.066Z",
+  "fetchedAt": "2026-11-07T06:32:55.581Z",
+  "sourceUpdatedAt": "2026-11-07T06:32:55.581Z",
+  "updated": "2026-11-07T06:32:55.581Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: JSC CB PRIVATBANK is experiencing higher refusal rates November 07 2026, 01:29 CET Payment methods and issuers Identified November 07 2026, 01:29 CET We have identified an issue outside of our platform resulting in higher refusal rates due to a planned maintenance on their system. Their maintenance work is scheduled for Nov 7th, 2026 from 23:00 to 05:00 CET Their official announcement can be found on their press blog https://privatbank.ua/en/news and widely in UA media. Pix is experiencing offer conversion issues November 06 2026, 23:51 CET Payment methods and issuers PayU LATAM is experiencing higher error and decline rates November 06 2026, 14:12 CET Payment methods and issuers MB WAY is experiencing higher error rates November 06 2026, 12:57 CET Payment methods and issuers Missing or changed payout descriptors for a subset of payouts November 04 2026, 18:34 CET Settlement and payouts",
+      "name": "Adyen active incident: Missing or changed payout descriptors for a subset of payouts November 04 2026, 18:34 CET Settlement and payouts Identified November 04 2026, 18:34 CET We have identified an external issue starting on November 2, 2026, resulting in missing or changed descriptors for a subset of payouts. As a result, a subset of customers may see a payout descriptor that is missing or different from the one configured on their account. Our engineering teams are engaged and are currently investigating. We will provide an update as soon as we have more information.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-11-07T00:30:43.066Z",
-      "updated_at": "2026-11-07T00:30:43.066Z",
+      "created_at": "2026-11-07T06:32:55.581Z",
+      "updated_at": "2026-11-07T06:32:55.581Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -55,16 +55,16 @@
       ]
     },
     {
-      "name": "PayU LATAM is experiencing higher error and decline rates",
-      "body": "Component: Payment methods and issuers",
+      "name": "Missing or changed payout descriptors for a subset of payouts",
+      "body": "Component: Settlement and payouts",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-11-06T13:12:00.000Z",
-      "updated_at": "2026-11-06T13:12:00.000Z",
-      "resolved_at": "2026-11-06T13:12:00.000Z",
+      "created_at": "2026-11-04T17:34:00.000Z",
+      "updated_at": "2026-11-04T17:34:00.000Z",
+      "resolved_at": "2026-11-04T17:34:00.000Z",
       "incident_updates": [
         {
-          "body": "Component: Payment methods and issuers"
+          "body": "Component: Settlement and payouts"
         }
       ]
     },
