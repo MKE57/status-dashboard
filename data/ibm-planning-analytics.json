@@ -3,14 +3,29 @@
   "cacheStatus": "ok",
   "source": "https://status.ai-apps-comms.ibm.com/announcement/iotm/api/v1/ext/1nS00axYWJZEkaNISKwKAi4ZaLCXam495VbYfjO6y%2BM%3D/notices.json",
   "statusPage": "https://status.ai-apps-comms.ibm.com/planninganalytics",
-  "fetchedAt": "2026-11-08T19:24:45.736Z",
-  "sourceUpdatedAt": "2026-10-26T16:40:44.000Z",
-  "updated": "2026-10-26T16:40:44.000Z",
+  "fetchedAt": "2026-11-09T20:58:15.983Z",
+  "sourceUpdatedAt": "2026-11-09T13:24:49.000Z",
+  "updated": "2026-11-09T13:24:49.000Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "IBM Planning Analytics - Planning Analytics Workspace Service Outage in EU region",
+      "body": "Resolved 11/09/2026 1:24 PM UTC This email is to advise you that Planning Analytics Workspace outage in Europe Region was Resolved. We will be monitoring the issue. If you encounter any issues please contact support for assistance. Updated 11/09/2026 11:53 AM UTC This email is to advise you that we are still working actively on resolving the issue. We will send another update in an hour. Updated 11/09/2026 11:06 AM UTC This email is to advise you that we are still working on resolving the issue. We will send another update in next 30 minutes. Published 11/09/2026 10:34 AM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. We have identified the issue and we are running validation now as it should be resolved now. Our apologies for this inconvenience. We will provide further update in 30 minutes.",
+      "status": "resolved",
+      "impact": "",
+      "created_at": "2026-11-09T10:34:05.000Z",
+      "updated_at": "2026-11-09T13:24:49.000Z",
+      "scheduled_for": null,
+      "scheduled_until": null,
+      "incident_updates": [
+        {
+          "body": "Resolved 11/09/2026 1:24 PM UTC This email is to advise you that Planning Analytics Workspace outage in Europe Region was Resolved. We will be monitoring the issue. If you encounter any issues please contact support for assistance. Updated 11/09/2026 11:53 AM UTC This email is to advise you that we are still working actively on resolving the issue. We will send another update in an hour. Updated 11/09/2026 11:06 AM UTC This email is to advise you that we are still working on resolving the issue. We will send another update in next 30 minutes. Published 11/09/2026 10:34 AM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. We have identified the issue and we are running validation now as it should be resolved now. Our apologies for this inconvenience. We will provide further update in 30 minutes."
+        }
+      ]
+    },
     {
       "name": "IBM Planning Analytics – Planning Analytics Workspace Upgrade - Asia Pacfic",
       "body": "Updated 10/26/2026 4:40 PM UTC This operation is complete concluding this activity. Updated 10/26/2026 2:19 PM UTC Deare Customers, We are starting this activity now for the targeted data centers. Regards Planning Analytics Team Published 10/22/2026 8:33 AM UTC Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.25 on October 26th 2026, 14:00_to_16:00_UTC, beginning with Europe, Canada, and the United States data centres then with Asia-Pacific and Singapore. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.25 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here",
@@ -145,22 +160,7 @@
           "body": "Closed 07/09/2026 4:45 AM UTC Planning Analytics Workspace 2.1.22 Deployment completed. Updated 07/09/2026 1:58 AM UTC Deployment has started Published 06/29/2026 5:28 AM UTC Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.22 on July 9th 2026, 2:00_to_5:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.22 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here"
         }
       ]
-    },
-    {
-      "name": "IBM Planning Analytics – Planning Analytics Workspace Upgrade - Asia Pacfic",
-      "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.22 overnight on July 8th 2026, 14:00_to_16:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.22 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here",
-      "status": "closed",
-      "impact": "",
-      "created_at": "2026-06-29T05:34:23.000Z",
-      "updated_at": "2026-06-29T05:34:23.000Z",
-      "scheduled_for": null,
-      "scheduled_until": null,
-      "incident_updates": [
-        {
-          "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.22 overnight on July 8th 2026, 14:00_to_16:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.22 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here"
-        }
-      ]
     }
   ],
-  "noticeCount": 77
+  "noticeCount": 78
 }
