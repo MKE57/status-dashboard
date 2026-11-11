@@ -3,14 +3,29 @@
   "cacheStatus": "ok",
   "source": "https://status.ai-apps-comms.ibm.com/announcement/iotm/api/v1/ext/1nS00axYWJZEkaNISKwKAi4ZaLCXam495VbYfjO6y%2BM%3D/notices.json",
   "statusPage": "https://status.ai-apps-comms.ibm.com/planninganalytics",
-  "fetchedAt": "2026-11-11T05:39:43.937Z",
-  "sourceUpdatedAt": "2026-11-09T13:24:49.000Z",
-  "updated": "2026-11-09T13:24:49.000Z",
+  "fetchedAt": "2026-11-11T20:07:26.011Z",
+  "sourceUpdatedAt": "2026-11-11T18:53:40.000Z",
+  "updated": "2026-11-11T18:53:40.000Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Connection issues with Cloudflare Error 522",
+      "body": "Updated 11/11/2026 6:53 PM UTC We continue to work toward full resolution of the network-related issue affecting environments hosted in the Amsterdam Data Center. Some customers may experience improved accessibility; however, intermittent disruptions remain possible while remediation and validation activities continue. Our teams are closely monitoring the environment to confirm sustained stability before issuing an all-clear notification. We will provide another update within next two hours. Updated 11/11/2026 5:48 PM UTC We continue remediation efforts for the network-related issue affecting environments hosted in the Amsterdam Data Center. We are observing improved accessibility for some customers as corrective actions progress; however, the issue has not yet been fully resolved and intermittent disruptions may still occur. Our teams remain actively engaged in restoration and validation activities to ensure service stability before declaring the incident resolved. We will provide another update within one hour. Updated 11/11/2026 4:52 PM UTC We continue to make progress toward resolving the network-related issue affecting environments hosted in the Amsterdam Data Center. Some customers may be able to access their environments; however, service stability has not yet been fully restored, and intermittent disruptions may continue to occur. Our teams are actively implementing corrective measures and closely monitoring the environment as remediation efforts continue. We will provide another update within one hour. Updated 11/11/2026 4:09 PM UTC We have isolated the issue to a network component and are actively working on a fix. The issue is currently impacting only environments hosted in the Amsterdam Data Center. While some customers may now be able to access their environments, the underlying issue has not yet been fully resolved. Intermittent disruptions may continue to occur until remediation efforts are complete and we provide an all-clear update. We will provide another update within an hour. Updated 11/11/2026 2:48 PM UTC We have isolated the issue to a network component and are actively working on a fix. The issue is currently impacting only environments hosted in the Amsterdam Data Center. We will provide another update within an hour. Published 11/11/2026 1:40 PM UTC Dear IBM Customers, We are currently investigating a Cloudflare Error 522 affecting multiple environments, which may impact connectivity to several services. Our teams are actively working to resolve the issue. We will provide an update as soon as service has been restored. Kind regards, IBM Planning Analytics and Controller on Cloud",
+      "status": "updated",
+      "impact": "",
+      "created_at": "2026-11-11T13:40:45.000Z",
+      "updated_at": "2026-11-11T18:53:40.000Z",
+      "scheduled_for": null,
+      "scheduled_until": null,
+      "incident_updates": [
+        {
+          "body": "Updated 11/11/2026 6:53 PM UTC We continue to work toward full resolution of the network-related issue affecting environments hosted in the Amsterdam Data Center. Some customers may experience improved accessibility; however, intermittent disruptions remain possible while remediation and validation activities continue. Our teams are closely monitoring the environment to confirm sustained stability before issuing an all-clear notification. We will provide another update within next two hours. Updated 11/11/2026 5:48 PM UTC We continue remediation efforts for the network-related issue affecting environments hosted in the Amsterdam Data Center. We are observing improved accessibility for some customers as corrective actions progress; however, the issue has not yet been fully resolved and intermittent disruptions may still occur. Our teams remain actively engaged in restoration and validation activities to ensure service stability before declaring the incident resolved. We will provide another update within one hour. Updated 11/11/2026 4:52 PM UTC We continue to make progress toward resolving the network-related issue affecting environments hosted in the Amsterdam Data Center. Some customers may be able to access their environments; however, service stability has not yet been fully restored, and intermittent disruptions may continue to occur. Our teams are actively implementing corrective measures and closely monitoring the environment as remediation efforts continue. We will provide another update within one hour. Updated 11/11/2026 4:09 PM UTC We have isolated the issue to a network component and are actively working on a fix. The issue is currently impacting only environments hosted in the Amsterdam Data Center. While some customers may now be able to access their environments, the underlying issue has not yet been fully resolved. Intermittent disruptions may continue to occur until remediation efforts are complete and we provide an all-clear update. We will provide another update within an hour. Updated 11/11/2026 2:48 PM UTC We have isolated the issue to a network component and are actively working on a fix. The issue is currently impacting only environments hosted in the Amsterdam Data Center. We will provide another update within an hour. Published 11/11/2026 1:40 PM UTC Dear IBM Customers, We are currently investigating a Cloudflare Error 522 affecting multiple environments, which may impact connectivity to several services. Our teams are actively working to resolve the issue. We will provide an update as soon as service has been restored. Kind regards, IBM Planning Analytics and Controller on Cloud"
+        }
+      ]
+    },
     {
       "name": "IBM Planning Analytics - Planning Analytics Workspace Service Outage in EU region",
       "body": "Resolved 11/09/2026 1:24 PM UTC This email is to advise you that Planning Analytics Workspace outage in Europe Region was Resolved. We will be monitoring the issue. If you encounter any issues please contact support for assistance. Updated 11/09/2026 11:53 AM UTC This email is to advise you that we are still working actively on resolving the issue. We will send another update in an hour. Updated 11/09/2026 11:06 AM UTC This email is to advise you that we are still working on resolving the issue. We will send another update in next 30 minutes. Published 11/09/2026 10:34 AM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. We have identified the issue and we are running validation now as it should be resolved now. Our apologies for this inconvenience. We will provide further update in 30 minutes.",
@@ -145,22 +160,7 @@
           "body": "Updated 07/10/2026 3:47 PM UTC Dear Customers, Service has been restored. ID/password logins should now be working as expected. We apologize for the disruption and appreciate your patience while the issue was being addressed. We will continue monitoring to ensure stability. Published 07/10/2026 3:37 PM UTC Dear Planning Analytics and Controller Customers, We are currently impacted by an authentication outage affecting IBM ID. The issue is being addressed, and once the authentication service is restored, the affected functionality should return to normal."
         }
       ]
-    },
-    {
-      "name": "IBM Planning Analytics – Planning Analytics Workspace Upgrade - EU/North America",
-      "body": "Closed 07/09/2026 4:45 AM UTC Planning Analytics Workspace 2.1.22 Deployment completed. Updated 07/09/2026 1:58 AM UTC Deployment has started Published 06/29/2026 5:28 AM UTC Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.22 on July 9th 2026, 2:00_to_5:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.22 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here",
-      "status": "closed",
-      "impact": "",
-      "created_at": "2026-06-29T05:28:39.000Z",
-      "updated_at": "2026-07-09T04:45:39.000Z",
-      "scheduled_for": null,
-      "scheduled_until": null,
-      "incident_updates": [
-        {
-          "body": "Closed 07/09/2026 4:45 AM UTC Planning Analytics Workspace 2.1.22 Deployment completed. Updated 07/09/2026 1:58 AM UTC Deployment has started Published 06/29/2026 5:28 AM UTC Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.22 on July 9th 2026, 2:00_to_5:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.22 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here"
-        }
-      ]
     }
   ],
-  "noticeCount": 77
+  "noticeCount": 81
 }
