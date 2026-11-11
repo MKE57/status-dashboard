@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-11-10T23:46:45.561Z",
-  "sourceUpdatedAt": "2026-11-10T23:46:45.561Z",
-  "updated": "2026-11-10T23:46:45.561Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: Settlement delay for a subset of SEPA Direct Debit transactions November 10 2026, 10:49 CET Settlement and payouts Updated November 10 2026, 20:11 CET We are writing to provide an update on the internal technical issue that started at 10:00 CET on November 9, 2026, resulting in a delay in processing a subset of SEPA Direct Debit transactions. Customers might experience a delay in receiving the settlement of affected SEPA Direct Debit transactions processed between November 7 and 9, 2026. We expect the delayed settlements to be completed by the end of the day CET on November 11, 2026. We will provide a further update as soon as we have more information. Identified November 10 2026, 10:49 CET We have identified an internal technical issue starting at 10:00 CET on November 9, 2026, resulting in a delay in processing a subset of SEPA Direct Debit transactions. As a result, customers might experience a delay in receiving the settlement of affected SEPA Direct Debit transactions processed between November 7 and 9, 2026. Our engineering teams have been engaged and are working to resolve this issue. We will provide an update on the expected delay as soon as we have more information.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-11-10T23:46:45.561Z",
-      "updated_at": "2026-11-10T23:46:45.561Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-11-11T18:45:55.342Z",
+  "sourceUpdatedAt": "2026-11-11T18:45:55.342Z",
+  "updated": "2026-11-11T18:45:55.342Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
