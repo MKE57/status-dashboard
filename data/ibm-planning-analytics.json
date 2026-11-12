@@ -3,14 +3,45 @@
   "cacheStatus": "ok",
   "source": "https://status.ai-apps-comms.ibm.com/announcement/iotm/api/v1/ext/1nS00axYWJZEkaNISKwKAi4ZaLCXam495VbYfjO6y%2BM%3D/notices.json",
   "statusPage": "https://status.ai-apps-comms.ibm.com/planninganalytics",
-  "fetchedAt": "2026-11-12T01:54:35.573Z",
-  "sourceUpdatedAt": "2026-11-11T20:23:30.000Z",
-  "updated": "2026-11-11T20:23:30.000Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-11-12T09:28:44.457Z",
+  "sourceUpdatedAt": "2026-11-12T08:46:39.000Z",
+  "updated": "2026-11-12T08:46:39.000Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "IBM Planning Analytics - Planning Analytics Workspace Service Outage",
+      "body": "This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour.",
+      "status": "published",
+      "impact": "",
+      "created_at": "2026-11-12T08:46:39.000Z",
+      "updated_at": "2026-11-12T08:46:39.000Z",
+      "scheduled_for": null,
+      "scheduled_until": null,
+      "incident_updates": [
+        {
+          "body": "This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "IBM Planning Analytics - Planning Analytics Workspace Service Outage",
+      "body": "This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour.",
+      "status": "published",
+      "impact": "",
+      "created_at": "2026-11-12T08:46:39.000Z",
+      "updated_at": "2026-11-12T08:46:39.000Z",
+      "scheduled_for": null,
+      "scheduled_until": null,
+      "incident_updates": [
+        {
+          "body": "This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour."
+        }
+      ]
+    },
     {
       "name": "Connection issues with Cloudflare Error 522",
       "body": "Resolved 11/11/2026 8:23 PM UTC The network-related issue affecting environments hosted in the Amsterdam Data Center has been resolved. Our teams have completed remediation activities and verified service stability across the affected infrastructure. Customers should now be able to access their environments normally. We will continue to closely monitor the environment as a precaution. Thank you for your patience while we worked to resolve this issue. Updated 11/11/2026 6:53 PM UTC We continue to work toward full resolution of the network-related issue affecting environments hosted in the Amsterdam Data Center. Some customers may experience improved accessibility; however, intermittent disruptions remain possible while remediation and validation activities continue. Our teams are closely monitoring the environment to confirm sustained stability before issuing an all-clear notification. We will provide another update within next two hours. Updated 11/11/2026 5:48 PM UTC We continue remediation efforts for the network-related issue affecting environments hosted in the Amsterdam Data Center. We are observing improved accessibility for some customers as corrective actions progress; however, the issue has not yet been fully resolved and intermittent disruptions may still occur. Our teams remain actively engaged in restoration and validation activities to ensure service stability before declaring the incident resolved. We will provide another update within one hour. Updated 11/11/2026 4:52 PM UTC We continue to make progress toward resolving the network-related issue affecting environments hosted in the Amsterdam Data Center. Some customers may be able to access their environments; however, service stability has not yet been fully restored, and intermittent disruptions may continue to occur. Our teams are actively implementing corrective measures and closely monitoring the environment as remediation efforts continue. We will provide another update within one hour. Updated 11/11/2026 4:09 PM UTC We have isolated the issue to a network component and are actively working on a fix. The issue is currently impacting only environments hosted in the Amsterdam Data Center. While some customers may now be able to access their environments, the underlying issue has not yet been fully resolved. Intermittent disruptions may continue to occur until remediation efforts are complete and we provide an all-clear update. We will provide another update within an hour. Updated 11/11/2026 2:48 PM UTC We have isolated the issue to a network component and are actively working on a fix. The issue is currently impacting only environments hosted in the Amsterdam Data Center. We will provide another update within an hour. Published 11/11/2026 1:40 PM UTC Dear IBM Customers, We are currently investigating a Cloudflare Error 522 affecting multiple environments, which may impact connectivity to several services. Our teams are actively working to resolve the issue. We will provide an update as soon as service has been restored. Kind regards, IBM Planning Analytics and Controller on Cloud",
@@ -145,22 +176,7 @@
           "body": "Dear IBM Planning Analytics customers, IBM will begin deployment of Planning Analytics Workspace 2.1.23 overnight on August 11th 2026, 14:00_to_16:00_UTC, beginning with Asia-Pacific and Singapore, then to Europe, Canada, and the United States data centres. You may continue to use your Planning Analytics application during this time. The What's New feature list for Planning Analytics Workspace 2.1.23 can be found here Defect corrections can be found here After login, you may view the Planning Analytics Workspace version by clicking the question mark on the black toolbar in the top-right corner, then selecting ‘About IBM Planning Analytics’. Questions and comments can be directed through the IBM Planning Analytics Community Discussion here"
         }
       ]
-    },
-    {
-      "name": "IBM ID Authentication Outage",
-      "body": "Updated 07/10/2026 3:47 PM UTC Dear Customers, Service has been restored. ID/password logins should now be working as expected. We apologize for the disruption and appreciate your patience while the issue was being addressed. We will continue monitoring to ensure stability. Published 07/10/2026 3:37 PM UTC Dear Planning Analytics and Controller Customers, We are currently impacted by an authentication outage affecting IBM ID. The issue is being addressed, and once the authentication service is restored, the affected functionality should return to normal.",
-      "status": "closed",
-      "impact": "",
-      "created_at": "2026-07-10T15:37:44.000Z",
-      "updated_at": "2026-07-10T15:55:14.000Z",
-      "scheduled_for": null,
-      "scheduled_until": null,
-      "incident_updates": [
-        {
-          "body": "Updated 07/10/2026 3:47 PM UTC Dear Customers, Service has been restored. ID/password logins should now be working as expected. We apologize for the disruption and appreciate your patience while the issue was being addressed. We will continue monitoring to ensure stability. Published 07/10/2026 3:37 PM UTC Dear Planning Analytics and Controller Customers, We are currently impacted by an authentication outage affecting IBM ID. The issue is being addressed, and once the authentication service is restored, the affected functionality should return to normal."
-        }
-      ]
     }
   ],
-  "noticeCount": 80
+  "noticeCount": 81
 }
