@@ -3,42 +3,26 @@
   "cacheStatus": "ok",
   "source": "https://status.ai-apps-comms.ibm.com/announcement/iotm/api/v1/ext/1nS00axYWJZEkaNISKwKAi4ZaLCXam495VbYfjO6y%2BM%3D/notices.json",
   "statusPage": "https://status.ai-apps-comms.ibm.com/planninganalytics",
-  "fetchedAt": "2026-11-12T09:28:44.457Z",
-  "sourceUpdatedAt": "2026-11-12T08:46:39.000Z",
-  "updated": "2026-11-12T08:46:39.000Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "IBM Planning Analytics - Planning Analytics Workspace Service Outage",
-      "body": "This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour.",
-      "status": "published",
-      "impact": "",
-      "created_at": "2026-11-12T08:46:39.000Z",
-      "updated_at": "2026-11-12T08:46:39.000Z",
-      "scheduled_for": null,
-      "scheduled_until": null,
-      "incident_updates": [
-        {
-          "body": "This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-11-12T17:42:38.831Z",
+  "sourceUpdatedAt": "2026-11-12T09:48:31.000Z",
+  "updated": "2026-11-12T09:48:31.000Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
       "name": "IBM Planning Analytics - Planning Analytics Workspace Service Outage",
-      "body": "This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour.",
-      "status": "published",
+      "body": "Resolved 11/12/2026 9:48 AM UTC This email is to advise you that we have resolved the unplanned interruption to EU Planning Analytics Workspace services. Our apologies for this inconvenience. Published 11/12/2026 8:46 AM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour.",
+      "status": "resolved",
       "impact": "",
       "created_at": "2026-11-12T08:46:39.000Z",
-      "updated_at": "2026-11-12T08:46:39.000Z",
+      "updated_at": "2026-11-12T09:48:31.000Z",
       "scheduled_for": null,
       "scheduled_until": null,
       "incident_updates": [
         {
-          "body": "This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour."
+          "body": "Resolved 11/12/2026 9:48 AM UTC This email is to advise you that we have resolved the unplanned interruption to EU Planning Analytics Workspace services. Our apologies for this inconvenience. Published 11/12/2026 8:46 AM UTC This email is to advise you that we are currently investigating an unplanned interruption to EU Planning Analytics Workspace services. Our apologies for this inconvenience. We are investigating and will provide further update every 1 hour."
         }
       ]
     },
