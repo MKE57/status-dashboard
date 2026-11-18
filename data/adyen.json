@@ -4,22 +4,22 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-11-13T02:59:02.976Z",
-  "sourceUpdatedAt": "2026-11-13T02:59:02.976Z",
-  "updated": "2026-11-13T02:59:02.976Z",
+  "fetchedAt": "2026-11-18T00:24:31.168Z",
+  "sourceUpdatedAt": "2026-11-18T00:24:31.168Z",
+  "updated": "2026-11-18T00:24:31.168Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "Increased timeouts and refusal rate for a subset of Pix refunds",
+      "name": "Cartes Bancaires 3D Secure is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-11-12T13:24:00.000Z",
-      "updated_at": "2026-11-12T13:24:00.000Z",
-      "resolved_at": "2026-11-12T13:24:00.000Z",
+      "created_at": "2026-11-17T22:54:00.000Z",
+      "updated_at": "2026-11-17T22:54:00.000Z",
+      "resolved_at": "2026-11-17T22:54:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -27,13 +27,13 @@
       ]
     },
     {
-      "name": "Diners Europe is experiencing higher error rates",
+      "name": "PayU LATAM is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-11-12T04:04:00.000Z",
-      "updated_at": "2026-11-12T04:04:00.000Z",
-      "resolved_at": "2026-11-12T04:04:00.000Z",
+      "created_at": "2026-11-17T22:37:00.000Z",
+      "updated_at": "2026-11-17T22:37:00.000Z",
+      "resolved_at": "2026-11-17T22:37:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -41,13 +41,13 @@
       ]
     },
     {
-      "name": "GCash Philippines is experiencing offer conversion issues",
+      "name": "Apple Pay is experiencing unexpected transaction volume fluctuations",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-11-11T21:37:00.000Z",
-      "updated_at": "2026-11-11T21:37:00.000Z",
-      "resolved_at": "2026-11-11T21:37:00.000Z",
+      "created_at": "2026-11-17T18:32:00.000Z",
+      "updated_at": "2026-11-17T18:32:00.000Z",
+      "resolved_at": "2026-11-17T18:32:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
