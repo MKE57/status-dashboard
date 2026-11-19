@@ -3,7 +3,7 @@
   "cacheStatus": "ok",
   "source": "https://status.ai-apps-comms.ibm.com/announcement/iotm/api/v1/ext/1nS00axYWJZEkaNISKwKAi4ZaLCXam495VbYfjO6y%2BM%3D/notices.json",
   "statusPage": "https://status.ai-apps-comms.ibm.com/planninganalytics",
-  "fetchedAt": "2026-11-17T02:21:53.607Z",
+  "fetchedAt": "2026-11-19T18:03:11.505Z",
   "sourceUpdatedAt": "2026-11-16T20:26:04.000Z",
   "updated": "2026-11-16T20:26:04.000Z",
   "status": "Operational",
@@ -162,5 +162,5 @@
       ]
     }
   ],
-  "noticeCount": 82
+  "noticeCount": 73
 }
