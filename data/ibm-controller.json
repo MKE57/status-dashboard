@@ -1,7 +1,7 @@
 {
   "provider": "IBM Controller",
   "cacheStatus": "ok",
-  "fetchedAt": "2026-11-19T17:38:30.309Z",
+  "fetchedAt": "2026-11-19T23:49:57.400Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
@@ -138,5 +138,5 @@
       ]
     }
   ],
-  "noticeCount": 31
+  "noticeCount": 36
 }
