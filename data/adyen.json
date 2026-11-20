@@ -4,14 +4,56 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-11-19T21:56:28.163Z",
-  "sourceUpdatedAt": "2026-11-19T21:56:28.163Z",
-  "updated": "2026-11-19T21:56:28.163Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-11-20T03:04:55.790Z",
+  "sourceUpdatedAt": "2026-11-20T03:04:55.790Z",
+  "updated": "2026-11-20T03:04:55.790Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Cellulant is experiencing offer conversion issues November 20 2026, 00:00 CET Payment methods and issuers Identified November 20 2026, 00:00 CET We have been informed of issues with Cellulant starting at 18:15 CET. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with Cellulant and we will provide an update as soon as it becomes available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-11-20T03:04:55.790Z",
+      "updated_at": "2026-11-20T03:04:55.790Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Cellulant is experiencing offer conversion issues",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-11-19T23:00:00.000Z",
+      "updated_at": "2026-11-19T23:00:00.000Z",
+      "resolved_at": "2026-11-19T23:00:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "PayU LATAM is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-11-19T22:10:00.000Z",
+      "updated_at": "2026-11-19T22:10:00.000Z",
+      "resolved_at": "2026-11-19T22:10:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Apple Pay is experiencing partial unavailability",
       "body": "Component: Payment methods and issuers",
@@ -23,34 +65,6 @@
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Partial delay in processing refunds for Pix",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-11-19T12:38:00.000Z",
-      "updated_at": "2026-11-19T12:38:00.000Z",
-      "resolved_at": "2026-11-19T12:38:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Incorrect billing of ManagedPayouts fees in October and November 2026",
-      "body": "Component: Settlement and payouts",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-11-19T11:27:00.000Z",
-      "updated_at": "2026-11-19T11:27:00.000Z",
-      "resolved_at": "2026-11-19T11:27:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Settlement and payouts"
         }
       ]
     },
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
