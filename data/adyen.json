@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-11-20T03:04:55.790Z",
-  "sourceUpdatedAt": "2026-11-20T03:04:55.790Z",
-  "updated": "2026-11-20T03:04:55.790Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: Cellulant is experiencing offer conversion issues November 20 2026, 00:00 CET Payment methods and issuers Identified November 20 2026, 00:00 CET We have been informed of issues with Cellulant starting at 18:15 CET. This may cause offers to remain open until cancelled. No payment errors are expected as the request is never sent to Adyen. We are in contact with Cellulant and we will provide an update as soon as it becomes available.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-11-20T03:04:55.790Z",
-      "updated_at": "2026-11-20T03:04:55.790Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-11-20T11:26:30.826Z",
+  "sourceUpdatedAt": "2026-11-20T11:26:30.826Z",
+  "updated": "2026-11-20T11:26:30.826Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
