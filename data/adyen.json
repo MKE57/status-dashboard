@@ -4,14 +4,28 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-11-20T11:26:30.826Z",
-  "sourceUpdatedAt": "2026-11-20T11:26:30.826Z",
-  "updated": "2026-11-20T11:26:30.826Z",
+  "fetchedAt": "2026-11-20T19:14:49.953Z",
+  "sourceUpdatedAt": "2026-11-20T19:14:49.953Z",
+  "updated": "2026-11-20T19:14:49.953Z",
   "status": "Operational",
   "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Multibanco is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-11-20T15:58:00.000Z",
+      "updated_at": "2026-11-20T15:58:00.000Z",
+      "resolved_at": "2026-11-20T15:58:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Cellulant is experiencing offer conversion issues",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +48,6 @@
       "created_at": "2026-11-19T22:10:00.000Z",
       "updated_at": "2026-11-19T22:10:00.000Z",
       "resolved_at": "2026-11-19T22:10:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Apple Pay is experiencing partial unavailability",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-11-19T18:08:00.000Z",
-      "updated_at": "2026-11-19T18:08:00.000Z",
-      "resolved_at": "2026-11-19T18:08:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
