@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-11-20T19:14:49.953Z",
-  "sourceUpdatedAt": "2026-11-20T19:14:49.953Z",
-  "updated": "2026-11-20T19:14:49.953Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-11-21T00:52:16.748Z",
+  "sourceUpdatedAt": "2026-11-21T00:52:16.748Z",
+  "updated": "2026-11-21T00:52:16.748Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Intersolve is experiencing higher error rates November 20 2026, 20:26 CET Payment methods and issuers Identified November 20 2026, 20:26 CET We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Intersolve starting at 20:00 CET. We have contacted Intersolve and we will provide an update as soon as it becomes available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-11-21T00:52:16.748Z",
+      "updated_at": "2026-11-21T00:52:16.748Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Intersolve is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-11-20T19:26:00.000Z",
+      "updated_at": "2026-11-20T19:26:00.000Z",
+      "resolved_at": "2026-11-20T19:26:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Multibanco is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +62,6 @@
       "created_at": "2026-11-19T23:00:00.000Z",
       "updated_at": "2026-11-19T23:00:00.000Z",
       "resolved_at": "2026-11-19T23:00:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "PayU LATAM is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-11-19T22:10:00.000Z",
-      "updated_at": "2026-11-19T22:10:00.000Z",
-      "resolved_at": "2026-11-19T22:10:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
