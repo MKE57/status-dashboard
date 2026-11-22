@@ -4,14 +4,42 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-11-22T17:04:22.718Z",
-  "sourceUpdatedAt": "2026-11-22T17:04:22.718Z",
-  "updated": "2026-11-22T17:04:22.718Z",
-  "status": "Operational",
-  "activeIncidents": [],
+  "fetchedAt": "2026-11-22T22:26:38.943Z",
+  "sourceUpdatedAt": "2026-11-22T22:26:38.943Z",
+  "updated": "2026-11-22T22:26:38.943Z",
+  "status": "Active incident",
+  "activeIncidents": [
+    {
+      "name": "Adyen active incident: Givex is experiencing higher error rates November 22 2026, 22:12 CET Payment methods and issuers Identified November 22 2026, 22:12 CET We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Givex starting at 17:25 CET. We have contacted Givex and we will provide an update as soon as it becomes available.",
+      "body": "Detected from rendered Adyen public status page scrape.",
+      "status": "active",
+      "impact": "minor",
+      "created_at": "2026-11-22T22:26:38.943Z",
+      "updated_at": "2026-11-22T22:26:38.943Z",
+      "incident_updates": [
+        {
+          "body": "Detected from rendered Adyen public status page scrape."
+        }
+      ]
+    }
+  ],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
+    {
+      "name": "Givex is experiencing higher error rates",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-11-22T21:12:00.000Z",
+      "updated_at": "2026-11-22T21:12:00.000Z",
+      "resolved_at": "2026-11-22T21:12:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
     {
       "name": "Givex is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
@@ -34,20 +62,6 @@
       "created_at": "2026-11-21T11:16:00.000Z",
       "updated_at": "2026-11-21T11:16:00.000Z",
       "resolved_at": "2026-11-21T11:16:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Intersolve is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-11-20T19:26:00.000Z",
-      "updated_at": "2026-11-20T19:26:00.000Z",
-      "resolved_at": "2026-11-20T19:26:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -139,7 +153,7 @@
       ]
     }
   ],
-  "noticeCount": 9,
+  "noticeCount": 10,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
