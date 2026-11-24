@@ -4,18 +4,18 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-11-23T12:20:17.170Z",
-  "sourceUpdatedAt": "2026-11-23T12:20:17.170Z",
-  "updated": "2026-11-23T12:20:17.170Z",
+  "fetchedAt": "2026-11-24T00:08:13.815Z",
+  "sourceUpdatedAt": "2026-11-24T00:08:13.815Z",
+  "updated": "2026-11-24T00:08:13.815Z",
   "status": "Active incident",
   "activeIncidents": [
     {
-      "name": "Adyen active incident: MB WAY is experiencing higher refusal rates November 23 2026, 12:23 CET Payment methods and issuers Identified November 23 2026, 12:23 CET We have identified an issue outside of our platform resulting in higher refusal rates for transactions processed through MB WAY starting at 00:15 CET. We have contacted MB WAY and we will provide an update as soon as it becomes available. Multibanco is experiencing higher error rates November 23 2026, 12:18 CET Payment methods and issuers Givex is experiencing higher error rates November 22 2026, 22:12 CET Payment methods and issuers",
+      "name": "Adyen active incident: Givex is experiencing higher error rates November 23 2026, 19:21 CET Payment methods and issuers Identified November 23 2026, 19:21 CET We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Givex starting at 14:40 CET. We have contacted Givex and we will provide an update as soon as it becomes available.",
       "body": "Detected from rendered Adyen public status page scrape.",
       "status": "active",
       "impact": "minor",
-      "created_at": "2026-11-23T12:20:17.170Z",
-      "updated_at": "2026-11-23T12:20:17.170Z",
+      "created_at": "2026-11-24T00:08:13.815Z",
+      "updated_at": "2026-11-24T00:08:13.815Z",
       "incident_updates": [
         {
           "body": "Detected from rendered Adyen public status page scrape."
@@ -27,27 +27,13 @@
   "upcomingMaintenances": [],
   "recentIncidents": [
     {
-      "name": "MB WAY is experiencing higher refusal rates",
+      "name": "Pay by PayMaya is experiencing higher error rates",
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-11-23T11:23:00.000Z",
-      "updated_at": "2026-11-23T11:23:00.000Z",
-      "resolved_at": "2026-11-23T11:23:00.000Z",
-      "incident_updates": [
-        {
-          "body": "Component: Payment methods and issuers"
-        }
-      ]
-    },
-    {
-      "name": "Multibanco is experiencing higher error rates",
-      "body": "Component: Payment methods and issuers",
-      "status": "resolved",
-      "impact": "minor",
-      "created_at": "2026-11-23T11:18:00.000Z",
-      "updated_at": "2026-11-23T11:18:00.000Z",
-      "resolved_at": "2026-11-23T11:18:00.000Z",
+      "created_at": "2026-11-23T18:22:00.000Z",
+      "updated_at": "2026-11-23T18:22:00.000Z",
+      "resolved_at": "2026-11-23T18:22:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
@@ -59,9 +45,23 @@
       "body": "Component: Payment methods and issuers",
       "status": "resolved",
       "impact": "minor",
-      "created_at": "2026-11-22T21:12:00.000Z",
-      "updated_at": "2026-11-22T21:12:00.000Z",
-      "resolved_at": "2026-11-22T21:12:00.000Z",
+      "created_at": "2026-11-23T18:21:00.000Z",
+      "updated_at": "2026-11-23T18:21:00.000Z",
+      "resolved_at": "2026-11-23T18:21:00.000Z",
+      "incident_updates": [
+        {
+          "body": "Component: Payment methods and issuers"
+        }
+      ]
+    },
+    {
+      "name": "Higher error rates for bank transfer transactions",
+      "body": "Component: Payment methods and issuers",
+      "status": "resolved",
+      "impact": "minor",
+      "created_at": "2026-11-23T12:36:00.000Z",
+      "updated_at": "2026-11-23T12:36:00.000Z",
+      "resolved_at": "2026-11-23T12:36:00.000Z",
       "incident_updates": [
         {
           "body": "Component: Payment methods and issuers"
