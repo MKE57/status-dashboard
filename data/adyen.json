@@ -4,25 +4,11 @@
   "source": "https://status.adyen.com/",
   "historySource": "https://status.adyen.com/incident-history#2026",
   "statusPage": "https://status.adyen.com/",
-  "fetchedAt": "2026-11-24T00:08:13.815Z",
-  "sourceUpdatedAt": "2026-11-24T00:08:13.815Z",
-  "updated": "2026-11-24T00:08:13.815Z",
-  "status": "Active incident",
-  "activeIncidents": [
-    {
-      "name": "Adyen active incident: Givex is experiencing higher error rates November 23 2026, 19:21 CET Payment methods and issuers Identified November 23 2026, 19:21 CET We have identified an issue outside of our platform resulting in higher error rates for transactions processed through Givex starting at 14:40 CET. We have contacted Givex and we will provide an update as soon as it becomes available.",
-      "body": "Detected from rendered Adyen public status page scrape.",
-      "status": "active",
-      "impact": "minor",
-      "created_at": "2026-11-24T00:08:13.815Z",
-      "updated_at": "2026-11-24T00:08:13.815Z",
-      "incident_updates": [
-        {
-          "body": "Detected from rendered Adyen public status page scrape."
-        }
-      ]
-    }
-  ],
+  "fetchedAt": "2026-11-24T20:39:19.990Z",
+  "sourceUpdatedAt": "2026-11-24T20:39:19.990Z",
+  "updated": "2026-11-24T20:39:19.990Z",
+  "status": "Operational",
+  "activeIncidents": [],
   "activeMaintenances": [],
   "upcomingMaintenances": [],
   "recentIncidents": [
@@ -153,7 +139,7 @@
       ]
     }
   ],
-  "noticeCount": 10,
+  "noticeCount": 9,
   "scrapeMode": "playwright-rendered-page-with-history",
   "componentStatuses": [
     {
